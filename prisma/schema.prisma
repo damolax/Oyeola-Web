@@ -1,0 +1,221 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model SiteSettings {
+  id                  String   @id @default("settings")
+  brandName           String   @default("Oyeola")
+  founderName         String   @default("Olalekan Musodiq Oyekunle")
+  tagline             String   @default("Websites that convert visitors into clients.")
+  logoUrl             String   @default("")
+  faviconUrl          String   @default("")
+  founderPhotoUrl     String   @default("")
+  primaryColor        String   @default("#0D1117")
+  secondaryColor      String   @default("#161B22")
+  accentColor         String   @default("#38D996")
+  backgroundColor     String   @default("#F8F5EF")
+  mutedColor          String   @default("#E8DDC7")
+  copperColor         String   @default("#C98A4A")
+  textColor           String   @default("#68707D")
+  buttonRadius        String   @default("999px")
+  fontFamily          String   @default("Inter")
+  navigationJson      String   @default("[]")
+  footerText          String   @default("Oyeola builds clear, structured websites that help visitors understand your offer, trust your business, and contact you.")
+  socialLinksJson     String   @default("[]")
+  seoTitle            String   @default("Oyeola - Ecommerce Revenue Leak Reviews and Store Conversion Strategy")
+  seoDescription      String   @default("Oyeola helps ecommerce stores diagnose product-page gaps, trust issues, cart friction, and follow-up leaks that may be stopping visitors from becoming buyers.")
+  ogImage             String   @default("")
+  contactRecipientEmail String @default("elicitors.online@gmail.com")
+  emailSubjectFormat  String   @default("New Oyeola store review request from {{name}}")
+  successMessage      String   @default("Your request has been received. Oyeola will review the details and respond with the next best step if the store is a fit.")
+  thankYouMessage     String   @default("Thank you for sending your store. Your submission has been received. Oyeola will review the details and respond with the next best step if the store is a fit.")
+  autoReplyMessage    String   @default("Thank you for requesting an Oyeola review. Your details were received, and the next step is to check whether your store is a fit for a practical buyer-journey review.")
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+model NavigationItem {
+  id        String   @id @default(cuid())
+  label     String
+  href      String
+  location  String   @default("header")
+  order     Int      @default(0)
+  visible   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Page {
+  id             String   @id @default(cuid())
+  title          String
+  slug           String   @unique
+  body           String
+  seoTitle       String   @default("")
+  seoDescription String   @default("")
+  published      Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Section {
+  id          String   @id @default(cuid())
+  pageSlug    String
+  key         String
+  title       String   @default("")
+  contentJson String   @default("{}")
+  visible     Boolean  @default(true)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([pageSlug, key])
+}
+
+model Service {
+  id             String   @id @default(cuid())
+  title          String
+  slug           String   @unique
+  summary        String
+  problem        String
+  whatWeDo       String
+  deliverable    String
+  bestFit        String   @default("")
+  icon           String   @default("ShoppingBag")
+  imageUrl       String   @default("")
+  includedJson   String   @default("[]")
+  processJson    String   @default("[]")
+  faqsJson       String   @default("[]")
+  ctaLabel       String   @default("Request a Store Review")
+  ctaLink        String   @default("/contact")
+  order          Int      @default(0)
+  published      Boolean  @default(true)
+  seoTitle       String   @default("")
+  seoDescription String   @default("")
+  relatedPortfolioItems PortfolioItem[] @relation("ServicePortfolio")
+  relatedTestimonials   Testimonial[]   @relation("ServiceTestimonial")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model PortfolioCategory {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String  @default("")
+  order       Int     @default(0)
+  items       PortfolioItem[] @relation("PortfolioCategories")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model PortfolioItem {
+  id             String   @id @default(cuid())
+  title          String
+  slug           String   @unique
+  clientType     String
+  niche          String   @default("")
+  problem        String
+  reviewed       String
+  findingsJson   String   @default("[]")
+  fixesJson      String   @default("[]")
+  impact         String
+  toolsJson      String   @default("[]")
+  imagesJson     String   @default("[]")
+  sampleLabel    String   @default("Sample Breakdown")
+  featured       Boolean  @default(false)
+  showOnHome     Boolean  @default(false)
+  published      Boolean  @default(true)
+  seoTitle       String   @default("")
+  seoDescription String   @default("")
+  categories     PortfolioCategory[] @relation("PortfolioCategories")
+  services       Service[]           @relation("ServicePortfolio")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Testimonial {
+  id          String   @id @default(cuid())
+  clientName  String
+  company     String   @default("")
+  role        String   @default("")
+  quote       String
+  rating      Int?
+  photoUrl    String   @default("")
+  tag         String   @default("")
+  featured    Boolean  @default(false)
+  showOnHome  Boolean  @default(false)
+  visible     Boolean  @default(true)
+  order       Int      @default(0)
+  services    Service[] @relation("ServiceTestimonial")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ResourcePost {
+  id             String   @id @default(cuid())
+  title          String
+  slug           String   @unique
+  category       String
+  featuredImage  String   @default("")
+  excerpt        String
+  body           String
+  seoTitle       String   @default("")
+  seoDescription String   @default("")
+  published      Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Lead {
+  id             String   @id @default(cuid())
+  name           String
+  email          String
+  websiteUrl     String
+  platform       String
+  monthlyTraffic String   @default("")
+  wantsReviewed  String
+  mainChallenge  String
+  consent        Boolean  @default(false)
+  status         String   @default("new")
+  internalNotes  String   @default("")
+  ipHash         String   @default("")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model FAQ {
+  id         String   @id @default(cuid())
+  parentType String
+  parentId   String
+  question   String
+  answer     String
+  order      Int      @default(0)
+  visible    Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model MediaAsset {
+  id        String   @id @default(cuid())
+  name      String
+  url       String
+  altText   String   @default("")
+  kind      String   @default("image")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  role         String   @default("owner")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
