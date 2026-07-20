@@ -1,18 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 170" role="img" aria-label="Oyeola Studio logo">
-  <defs>
-    <linearGradient id="g" x1="20" y1="10" x2="130" y2="145" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#7CFF4F"/>
-      <stop offset="0.52" stop-color="#20E956"/>
-      <stop offset="1" stop-color="#00B53F"/>
-    </linearGradient>
-  </defs>
-  <rect width="760" height="170" rx="28" fill="#050705"/>
-  <g transform="translate(38 31)">
-    <circle cx="54" cy="54" r="38" fill="none" stroke="url(#g)" stroke-width="17" stroke-linecap="round"/>
-    <path d="M76 78 L100 102" stroke="#20E956" stroke-width="14" stroke-linecap="round"/>
-    <circle cx="54" cy="54" r="22" fill="#050705"/>
-  </g>
-  <text x="158" y="85" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="800" letter-spacing="6">OYEOLA</text>
-  <text x="162" y="123" fill="#20E956" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="14">STUDIO</text>
-  <path d="M606 114H700" stroke="#20E956" stroke-width="3" opacity="0.7"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="54" viewBox="0 0 260 54"><rect x="2" y="8" width="38" height="38" rx="12" fill="#6b2337"/><path d="M14 28c0-7.4 5.3-12.5 12.3-12.5S38.5 20.6 38.5 28 33.2 40.5 26.3 40.5 14 35.4 14 28Zm7.3 0c0 3.5 2 5.9 5 5.9s5-2.4 5-5.9-2-5.9-5-5.9-5 2.4-5 5.9Z" fill="#fff"/><text x="52" y="30" font-size="21" font-weight="700" fill="#1b1715" font-family="Inter,Arial,sans-serif">Oyeola Studio</text><text x="53" y="45" font-size="10" font-weight="600" fill="#6b625d" font-family="Inter,Arial,sans-serif">Websites • systems • clarity</text></svg>

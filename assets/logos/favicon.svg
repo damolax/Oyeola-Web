@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Oyeola Studio mark">
-  <defs>
-    <linearGradient id="g" x1="20" y1="10" x2="105" y2="120" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#7CFF4F"/>
-      <stop offset="0.48" stop-color="#20E956"/>
-      <stop offset="1" stop-color="#00B53F"/>
-    </linearGradient>
-  </defs>
-  <rect width="128" height="128" rx="28" fill="#050705"/>
-  <circle cx="64" cy="64" r="38" fill="none" stroke="url(#g)" stroke-width="18" stroke-linecap="round"/>
-  <path d="M86 86 L108 108" stroke="#20E956" stroke-width="15" stroke-linecap="round"/>
-  <circle cx="64" cy="64" r="23" fill="#050705"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><rect width="64" height="64" rx="18" fill="#6b2337"/><path d="M15 32c0-10.2 7.3-17.2 17-17.2S49 21.8 49 32 41.7 49.2 32 49.2 15 42.2 15 32Zm9.3 0c0 5 3.1 8.4 7.7 8.4s7.7-3.4 7.7-8.4S36.6 23.6 32 23.6 24.3 27 24.3 32Z" fill="#fff"/></svg>

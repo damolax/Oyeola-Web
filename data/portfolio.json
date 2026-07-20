@@ -2,205 +2,157 @@
   {
     "slug": "one-love-beauty",
     "title": "One Love Beauty",
-    "category": "Booking Website",
     "platform": "Wix",
+    "category": "Booking Website",
     "service": "booking-website",
-    "short": "A polished service website for a hair recovery specialist with consultation CTA, process, services, and client story.",
-    "needed": "The business needed a premium website that could explain hair recovery services and make booking a consultation feel easy and trustworthy.",
-    "built": [
-      "A clear homepage with a strong consultation CTA",
-      "Process section showing observe, treatment, and maintenance",
-      "Service cards for scalp analysis, hair restoration, replacement, and styling",
-      "Client story and footer contact flow",
-      "Booking and client portal buttons placed where visitors can act"
-    ],
-    "matters": "This helps visitors understand the service, see the process, and move toward booking instead of leaving unsure."
+    "service_label": "Booking Website Setup",
+    "image": "/mnt/data/One Love Beauty _ Hair Recovery Specialist in Charlotte, NC(1).png",
+    "website": "https://www.onelovebeaut.com/",
+    "needed": "A professional beauty and hair recovery website that feels calm, trusted, and easy to book from.",
+    "matters": "The site makes the service easier to trust and gives visitors a clear next step: book a consultation or learn more."
   },
   {
     "slug": "dr-akira",
     "title": "Dr. Akira",
-    "category": "Booking Website",
     "platform": "Wix",
+    "category": "Booking Website",
     "service": "booking-website",
-    "short": "A professional mental health website with service cards, featured proof, FAQs, appointment CTA, and contact form.",
-    "needed": "The client needed a calm, credible website that explains mental health services and gives visitors a clear appointment path.",
-    "built": [
-      "Homepage hero with appointment CTA",
-      "Service cards for assessments, therapy, and speaking engagements",
-      "Featured-in proof section",
-      "Areas of support and FAQ section",
-      "Contact form and appointment request section"
-    ],
-    "matters": "This gives visitors the information they need before reaching out and makes the next step easy to find."
+    "service_label": "Booking Website Setup",
+    "image": "/mnt/data/Home - Dr Akira.png",
+    "website": "",
+    "needed": "A polished mental health website that presents services, authority, and appointment options clearly.",
+    "matters": "Visitors can understand the expertise, see service options, and move toward booking without confusion."
   },
   {
-    "slug": "somatra-healing",
-    "title": "Somatra Healing",
-    "category": "Wix Website Design",
-    "platform": "Wix",
-    "service": "wix-website-design",
-    "short": "A calming healing-service website with mission, services, about, benefits, contact, newsletter, and FAQs.",
-    "needed": "The business needed an online presence that could explain a sensitive healing service in a calm, trusted way.",
-    "built": [
-      "Homepage hero and mission section",
-      "Healing service cards",
-      "About section and service benefit section",
-      "Newsletter signup and contact form",
-      "FAQ section to answer visitor questions"
-    ],
-    "matters": "The site helps visitors understand the service and feel comfortable enough to learn more or contact the business."
+    "slug": "guestwork-property-management",
+    "title": "Guestwork Property Management",
+    "platform": "WordPress",
+    "category": "WordPress Website",
+    "service": "wordpress-website-design",
+    "service_label": "WordPress Website Design",
+    "image": "/mnt/data/Rental Host Ontario _ Guestwork Property Management.png",
+    "website": "https://guestwork.ca/",
+    "needed": "A property management website that speaks directly to rental owners and shows a simple consultation path.",
+    "matters": "The site guides rental owners from \u201cI need help managing my property\u201d to \u201cI understand the service and can request a consultation.\u201d"
   },
   {
     "slug": "bare-canvas-media",
     "title": "Bare Canvas Media",
-    "category": "Wix Studio Website",
     "platform": "Wix Studio",
+    "category": "Wix Studio Website",
     "service": "wix-studio-websites",
-    "short": "A digital marketing website with hero CTA, service cards, mission sections, and consultation call-to-action.",
-    "needed": "The brand needed a modern website that could present digital marketing services clearly and push visitors toward a consultation.",
-    "built": [
-      "Large hero section with get-started CTA",
-      "Three value cards under the hero",
-      "Who-we-are and mission/vision sections",
-      "Service cards for SEO, PPC, content, email, and web design",
-      "Free consultation CTA section"
-    ],
-    "matters": "This turns a broad digital marketing offer into clear service choices and a simple path to contact."
-  },
-  {
-    "slug": "davinci-resolve-craftsman",
-    "title": "DaVinci Resolve Craftsman",
-    "category": "Wix Website Design",
-    "platform": "Wix",
-    "service": "wix-website-design",
-    "short": "A video editor website with services, portfolio gallery, pricing, work process, and booking contact.",
-    "needed": "The creator needed a website that shows editing services, proof of work, packages, and a way to book.",
-    "built": [
-      "Hero section for video editing services",
-      "About and service sections",
-      "Portfolio gallery with sample visuals",
-      "Pricing/package section",
-      "Work process and booking contact area"
-    ],
-    "matters": "The site helps prospects see the skill, understand the offer, compare packages, and contact for service."
-  },
-  {
-    "slug": "bambo-oladipo",
-    "title": "Bambo Oladipo",
-    "category": "Personal Brand Website",
-    "platform": "Wix",
-    "service": "wix-website-design",
-    "short": "A personal brand website for a data analyst with service sections, skills, experience, testimonials, and contact.",
-    "needed": "The client needed a personal brand website that presents expertise, services, proof, and contact information clearly.",
-    "built": [
-      "Professional hero and about section",
-      "Service cards for data analysis, visualization, and database management",
-      "Skills and experience sections",
-      "Testimonial section",
-      "Contact form and contact details"
-    ],
-    "matters": "The site makes the expert easier to understand, easier to trust, and easier to contact."
-  },
-  {
-    "slug": "vapourvend",
-    "title": "VapourVend",
-    "category": "Lead-Generation Website",
-    "platform": "Wix",
-    "service": "ecommerce-website",
-    "short": "A bold vending-machine website with product explanation, machine options, restock message, and enquiry CTA.",
-    "needed": "The business needed a strong landing page that explains vape vending machines and encourages venues to enquire.",
-    "built": [
-      "Bold hero section with enquiry CTA",
-      "Why VapourVend section",
-      "Machine feature breakdown",
-      "Machine model options",
-      "Restock message and contact form"
-    ],
-    "matters": "The site explains the product, shows why venues should care, and gives them a clear enquiry path."
-  },
-  {
-    "slug": "three-nails-one-cross",
-    "title": "3 Nails 1 Cross",
-    "category": "Ecommerce Website",
-    "platform": "Wix",
-    "service": "ecommerce-website",
-    "short": "A faith-based ecommerce website with product categories, best sellers, testimonials, contact, and trust sections.",
-    "needed": "The store needed a website that could show product categories and make the shopping path feel clear and trustworthy.",
-    "built": [
-      "Shop-by-category section",
-      "Story and values section",
-      "Best-selling product section",
-      "Product category blocks for keychains, hats, shirts, and wedding items",
-      "Testimonials, contact form, support, shipping, and guarantee sections"
-    ],
-    "matters": "The site helps visitors understand the brand, browse categories, and move toward shopping with more trust."
+    "service_label": "Wix Studio Websites",
+    "image": "/mnt/data/Affordable Content Marketing Services & Digital Growth _ Bare Canvas Media (1)(1).png",
+    "website": "",
+    "needed": "A digital marketing website that looks modern and explains the service offer fast.",
+    "matters": "The business looks more credible and visitors can quickly see what kind of marketing help is offered."
   },
   {
     "slug": "zentravels",
-    "title": "Zen Travels",
-    "category": "GoDaddy Website",
+    "title": "ZenTravels",
     "platform": "GoDaddy",
+    "category": "Travel Website",
     "service": "godaddy-website-design",
-    "short": "A travel website with vacation types, promotional trips, resource CTA, gallery, FAQ, and contact section.",
-    "needed": "The business needed a simple travel website that shows vacation options and helps visitors request help planning a trip.",
-    "built": [
-      "Hero section for dream vacations",
-      "Travel partner/logo proof row",
-      "Story section",
-      "Vacation type cards",
-      "Promotions, gallery, FAQs, and contact area"
-    ],
-    "matters": "The website turns travel planning into clear options and makes it easy for visitors to ask for help."
+    "service_label": "GoDaddy Website Design",
+    "image": "/mnt/data/Plan Your Dream Vacation.png",
+    "website": "zentravels.us",
+    "needed": "A travel website that helps visitors discover vacation types, offers, resources, and contact options.",
+    "matters": "Visitors can understand the travel help offered, browse trip types, and contact the business with less friction."
   },
   {
     "slug": "concierge-wellness",
     "title": "Concierge Wellness & Consulting",
-    "category": "GoDaddy Website",
     "platform": "GoDaddy",
+    "category": "Service Website",
     "service": "godaddy-website-design",
-    "short": "A wellness and consulting website with about, services, CTA, benefits, testimonials, FAQ, contact, and partner proof.",
-    "needed": "The business needed a service website that explains wellness, therapy, and consulting options in one place.",
-    "built": [
-      "Hero CTA and about section",
-      "Service cards for consulting, therapy, sports performance, and supervision",
-      "Strong wellness journey CTA",
-      "Benefits and trust section",
-      "Testimonials, FAQs, contact, partners, and mailing list"
-    ],
-    "matters": "The site gives visitors the service options, trust points, and contact path needed before they reach out."
+    "service_label": "GoDaddy Website Design",
+    "image": "/mnt/data/Concierge Wellness and Consulting.png",
+    "website": "",
+    "needed": "A wellness and consulting website that explains multiple services while still feeling simple.",
+    "matters": "The site turns a multi-service offer into a clearer path for people who need support and want to contact the business."
   },
   {
     "slug": "latonya-speaks",
     "title": "LaTonya Speaks",
-    "category": "GoDaddy Personal Brand",
     "platform": "GoDaddy",
+    "category": "Personal Brand Website",
     "service": "godaddy-website-design",
-    "short": "A personal brand website with speaking, coaching, consultation, testimonials, event proof, contact, and FAQ sections.",
-    "needed": "The client needed a website to show her speaking, coaching, story, and consultation options clearly.",
-    "built": [
-      "Personal hero and transformational message",
-      "About/story section",
-      "Speaking and coaching sections",
-      "Consultation and testimonial sections",
-      "Image proof, contact form, steps to work together, FAQs, and subscribe section"
-    ],
-    "matters": "The website positions the client as a trusted expert and gives visitors clear ways to learn, book, or contact."
+    "service_label": "GoDaddy Website Design",
+    "image": "/mnt/data/(1) - Let me know if you have any questions!.png",
+    "website": "",
+    "needed": "A personal brand website for speaking, coaching, consulting, events, and contact.",
+    "matters": "The site helps the visitor see the speaker\u2019s work, understand the offer, and take the next step."
+  },
+  {
+    "slug": "somatra-healing",
+    "title": "Somatra Healing",
+    "platform": "Wix",
+    "category": "Wellness Website",
+    "service": "wix-website-design",
+    "service_label": "Wix Website Design",
+    "image": "/mnt/data/Akashic Records Reader _ Somatra Healing(1).png",
+    "website": "somatrahealing.com",
+    "needed": "A wellness website that communicates healing services, trust, benefits, and contact path.",
+    "matters": "The business feels more trustworthy and visitors can quickly understand the healing services offered."
+  },
+  {
+    "slug": "davinci-resolve-craftsman",
+    "title": "DaVinci Resolve Craftsman",
+    "platform": "Wix",
+    "category": "Portfolio Website",
+    "service": "wix-website-design",
+    "service_label": "Wix Website Design",
+    "image": "/mnt/data/DaVinci Resolve Craftsman \u2013 Expert Video Editor(1).png",
+    "website": "https://www.davinciresolvecraftsman.com/",
+    "needed": "A video editing portfolio site that shows services, sample work, packages, process, and booking path.",
+    "matters": "The site helps prospects quickly see the editor\u2019s style, services, prices, and next step."
+  },
+  {
+    "slug": "bambo-oladipo",
+    "title": "Bambo Oladipo",
+    "platform": "Wix",
+    "category": "Personal Brand Website",
+    "service": "wix-website-design",
+    "service_label": "Wix Website Design",
+    "image": "/mnt/data/Home _ Bambo Oladipo(1).png",
+    "website": "https://olabambodatapro.wixsite.com/bambo-oladipo",
+    "needed": "A personal brand website for a data analyst that explains expertise, skills, services, and contact.",
+    "matters": "The site gives the professional a stronger online presence and makes the service offer easy to understand."
+  },
+  {
+    "slug": "vapourvend",
+    "title": "VapourVend",
+    "platform": "Wix",
+    "category": "Lead Generation Website",
+    "service": "ecommerce-website",
+    "service_label": "Ecommerce / Lead Website",
+    "image": "/mnt/data/HOME _ Vapour Vend Copy(1).png",
+    "website": "https://vapourvend.wixsite.com/website",
+    "needed": "A bold product/service website for a vape vending solution with a clear enquiry path.",
+    "matters": "The site makes the offer feel bigger, clearer, and easier for venues to enquire about."
+  },
+  {
+    "slug": "three-nails-one-cross",
+    "title": "3 Nails 1 Cross",
+    "platform": "Wix",
+    "category": "Ecommerce Website",
+    "service": "ecommerce-website",
+    "service_label": "Ecommerce Website Setup",
+    "image": "/mnt/data/3 Nails 1 Cross(1).png",
+    "website": "https://www.3nails1cross.com/",
+    "needed": "An ecommerce website for faith-focused products with categories, product sections, story, testimonials, and contact.",
+    "matters": "The store is easier to browse and gives shoppers more reasons to trust and buy."
   },
   {
     "slug": "shop-ship-express-analytics",
     "title": "Shop & Ship Express Analytics",
-    "category": "Analytics Visibility",
     "platform": "Wix Analytics",
+    "category": "Analytics Visibility",
     "service": "analytics-tracking",
-    "short": "A Wix analytics view showing traffic, visitor behavior, top pages, contact clicks, sources, and AI visibility signals.",
-    "needed": "The business needed to understand what was happening on the website instead of only judging by appearance.",
-    "built": [
-      "Review of sessions, visitors, and clicks to contact",
-      "Traffic source visibility",
-      "Most visited pages review",
-      "Engagement and behavior review",
-      "Marketing and AI visibility signals"
-    ],
-    "matters": "This helps the business see what people are doing and decide what page, CTA, or traffic source needs attention next."
+    "service_label": "Analytics & Website Visibility",
+    "image": "/mnt/data/Highlights-Wix-com-07-19-2026_09_26_AM(2).png",
+    "website": "https://www.shopandshipexpress.com/",
+    "needed": "A clearer view of how the website is performing after launch, including visitors, clicks, pages, and traffic sources.",
+    "matters": "The business can stop guessing and use website activity to decide what should be improved first."
   }
 ]
