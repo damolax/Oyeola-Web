@@ -1,6 +1,6 @@
 {
   "framework": null,
-  "installCommand": "echo No install needed for static Oyeola Studio site",
+  "installCommand": "echo No install needed for static Oyeola site",
   "buildCommand": "echo Static site ready",
   "outputDirectory": ".",
   "cleanUrls": true,
