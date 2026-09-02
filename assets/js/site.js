@@ -1,74 +1,123 @@
 (() => {
-  const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
-  const path=location.pathname.toLowerCase();
-  const nested=/\/(services|case-studies)\//.test(path), root=nested?'../':'';
-  const active=path.includes('/case-studies/')||/\/work(?:\.html)?$/.test(path)?'work':path.includes('/services/airtable')||path.includes('operations')?'operations':path.includes('/services/')||path.includes('website')?'websites':path.includes('digital-planners')||path.includes('planner-demo')?'planners':path.includes('about')?'about':'';
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const path = location.pathname.toLowerCase();
+  const nested = /\/(services|case-studies)\//.test(path);
+  const root = nested ? '../' : '';
+  const active = path.includes('/case-studies/') || /\/work(?:\.html)?$/.test(path) ? 'work'
+    : path.includes('/services/airtable') || path.includes('operations') ? 'operations'
+    : path.includes('/services/') || path.includes('website') ? 'websites'
+    : path.includes('digital-planners') || path.includes('planner-demo') ? 'planners'
+    : path.includes('about') ? 'about' : '';
 
-  const header=$('.site-header');
-  if(header) header.outerHTML=`<header class="site-header"><div class="container nav"><a class="brand brand-lockup" href="${root}index.html" aria-label="Oyeola Online home"><img src="${root}assets/logos/logo-horizontal-light.svg" alt="Oyeola Online"></a><nav class="nav-links" aria-label="Primary navigation"><a class="${active==='websites'?'active':''}" href="${root}websites.html">Websites</a><a class="${active==='operations'?'active':''}" href="${root}operations.html">Operations</a><a class="${active==='planners'?'active':''}" href="${root}digital-planners.html">Digital Planners</a><a class="${active==='work'?'active':''}" href="${root}work.html">Work</a><a class="${active==='about'?'active':''}" href="${root}about.html">About</a><a class="btn small" href="${root}start-here.html">Start Here</a></nav><button class="menu-btn" aria-label="Open navigation">Menu</button></div></header>`;
+  const header = $('.site-header');
+  if (header) {
+    header.outerHTML = `<header class="site-header"><div class="container nav"><a class="brand brand-lockup" href="${root}index.html" aria-label="Oyeola Online home"><img src="${root}assets/logos/logo-horizontal-light.svg" alt="Oyeola Online"></a><nav class="nav-links" aria-label="Primary navigation"><a class="${active === 'websites' ? 'active' : ''}" href="${root}websites.html">Websites</a><a class="${active === 'operations' ? 'active' : ''}" href="${root}operations.html">Operations</a><a class="${active === 'planners' ? 'active' : ''}" href="${root}digital-planners.html">Digital Planners</a><a class="${active === 'work' ? 'active' : ''}" href="${root}work.html">Work</a><a class="${active === 'about' ? 'active' : ''}" href="${root}about.html">About</a><a class="btn small" href="${root}start-here.html">Start Here</a></nav><button class="menu-btn" aria-label="Open navigation" aria-expanded="false">Menu</button></div></header>`;
+  }
 
-  let icon=document.querySelector('link[rel="icon"]');
-  if(!icon){icon=document.createElement('link');icon.rel='icon';document.head.appendChild(icon)}
-  icon.href=`${root}assets/logos/favicon.svg`; icon.type='image/svg+xml';
-  $$('link[rel="apple-touch-icon"]').forEach(x=>x.href=`${root}assets/logos/icon-192.png`);
+  let icon = document.querySelector('link[rel="icon"]');
+  if (!icon) {
+    icon = document.createElement('link');
+    icon.rel = 'icon';
+    document.head.appendChild(icon);
+  }
+  icon.href = `${root}assets/logos/favicon.svg`;
+  icon.type = 'image/svg+xml';
 
-  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),nodes=[];let n;
-  while(n=walker.nextNode())nodes.push(n);
-  nodes.forEach(x=>{if(!/^(SCRIPT|STYLE)$/.test(x.parentElement?.tagName||''))x.nodeValue=x.nodeValue.replace(/Oyeola Studio/g,'Oyeola Online')});
-  document.title=document.title.replace(/Oyeola Studio/g,'Oyeola Online');
-  $$('meta[property="og:title"]').forEach(m=>m.content=m.content.replace(/Oyeola Studio/g,'Oyeola Online'));
+  const footer = $('footer.footer');
+  if (footer) {
+    footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-light.svg" alt="Oyeola Online"></a><p>Websites that help customers act. Operations systems that reduce chasing. Digital planners built to be chosen and used.</p></div><div><strong>Services</strong><p><a href="${root}websites.html">Websites</a><br><a href="${root}operations.html">Operations Systems</a><br><a href="${root}digital-planners.html">Digital Planners</a></p></div><div><strong>Start</strong><p><a href="${root}website-check.html">Website Check</a><br><a href="${root}operations-check.html">Operations Check</a><br><a href="${root}demos.html">Working Demos</a></p></div><div><strong>Contact</strong><p><a href="${root}contact.html">Project enquiry</a><br><a href="mailto:oyeolawebmaster@gmail.com">Email backup</a><br><a href="${root}privacy.html">Privacy</a></p></div></div><div class="footer-bottom"><span>© 2026 Oyeola Online</span><span>Understand → decide → build.</span></div></div></footer>`;
+  }
 
-  const slug=path.includes('/services/')?path.split('/').pop().replace(/\.html$/,''):'';
-  const services={
-    'website-growth-setup':{area:'Websites',eye:'For websites that get attention but not enough action',title:'Turn More Website Visits Into Enquiries, Bookings or Sales',desc:'I improve the message, service path, calls to action and follow-up journey so the right visitor can understand what you offer and move forward.',problem:'People are reaching the site, but too many still leave without choosing a service, booking, requesting a quote or starting a conversation.',outcome:'A clearer customer journey where visitors understand the offer, see the proof they need and know exactly what to do next.',start:'../website-check.html',label:'Run my Website Check'},
-    'wix-website-design':{area:'Websites',eye:'For businesses using Wix',title:'Build a Wix Website That Helps Customers Decide and Act',desc:'I design Wix websites around what the customer needs to understand, trust and do next—not around filling a template with sections.',problem:'Your Wix site may look acceptable but still make visitors work too hard to understand the offer, compare services or take the next action.',outcome:'A Wix site with a clear promise, useful proof and a direct path to enquiry, booking, quote or purchase.',start:'../website-check.html',label:'Run my Website Check'},
-    'wix-studio-websites':{area:'Websites',eye:'For brands that need more design control',title:'Use Wix Studio Without Losing the Customer Journey',desc:'I combine Wix Studio’s visual flexibility with a clear message hierarchy and conversion path so the site feels premium without becoming hard to use.',problem:'A visually ambitious website can still underperform when design choices bury the offer, proof or next action.',outcome:'A polished Wix Studio experience that looks distinctive while keeping the customer decision simple.',start:'../website-check.html',label:'Run my Website Check'},
-    'wordpress-website-design':{area:'Websites',eye:'For businesses building on WordPress',title:'Build a WordPress Site Customers Can Understand and Use',desc:'I structure WordPress websites around clear services, proof, search visibility and action paths so the site can grow without becoming confusing.',problem:'As WordPress sites grow, pages, plugins and content can accumulate without helping the customer decide what matters.',outcome:'A WordPress site with clear service architecture, stronger conversion paths and a foundation that can support future content and growth.',start:'../website-check.html',label:'Run my Website Check'},
-    'godaddy-website-design':{area:'Websites',eye:'For businesses that need a focused GoDaddy site',title:'Get a Professional GoDaddy Website Without Overcomplicating the Build',desc:'I build focused GoDaddy sites for businesses that need credibility, clear services and a simple path to contact, book or request a quote.',problem:'You need a credible online presence, but a heavy website stack would create more cost and maintenance than the business needs.',outcome:'A straightforward site with the right pages, proof and next action—easy for customers to understand and easy for you to maintain.',start:'../website-check.html',label:'Run my Website Check'},
-    'booking-website':{area:'Websites',eye:'For service businesses that need more bookings',title:'Make It Easier for the Right Customer to Book',desc:'I build the information and booking path around the questions customers need answered before they are ready to choose a time.',problem:'Interested visitors hesitate when they cannot quickly understand the service, fit, price expectations or what happens after booking.',outcome:'A clearer route from interest to appointment, with the right information and proof placed before the booking decision.',start:'../website-check.html',label:'Run my Website Check'},
-    'ecommerce-website':{area:'Websites',eye:'For stores that need an easier buying journey',title:'Help Shoppers Find the Right Product and Complete the Purchase',desc:'I improve ecommerce discovery, product explanation, trust and action paths so buyers spend less effort figuring out what to choose.',problem:'Good products still lose sales when categories are confusing, product value is unclear or the route to checkout creates hesitation.',outcome:'A store where shoppers can find the right product, understand why it fits and move toward purchase with fewer unanswered questions.',start:'../website-check.html',label:'Run my Website Check'},
-    'analytics-tracking':{area:'Websites',eye:'For businesses making website decisions without enough evidence',title:'See What Visitors Do Before You Decide What to Change',desc:'I set up useful website visibility around traffic, important actions and drop-off points so future changes are based on evidence rather than guesswork.',problem:'Without useful tracking, you can see that results are weak but not where the customer journey is losing people.',outcome:'A small set of dependable signals showing where visitors come from, what they use and where the journey needs attention.',start:'../website-check.html',label:'Run my Website Check'},
-    'airtable-systems':{area:'Operations',eye:'For teams considering Airtable',title:'Use Airtable to Reduce Chasing, Duplicate Work and Missing Follow-Up',desc:'I build Airtable systems when they genuinely improve how your business tracks leads, clients, projects, ownership, next actions and reporting.',problem:'Important work is scattered across spreadsheets, inboxes and people’s memory, so someone has to keep moving information and asking for updates.',outcome:'A dependable operating view where the team can see status, ownership, next actions and important exceptions without constant coordination.',start:'../operations-check.html',label:'Run my Operations Check'}
+  const menu = $('.menu-btn');
+  const nav = $('.nav-links');
+  if (menu && nav) {
+    menu.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menu.setAttribute('aria-expanded', String(open));
+    });
+    $$('.nav-links a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menu.setAttribute('aria-expanded', 'false');
+    }));
+  }
+
+  const finder = $('[data-finder]');
+  if (finder) {
+    const state = { area: '', outcome: '' };
+    const result = $('[data-finder-result]', finder);
+    const render = () => {
+      if (!state.area || !state.outcome) {
+        result.classList.add('hidden');
+        return;
+      }
+      let title = '', copy = '', href = '', label = '';
+      if (state.area === 'website') {
+        title = 'Start with the Website Check.';
+        copy = 'Find out whether the biggest issue is clarity, trust, conversion, discovery or technical foundation before you pay to redesign anything.';
+        href = 'website-check.html';
+        label = 'Check my website';
+      } else if (state.area === 'operations') {
+        title = 'Start with the Operations Check.';
+        copy = 'Find where status, handoffs, reporting, capacity or reliance on memory is creating unnecessary coordination.';
+        href = 'operations-check.html';
+        label = 'Check my operations';
+      } else {
+        title = 'Inspect the planner sample first.';
+        copy = 'See how a premium planner handles writing space, navigation and page structure, then decide what your own buyer needs.';
+        href = 'planner-demo.html';
+        label = 'See the planner sample';
+      }
+      result.innerHTML = `<p class="eyebrow">Recommended next step</p><h3>${title}</h3><p>${copy}</p><a class="btn small" href="${href}">${label}</a>`;
+      result.classList.remove('hidden');
+      window.oyeolaTrack('start_here_recommendation', { area: state.area, outcome: state.outcome });
+    };
+    $$('[data-choice]', finder).forEach(button => button.addEventListener('click', () => {
+      const group = button.dataset.group;
+      $$(`[data-group="${group}"]`, finder).forEach(item => item.classList.remove('active'));
+      button.classList.add('active');
+      state[group] = button.dataset.choice;
+      render();
+    }));
+  }
+
+  const demo = $('[data-dashboard-demo]');
+  if (demo) {
+    const views = {
+      overview: ['Operations overview', '14', 'active projects', '72%', 'team capacity', '3', 'items at risk'],
+      pipeline: ['Sales → delivery handoff', '21', 'open opportunities', '6', 'ready to hand off', '2', 'missing owners'],
+      capacity: ['Capacity view', '72%', 'planned utilization', '4', 'people near capacity', '2', 'open slots next month']
+    };
+    $$('[data-demo-view]', demo).forEach(button => button.addEventListener('click', () => {
+      $$('[data-demo-view]', demo).forEach(item => item.classList.remove('active'));
+      button.classList.add('active');
+      const view = views[button.dataset.demoView];
+      $('[data-dash-title]', demo).textContent = view[0];
+      for (let i = 1; i <= 3; i++) {
+        $(`[data-metric="${i}"]`, demo).textContent = view[(i - 1) * 2 + 1];
+        $(`[data-label="${i}"]`, demo).textContent = view[(i - 1) * 2 + 2];
+      }
+      window.oyeolaTrack('operations_demo_view', { view: button.dataset.demoView });
+    }));
+  }
+
+  window.oyeolaTrack = window.oyeolaTrack || ((eventName, detail = {}) => {
+    window.dispatchEvent(new CustomEvent('oyeola:track', { detail: { eventName, ...detail } }));
+  });
+
+  $$('a[href],button').forEach(element => element.addEventListener('click', () => {
+    const label = (element.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 120);
+    if (/check|start|enquir|planner|demo|case study|contact/i.test(label)) {
+      window.oyeolaTrack('conversion_click', { label, href: element.getAttribute('href') || '' });
+    }
+  }));
+
+  const load = src => {
+    const script = document.createElement('script');
+    script.src = root + src;
+    document.body.appendChild(script);
   };
-
-  if(slug&&services[slug]){
-    const d=services[slug],hero=$('.service-hero');
-    if(hero){const e=$('.eyebrow',hero),h=$('h1',hero),p=$$('p',hero).find(x=>!x.classList.contains('eyebrow')),a=$('.actions',hero);if(e)e.textContent=d.eye;if(h)h.textContent=d.title;if(p)p.textContent=d.desc;if(a)a.innerHTML=`<a class="btn" href="${d.start}">${d.label}</a><a class="btn secondary" href="../${d.area==='Operations'?'operations':'websites'}.html">See how I help with ${d.area.toLowerCase()}</a>`}
-    const grid=$('.service-hero + .section .grid.two, .service-hero + .section .grid');
-    if(grid)grid.innerHTML=`<article class="card"><p class="eyebrow">The problem</p><h2>${d.problem}</h2></article><article class="card"><p class="eyebrow">The outcome</p><h2>${d.outcome}</h2></article>`;
-    const packs=$('.packages');
-    if(packs){const sec=packs.closest('.section'),head=sec?.querySelector('.section-head');if(head)head.innerHTML='<div><p class="eyebrow">The plan</p><h2>See the problem. Agree on the priority. Build the right fix.</h2></div><p>You should know what the work is meant to improve before you approve the build.</p>';packs.innerHTML='<article class="package"><p class="eyebrow">01 · Show me the current setup</p><h3>Identify what is costing you</h3><p>Review the customer journey or workflow and make the weak point specific.</p></article><article class="package featured"><p class="eyebrow">02 · Agree on the priority</p><h3>Decide what should actually change</h3><p>Keep useful work. Fix the part that is creating confusion, delay or manual coordination.</p></article><article class="package"><p class="eyebrow">03 · Build and test</p><h3>Implement the solution in real use</h3><p>Create the pages, system or automation around the agreed outcome and verify the path works.</p></article>'}
-    const feature=$('.feature-box');
-    if(feature&&slug==='airtable-systems')feature.innerHTML='<div><p class="eyebrow">Before you add Airtable</p><h2>Make sure the real problem is one Airtable should solve.</h2><p class="lead">The Operations Check shows whether the bigger issue is visibility, handoffs, reporting, capacity or reliability before you commit to a platform.</p><div class="actions"><a class="btn" href="../operations-check.html">Run my Operations Check</a></div></div><div class="card"><h3>Your recommendation may be to:</h3><ul class="simple-list"><li>Keep the current tools</li><li>Connect systems that already work</li><li>Reconfigure an existing workflow</li><li>Build an Airtable operations layer</li></ul></div>';
-    document.title=`${d.title} | Oyeola Online`;
-    const md=$('meta[name="description"]'),ot=$('meta[property="og:title"]'),od=$('meta[property="og:description"]');if(md)md.content=d.desc;if(ot)ot.content=document.title;if(od)od.content=d.desc;
-    $$('.section').find(sec=>sec.querySelector('.section-head')?.textContent.toLowerCase().includes('related work'))?.remove();
+  if (document.getElementById('website-check-form') || document.getElementById('operations-check')) {
+    load('assets/js/checks.js');
   }
-
-  if(path.includes('/case-studies/')){
-    const blocks=$$('.case-content .case-block'),labels=['The problem','What changed','Why it mattered'];
-    blocks.slice(0,3).forEach((b,i)=>{const h=$('h2,h3',b);if(h)h.textContent=labels[i]});
-    blocks.slice(3).forEach(b=>b.remove());
-    const e=$('.case-content > .eyebrow');if(e&&!e.textContent.toLowerCase().includes('real'))e.textContent=`Real project · ${e.textContent}`;
-    const action=$('.case-content .actions');if(action){const similar=$$('a',action).find(a=>/request similar work/i.test(a.textContent));if(similar)similar.textContent='Ask about a similar project'}
-    $$('.section').find(s=>s.querySelector('.section-head')?.textContent.toLowerCase().includes('more work'))?.remove();
-  }
-
-  $$('.work-grid').forEach(g=>{if(!g.children.length)g.closest('.section')?.remove()});
-  $$('a[href$="workflow-check.html"]').forEach(a=>a.href=`${root}operations-check.html`);
-
-  const footer=$('footer.footer');
-  if(footer)footer.outerHTML=`<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-light.svg" alt="Oyeola Online"></a><p>Websites that help customers act. Operations systems that reduce chasing. Digital planners built to be chosen and used.</p></div><div><strong>Services</strong><p><a href="${root}websites.html">Websites</a><br><a href="${root}operations.html">Operations Systems</a><br><a href="${root}digital-planners.html">Digital Planners</a></p></div><div><strong>Start</strong><p><a href="${root}website-check.html">Website Check</a><br><a href="${root}operations-check.html">Operations Check</a><br><a href="${root}demos.html">Working Demos</a></p></div><div><strong>Contact</strong><p><a href="mailto:oyeolawebmaster@gmail.com">oyeolawebmaster@gmail.com</a><br><a href="${root}contact.html">Tell me what is not working</a></p></div></div><div class="footer-bottom"><span>© 2026 Oyeola Online</span><span>Understand → decide → build.</span></div></div></footer>`;
-
-  const menu=$('.menu-btn'),nav=$('.nav-links');
-  if(menu&&nav){menu.addEventListener('click',()=>nav.classList.toggle('open'));$$('.nav-links a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')))}
-
-  const finder=$('[data-finder]');
-  if(finder){const state={area:'',outcome:''},result=$('[data-finder-result]',finder);const render=()=>{if(!state.area||!state.outcome){result.classList.add('hidden');return}let title='',copy='',href='',label='Continue';if(state.area==='website'){title='Start with the Website Check.';copy='Find out whether the biggest issue is clarity, trust, conversion, discovery or technical foundation before you pay to redesign anything.';href='website-check.html';label='Check my website'}else if(state.area==='operations'){title='Start with the Operations Check.';copy='Find where status, handoffs, reporting, capacity or reliance on memory is creating unnecessary coordination.';href='operations-check.html';label='Check my operations'}else{title='Inspect the planner sample first.';copy='See how a premium planner handles writing space, navigation and page structure, then decide what your own buyer needs.';href='planner-demo.html';label='See the planner sample'}result.innerHTML=`<p class="eyebrow">Recommended next step</p><h3>${title}</h3><p>${copy}</p><a class="btn small" href="${href}">${label}</a>`;result.classList.remove('hidden')};$$('[data-choice]',finder).forEach(b=>b.addEventListener('click',()=>{const g=b.dataset.group;$$(`[data-group="${g}"]`,finder).forEach(x=>x.classList.remove('active'));b.classList.add('active');state[g]=b.dataset.choice;render()}))}
-
-  const demo=$('[data-dashboard-demo]');
-  if(demo){const views={overview:['Operations overview','14','active projects','72%','team capacity','3','items at risk'],pipeline:['Sales → delivery handoff','21','open opportunities','6','ready to hand off','2','missing owners'],capacity:['Capacity view','72%','planned utilization','4','people near capacity','2','open slots next month']};$$('[data-demo-view]',demo).forEach(b=>b.addEventListener('click',()=>{$$('[data-demo-view]',demo).forEach(x=>x.classList.remove('active'));b.classList.add('active');const v=views[b.dataset.demoView];$('[data-dash-title]',demo).textContent=v[0];for(let i=1;i<=3;i++){$(`[data-metric="${i}"]`,demo).textContent=v[(i-1)*2+1];$(`[data-label="${i}"]`,demo).textContent=v[(i-1)*2+2]}}))}
-
-  const load=src=>{const s=document.createElement('script');s.src=root+src;document.body.appendChild(s)};
-  if(document.getElementById('website-check-form')||document.getElementById('operations-check'))load('assets/js/checks.js');
 })();
