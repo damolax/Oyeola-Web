@@ -4,5 +4,17 @@
   "buildCommand": "echo Static site ready",
   "outputDirectory": ".",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/workflow-check",
+      "destination": "/operations-check",
+      "permanent": true
+    },
+    {
+      "source": "/workflow-check.html",
+      "destination": "/operations-check",
+      "permanent": true
+    }
+  ]
 }

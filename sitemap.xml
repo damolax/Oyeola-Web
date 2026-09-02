@@ -1,16 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://oyeola-web.vercel.app/</loc></url>
-<url><loc>https://oyeola-web.vercel.app/websites.html</loc></url>
-<url><loc>https://oyeola-web.vercel.app/operations.html</loc></url>
-<url><loc>https://oyeola-web.vercel.app/digital-planners.html</loc></url>
-<url><loc>https://oyeola-web.vercel.app/website-check.html</loc></url>
-<url><loc>https://oyeola-web.vercel.app/operations-check.html</loc></url>
-<url><loc>https://oyeola-web.vercel.app/demos.html</loc></url>
-<url><loc>https://oyeola-web.vercel.app/planner-demo.html</loc></url>
-<url><loc>https://oyeola-web.vercel.app/work.html</loc></url>
-<url><loc>https://oyeola-web.vercel.app/about.html</loc></url>
-<url><loc>https://oyeola-web.vercel.app/contact.html</loc></url>
-<url><loc>https://oyeola-web.vercel.app/start-here.html</loc></url>
-<url><loc>https://oyeola-web.vercel.app/services.html</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/websites</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/operations</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/digital-planners</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/work</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/about</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/start-here</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/contact</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/website-check</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/operations-check</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/planner-demo</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/demos</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/services/website-growth-setup</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/services/wix-website-design</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/services/wix-studio-websites</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/services/wordpress-website-design</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/services/godaddy-website-design</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/services/booking-website</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/services/ecommerce-website</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/services/analytics-tracking</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/services/airtable-systems</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/case-studies/bambo-oladipo</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/case-studies/bare-canvas-media</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/case-studies/concierge-wellness</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/case-studies/davinci-resolve-craftsman</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/case-studies/dr-akira</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/case-studies/guestwork-property-management</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/case-studies/latonya-speaks</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/case-studies/one-love-beauty</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/case-studies/shop-ship-express-analytics</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/case-studies/somatra-healing</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/case-studies/three-nails-one-cross</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/case-studies/vapourvend</loc></url>
+  <url><loc>https://oyeola-web.vercel.app/case-studies/zentravels</loc></url>
 </urlset>
