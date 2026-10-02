@@ -15,6 +15,8 @@
         _subject: `Oyeola ${data.type || 'project'} enquiry from ${data.name || data.email}`,
         _template: 'table',
         _captcha: 'false',
+        _replyto: data.email || '',
+        _url: location.href,
         ...data
       })
     });
