@@ -12,10 +12,12 @@ The site is deployed on Vercel. Static HTML/CSS/JS pages are combined with one V
 
 `/api/lead` receives project enquiries, Website Check follow-up, Operations Check follow-up, Start Here enquiries and planner-resource requests.
 
-Required production environment variables:
+Primary database capture uses Supabase when these production environment variables are configured:
 
 - `SUPABASE_URL` — currently expected to be `https://pnuyufllwzultgrgpotz.supabase.co`
 - `SUPABASE_PUBLISHABLE_KEY` — the public/publishable key for that Supabase project
+
+If database capture is unavailable or fails, `/api/lead` falls back to delivering the enquiry to `oyeolawebmaster@gmail.com` through FormSubmit so the public form does not dead-end.
 
 Automatic confirmation/resource email is enabled when both of these are configured:
 
