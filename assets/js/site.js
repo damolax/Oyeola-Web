@@ -29,6 +29,69 @@
     footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-light.svg" alt="Oyeola Online"></a><p>Websites that help customers act. Operations systems that reduce chasing. Digital planners built to be chosen and used.</p></div><div><strong>Services</strong><p><a href="${root}websites.html">Websites</a><br><a href="${root}operations.html">Operations Systems</a><br><a href="${root}digital-planners.html">Digital Planners</a></p></div><div><strong>Start</strong><p><a href="${root}website-check.html">Website Check</a><br><a href="${root}operations-check.html">Operations Check</a><br><a href="${root}demos.html">Working Demos</a></p></div><div><strong>Contact</strong><p><a href="${root}contact.html">Project enquiry</a><br><a href="mailto:oyeolawebmaster@gmail.com">Email Oyeola</a><br><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener">LinkedIn</a><br><a href="${root}privacy.html">Privacy</a></p></div></div><div class="footer-bottom"><span>© 2026 Oyeola Online</span><span>Understand → decide → build.</span></div></div></footer>`;
   }
 
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion) {
+    document.body.classList.add('motion-ready');
+
+    const revealSelectors = [
+      '.section-head',
+      '.portfolio-intro',
+      '.proof-panel',
+      '.path',
+      '.step',
+      '.stat-item',
+      '.work-card',
+      '.project-card',
+      '.compare > div',
+      '.copy',
+      '.media',
+      '.planner-proof',
+      '.diagnostic',
+      '.finder',
+      '.form-intro',
+      '.case-block',
+      '.case-screen',
+      '.demo-stage',
+      '.demo-card',
+      '.callout',
+      '.tool-list',
+      '.privacy-copy'
+    ];
+
+    const revealItems = [...document.querySelectorAll(revealSelectors.join(','))]
+      .filter((element, index, items) => items.indexOf(element) === index)
+      .filter(element => !element.closest('.hero,.page-hero,.service-hero,.case-hero'));
+
+    revealItems.forEach((element, index) => {
+      element.classList.add('reveal');
+      element.style.setProperty('--reveal-delay', `${(index % 4) * 55}ms`);
+      if (element.classList.contains('media') || element.classList.contains('case-screen')) {
+        element.classList.add(index % 2 ? 'reveal-right' : 'reveal-left');
+      }
+    });
+
+    const observer = 'IntersectionObserver' in window
+      ? new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' })
+      : null;
+
+    revealItems.forEach(element => {
+      if (observer) observer.observe(element);
+      else element.classList.add('is-visible');
+    });
+
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      document.body.classList.add('motion-loaded');
+    }));
+  } else {
+    document.body.classList.add('motion-loaded');
+  }
+
   const menu = $('.menu-btn');
   const nav = $('.nav-links');
   if (menu && nav) {
