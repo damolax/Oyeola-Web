@@ -299,3 +299,38 @@ html body .footer .footer-grid{gap:20px!important}
 html body .footer p{margin:8px 0 0!important;line-height:1.6!important}
 html body .footer strong{display:block;margin-bottom:4px!important}
 html body .footer-bottom{margin-top:24px!important;padding-top:14px!important}
+
+/* About + testimonial expansion */
+.about-story-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:42px;align-items:center}
+.education-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.education-card{display:grid;grid-template-columns:88px 1fr;gap:20px;align-items:center;padding:24px;border:1px solid var(--oy-line);border-radius:20px;background:#0a0f0b}
+.school-logo{width:82px;height:82px;border-radius:18px;background:#fff;display:grid;place-items:center;padding:10px;overflow:hidden}
+.school-logo img{max-width:100%;max-height:100%;object-fit:contain}
+.uopeople-logo{padding:6px}
+.year-pill{display:inline-flex;padding:5px 9px;border-radius:999px;background:#0d1c10;border:1px solid #24582b;color:#a8ffb0;font-size:10px;font-weight:700;letter-spacing:.05em;margin-bottom:9px}
+.education-card h3,.learning-card h3,.toolbox-card h3,.story-timeline h3{margin:0 0 8px;font-size:21px}
+.education-card p,.learning-card p,.story-timeline p{margin:0;color:#9da89f;font-size:14px}
+.learning-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.learning-card{padding:24px;border-radius:20px;border:1px solid var(--oy-line);background:#0a0f0b}
+.learning-card:nth-child(3){grid-column:1/-1}
+.course-list,.tool-chips,.skills-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.course-list span,.tool-chips span,.skills-cloud span{padding:8px 11px;border-radius:999px;border:1px solid #26372a;background:#080d09;color:#c7d1c9;font-size:12px}
+.toolbox-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.toolbox-card{padding:24px;border:1px solid var(--oy-line);border-radius:20px;background:#0a0f0b}
+.skills-cloud{margin-top:0}
+.skills-cloud span{font-size:13px;padding:10px 13px}
+.story-timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.story-timeline article{padding:22px;border-radius:18px;border:1px solid var(--oy-line);background:#0a0f0b}
+.story-timeline article>span{display:block;color:var(--oy-green);font-weight:700;font-size:11px;letter-spacing:.08em;margin-bottom:10px}
+.testimonial-page-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.review-card{padding:28px;border:1px solid var(--oy-line);border-radius:22px;background:linear-gradient(160deg,#0c120d,#080b09)}
+.review-card blockquote{margin:16px 0 12px;font-size:20px;line-height:1.5;color:#eef5ef}
+.review-card>p{font-size:14px;color:#9da89f}
+.review-meta{display:flex;justify-content:space-between;gap:12px;margin-top:22px;padding-top:16px;border-top:1px solid var(--oy-line)}
+.review-meta strong,.review-meta span{font-size:11px}
+.review-meta span{color:#7e8a80}
+@media(max-width:850px){
+  .about-story-grid,.education-grid,.toolbox-grid,.story-timeline,.testimonial-page-grid{grid-template-columns:1fr}
+  .learning-grid{grid-template-columns:1fr}
+  .learning-card:nth-child(3){grid-column:auto}
+}
