@@ -75,3 +75,10 @@ on conflict (content_type, slug) do nothing;
 --   "related_demo":"travel",
 --   "testimonial_slug":"..."
 -- };
+
+
+-- Public media bucket for portfolio screenshots, logos, thumbnails and protected sample assets.
+-- Large walkthrough videos should preferably use a video host/CDN and be linked by URL.
+insert into storage.buckets (id, name, public, file_size_limit)
+values ('oyeola-media','oyeola-media',true,10485760)
+on conflict (id) do update set public=true, file_size_limit=10485760;
