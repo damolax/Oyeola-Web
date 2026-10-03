@@ -47,3 +47,35 @@ No third-party analytics account is connected yet. `assets/js/site.js` emits `oy
 - `404.html` is the custom not-found page.
 - Legacy `/workflow-check` URLs permanently redirect to `/operations-check` through `vercel.json`.
 - `sitemap.xml` includes core pages, specialist service pages and case studies.
+
+
+## Admin CMS
+
+The private content portal is available at `/admin/`. It is intentionally not linked from the public navigation or footer.
+
+The CMS manages reusable site content:
+
+- portfolio projects and project stories
+- reviews/testimonials
+- services
+- tools and tool logos
+- skills
+- credentials/certificates
+- demos
+- animated homepage statistics
+- global settings
+
+Project records support service/industry/platform/year, live site URL, thumbnail, hero image, full-page screenshot, video URL, tools, skills, project story, branding contribution, related demo and testimonial links. The public `project.html?slug=...` template renders the project gallery, video preview, story, full-page viewer, tools and skills.
+
+Required production environment variables:
+
+- `SUPABASE_URL`
+- `SUPABASE_PUBLISHABLE_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `OYEOLA_ADMIN_EMAIL`
+
+Run `supabase/cms-schema.sql` in the intended Supabase project before using the CMS. Create the authorized admin user in Supabase Auth with the email configured in `OYEOLA_ADMIN_EMAIL`.
+
+Media uploads use the public `oyeola-media` Supabase Storage bucket created by the CMS schema. Direct admin uploads are intended for screenshots, thumbnails, logos and smaller PDFs. Large project walkthrough videos should use an external video host/CDN and be saved as a video URL in the project record.
+
+The public site gracefully falls back to its existing hard-coded content when the CMS is not configured or has no published records.
