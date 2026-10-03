@@ -30,5 +30,15 @@
     if(!items.length)return;
     host.innerHTML=items.slice(0,3).map(i=>{const d=i.data||{},stars='★'.repeat(Math.max(1,Math.min(5,Number(d.rating)||5)));return `<article class="testimonial-card"><div class="testimonial-stars">${stars}</div><blockquote>“${d.full_review||i.excerpt||''}”</blockquote><div class="testimonial-source"><strong>${d.project_slug||d.service||'Client project'}</strong><span>${d.source||'Client feedback'}</span></div></article>`}).join('');
   }
-  hydrateStats(); hydrateFeaturedReviews();
+  async function hydrateProjects(){
+    const host=$('[data-cms-projects]'); if(!host)return;
+    const items=await get('project'); if(!items.length)return;
+    host.innerHTML=items.map(i=>{const d=i.data||{},img=d.thumbnail_url||d.hero_image_url||'',meta=[d.industry,d.platform].filter(Boolean).join(' · '),href='project.html?slug='+encodeURIComponent(i.slug);return `<article class="project-card"><a class="browser-mockup" href="${href}"><div class="browser-bar"><i></i><i></i><i></i><span></span></div><div class="browser-screen">${img?`<img src="${img}" alt="${i.title}">`:''}</div></a><div class="project-copy"><div class="work-meta">${meta}</div><h3>${i.title}</h3><p>${i.excerpt||''}</p><a class="text-link" href="${href}">View project</a></div></article>`}).join('');
+  }
+  async function hydrateTestimonials(){
+    const host=$('[data-cms-testimonials]'); if(!host)return;
+    const items=await get('review'); if(!items.length)return;
+    host.innerHTML=items.map(i=>{const d=i.data||{},stars='★'.repeat(Math.max(1,Math.min(5,Number(d.rating)||5)));return `<article class="review-card"><div class="testimonial-stars">${stars}</div><span class="proof-tag">${d.service||'Client project'}</span><blockquote>“${d.full_review||i.excerpt||''}”</blockquote><div class="review-meta"><strong>${d.source||'Client feedback'}</strong><span>${d.project_slug||d.reviewer_label||''}</span></div></article>`}).join('');
+  }
+  hydrateStats(); hydrateFeaturedReviews(); hydrateProjects(); hydrateTestimonials();
 })();
