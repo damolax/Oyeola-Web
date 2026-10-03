@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Oyeola Admin</title><meta name="robots" content="noindex,nofollow"><link rel="icon" href="../assets/logos/favicon.svg"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="admin.css"></head><body>
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="../index.html"><img src="../assets/logos/logo-horizontal-dark.svg" alt="Oyeola Online"></a>
+    <nav id="admin-nav">
+      <button class="active" data-section="dashboard">Dashboard</button>
+      <button data-section="project">Portfolio</button>
+      <button data-section="review">Reviews</button>
+      <button data-section="service">Services</button>
+      <button data-section="tool">Tools</button>
+      <button data-section="skill">Skills</button>
+      <button data-section="credential">Credentials</button>
+      <button data-section="demo">Demos</button>
+      <button data-section="stat">Homepage Stats</button>
+      <button data-section="setting">Settings</button>
+    </nav>
+    <div class="admin-side-bottom"><a href="../index.html" target="_blank">View website ↗</a><button id="logout-btn" hidden>Sign out</button></div>
+  </aside>
+
+  <main class="admin-main">
+    <section id="login-view" class="login-view">
+      <div class="login-card">
+        <p class="eyebrow">Private Oyeola control room</p>
+        <h1>Admin portal</h1>
+        <p>Sign in with the admin email configured for this website.</p>
+        <form id="login-form">
+          <label>Email<input id="login-email" type="email" required autocomplete="username"></label>
+          <label>Password<input id="login-password" type="password" required autocomplete="current-password"></label>
+          <button type="submit">Sign in</button>
+          <p id="login-status"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="app-view" hidden>
+      <header class="admin-topbar"><div><p class="eyebrow">Oyeola CMS</p><h1 id="section-title">Dashboard</h1></div><div class="top-actions"><span id="admin-user"></span><button id="new-item-btn" hidden>+ Add new</button></div></header>
+
+      <section id="dashboard-view" class="panel-grid">
+        <article class="metric"><span>Projects</span><strong id="count-project">0</strong></article>
+        <article class="metric"><span>Reviews</span><strong id="count-review">0</strong></article>
+        <article class="metric"><span>Services</span><strong id="count-service">0</strong></article>
+        <article class="metric"><span>Tools</span><strong id="count-tool">0</strong></article>
+        <article class="metric"><span>Published</span><strong id="count-published">0</strong></article>
+        <article class="metric"><span>Featured home</span><strong id="count-featured">0</strong></article>
+        <article class="wide-card"><div><p class="eyebrow">Quick actions</p><h2>Update the site without touching code.</h2></div><div class="quick-actions"><button data-quick="project">Add project</button><button data-quick="review">Add review</button><button data-quick="stat">Edit homepage stats</button><button data-quick="credential">Add credential</button></div></article>
+      </section>
+
+      <section id="content-view" hidden>
+        <div class="content-toolbar"><input id="content-search" type="search" placeholder="Search"><select id="content-status-filter"><option value="all">All</option><option value="published">Published</option><option value="draft">Draft</option><option value="featured">Featured home</option></select></div>
+        <div id="content-list" class="content-list"></div>
+      </section>
+    </section>
+  </main>
+</div>
+
+<div id="editor-modal" class="modal" hidden>
+  <div class="modal-card">
+    <div class="modal-head"><div><p class="eyebrow" id="editor-eyebrow">Content</p><h2 id="editor-title">Add item</h2></div><button id="editor-close" aria-label="Close">×</button></div>
+    <form id="editor-form">
+      <input type="hidden" id="edit-id">
+      <input type="hidden" id="edit-type">
+      <div class="form-grid">
+        <label>Title<input id="edit-title" required></label>
+        <label>Slug<input id="edit-slug" required></label>
+        <label class="full">Short description<textarea id="edit-excerpt" rows="2"></textarea></label>
+        <div id="dynamic-fields" class="dynamic-fields full"></div>
+        <label>Order<input id="edit-order" type="number" value="0"></label>
+        <div class="switches"><label><input id="edit-published" type="checkbox"> Published</label><label><input id="edit-featured" type="checkbox"> Show on homepage</label></div>
+      </div>
+      <details class="advanced-json"><summary>Advanced JSON</summary><textarea id="edit-json" rows="10" spellcheck="false">{}</textarea></details>
+      <div class="modal-actions"><button type="button" class="danger" id="delete-item-btn" hidden>Delete</button><span></span><button type="button" class="secondary" id="cancel-item-btn">Cancel</button><button type="submit">Save</button></div>
+      <p id="editor-status"></p>
+    </form>
+  </div>
+</div>
+<script src="admin.js"></script></body></html>
