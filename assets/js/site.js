@@ -4,15 +4,18 @@
   const path = location.pathname.toLowerCase();
   const nested = /\/(services|case-studies)\//.test(path);
   const root = nested ? '../' : '';
-  const active = path.includes('/case-studies/') || /\/work(?:\.html)?$/.test(path) ? 'work'
+  const isHome = path === '/' || /\/index(?:\.html)?$/.test(path);
+  const active = isHome ? 'home'
+    : path.includes('/case-studies/') || /\/work(?:\.html)?$/.test(path) ? 'work'
     : path.includes('/services/airtable') || path.includes('operations') ? 'operations'
     : path.includes('/services/') || path.includes('website') ? 'websites'
     : path.includes('digital-planners') || path.includes('planner-demo') ? 'planners'
+    : path.includes('demos') ? 'demos'
     : path.includes('about') ? 'about' : '';
 
   const header = $('.site-header');
   if (header) {
-    header.outerHTML = `<header class="site-header"><div class="container nav"><a class="brand brand-lockup" href="${root}index.html" aria-label="Oyeola Online home"><img src="${root}assets/logos/logo-horizontal-light.svg" alt="Oyeola Online"></a><nav class="nav-links" aria-label="Primary navigation"><a class="${active === 'websites' ? 'active' : ''}" href="${root}websites.html">Websites</a><a class="${active === 'operations' ? 'active' : ''}" href="${root}operations.html">Operations</a><a class="${active === 'planners' ? 'active' : ''}" href="${root}digital-planners.html">Digital Planners</a><a class="${active === 'work' ? 'active' : ''}" href="${root}work.html">Work</a><a class="${active === 'about' ? 'active' : ''}" href="${root}about.html">About</a><a class="btn small" href="${root}start-here.html">Start Here</a></nav><button class="menu-btn" aria-label="Open navigation" aria-expanded="false">Menu</button></div></header>`;
+    header.outerHTML = `<header class="site-header"><div class="container nav"><a class="brand brand-lockup" href="${root}index.html" aria-label="Oyeola Online home"><img src="${root}assets/logos/logo-horizontal-dark.svg" alt="Oyeola Online"></a><nav class="nav-links" aria-label="Primary navigation"><a class="${active === 'home' ? 'active' : ''}" href="${root}index.html">Home</a><a class="${active === 'websites' ? 'active' : ''}" href="${root}websites.html">Websites</a><a class="${active === 'operations' ? 'active' : ''}" href="${root}operations.html">Operations</a><a class="${active === 'planners' ? 'active' : ''}" href="${root}digital-planners.html">Planners</a><a class="${active === 'demos' ? 'active' : ''}" href="${root}demos.html">Demo Lab</a><a class="${active === 'work' ? 'active' : ''}" href="${root}work.html">Work</a><a class="${active === 'about' ? 'active' : ''}" href="${root}about.html">About</a><a class="btn small" href="${root}start-here.html">Let's Build</a></nav><button class="menu-btn" aria-label="Open navigation" aria-expanded="false">Menu</button></div></header>`;
   }
 
   let icon = document.querySelector('link[rel="icon"]');
@@ -26,45 +29,26 @@
 
   const footer = $('footer.footer');
   if (footer) {
-    footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-light.svg" alt="Oyeola Online"></a><p>Websites that help customers act. Operations systems that reduce chasing. Digital planners built to be chosen and used.</p></div><div><strong>Services</strong><p><a href="${root}websites.html">Websites</a><br><a href="${root}operations.html">Operations Systems</a><br><a href="${root}digital-planners.html">Digital Planners</a></p></div><div><strong>Start</strong><p><a href="${root}website-check.html">Website Check</a><br><a href="${root}operations-check.html">Operations Check</a><br><a href="${root}demos.html">Working Demos</a></p></div><div><strong>Contact</strong><p><a href="${root}contact.html">Project enquiry</a><br><a href="mailto:oyeolawebmaster@gmail.com">Email Oyeola</a><br><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener">LinkedIn</a><br><a href="${root}privacy.html">Privacy</a></p></div></div><div class="footer-bottom"><span>© 2026 Oyeola Online</span><span>Understand → decide → build.</span></div></div></footer>`;
+    footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-light.svg" alt="Oyeola Online"></a><p>Websites, systems and digital products built around clearer decisions and better customer experiences.</p></div><div><strong>Explore</strong><p><a href="${root}websites.html">Websites</a><br><a href="${root}operations.html">Operations</a><br><a href="${root}digital-planners.html">Digital Planners</a><br><a href="${root}demos.html">Demo Lab</a></p></div><div><strong>Proof</strong><p><a href="${root}work.html">Selected Work</a><br><a href="${root}website-check.html">Website Check</a><br><a href="${root}operations-check.html">Operations Check</a><br><a href="${root}planner-demo.html">Planner Sample</a></p></div><div><strong>Contact</strong><p><a href="${root}contact.html">Project enquiry</a><br><a href="mailto:oyeolawebmaster@gmail.com">oyeolawebmaster@gmail.com</a><br><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener">LinkedIn</a><br><a href="${root}privacy.html">Privacy</a></p></div></div><div class="footer-bottom"><span>© 2026 Oyeola Online</span><span>Understand · experience · decide · build.</span></div></div></footer>`;
   }
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduceMotion) {
     document.body.classList.add('motion-ready');
-
     const revealSelectors = [
-      '.section-head',
-      '.portfolio-intro',
-      '.proof-panel',
-      '.path',
-      '.step',
-      '.stat-item',
-      '.work-card',
-      '.project-card',
-      '.compare > div',
-      '.copy',
-      '.media',
-      '.planner-proof',
-      '.diagnostic',
-      '.finder',
-      '.form-intro',
-      '.case-block',
-      '.case-screen',
-      '.demo-stage',
-      '.demo-card',
-      '.callout',
-      '.tool-list',
-      '.privacy-copy'
+      '.section-head','.portfolio-intro','.proof-panel','.path','.step','.stat-item',
+      '.work-card','.project-card','.compare > div','.copy','.media','.planner-proof',
+      '.diagnostic','.finder','.form-intro','.case-block','.case-screen','.demo-stage',
+      '.demo-card','.callout','.tool-list','.privacy-copy','.service-tile','.demo-lab-card',
+      '.testimonial-card','.surface','.feature-card'
     ];
-
     const revealItems = [...document.querySelectorAll(revealSelectors.join(','))]
-      .filter((element, index, items) => items.indexOf(element) === index)
-      .filter(element => !element.closest('.hero,.page-hero,.service-hero,.case-hero'));
+      .filter((el, index, items) => items.indexOf(el) === index)
+      .filter(el => !el.closest('.hero,.page-hero,.service-hero,.case-hero'));
 
     revealItems.forEach((element, index) => {
       element.classList.add('reveal');
-      element.style.setProperty('--reveal-delay', `${(index % 4) * 55}ms`);
+      element.style.setProperty('--reveal-delay', `${(index % 4) * 50}ms`);
       if (element.classList.contains('media') || element.classList.contains('case-screen')) {
         element.classList.add(index % 2 ? 'reveal-right' : 'reveal-left');
       }
@@ -77,17 +61,11 @@
             entry.target.classList.add('is-visible');
             observer.unobserve(entry.target);
           });
-        }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' })
+        }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' })
       : null;
 
-    revealItems.forEach(element => {
-      if (observer) observer.observe(element);
-      else element.classList.add('is-visible');
-    });
-
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      document.body.classList.add('motion-loaded');
-    }));
+    revealItems.forEach(element => observer ? observer.observe(element) : element.classList.add('is-visible'));
+    requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.add('motion-loaded')));
   } else {
     document.body.classList.add('motion-loaded');
   }
@@ -116,10 +94,10 @@
       }
       let title = '', copy = '', href = '', label = '';
       if (state.area === 'website') {
-        title = 'Start with the Website Check.';
-        copy = 'Find out whether the biggest issue is clarity, trust, conversion, discovery or technical foundation before you pay to redesign anything.';
-        href = 'website-check.html';
-        label = 'Check my website';
+        title = 'Start with a website experience.';
+        copy = 'Try a relevant industry demo first, then run the Website Check if you want a diagnosis of the current site.';
+        href = 'demos.html';
+        label = 'Open the Demo Lab';
       } else if (state.area === 'operations') {
         title = 'Start with the Operations Check.';
         copy = 'Find where status, handoffs, reporting, capacity or reliance on memory is creating unnecessary coordination.';
@@ -133,7 +111,7 @@
       }
       result.innerHTML = `<p class="eyebrow">Recommended next step</p><h3>${title}</h3><p>${copy}</p><a class="btn small" href="${href}">${label}</a>`;
       result.classList.remove('hidden');
-      window.oyeolaTrack('start_here_recommendation', { area: state.area, outcome: state.outcome });
+      window.oyeolaTrack?.('start_here_recommendation', { area: state.area, outcome: state.outcome });
     };
     $$('[data-choice]', finder).forEach(button => button.addEventListener('click', () => {
       const group = button.dataset.group;
@@ -149,18 +127,34 @@
     const views = {
       overview: ['Operations overview', '14', 'active projects', '72%', 'team capacity', '3', 'items at risk'],
       pipeline: ['Sales → delivery handoff', '21', 'open opportunities', '6', 'ready to hand off', '2', 'missing owners'],
-      capacity: ['Capacity view', '72%', 'planned utilization', '4', 'people near capacity', '2', 'open slots next month']
+      capacity: ['Capacity view', '72%', 'planned utilization', '4', 'people near capacity', '2', 'open slots next month'],
+      risk: ['Delivery risk', '5', 'due this week', '2', 'blocked items', '1', 'owner missing']
     };
     $$('[data-demo-view]', demo).forEach(button => button.addEventListener('click', () => {
       $$('[data-demo-view]', demo).forEach(item => item.classList.remove('active'));
       button.classList.add('active');
       const view = views[button.dataset.demoView];
+      if (!view) return;
       $('[data-dash-title]', demo).textContent = view[0];
       for (let i = 1; i <= 3; i++) {
         $(`[data-metric="${i}"]`, demo).textContent = view[(i - 1) * 2 + 1];
         $(`[data-label="${i}"]`, demo).textContent = view[(i - 1) * 2 + 2];
       }
-      window.oyeolaTrack('operations_demo_view', { view: button.dataset.demoView });
+      window.oyeolaTrack?.('operations_demo_view', { view: button.dataset.demoView });
+    }));
+  }
+
+  const workFilters = $$('[data-work-filter]');
+  if (workFilters.length) {
+    const cards = $$('.project-card');
+    workFilters.forEach(button => button.addEventListener('click', () => {
+      workFilters.forEach(b => b.classList.remove('active'));
+      button.classList.add('active');
+      const filter = button.dataset.workFilter;
+      cards.forEach(card => {
+        const haystack = (card.textContent || '').toLowerCase();
+        card.hidden = filter !== 'all' && !haystack.includes(filter);
+      });
     }));
   }
 
@@ -170,7 +164,7 @@
 
   $$('a[href],button').forEach(element => element.addEventListener('click', () => {
     const label = (element.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 120);
-    if (/check|start|enquir|planner|demo|case study|contact/i.test(label)) {
+    if (/check|start|enquir|planner|demo|case study|contact|build|project/i.test(label)) {
       window.oyeolaTrack('conversion_click', { label, href: element.getAttribute('href') || '' });
     }
   }));
@@ -180,7 +174,7 @@
     script.src = root + src;
     document.body.appendChild(script);
   };
-  if (document.getElementById('website-check-form') || document.getElementById('operations-check')) {
-    load('assets/js/checks.js');
-  }
+
+  if (document.getElementById('website-check-form') || document.getElementById('operations-check')) load('assets/js/checks.js');
+  if (document.querySelector('[data-demo-lab]')) load('assets/js/demo-lab.js');
 })();
