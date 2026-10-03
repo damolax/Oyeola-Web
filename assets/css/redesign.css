@@ -254,3 +254,16 @@ small{line-height:1.55}
   .nav-links .btn.small{justify-content:center}
   .menu-btn{display:block!important}
 }
+
+/* Conversion content pass */
+.section{padding:64px 0!important}
+.section-head{margin-bottom:30px!important}
+.footer-logo{background:transparent!important;padding:0!important;border-radius:0!important;box-shadow:none!important}
+.footer-logo img{width:190px!important;display:block}
+.footer .footer-grid{gap:34px!important}
+.testimonial-card{min-height:190px!important}
+.path,.service-tile,.feature-card,.demo-lab-card{min-height:0!important}
+@media(max-width:680px){
+  .section{padding:48px 0!important}
+  .section-head{margin-bottom:24px!important}
+}
