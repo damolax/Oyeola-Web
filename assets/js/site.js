@@ -2,6 +2,10 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const path = location.pathname.toLowerCase();
+  const savedTheme = localStorage.getItem('oyeola-theme');
+  const systemLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  let theme = savedTheme || (systemLight ? 'light' : 'dark');
+  document.documentElement.dataset.theme = theme;
   const nested = /\/(services|case-studies)\//.test(path);
   const root = nested ? '../' : '';
   const isHome = path === '/' || /\/index(?:\.html)?$/.test(path);
@@ -15,7 +19,7 @@
 
   const header = $('.site-header');
   if (header) {
-    header.outerHTML = `<header class="site-header"><div class="container nav"><a class="brand brand-lockup" href="${root}index.html" aria-label="Oyeola Online home"><img src="${root}assets/logos/logo-horizontal-dark.svg" alt="Oyeola Online"></a><nav class="nav-links" aria-label="Primary navigation"><a class="${active === 'home' ? 'active' : ''}" href="${root}index.html">Home</a><a class="${active === 'websites' ? 'active' : ''}" href="${root}websites.html">Websites</a><a class="${active === 'operations' ? 'active' : ''}" href="${root}operations.html">Operations</a><a class="${active === 'planners' ? 'active' : ''}" href="${root}digital-planners.html">Planners</a><a class="${active === 'demos' ? 'active' : ''}" href="${root}demos.html">Demo Lab</a><a class="${active === 'work' ? 'active' : ''}" href="${root}work.html">Work</a><a class="${active === 'about' ? 'active' : ''}" href="${root}about.html">About</a><a class="btn small" href="${root}start-here.html">Let's Build</a></nav><button class="menu-btn" aria-label="Open navigation" aria-expanded="false">Menu</button></div></header>`;
+    header.outerHTML = `<header class="site-header"><div class="container nav"><a class="brand brand-lockup" href="${root}index.html" aria-label="Oyeola Online home"><img data-theme-logo src="${root}assets/logos/${theme==='light'?'logo-horizontal-light.svg':'logo-horizontal-dark.svg'}" alt="Oyeola Online"></a><nav class="nav-links" aria-label="Primary navigation"><a class="${active === 'home' ? 'active' : ''}" href="${root}index.html">Home</a><a class="${active === 'websites' ? 'active' : ''}" href="${root}websites.html">Websites</a><a class="${active === 'operations' ? 'active' : ''}" href="${root}operations.html">Operations</a><a class="${active === 'planners' ? 'active' : ''}" href="${root}digital-planners.html">Planners</a><a class="${active === 'demos' ? 'active' : ''}" href="${root}demos.html">Demo Lab</a><a class="${active === 'work' ? 'active' : ''}" href="${root}work.html">Work</a><a class="${active === 'about' ? 'active' : ''}" href="${root}about.html">About</a><button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme"><span data-theme-icon>${theme==='light'?'☀':'◐'}</span></button><a class="btn small" href="${root}start-here.html">Let's Build</a></nav><button class="menu-btn" aria-label="Open navigation" aria-expanded="false">Menu</button></div></header>`;
   }
 
   let icon = document.querySelector('link[rel="icon"]');
@@ -31,6 +35,18 @@
   if (footer) {
     footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-light.svg?v=20261003c" alt="Oyeola Online"></a><p>Websites, systems and digital products built to make the next step easier.</p></div><div><strong>Explore</strong><p><a href="${root}websites.html">Websites</a><br><a href="${root}operations.html">Operations</a><br><a href="${root}digital-planners.html">Planners</a><br><a href="${root}demos.html">Demo Lab</a></p></div><div><strong>Proof</strong><p><a href="${root}work.html">Work</a><br><a href="${root}testimonials.html">Testimonials</a><br><a href="${root}website-check.html">Website Check</a><br><a href="${root}operations-check.html">Operations Check</a></p></div><div><strong>Contact</strong><p><a href="mailto:oyeolawebmaster@gmail.com">Email</a><br><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener">LinkedIn</a><br><a href="${root}privacy.html">Privacy</a></p></div></div><div class="footer-bottom"><span>© 2026 Oyeola Online</span><span>Understand · decide · build.</span></div></div></footer>`;
   }
+
+  const themeToggle = $('.theme-toggle');
+  const applyTheme = next => {
+    theme = next;
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem('oyeola-theme', next);
+    const logo = $('[data-theme-logo]');
+    if (logo) logo.src = root + 'assets/logos/' + (next === 'light' ? 'logo-horizontal-light.svg' : 'logo-horizontal-dark.svg');
+    const themeIcon = $('[data-theme-icon]');
+    if (themeIcon) themeIcon.textContent = next === 'light' ? '☀' : '◐';
+  };
+  themeToggle?.addEventListener('click', () => applyTheme(theme === 'light' ? 'dark' : 'light'));
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduceMotion) {
