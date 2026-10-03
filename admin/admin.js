@@ -80,7 +80,7 @@
   function renderDashboard(){
     const count=t=>items.filter(i=>i.content_type===t).length;
     $('#count-project').textContent=count('project'); $('#count-review').textContent=count('review'); $('#count-service').textContent=count('service'); $('#count-tool').textContent=count('tool');
-    $('#count-published').textContent=items.filter(i=>i.published).length; $('#count-featured').textContent=items.filter(i=>i.featured_home).length;
+    $('#count-published').textContent=items.filter(i=>i.published).length; $('#count-featured').textContent=items.filter(i=>i.featured_home).length; if($('#count-lead')) $('#count-lead').textContent=count('lead');
   }
 
   function showDashboard(){
@@ -89,7 +89,7 @@
   }
 
   function showType(type){
-    currentType=type; $('#section-title').textContent=TYPES[type]||type; $('#dashboard-view').hidden=true; $('#content-view').hidden=false; $('#new-item-btn').hidden=false;
+    currentType=type; $('#section-title').textContent=TYPES[type]||type; $('#dashboard-view').hidden=true; $('#content-view').hidden=false; $('#new-item-btn').hidden=type==='lead';
     $$('#admin-nav button').forEach(b=>b.classList.toggle('active',b.dataset.section===type)); renderList();
   }
 
