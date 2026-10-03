@@ -13,12 +13,11 @@ Branch ID: `br-super-moon-b5rfh8yp`
 Database: `oyeola_web`  
 Database role: `oyeola_web_owner`
 
-The Neon Data API is active for the `oyeola_web` database and the branch also has a public-read Object Storage bucket named `oyeola-media`.
+The production backend connects directly to the `oyeola_web` Neon Postgres database from Vercel Functions. The branch also has a public-read Neon Object Storage bucket named `oyeola-media`.
 
 ### Required Vercel environment
 
 - `NEON_DATABASE_URL` or `DATABASE_URL` — connection string for `oyeola_web`
-- `NEON_DATA_API_URL` — optional; the code defaults to the production Oyeola Data API URL
 - `NEON_STORAGE_ENDPOINT` — optional; defaults to the Oyeola production storage endpoint
 - `NEON_STORAGE_BUCKET` — optional; defaults to `oyeola-media`
 - `NEON_STORAGE_REGION` — optional; defaults to `us-east-2`
@@ -49,7 +48,7 @@ The CMS controls:
 - global settings
 - captured leads
 
-Published records are stored in `public.cms_items`. Public pages read only published records through the Neon Data API view `public.cms_public_items`.
+Published records are stored in `public.cms_items`. Public pages read published records through the server-side `/api/content` Neon query endpoint. The `public.cms_public_items` view remains available for future Data API use.
 
 Admin authentication is also stored in Neon:
 
