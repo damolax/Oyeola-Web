@@ -1,6 +1,6 @@
 (() => {
   const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
-  const TYPES={project:'Portfolio',review:'Reviews',service:'Services',tool:'Tools',skill:'Skills',credential:'Credentials',demo:'Demos',stat:'Homepage Stats',setting:'Settings'};
+  const TYPES={project:'Portfolio',review:'Reviews',service:'Services',tool:'Tools',skill:'Skills',credential:'Credentials',demo:'Demos',stat:'Homepage Stats',setting:'Settings',lead:'Leads'};
   let config=null,session=null,currentType=null,items=[];
   const stateKey='oyeola_admin_session';
 
@@ -20,7 +20,8 @@
     credential:[['organization','Organization','text'],['date_label','Date / range','text'],['credential_url','Credential URL','url'],['logo_url','Logo URL','url'],['credential_type','Type','text']],
     demo:[['industry','Industry','text'],['service','Service','text'],['thumbnail_url','Thumbnail URL','url'],['launch_url','Launch URL','url'],['related_projects','Related project slugs (comma separated)','text']],
     stat:[['value','Number','number'],['suffix','Suffix','text'],['label','Label','text'],['href','Link','text']],
-    setting:[['value','Value','text']]
+    setting:[['value','Value','text']],
+    lead:[['name','Name','text'],['email','Email','email'],['service_type','Service type','text'],['business_url','Business URL','url'],['problem','Problem','textarea'],['desired_result','Desired result','textarea'],['timeline','Timeline','text'],['source_page','Source page','text']]
   };
 
   async function api(path,opts={}){
@@ -32,25 +33,36 @@
     return data;
   }
 
-  async function loadConfig(){ config=await api('/api/config'); }
+  async function loadConfig(){
+    config=await api('/api/config');
+    const status=await api('/api/admin-auth?action=status');
+    config.setupRequired=!!status.setupRequired;
+    config.adminEmail=status.adminEmail||'';
+  }
   function saveSession(s){session=s;localStorage.setItem(stateKey,JSON.stringify(s));}
   function restoreSession(){try{session=JSON.parse(localStorage.getItem(stateKey)||'null')}catch{session=null}}
   function clearSession(){session=null;localStorage.removeItem(stateKey)}
 
   async function login(email,password){
-    const r=await fetch(config.supabaseUrl+'/auth/v1/token?grant_type=password',{method:'POST',headers:{'Content-Type':'application/json',apikey:config.supabaseAnonKey},body:JSON.stringify({email,password})});
-    const data=await r.json();
-    if(!r.ok) throw new Error(data.error_description||data.msg||'Sign in failed');
+    const data=await api('/api/admin-auth?action=login',{method:'POST',body:JSON.stringify({email,password})});
     saveSession(data); return data;
   }
 
   async function verify(){
     if(!session?.access_token) return false;
-    const r=await fetch(config.supabaseUrl+'/auth/v1/user',{headers:{apikey:config.supabaseAnonKey,Authorization:'Bearer '+session.access_token}});
-    if(!r.ok) return false;
-    const user=await r.json();
-    if(config.adminEmail && user.email.toLowerCase()!==config.adminEmail.toLowerCase()) return false;
-    $('#admin-user').textContent=user.email; return true;
+    try{
+      const user=await api('/api/admin-auth?action=verify');
+      $('#admin-user').textContent=user.email||'Admin'; return true;
+    }catch{return false}
+  }
+
+  async function setupAdmin(setup_key,email,password){
+    return api('/api/admin-auth?action=setup',{method:'POST',body:JSON.stringify({setup_key,email,password})});
+  }
+
+  function renderSetupForm(){
+    const form=$('#login-form');
+    form.innerHTML=`<label>One-time setup key<input id="setup-key" type="password" required autocomplete="off"></label><label>Admin email<input id="login-email" type="email" required autocomplete="email" value="${config.adminEmail||''}"></label><label>Create password<input id="login-password" type="password" required minlength="10" autocomplete="new-password"></label><button type="submit">Create admin login</button><p id="login-status"></p>`;
   }
 
   function showApp(ok){
@@ -161,8 +173,19 @@
     await api('/api/admin-content?id='+encodeURIComponent(id),{method:'DELETE'}); $('#editor-modal').hidden=true; await refreshAll();
   }
 
-  $('#login-form').addEventListener('submit',async e=>{e.preventDefault();$('#login-status').textContent='Signing in…';try{await login($('#login-email').value,$('#login-password').value);const ok=await verify();if(!ok)throw new Error('This account is not authorized');showApp(true);await refreshAll()}catch(err){clearSession();$('#login-status').textContent=err.message}});
-  $('#logout-btn').onclick=()=>{clearSession();location.reload()};
+  $('#login-form').addEventListener('submit',async e=>{
+    e.preventDefault(); const status=$('#login-status'); status.textContent=config.setupRequired?'Creating admin login…':'Signing in…';
+    try{
+      if(config.setupRequired){
+        await setupAdmin($('#setup-key').value,$('#login-email').value,$('#login-password').value);
+        config.setupRequired=false; status.textContent='Admin login created. Signing in…';
+      }
+      await login($('#login-email').value,$('#login-password').value);
+      const ok=await verify(); if(!ok) throw new Error('Could not verify admin session');
+      showApp(true); await refreshAll();
+    }catch(err){clearSession();status.textContent=err.message}
+  });
+  $('#logout-btn').onclick=async()=>{try{await api('/api/admin-auth?action=logout',{method:'POST'})}catch{} clearSession();location.reload()};
   $$('#admin-nav button').forEach(b=>b.onclick=()=>b.dataset.section==='dashboard'?showDashboard():showType(b.dataset.section));
   $$('[data-quick]').forEach(b=>b.onclick=()=>{showType(b.dataset.quick);openEditor(null,b.dataset.quick)});
   $('#new-item-btn').onclick=()=>openEditor();
@@ -174,5 +197,9 @@
   $('#edit-slug').addEventListener('input',()=>$('#edit-slug').dataset.touched='1');
   $('#content-search').addEventListener('input',renderList); $('#content-status-filter').addEventListener('change',renderList);
 
-  (async()=>{try{await loadConfig();restoreSession();const ok=await verify();showApp(ok);if(ok)await refreshAll()}catch(err){$('#login-status').textContent=err.message}})();
+  (async()=>{try{
+    await loadConfig(); restoreSession();
+    if(config.setupRequired) renderSetupForm();
+    const ok=await verify(); showApp(ok); if(ok) await refreshAll();
+  }catch(err){$('#login-status').textContent=err.message}})();
 })();
