@@ -106,7 +106,7 @@
   function openEditor(item=null,type=currentType){
     const t=item?.content_type||type; $('#editor-modal').hidden=false; $('#edit-id').value=item?.id||''; $('#edit-type').value=t; $('#editor-eyebrow').textContent=TYPES[t]||t; $('#editor-title').textContent=item?'Edit '+item.title:'Add '+(TYPES[t]||t);
     $('#edit-title').value=item?.title||''; $('#edit-slug').value=item?.slug||''; $('#edit-excerpt').value=item?.excerpt||''; $('#edit-order').value=item?.sort_order||0; $('#edit-published').checked=!!item?.published; $('#edit-featured').checked=!!item?.featured_home;
-    buildDynamic(t,item?.data||{}); $('#edit-json').value=JSON.stringify(item?.data||{},null,2); $('#delete-item-btn').hidden=!item; $('#editor-status').textContent='';
+    buildDynamic(t,item?.data||{}); $('#edit-json').value=JSON.stringify(item?.data||{},null,2); $('#media-upload-box').style.display=t==='project'?'block':'none'; $('#delete-item-btn').hidden=!item; $('#editor-status').textContent='';
   }
 
   function collectData(){
@@ -124,6 +124,28 @@
       data[el.dataset.field]=v;
     });
     return data;
+  }
+
+  async function uploadSelectedFile(){
+    const file=$('#upload-file').files?.[0]; if(!file) throw new Error('Choose a file first');
+    $('#upload-status').textContent='Preparing upload…';
+    const reader=new FileReader();
+    const data=await new Promise((resolve,reject)=>{reader.onload=()=>resolve(reader.result);reader.onerror=reject;reader.readAsDataURL(file)});
+    $('#upload-status').textContent='Uploading…';
+    const result=await api('/api/admin-upload',{method:'POST',body:JSON.stringify({name:file.name,type:file.type||'application/octet-stream',data,folder:'portfolio'})});
+    const target=$('#upload-target').value;
+    if(target==='gallery'){
+      let j={}; try{j=JSON.parse($('#edit-json').value||'{}')}catch{}
+      j.gallery=Array.isArray(j.gallery)?j.gallery:[];
+      j.gallery.push({url:result.url,caption:file.name,type:'image'});
+      $('#edit-json').value=JSON.stringify(j,null,2);
+    }else{
+      const input=$(`[data-field="${target}"]`);
+      if(input) input.value=result.url;
+      let j={}; try{j=JSON.parse($('#edit-json').value||'{}')}catch{}
+      j[target]=result.url; $('#edit-json').value=JSON.stringify(j,null,2);
+    }
+    $('#upload-status').textContent='Uploaded';
   }
 
   async function saveEditor(e){
@@ -147,6 +169,7 @@
   $('#editor-close').onclick=$('#cancel-item-btn').onclick=()=>$('#editor-modal').hidden=true;
   $('#editor-form').addEventListener('submit',e=>saveEditor(e).catch(err=>$('#editor-status').textContent=err.message));
   $('#delete-item-btn').onclick=()=>deleteItem().catch(err=>$('#editor-status').textContent=err.message);
+  $('#upload-file-btn').addEventListener('click',()=>uploadSelectedFile().catch(err=>$('#upload-status').textContent=err.message));
   $('#edit-title').addEventListener('input',()=>{if(!$('#edit-id').value&&!$('#edit-slug').dataset.touched)$('#edit-slug').value=slugify($('#edit-title').value)});
   $('#edit-slug').addEventListener('input',()=>$('#edit-slug').dataset.touched='1');
   $('#content-search').addEventListener('input',renderList); $('#content-status-filter').addEventListener('change',renderList);
