@@ -3,6 +3,17 @@
   if (!forms.length) return;
 
   const fallbackEmail = 'oyeolawebmaster@gmail.com';
+  const pageParams = new URLSearchParams(location.search);
+  const contextFields = ['demo','result','source','utm_source','utm_medium','utm_campaign'];
+  forms.forEach(form => {
+    const demo = pageParams.get('demo');
+    if (demo) {
+      const note = document.createElement('div');
+      note.className = 'status success';
+      note.textContent = `Demo context attached: ${demo}. You do not need to explain that part again.`;
+      form.prepend(note);
+    }
+  });
 
   const deliverByFormSubmit = async (data) => {
     const response = await fetch(`https://formsubmit.co/ajax/${fallbackEmail}`, {
@@ -32,6 +43,10 @@
     const button = form.querySelector('[type="submit"]');
     const data = Object.fromEntries(new FormData(form).entries());
     data.source_page = location.pathname;
+    contextFields.forEach(key => {
+      const value = pageParams.get(key);
+      if (value) data[key] = value;
+    });
     if (button) button.disabled = true;
     if (status) { status.textContent = 'Sending…'; status.className = 'form-status'; }
 
