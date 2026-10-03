@@ -267,3 +267,28 @@ small{line-height:1.55}
   .section{padding:48px 0!important}
   .section-head{margin-bottom:24px!important}
 }
+
+/* Final footer lock */
+html body .footer{
+  background:#cdf5d0!important;
+  background-color:#cdf5d0!important;
+  background-image:none!important;
+  color:#0a150c!important;
+}
+html body .footer .footer-grid,
+html body .footer .footer-bottom{background:transparent!important}
+html body .footer p,
+html body .footer a{color:#2b3c2e!important}
+html body .footer strong{color:#071009!important}
+html body .footer-logo{
+  background:transparent!important;
+  border:0!important;
+  padding:0!important;
+  box-shadow:none!important;
+}
+html body .footer-logo img{
+  display:block!important;
+  width:190px!important;
+  height:auto!important;
+  background:transparent!important;
+}
