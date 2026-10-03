@@ -292,3 +292,10 @@ html body .footer-logo img{
   height:auto!important;
   background:transparent!important;
 }
+
+/* Compact footer */
+html body .footer{padding:34px 0 16px!important}
+html body .footer .footer-grid{gap:20px!important}
+html body .footer p{margin:8px 0 0!important;line-height:1.6!important}
+html body .footer strong{display:block;margin-bottom:4px!important}
+html body .footer-bottom{margin-top:24px!important;padding-top:14px!important}
