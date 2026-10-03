@@ -5,15 +5,16 @@
   }
   function animateStats(){
     const section=$('[data-cms-stats]'); if(!section)return;
-    const nums=$$('[data-stat-value]',section);
-    const run=()=>nums.forEach((el,idx)=>{
+    const nums=$('[data-stat-value]',section);
+    let played=false;
+    const run=()=>{ if(played)return; played=true; nums.forEach((el,idx)=>{
       const end=Number(el.dataset.value||0),suffix=el.dataset.suffix||'';
       if(!end){el.textContent='0'+suffix;return}
       const dur=1100+idx*120,start=performance.now();
       const step=now=>{const p=Math.min(1,(now-start)/dur),ease=1-Math.pow(1-p,3);el.textContent=Math.round(end*ease)+suffix;if(p<1)requestAnimationFrame(step)};
       requestAnimationFrame(step);
-    });
-    if('IntersectionObserver'in window){const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){run();io.disconnect()}},{threshold:.35});io.observe(section)}else run();
+    }); };
+    if('IntersectionObserver'in window){const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){run();io.disconnect()}},{threshold:.2});io.observe(section);setTimeout(run,1400)}else run();
   }
   async function hydrateStats(){
     const section=$('[data-cms-stats]'); if(!section)return;
