@@ -892,6 +892,15 @@
     return scenarios.map(([name,answers,expected])=>{const got=calculate(answers).primary.id;return{name,got,expected,pass:expected.includes(got)}});
   }
 
+  const resultsNav=document.querySelector('a[href="#results"]');
+  resultsNav?.addEventListener('click',e=>{
+    if(els.results.hidden){
+      e.preventDefault();
+      if(!state.started)start();
+      else $('#live-demo')?.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+
   $('[data-sm-begin]')?.addEventListener('click',start);
   $$('[data-sm-start]').forEach(x=>x.addEventListener('click',()=>{if(!state.started)setTimeout(start,250)}));
   els.next?.addEventListener('click',next);els.back?.addEventListener('click',back);
