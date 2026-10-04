@@ -14,7 +14,7 @@
     : path.includes('/services/airtable') || path.includes('operations') ? 'operations'
     : path.includes('/services/') || path.includes('website') ? 'websites'
     : path.includes('digital-planners') || path.includes('planner-demo') ? 'planners'
-    : path.includes('demos') || path.includes('demo-') ? 'demos'
+    : path.includes('demos') || path.includes('demo-') || path.includes('smart-match') || path.includes('configure') ? 'demos'
     : path.includes('about') ? 'about' : '';
 
   const header = $('.site-header');
