@@ -296,6 +296,10 @@
     const input=$('input',wrap),display=$('[data-cfg-scope-value]',wrap);
     input.addEventListener('change',()=>changeScope(Number(input.value)));
     input.addEventListener('input',()=>{const s=DATA.scopes[Number(input.value)-1];display.textContent=s.label+' · '+s.capacity+' '+currentType().unit});
+    const quick=document.createElement('div');quick.className='cfg-scope-quick';
+    quick.innerHTML=DATA.scopes.map(s=>'<button type="button" class="'+(Number(state.config.scope)===s.id?'selected':'')+'" data-scope-quick="'+s.id+'"><strong>'+esc(s.label)+'</strong><span>'+esc(s.capacity+' '+currentType().unit)+'</span></button>').join('');
+    $('[data-scope-quick]',quick).forEach(b=>b.addEventListener('click',()=>changeScope(Number(b.dataset.scopeQuick))));
+    wrap.appendChild(quick);
     els.stepContent.appendChild(wrap);
 
     const budget=document.createElement('div');budget.className='cfg-budget-card';
@@ -591,7 +595,13 @@
     const before=metrics(state.config).total;if(before<=state.config.budget){toast('This configuration is already inside your target budget.');return}
     const clone=deep(state.config),changes=[];
     const removeEnh=[...clone.enhancements].filter(id=>!state.locked.includes(id)).sort((a,b)=>(enhancement(b)?.price||0)-(enhancement(a)?.price||0));
-    for(const id of removeEnh){if(metricsWith(clone).total<=clone.budget)break;clone.enhancements=clone.enhancements.filter(x=>x!==id);changes.push('Remove '+enhancement(id).label)}
+    for(const id of removeEnh){
+      if(metricsWith(clone).total<=clone.budget)break;
+      const requiredByFeature=clone.features.some(fid=>feature(fid)?.requires?.enhancement===id);
+      const requiredByEnhancement=clone.enhancements.some(eid=>eid!==id&&enhancement(eid)?.requires?.enhancement===id);
+      if(requiredByFeature||requiredByEnhancement)continue;
+      clone.enhancements=clone.enhancements.filter(x=>x!==id);changes.push('Remove '+enhancement(id).label)
+    }
     const removeFeat=[...clone.features].filter(id=>!state.locked.includes(id)).sort((a,b)=>(feature(b)?.price||0)-(feature(a)?.price||0));
     for(const id of removeFeat){if(metricsWith(clone).total<=clone.budget)break;const requiredBy=clone.enhancements.some(eid=>enhancement(eid)?.requires?.feature===id);if(requiredBy)continue;clone.features=clone.features.filter(x=>x!==id);changes.push('Remove '+feature(id).label)}
     if(metricsWith(clone).total>clone.budget&&clone.quality==='premium'){clone.quality='refined';changes.push('Premium quality → Refined')}
