@@ -93,7 +93,17 @@
    $('[data-project-skills]').innerHTML=(d.skills||[]).map(x=>`<span>${esc(x)}</span>`).join('');
    const demo=d.related_demo||d.related_demo_slug;
    const demoBtn=$('[data-project-demo]');
-   if(demo){demoBtn.href='demos.html?demo='+encodeURIComponent(demo)}else{demoBtn.hidden=true}
+   if(demo){
+     const routes={
+       wedding:'demo-wedding.html',ecommerce:'demo-ecommerce.html',travel:'demo-travel.html',
+       realestate:'demo-real-estate.html',hospitality:'demo-hospitality.html',beauty:'demo-beauty.html',
+       therapy:'demo-therapy.html',professional:'demo-professional-services.html',
+       homeservices:'demo-home-services.html',education:'demo-education.html',saas:'demo-saas.html',
+       nonprofit:'demo-nonprofit.html',operations:'operations-demo.html',planner:'planner-demo.html',
+       'smart-match':'smart-match.html',configure:'configure.html'
+     };
+     demoBtn.href=routes[String(demo).toLowerCase()]||'demos.html';
+   }else{demoBtn.hidden=true}
  }
  load();
 })();
