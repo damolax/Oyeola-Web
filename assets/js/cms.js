@@ -36,10 +36,23 @@
     const items=await get('project'); if(!items.length)return;
     host.innerHTML=items.map(i=>{const d=i.data||{},img=d.thumbnail_url||d.hero_image_url||'',meta=[d.industry,d.platform].filter(Boolean).join(' · '),href='project.html?slug='+encodeURIComponent(i.slug);return `<article class="project-card"><a class="browser-mockup" href="${href}"><div class="browser-bar"><i></i><i></i><i></i><span></span></div><div class="browser-screen">${img?`<img src="${img}" alt="${i.title}">`:''}</div></a><div class="project-copy"><div class="work-meta">${meta}</div><h3>${i.title}</h3><p>${i.excerpt||''}</p><a class="text-link" href="${href}">View project</a></div></article>`}).join('');
   }
+  async function hydratePlannerProjects(){
+    const host=$('[data-cms-planner-projects]'); if(!host)return;
+    const items=(await get('project')).filter(i=>{
+      const d=i.data||{};
+      return d.service==='Digital Planner Design'||(Array.isArray(d.service_slugs)&&d.service_slugs.includes('digital-planners'))||String(d.portfolio_kind||'').includes('planner');
+    });
+    if(!items.length)return;
+    host.innerHTML=items.map(i=>{
+      const d=i.data||{},img=d.thumbnail_url||d.hero_image_url||d.cover_url||'',href='project.html?slug='+encodeURIComponent(i.slug);
+      return `<article class="planner-portfolio-card"><a class="planner-device-card" href="${href}">${img?`<img src="${img}" alt="${i.title}">`:''}</a><div><p class="eyebrow">${d.platform||'Digital Planner'}</p><h3>${i.title}</h3><p>${i.excerpt||d.summary||''}</p><div class="actions"><a class="btn small" href="${href}">View project</a>${d.sample_pdf_url?`<a class="btn small secondary" href="${d.sample_pdf_url}" target="_blank" rel="noopener">Try watermarked PDF</a>`:''}</div></div></article>`;
+    }).join('');
+  }
+
   async function hydrateTestimonials(){
     const host=$('[data-cms-testimonials]'); if(!host)return;
     const items=await get('review'); if(!items.length)return;
     host.innerHTML=items.map(i=>{const d=i.data||{},stars='★'.repeat(Math.max(1,Math.min(5,Number(d.rating)||5)));return `<article class="review-card"><div class="testimonial-stars">${stars}</div><span class="proof-tag">${d.service||'Client project'}</span><blockquote>“${d.full_review||i.excerpt||''}”</blockquote><div class="review-meta"><strong>${d.source||'Client feedback'}</strong><span>${d.project_slug||d.reviewer_label||''}</span></div></article>`}).join('');
   }
-  hydrateStats(); hydrateFeaturedReviews(); hydrateProjects(); hydrateTestimonials();
+  hydrateStats(); hydrateFeaturedReviews(); hydrateProjects(); hydratePlannerProjects(); hydrateTestimonials();
 })();
