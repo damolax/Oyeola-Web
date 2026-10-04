@@ -648,3 +648,35 @@ html[data-theme="light"] .menu-btn{background:#fff!important;color:#0a140c!impor
 }
 @media(max-width:480px){.planner-feature-strip{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.logo-track{animation:none}}
+
+/* Horizontal feature rails */
+.feature-rail{position:relative;overflow:hidden}
+.feature-rail-controls{display:flex;justify-content:flex-end;gap:8px;margin:0 0 14px}
+.feature-rail-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--oy-line);background:var(--oy-panel);color:var(--oy-text);display:grid;place-items:center;cursor:pointer;font:700 18px/1 Poppins,sans-serif;transition:.18s ease}
+.feature-rail-btn:hover:not(:disabled){border-color:var(--oy-green);color:var(--oy-green);transform:translateY(-1px)}
+.feature-rail-btn:disabled{opacity:.32;cursor:not-allowed}
+.feature-rail .feature-grid{
+  display:grid!important;
+  grid-auto-flow:column;
+  grid-auto-columns:minmax(280px,calc((100% - 24px)/3));
+  grid-template-columns:none!important;
+  gap:12px!important;
+  overflow-x:auto;
+  overscroll-behavior-inline:contain;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  padding:0 0 6px;
+}
+.feature-rail .feature-grid::-webkit-scrollbar{display:none}
+.feature-rail .feature-card{scroll-snap-align:start;min-width:0}
+html[data-theme="light"] .feature-rail-btn{background:#fff!important;color:#0a140c!important;border-color:var(--oy-line)!important}
+
+@media(max-width:900px){
+  .feature-rail .feature-grid{grid-auto-columns:minmax(280px,72%)}
+}
+@media(max-width:620px){
+  .feature-rail-controls{margin-bottom:10px}
+  .feature-rail-btn{width:38px;height:38px}
+  .feature-rail .feature-grid{grid-auto-columns:88%;gap:10px!important}
+}
