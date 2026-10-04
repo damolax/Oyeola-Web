@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Oyeola Configure | Interactive Configurator & Solution Builder</title>
+  <meta name="description" content="Try Oyeola Configure, a reusable interactive configurator that lets customers build, validate, optimize, compare and submit the right solution before they contact a business.">
+  <link rel="canonical" href="https://oyeola-web.vercel.app/configure">
+  <link rel="icon" href="assets/logos/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/configure.css">
+</head>
+<body class="cfg-page">
+<a class="cfg-skip" href="#live-demo">Skip to configurator</a>
+
+<header class="cfg-header">
+  <div class="cfg-shell cfg-nav">
+    <a class="cfg-brand" href="index.html" aria-label="Oyeola home"><img src="assets/logos/logo-horizontal-dark.svg" alt="Oyeola Online"></a>
+    <nav class="cfg-navlinks" data-cfg-nav aria-label="Configurator navigation">
+      <a href="#configure">Configurator</a>
+      <a href="#live-demo">Live Demo</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#customer-view">Customer View</a>
+      <a href="#business-view">Business View</a>
+      <a class="cfg-btn cfg-btn-small" href="#live-demo" data-cfg-start-link>Try The Builder</a>
+    </nav>
+    <button class="cfg-menu" type="button" aria-expanded="false" aria-label="Open navigation" data-cfg-menu>Menu</button>
+  </div>
+</header>
+
+<main>
+<section class="cfg-hero" id="configure">
+  <div class="cfg-shell cfg-hero-grid">
+    <div>
+      <p class="cfg-kicker">OYEOLA CONFIGURE</p>
+      <h1>DON'T JUST SHOW CUSTOMERS THEIR OPTIONS. <span>LET THEM BUILD THEIR OWN.</span></h1>
+      <p class="cfg-hero-copy">Guide people through the decisions, prevent incompatible choices, update the result instantly and hand your team a complete specification instead of a vague enquiry.</p>
+      <div class="cfg-actions">
+        <a class="cfg-btn" href="#live-demo" data-cfg-start-link>Build Something</a>
+        <a class="cfg-btn cfg-btn-ghost" href="#how-it-works">See How It Works</a>
+      </div>
+      <p class="cfg-micro">No login required. Test the full experience.</p>
+    </div>
+    <div class="cfg-hero-visual" aria-label="Configuration experience preview">
+      <div class="cfg-visual-stage">
+        <div class="cfg-visual-head"><span>YOUR SOLUTION</span><strong>Live configuration</strong></div>
+        <div class="cfg-module-stack">
+          <div class="cfg-module cfg-module-base"><small>BASE</small><strong>Enhanced</strong></div>
+          <div class="cfg-module cfg-module-capacity"><small>CAPACITY</small><strong>Medium</strong></div>
+          <div class="cfg-module cfg-module-feature"><small>FEATURES</small><strong>3 active</strong></div>
+          <div class="cfg-module cfg-module-valid"><small>COMPATIBILITY</small><strong>✓ Valid</strong></div>
+        </div>
+        <div class="cfg-live-price"><small>ESTIMATED CONFIGURATION</small><strong>£4,850</strong><span>updates as choices change</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cfg-section cfg-problem">
+  <div class="cfg-shell">
+    <div class="cfg-editorial">
+      <p class="cfg-kicker">THE FRICTION</p>
+      <h2>Customers should not have to reconstruct your offer in an email.</h2>
+      <p>If what you sell has variables, the website can help people build a valid version before your team gets involved.</p>
+    </div>
+    <div class="cfg-friction-flow">
+      <div><span>Read multiple pages</span><i>→</i><span>Remember options</span><i>→</i><span>Email a vague request</span><i>→</i><span>Wait for clarification</span></div>
+      <div><span>Choose</span><i>→</i><span>Configure</span><i>→</i><span>Validate</span><i>→</i><span>Submit the specification</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cfg-section cfg-demo-section" id="live-demo">
+  <div class="cfg-shell">
+    <div class="cfg-section-head">
+      <div><p class="cfg-kicker">LIVE DEMO</p><h2>Build a solution. Watch every meaningful choice change the result.</h2></div>
+      <div class="cfg-meta"><span>Adaptive steps</span><span>Deterministic rules</span><span>No account</span></div>
+    </div>
+
+    <div class="cfg-return" data-cfg-return hidden>
+      <div><small>WELCOME BACK.</small><strong>Your configuration is waiting.</strong></div>
+      <div class="cfg-actions"><button class="cfg-btn cfg-btn-small" type="button" data-cfg-continue>Continue Building</button><button class="cfg-btn cfg-btn-small cfg-btn-ghost" type="button" data-cfg-reset>Start Again</button></div>
+    </div>
+
+    <section class="cfg-entry" data-cfg-entry>
+      <div class="cfg-entry-step">
+        <p class="cfg-kicker">STEP 1</p>
+        <h3>WHAT KIND OF THING DO YOU WANT TO BUILD?</h3>
+        <div class="cfg-type-grid" data-cfg-types></div>
+      </div>
+      <div class="cfg-entry-step" data-cfg-mode-step hidden>
+        <p class="cfg-kicker">STEP 2</p>
+        <h3>How do you want to start?</h3>
+        <div class="cfg-mode-grid">
+          <button type="button" data-cfg-mode="manual"><strong>BUILD IT MYSELF</strong><span>Choose the base, scope, features and enhancements yourself.</span></button>
+          <button type="button" data-cfg-mode="auto"><strong>BUILD IT FOR ME</strong><span>Choose outcomes, budget and priorities. We will generate a starting point you can edit.</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cfg-autobuild" data-cfg-autobuild hidden>
+      <div class="cfg-builder-shell">
+        <div class="cfg-auto-copy">
+          <p class="cfg-kicker">BUILD IT FOR ME</p>
+          <h3>What must this solution do?</h3>
+          <p>Choose the outcomes that matter. The engine will create a deterministic starting configuration.</p>
+          <div class="cfg-outcome-grid" data-cfg-outcomes></div>
+          <label class="cfg-field">Target budget <span>optional</span><div class="cfg-money-input"><span>£</span><input type="number" min="0" step="100" placeholder="5000" data-cfg-auto-budget></div></label>
+          <label class="cfg-field">Top priority<select data-cfg-auto-priority><option value="performance">Performance</option><option value="budget">Budget</option><option value="speed">Speed</option><option value="flexibility">Flexibility</option><option value="support">Support</option></select></label>
+          <div class="cfg-actions"><button class="cfg-btn" type="button" data-cfg-generate>Build My Starting Point</button><button class="cfg-btn cfg-btn-ghost" type="button" data-cfg-manual-switch>Start From Scratch</button></div>
+        </div>
+        <div class="cfg-auto-preview" data-cfg-auto-preview>
+          <div class="cfg-auto-empty"><span>✦</span><strong>Your recommended starting point will appear here.</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cfg-builder" data-cfg-builder hidden>
+      <div class="cfg-builder-toolbar">
+        <div>
+          <span class="cfg-dot"></span>
+          <strong data-cfg-build-title>YOUR SOLUTION</strong>
+          <small data-cfg-step-label>Step 1 of 7</small>
+        </div>
+        <div class="cfg-toolbar-actions">
+          <span class="cfg-save-state" data-cfg-save-state>Changes saved</span>
+          <button class="cfg-icon-btn" type="button" data-cfg-undo disabled>Undo</button>
+          <button class="cfg-icon-btn" type="button" data-cfg-reset>Start Over</button>
+        </div>
+      </div>
+      <div class="cfg-progress"><span data-cfg-progress></span></div>
+
+      <div class="cfg-builder-grid">
+        <div class="cfg-controls">
+          <div class="cfg-step-head">
+            <p class="cfg-kicker" data-cfg-step-kicker>STEP 1</p>
+            <h3 data-cfg-step-title>Choose Base</h3>
+            <p data-cfg-step-help></p>
+          </div>
+          <div class="cfg-step-content" data-cfg-step-content></div>
+          <div class="cfg-step-nav">
+            <button class="cfg-btn cfg-btn-small cfg-btn-ghost" type="button" data-cfg-back>Back</button>
+            <button class="cfg-btn cfg-btn-small" type="button" data-cfg-next>Continue</button>
+          </div>
+        </div>
+
+        <aside class="cfg-summary" data-cfg-summary aria-label="Live configuration summary">
+          <div class="cfg-summary-head">
+            <div><small>LIVE CONFIGURATION</small><strong data-cfg-summary-name>Your Solution</strong></div>
+            <span class="cfg-valid" data-cfg-valid>✓ Valid</span>
+          </div>
+          <div class="cfg-preview" data-cfg-preview>
+            <div class="cfg-preview-core" data-cfg-preview-core></div>
+          </div>
+          <div class="cfg-summary-grid">
+            <div><small>Base</small><strong data-cfg-summary-base>Not selected</strong></div>
+            <div><small>Scope</small><strong data-cfg-summary-scope>Not selected</strong></div>
+            <div><small>Features</small><strong data-cfg-summary-features>0</strong></div>
+            <div><small>Timeline</small><strong data-cfg-summary-timeline>Not set</strong></div>
+          </div>
+          <div class="cfg-price-box">
+            <small>ESTIMATED CONFIGURATION</small>
+            <strong data-cfg-estimate>£0</strong>
+            <span data-cfg-added>£0 added</span>
+            <p>Demo pricing only. A live implementation would use the business's actual pricing logic.</p>
+          </div>
+          <div class="cfg-budget-mini" data-cfg-budget-mini hidden>
+            <div><span>Budget target</span><strong data-cfg-budget-usage></strong></div>
+            <div class="cfg-budget-bar"><span data-cfg-budget-bar></span></div>
+            <p data-cfg-budget-note></p>
+            <button class="cfg-btn cfg-btn-small cfg-btn-ghost" type="button" data-cfg-optimize>Optimize This</button>
+          </div>
+          <button class="cfg-mobile-summary-close" type="button" data-cfg-summary-close>Close summary</button>
+        </aside>
+      </div>
+      <button class="cfg-mobile-summary-open" type="button" data-cfg-summary-open>View Live Summary <strong data-cfg-mobile-estimate>£0</strong></button>
+    </section>
+  </div>
+</section>
+
+<section class="cfg-result-section" id="customer-view" data-cfg-results hidden>
+  <div class="cfg-shell">
+    <div class="cfg-result-hero">
+      <div>
+        <p class="cfg-kicker">YOUR CONFIGURATION</p>
+        <div class="cfg-ref" data-cfg-ref>CFG-1042 · fictional demo reference</div>
+        <h2 data-cfg-final-name>Your Solution</h2>
+        <p data-cfg-final-copy></p>
+        <div class="cfg-actions">
+          <button class="cfg-btn" type="button" data-cfg-next-action>Request Final Quote</button>
+          <button class="cfg-btn cfg-btn-ghost" type="button" data-cfg-download>Download Configuration</button>
+        </div>
+      </div>
+      <button class="cfg-health" type="button" data-cfg-health-details>
+        <span data-cfg-health>92%</span><small>CONFIGURATION HEALTH</small><em>View details</em>
+      </button>
+    </div>
+
+    <div class="cfg-result-grid">
+      <article class="cfg-panel">
+        <p class="cfg-kicker">COMPLETENESS</p>
+        <div class="cfg-complete-head"><strong data-cfg-complete>83% complete</strong><span data-cfg-complete-status>Ready to refine</span></div>
+        <div class="cfg-complete-bar"><span data-cfg-complete-bar></span></div>
+        <ul class="cfg-check-list" data-cfg-complete-list></ul>
+      </article>
+      <article class="cfg-panel">
+        <p class="cfg-kicker">CONFIGURATION HEALTH</p>
+        <div class="cfg-health-grid" data-cfg-health-grid></div>
+      </article>
+    </div>
+
+    <section class="cfg-result-block">
+      <div class="cfg-section-head cfg-small-head"><div><p class="cfg-kicker">SEE WHAT YOU'VE CHANGED</p><h3>Start configuration vs. current configuration.</h3></div></div>
+      <div class="cfg-before-after" data-cfg-before-after></div>
+    </section>
+
+    <section class="cfg-result-block" data-cfg-recommend-section>
+      <div class="cfg-section-head cfg-small-head"><div><p class="cfg-kicker">YOU MAY ALSO WANT</p><h3>Only enhancements that make sense for this setup.</h3></div></div>
+      <div class="cfg-recommendations" data-cfg-recommendations></div>
+    </section>
+
+    <section class="cfg-result-block">
+      <div class="cfg-section-head cfg-small-head"><div><p class="cfg-kicker">TEST A DIFFERENT VERSION</p><h3>Change one variable without destroying your configuration.</h3></div></div>
+      <div class="cfg-whatif-grid">
+        <button type="button" data-cfg-whatif="capacity"><strong>Double capacity</strong><span>See cost, timeline and support impact.</span></button>
+        <button type="button" data-cfg-whatif="noextras"><strong>Remove all extras</strong><span>Strip the solution back to essentials.</span></button>
+        <button type="button" data-cfg-whatif="premium"><strong>Choose premium quality</strong><span>See how quality changes the configuration.</span></button>
+        <button type="button" data-cfg-whatif="faster"><strong>Need it faster</strong><span>Test a priority timeline.</span></button>
+        <button type="button" data-cfg-whatif="lowerbudget"><strong>Reduce my budget</strong><span>See where the pressure appears.</span></button>
+      </div>
+      <div class="cfg-whatif-card" data-cfg-whatif-card hidden></div>
+    </section>
+
+    <section class="cfg-result-block cfg-version-section">
+      <div class="cfg-section-head cfg-small-head"><div><p class="cfg-kicker">COMPARE CONFIGURATIONS</p><h3>Save versions without losing the one you already built.</h3></div></div>
+      <div class="cfg-version-actions">
+        <button class="cfg-btn cfg-btn-small" type="button" data-cfg-save-version>Save Current Version</button>
+        <button class="cfg-btn cfg-btn-small cfg-btn-ghost" type="button" data-cfg-duplicate>Duplicate & Edit</button>
+        <button class="cfg-btn cfg-btn-small cfg-btn-ghost" type="button" data-cfg-compare disabled>Compare Versions</button>
+      </div>
+      <div class="cfg-version-list" data-cfg-version-list></div>
+    </section>
+
+    <section class="cfg-blueprint cfg-result-block">
+      <div class="cfg-section-head cfg-small-head"><div><p class="cfg-kicker">YOUR SOLUTION BLUEPRINT</p><h3>A specification worth keeping.</h3></div></div>
+      <div class="cfg-blueprint-grid" data-cfg-blueprint></div>
+      <div class="cfg-blueprint-actions">
+        <button class="cfg-btn cfg-btn-small" type="button" data-cfg-download>Download Configuration</button>
+        <button class="cfg-btn cfg-btn-small cfg-btn-ghost" type="button" data-cfg-share>Share This Version</button>
+        <button class="cfg-btn cfg-btn-small cfg-btn-ghost" type="button" data-cfg-save-later>Save For Later</button>
+      </div>
+      <p class="cfg-inline-status" data-cfg-blueprint-status aria-live="polite"></p>
+    </section>
+
+    <section class="cfg-result-block cfg-result-grid">
+      <article class="cfg-panel">
+        <p class="cfg-kicker">EMAIL MY CONFIGURATION</p>
+        <h3>Keep the configuration without creating an account.</h3>
+        <form class="cfg-email-form" data-cfg-email-form novalidate>
+          <label>Name <span>optional</span><input name="name" autocomplete="name"></label>
+          <label>Email<input name="email" type="email" autocomplete="email" required></label>
+          <label>Business <span>optional</span><input name="business" autocomplete="organization"></label>
+          <button class="cfg-btn cfg-btn-small" type="submit">Send My Blueprint</button>
+          <p class="cfg-inline-status" data-cfg-email-status aria-live="polite"></p>
+        </form>
+      </article>
+      <article class="cfg-panel">
+        <p class="cfg-kicker">LIVE-SITE CAPABILITY</p>
+        <h3>No account is required here.</h3>
+        <p>A secure account could allow customers to save configurations across devices, collaborate, access private pricing or return to order history. Account functionality is disabled for this public demo.</p>
+        <button class="cfg-btn cfg-btn-small cfg-btn-ghost" type="button" data-cfg-edit>Continue Demo</button>
+      </article>
+    </section>
+  </div>
+</section>
+
+<section class="cfg-section" id="business-view">
+  <div class="cfg-shell">
+    <div class="cfg-section-head">
+      <div><p class="cfg-kicker">BUSINESS VIEW</p><h2>Same prospect. Completely different quality of conversation.</h2></div>
+      <button class="cfg-btn cfg-btn-ghost" type="button" data-cfg-business-view>See What The Business Receives</button>
+    </div>
+    <div class="cfg-lead-compare">
+      <article>
+        <p class="cfg-kicker">NORMAL WEBSITE</p>
+        <div class="cfg-normal-lead"><span>Name: Daniel</span><span>Email: daniel@example.com</span><blockquote>“Can you give me a quote?”</blockquote></div>
+      </article>
+      <div class="cfg-vs">VS</div>
+      <article>
+        <p class="cfg-kicker">OYEOLA CONFIGURED LEAD</p>
+        <div class="cfg-rich-lead"><span>Base</span><span>Capacity</span><span>Quality</span><span>Required features</span><span>Enhancements</span><span>Budget</span><span>Estimated scope</span><span>Timeline</span><span>Compatibility</span><span>Intent</span></div>
+      </article>
+    </div>
+    <div class="cfg-business-callout">
+      <p class="cfg-kicker">THIS IS NOT JUST A PRODUCT CUSTOMIZER.</p>
+      <h3>The same architecture can configure services, projects, packages, products, spaces, subscriptions, experiences, technical systems and custom orders.</h3>
+      <p>What changes is your options, rules, pricing, dependencies, compatibility conditions and conversion goal.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cfg-section" id="how-it-works">
+  <div class="cfg-shell">
+    <div class="cfg-section-head"><div><p class="cfg-kicker">HOW IT WORKS</p><h2>The website progressively constructs the solution with the customer.</h2></div></div>
+    <div class="cfg-how-grid">
+      <article><span>01</span><h3>Customer chooses</h3><p>The website understands what they want.</p></article>
+      <article><span>02</span><h3>Rules react</h3><p>Invalid or irrelevant options disappear or are explained.</p></article>
+      <article><span>03</span><h3>Result updates</h3><p>Price, scope, requirements and timeline change instantly.</p></article>
+      <article><span>04</span><h3>Customer refines</h3><p>They compare, optimize and adjust.</p></article>
+      <article><span>05</span><h3>Business receives the specification</h3><p>The enquiry already contains what the customer built.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="cfg-section cfg-benefits">
+  <div class="cfg-shell cfg-benefit-grid">
+    <div>
+      <p class="cfg-kicker">FOR THE CUSTOMER</p>
+      <h2>“I understand what I’m building.”</h2>
+      <ul><li>I understand my options.</li><li>I know what affects price and timeline.</li><li>I can see what fits my budget.</li><li>I cannot accidentally keep an invalid combination.</li><li>I can compare versions and save my work.</li><li>I know what happens next.</li></ul>
+    </div>
+    <div>
+      <p class="cfg-kicker">FOR THE BUSINESS</p>
+      <h2>Less repetitive qualification.</h2>
+      <ul><li>Fewer vague enquiries.</li><li>Better scope information.</li><li>More relevant enhancement opportunities.</li><li>Clearer customer expectations.</li><li>Faster quoting conversations.</li><li>Higher-intent enquiries.</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="cfg-section cfg-platform-section">
+  <div class="cfg-shell">
+    <div class="cfg-section-head"><div><p class="cfg-kicker">BUILDABILITY</p><h2>This can be built around the right platform and data.</h2></div></div>
+    <div class="cfg-platforms"><span>WordPress</span><span>Wix Studio</span><span>Webflow</span><span>Framer</span><span>Squarespace</span><span>Joomla</span><span>Custom code</span></div>
+    <p class="cfg-platform-note">Implementation methods differ. Native CMS features, custom code, forms, databases, automation, APIs and external services can be combined where appropriate.</p>
+  </div>
+</section>
+
+<section class="cfg-section cfg-approval">
+  <div class="cfg-shell">
+    <p class="cfg-kicker">OPTIONAL APPROVAL FLOW</p>
+    <h2>Customer builds → business reviews → pricing or availability is confirmed → customer approves → booking or order begins.</h2>
+  </div>
+</section>
+
+<section class="cfg-section cfg-enquiry">
+  <div class="cfg-shell cfg-enquiry-grid">
+    <div>
+      <p class="cfg-kicker">ZERO-REPETITION ENQUIRY</p>
+      <h2>Stop asking the customer to describe what they already built.</h2>
+      <p>The selected base, features, budget, scope, capacity, priorities, timeline and configuration are carried into the enquiry. Only missing information is requested.</p>
+    </div>
+    <form class="cfg-enquiry-form" data-lead-form data-reset="false" data-success="YOUR CONFIGURATION BRIEF IS READY. We’ve carried the configuration into the enquiry so you do not have to explain it again.">
+      <input type="hidden" name="type" value="contact">
+      <input type="hidden" name="service_type" value="Oyeola Configure">
+      <input type="hidden" name="desired_result" data-cfg-lead-result>
+      <input type="hidden" name="business_url" value="">
+      <label>Name<input name="name" autocomplete="name" required></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <label>Phone <span>optional</span><input name="phone" autocomplete="tel"></label>
+      <label>Additional notes <span>optional</span><textarea name="problem" rows="4"></textarea></label>
+      <input type="hidden" name="timeline" data-cfg-lead-timeline>
+      <button class="cfg-btn" type="submit">Discuss My Configurator</button>
+      <p class="form-status cfg-inline-status" data-form-status aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="cfg-final">
+  <div class="cfg-shell cfg-final-inner">
+    <p class="cfg-kicker">STOP MAKING CUSTOMERS DESCRIBE WHAT THEY WANT FROM SCRATCH.</p>
+    <h2>Let them build it. Then let your team receive the configuration.</h2>
+    <div class="cfg-actions"><a class="cfg-btn" href="#live-demo" data-cfg-final-build>BUILD MY CONFIGURATOR</a><button class="cfg-btn cfg-btn-ghost" type="button" data-cfg-reset>Try Another Configuration</button></div>
+  </div>
+</section>
+</main>
+
+<aside class="cfg-tools">
+  <button class="cfg-tools-toggle" type="button" aria-expanded="false" data-cfg-tools-toggle>Demo Tools</button>
+  <div class="cfg-tools-panel" data-cfg-tools-panel hidden>
+    <div class="cfg-tools-head"><strong>Demo Tools</strong><button type="button" data-cfg-tools-close aria-label="Close demo tools">×</button></div>
+    <button type="button" data-cfg-reset>Reset</button>
+    <button type="button" data-cfg-preset="simple">Load Simple Example</button>
+    <button type="button" data-cfg-preset="complex">Load Complex Example</button>
+    <button type="button" data-cfg-invalid>Try Invalid Combination</button>
+    <button type="button" data-cfg-preset="auto">Auto-Build Example</button>
+    <button type="button" data-cfg-customer-view>Customer View</button>
+    <button type="button" data-cfg-business-view>Business View</button>
+    <button type="button" data-cfg-logic>View Configuration Logic</button>
+  </div>
+</aside>
+
+<div class="cfg-modal" data-cfg-modal hidden>
+  <div class="cfg-modal-backdrop" data-cfg-modal-close></div>
+  <section class="cfg-modal-card" role="dialog" aria-modal="true" aria-labelledby="cfg-modal-title">
+    <div class="cfg-modal-head"><div><p class="cfg-kicker" data-cfg-modal-kicker>OYEOLA CONFIGURE</p><h2 id="cfg-modal-title" data-cfg-modal-title></h2></div><button type="button" data-cfg-modal-close aria-label="Close dialog">×</button></div>
+    <div class="cfg-modal-body" data-cfg-modal-body></div>
+  </section>
+</div>
+
+<div class="cfg-toast" data-cfg-toast hidden aria-live="polite"></div>
+
+<footer class="cfg-footer">
+  <div class="cfg-shell cfg-footer-grid">
+    <div><img src="assets/logos/logo-horizontal-dark.svg" alt="Oyeola Online"><p>Websites that help customers decide.</p></div>
+    <div><strong>Explore</strong><a href="websites.html">Interactive Websites</a><a href="smart-match.html">Smart Match</a><a href="#configure">Configurator</a><a href="operations.html">Automation</a><a href="websites.html">Web Design</a><a href="contact.html">Contact</a></div>
+  </div>
+  <div class="cfg-shell cfg-footer-bottom"><span>© 2026 Oyeola Online</span><span>This is an Oyeola interactive demonstration. Prices, configurations and specifications shown are example data and do not represent real products or quotations.</span></div>
+</footer>
+
+<script src="assets/js/configure.js"></script>
+<script src="assets/js/forms.js"></script>
+</body>
+</html>
