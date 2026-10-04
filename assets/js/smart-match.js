@@ -290,7 +290,7 @@
     })
   };
 
-  const state={answers:{},sequence:[],step:0,result:null,baseResult:null,whatIfKey:null,started:false};
+  const state={answers:{},sequence:[],step:0,result:null,baseResult:null,whatIfKey:null,whatIfAnswers:null,started:false};
   const els={
     engine:$('[data-sm-engine]'),startPanel:$('[data-sm-start-panel]'),questionWrap:$('[data-sm-question-wrap]'),
     qIndex:$('[data-sm-question-index]'),qTitle:$('[data-sm-question-title]'),qHelp:$('[data-sm-question-help]'),
@@ -307,6 +307,7 @@
     leadResult:$('[data-sm-lead-result]'),leadUrl:$('[data-sm-lead-url]')
   };
 
+  function effectiveAnswers(){return state.whatIfAnswers||state.answers}
   function getDecision(){return state.answers.decision}
   function buildSequence(){
     const seq=['decision'];
@@ -565,7 +566,7 @@
     els.questionWrap.hidden=true;els.analysis.hidden=false;els.progress.style.width='100%';els.progressLabel.textContent='Analysing';
     const lines=['Understanding your customer journey...','Mapping decision points...','Evaluating personalization...','Finding the strongest experience...','Building your recommendation...'];
     for(const line of lines){els.analysisCopy.textContent=line;await wait(430)}
-    state.baseResult=calculate(state.answers);state.result=state.baseResult;state.whatIfKey=null;
+    state.baseResult=calculate(state.answers);state.result=state.baseResult;state.whatIfKey=null;state.whatIfAnswers=null;state.whatIfAnswers=null;
     renderResult();
     els.analysis.hidden=true;els.questionWrap.hidden=false;
     els.results.hidden=false;
@@ -575,7 +576,7 @@
   function renderResult(){
     const r=state.result;if(!r)return;
     els.resultName.textContent=r.displayName;
-    els.resultSummary.textContent=resultSummary(r,state.answers);
+    els.resultSummary.textContent=resultSummary(r,effectiveAnswers());
     els.score.textContent=r.primary.score+'%';
     els.why.innerHTML=r.why.map(x=>'<li>'+escapeHtml(x)+'</li>').join('');
     els.whySummary.textContent=whySummary(r.primary.id,state.answers);
@@ -619,7 +620,7 @@
   }
 
   function renderBlueprint(r){
-    const a=state.answers,c=a.context||{};
+    const a=effectiveAnswers(),c=a.context||{};
     const recQuestions=recommendedQuestions(r.primary.id,a);
     const data=[
       ['Business context',c.business||'Not provided'],
@@ -665,7 +666,7 @@
   }
 
   function updateLeadFields(r){
-    const a=state.answers,c=a.context||{};
+    const a=effectiveAnswers(),c=a.context||{};
     const summary=[
       'Decision: '+(CONFIG.decisions.find(x=>x.id===a.decision)?.label||a.decision),
       'Options: '+optionLabel(a.optionCount),
@@ -685,24 +686,24 @@
   }
 
   function updateAdaptiveCTA(r){
-    const c=state.answers.context||{};
+    const a=effectiveAnswers(),c=a.context||{};
     let label='Explore This For My Website';
     if(c.websiteStatus==='no')label='Build My Website Around This';
     else if(r.features.complexity>=.75)label='Plan My Customer Journey';
-    else if(state.answers.conversion==='consult')label='See The Consultation Flow';
+    else if(a.conversion==='consult')label='See The Consultation Flow';
     $$('[data-sm-final-cta]').forEach(x=>x.textContent=label.toUpperCase());
   }
 
   function applyWhatIf(key){
     if(!state.baseResult)return;
-    if(state.whatIfKey===key){state.whatIfKey=null;state.result=state.baseResult;els.whatIfStatus.textContent='Returned to your original answers.';renderResult();return}
+    if(state.whatIfKey===key){state.whatIfKey=null;state.whatIfAnswers=null;state.result=state.baseResult;els.whatIfStatus.textContent='Returned to your original answers.';renderResult();return}
     const clone=JSON.parse(JSON.stringify(state.answers));
     if(key==='moreOptions')clone.optionCount=4;
     if(key==='budget'){clone.decision='budget';clone.branch_budget='primary';clone.factors=uniqueTop(['Price',...(clone.factors||[])],3);clone.pricing=clone.pricing==='fixed'?'calculated':clone.pricing}
     if(key==='buyNow')clone.conversion='buy';
     if(key==='availability'){clone.decision='availability';clone.branch_availability=['Date','Capacity'];clone.availabilityLevel=4;clone.factors=uniqueTop(['Availability',...(clone.factors||[])],3)}
     if(key==='personal')clone.personalization=4;
-    state.whatIfKey=key;state.result=calculate(clone);
+    state.whatIfKey=key;state.whatIfAnswers=clone;state.result=calculate(clone);
     els.whatIfStatus.textContent='Recalculated: '+state.result.displayName+' at '+state.result.primary.score+'% fit.';
     renderResult();
   }
@@ -710,7 +711,7 @@
   function saveResult(){
     if(!state.result){start();return}
     try{
-      localStorage.setItem(STORAGE_KEY,JSON.stringify({answers:state.answers,savedAt:Date.now()}));
+      localStorage.setItem(STORAGE_KEY,JSON.stringify({answers:effectiveAnswers(),savedAt:Date.now()}));
       els.saveNote.textContent='Saved on this device.';
       els.returnBanner.hidden=true;
     }catch{els.saveNote.textContent='Local save is unavailable in this browser.'}
@@ -724,12 +725,12 @@
   }
   function continueSaved(){
     const saved=loadSaved();if(!saved)return;
-    state.answers=saved.answers;buildSequence();state.started=true;state.baseResult=calculate(state.answers);state.result=state.baseResult;state.step=Math.max(0,state.sequence.length-1);
+    state.answers=saved.answers;buildSequence();state.started=true;state.baseResult=calculate(state.answers);state.result=state.baseResult;state.whatIfAnswers=null;state.step=Math.max(0,state.sequence.length-1);
     els.startPanel.hidden=true;els.questionWrap.hidden=false;renderQuestion();renderResult();els.results.hidden=false;els.returnBanner.hidden=true;
     $('#results')?.scrollIntoView({behavior:'smooth'});
   }
   function resetDemo(){
-    state.answers={};state.sequence=[];state.step=0;state.result=null;state.baseResult=null;state.whatIfKey=null;state.started=false;
+    state.answers={};state.sequence=[];state.step=0;state.result=null;state.baseResult=null;state.whatIfKey=null;state.whatIfAnswers=null;state.started=false;
     try{localStorage.removeItem(STORAGE_KEY)}catch{}
     els.results.hidden=true;els.analysis.hidden=true;els.questionWrap.hidden=true;els.startPanel.hidden=false;els.progress.style.width='0';els.progressLabel.textContent='Ready to begin';
     els.saveNote.textContent='';els.whatIfStatus.textContent='Choose a scenario to recalculate the match.';
@@ -765,7 +766,7 @@
 
   function openLeadPreview(){
     if(!state.result){start();return}
-    const a=state.answers,c=a.context||{},r=state.result;
+    const a=effectiveAnswers(),c=a.context||{},r=state.result;
     const fields=[
       ['Business',c.business||'Example business'],
       ['Website',c.websiteUrl||({yes:'Existing website',no:'No website yet',rebuild:'Being rebuilt'}[c.websiteStatus]||'Not provided')],
