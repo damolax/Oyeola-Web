@@ -29,7 +29,11 @@
     const host=$('[data-cms-reviews]'); if(!host)return;
     const items=(await get('review')).filter(i=>i.featured_home);
     if(!items.length)return;
-    host.innerHTML=items.slice(0,3).map(i=>{const d=i.data||{},stars='★'.repeat(Math.max(1,Math.min(5,Number(d.rating)||5)));return `<article class="testimonial-card"><div class="testimonial-stars">${stars}</div><blockquote>“${d.full_review||i.excerpt||''}”</blockquote><div class="testimonial-source"><strong>${d.project_slug||d.service||'Client project'}</strong><span>${d.source||'Client feedback'}</span></div></article>`}).join('');
+    host.innerHTML=items.slice(0,3).map(i=>{
+      const d=i.data||{},stars='★'.repeat(Math.max(1,Math.min(5,Number(d.rating)||5)));
+      const review=d.full_review||i.excerpt||'';
+      return `<article class="testimonial-card testimonial-card-full"><div class="testimonial-stars">${stars}</div><blockquote>“${review}”</blockquote><div class="testimonial-source"><strong>${d.project_slug||d.service||'Client project'}</strong><span>${d.source||'Client feedback'}</span></div></article>`;
+    }).join('');
   }
   async function hydrateProjects(){
     const host=$('[data-cms-projects]'); if(!host)return;
