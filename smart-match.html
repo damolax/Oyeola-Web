@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Oyeola Smart Match | Interactive Recommendation System Demo</title>
+  <meta name="description" content="Try Oyeola Smart Match: an adaptive website experience that asks relevant questions, recommends the right customer journey, explains why, compares alternatives and produces a qualified lead.">
+  <link rel="canonical" href="https://oyeola-web.vercel.app/smart-match">
+  <link rel="icon" href="assets/logos/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/smart-match.css">
+</head>
+<body class="sm-page">
+<a class="sm-skip" href="#live-demo">Skip to Smart Match</a>
+
+<header class="sm-header" data-sm-header>
+  <div class="sm-shell sm-nav">
+    <a class="sm-brand" href="index.html" aria-label="Oyeola home">
+      <img src="assets/logos/logo-horizontal-dark.svg" alt="Oyeola Online">
+    </a>
+    <nav class="sm-navlinks" aria-label="Smart Match navigation" data-sm-navlinks>
+      <a href="#smart-match">Smart Match</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#live-demo">Live Demo</a>
+      <a href="#results">Results</a>
+      <a href="#business-view">Business View</a>
+      <a class="sm-btn sm-btn-small" href="#live-demo" data-sm-start>Try Smart Match</a>
+    </nav>
+    <button class="sm-menu" type="button" aria-label="Open navigation" aria-expanded="false" data-sm-menu>Menu</button>
+  </div>
+</header>
+
+<main>
+<section class="sm-hero" id="smart-match">
+  <div class="sm-shell sm-hero-grid">
+    <div>
+      <p class="sm-kicker">OYEOLA SMART MATCH</p>
+      <h1>DON'T MAKE YOUR CUSTOMERS <span>FIGURE IT OUT.</span></h1>
+      <p class="sm-hero-copy">Give them a guided journey that understands what they need and leads them to the right option.</p>
+      <div class="sm-actions">
+        <a class="sm-btn" href="#live-demo" data-sm-start>Find My Best Match</a>
+        <a class="sm-btn sm-btn-ghost" href="#how-it-works">See How It Works</a>
+      </div>
+      <p class="sm-micro">No account required. Test the complete experience.</p>
+    </div>
+    <div class="sm-hero-demo" aria-label="Smart Match concept preview">
+      <div class="sm-orbit-card sm-orbit-a"><small>Visitor says</small><strong>“I’m not sure which option fits.”</strong></div>
+      <div class="sm-orbit-line"></div>
+      <div class="sm-hero-core">
+        <span class="sm-pulse"></span>
+        <small>SMART MATCH</small>
+        <strong>Understand → Narrow → Recommend</strong>
+      </div>
+      <div class="sm-orbit-card sm-orbit-b"><small>Website responds</small><strong>“Here’s your best fit, and why.”</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="sm-section sm-section-tight" id="how-it-works">
+  <div class="sm-shell">
+    <div class="sm-editorial">
+      <p class="sm-kicker">THE PROBLEM</p>
+      <h2>Your customer shouldn't need to understand your entire business before they can buy from you.</h2>
+      <p>Most websites make people read, compare, guess and then contact the business with questions the website could have helped answer.</p>
+    </div>
+    <div class="sm-path" aria-label="Traditional journey compared with Smart Match">
+      <div class="sm-path-row sm-path-old"><span>Read everything</span><i>→</i><span>Compare manually</span><i>→</i><span>Get confused</span><i>→</i><span>Leave or ask basic questions</span></div>
+      <div class="sm-path-row sm-path-new"><span>Understand me</span><i>→</i><span>Ask what matters</span><i>→</i><span>Recommend</span><i>→</i><span>Move me forward</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sm-section sm-demo-section" id="live-demo">
+  <div class="sm-shell">
+    <div class="sm-section-head">
+      <div>
+        <p class="sm-kicker">TRY THE MATCH ENGINE</p>
+        <h2>Answer a few questions. Watch the experience change around you.</h2>
+      </div>
+      <div class="sm-demo-meta"><span>≈ 60–90 seconds</span><span>No login</span><span>Nothing to install</span></div>
+    </div>
+
+    <div class="sm-return-banner" data-sm-return hidden>
+      <div><small>WELCOME BACK.</small><strong>Your Smart Match Blueprint is still here.</strong></div>
+      <div class="sm-actions"><button class="sm-btn sm-btn-small" type="button" data-sm-continue-saved>Continue</button><button class="sm-btn sm-btn-small sm-btn-ghost" type="button" data-sm-start-again>Start Again</button></div>
+    </div>
+
+    <div class="sm-engine" data-sm-engine>
+      <div class="sm-engine-top">
+        <div><span class="sm-status-dot"></span><strong>Your Match</strong></div>
+        <div class="sm-progress-label" data-sm-progress-label>Ready to begin</div>
+      </div>
+      <div class="sm-progress-track" aria-hidden="true"><span data-sm-progress></span></div>
+
+      <div class="sm-question-stage" data-sm-stage>
+        <div class="sm-start-panel" data-sm-start-panel>
+          <div class="sm-start-icon">✦</div>
+          <p class="sm-kicker">A DIGITAL SALES CONSULTANT BUILT INTO A WEBSITE</p>
+          <h3>What would a smarter customer journey look like for your business?</h3>
+          <p>The questions adapt to your answers. You will get a recommendation, comparison, customer-flow preview and a structured blueprint.</p>
+          <button class="sm-btn" type="button" data-sm-begin>Start Matching</button>
+        </div>
+
+        <div class="sm-question" data-sm-question-wrap hidden>
+          <p class="sm-question-index" data-sm-question-index></p>
+          <h3 data-sm-question-title></h3>
+          <p class="sm-question-help" data-sm-question-help></p>
+          <div class="sm-answer-area" data-sm-answer-area></div>
+          <div class="sm-question-nav">
+            <button class="sm-btn sm-btn-ghost sm-btn-small" type="button" data-sm-back>Back</button>
+            <button class="sm-btn sm-btn-small" type="button" data-sm-next>Continue</button>
+          </div>
+        </div>
+
+        <div class="sm-analysis" data-sm-analysis hidden aria-live="polite">
+          <div class="sm-analysis-mark"><span></span><span></span><span></span></div>
+          <p class="sm-kicker">BUILDING YOUR RESULT</p>
+          <h3 data-sm-analysis-copy>Understanding your customer journey...</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sm-results" id="results" data-sm-results hidden>
+  <div class="sm-shell">
+    <div class="sm-result-hero">
+      <div>
+        <p class="sm-kicker">YOUR BEST-FIT CUSTOMER JOURNEY</p>
+        <h2 data-sm-result-name>Guided Service Matcher</h2>
+        <p class="sm-result-summary" data-sm-result-summary></p>
+        <div class="sm-actions">
+          <button class="sm-btn" type="button" data-sm-preview-customer>Preview What Your Customer Would Experience</button>
+          <button class="sm-btn sm-btn-ghost" type="button" data-sm-save>Save This Result</button>
+        </div>
+        <p class="sm-save-note" data-sm-save-note aria-live="polite"></p>
+      </div>
+      <button class="sm-score" type="button" data-sm-match-details aria-label="View match score details">
+        <span data-sm-score>96%</span>
+        <small>fit</small>
+        <em>View Match Details</em>
+      </button>
+    </div>
+
+    <div class="sm-grid-two sm-result-block">
+      <article class="sm-panel">
+        <p class="sm-kicker">WHY THIS FITS YOUR BUSINESS</p>
+        <ul class="sm-check-list" data-sm-why></ul>
+        <p class="sm-panel-note" data-sm-why-summary></p>
+      </article>
+      <article class="sm-panel">
+        <p class="sm-kicker">IMPLEMENTATION COMPLEXITY</p>
+        <div class="sm-complexity"><strong data-sm-complexity>Moderate</strong><span data-sm-complexity-copy></span></div>
+        <div class="sm-readiness">
+          <div><span>Customer journey readiness</span><strong data-sm-readiness-score>78%</strong></div>
+          <div class="sm-readiness-bar"><span data-sm-readiness-bar></span></div>
+          <ul data-sm-readiness-list></ul>
+        </div>
+      </article>
+    </div>
+
+    <section class="sm-result-block">
+      <div class="sm-section-head sm-head-small"><div><p class="sm-kicker">YOUR VISUAL CUSTOMER JOURNEY</p><h3>What the experience could do.</h3></div></div>
+      <div class="sm-journey" data-sm-journey></div>
+    </section>
+
+    <section class="sm-result-block">
+      <div class="sm-section-head sm-head-small"><div><p class="sm-kicker">WANT TO TEST THE LOGIC?</p><h3>Change one answer. Watch the recommendation respond.</h3></div></div>
+      <div class="sm-whatif-grid">
+        <button type="button" data-sm-whatif="moreOptions"><strong>More options</strong><span>What if customers have too many choices?</span></button>
+        <button type="button" data-sm-whatif="budget"><strong>Budget first</strong><span>What if price becomes the biggest factor?</span></button>
+        <button type="button" data-sm-whatif="buyNow"><strong>Buy immediately</strong><span>What if customers can purchase right away?</span></button>
+        <button type="button" data-sm-whatif="availability"><strong>Availability matters</strong><span>What if dates, stock or capacity drive the decision?</span></button>
+        <button type="button" data-sm-whatif="personal"><strong>Every customer differs</strong><span>What if the best answer changes person to person?</span></button>
+      </div>
+      <div class="sm-whatif-status" data-sm-whatif-status>Choose a scenario to recalculate the match.</div>
+    </section>
+
+    <section class="sm-result-block sm-grid-two">
+      <article class="sm-panel sm-alt-card">
+        <p class="sm-kicker">ANOTHER APPROACH THAT COULD WORK</p>
+        <div class="sm-alt-head"><h3 data-sm-alt-name></h3><strong data-sm-alt-score></strong></div>
+        <p data-sm-alt-copy></p>
+        <button class="sm-btn sm-btn-small sm-btn-ghost" type="button" data-sm-compare>Compare Approaches</button>
+      </article>
+      <article class="sm-panel">
+        <p class="sm-kicker">THIS CAN WORK WITH YOUR EXISTING WEBSITE</p>
+        <div class="sm-platforms" aria-label="Supported implementation platforms">
+          <span>WordPress</span><span>Wix Studio</span><span>Webflow</span><span>Framer</span><span>Squarespace</span><span>Joomla</span><span>Custom</span>
+        </div>
+        <p class="sm-panel-note">Implementation varies by platform. Oyeola can use native features, CMS logic, custom code, forms, automations or external services where appropriate.</p>
+      </article>
+    </section>
+
+    <section class="sm-blueprint sm-result-block" data-sm-blueprint-section>
+      <div class="sm-section-head sm-head-small"><div><p class="sm-kicker">YOUR SMART MATCH BLUEPRINT</p><h3>A mini strategy document built from your answers.</h3></div></div>
+      <div class="sm-blueprint-grid" data-sm-blueprint></div>
+      <div class="sm-blueprint-actions">
+        <button class="sm-btn sm-btn-small" type="button" data-sm-copy-blueprint>Copy Blueprint</button>
+        <button class="sm-btn sm-btn-small sm-btn-ghost" type="button" data-sm-print-blueprint>Print / Save PDF</button>
+      </div>
+    </section>
+
+    <section class="sm-result-block sm-grid-two">
+      <article class="sm-panel" id="email-blueprint">
+        <p class="sm-kicker">WANT TO KEEP THIS?</p>
+        <h3>Send your Smart Match Blueprint to your inbox.</h3>
+        <form class="sm-mini-form" data-sm-email-form novalidate>
+          <label>Name <span>optional</span><input name="name" autocomplete="name"></label>
+          <label>Email <input name="email" type="email" autocomplete="email" required></label>
+          <label>Business name <span>optional</span><input name="business" autocomplete="organization"></label>
+          <button class="sm-btn sm-btn-small" type="submit">Email My Blueprint</button>
+          <p class="sm-form-status" data-sm-email-status aria-live="polite"></p>
+        </form>
+      </article>
+      <article class="sm-panel">
+        <p class="sm-kicker">NO ACCOUNT REQUIRED</p>
+        <h3>Save on this device.</h3>
+        <p>Your result can stay in this browser with local storage. No password, signup or authentication.</p>
+        <button class="sm-btn sm-btn-small sm-btn-ghost" type="button" data-sm-save>Save This Result</button>
+        <div class="sm-live-capability"><strong>Live-site capability</strong><p>On a live implementation, customers could optionally create an account to access private saved recommendations across devices. Account functionality is disabled for this public demo.</p></div>
+      </article>
+    </section>
+  </div>
+</section>
+
+<section class="sm-section" id="business-view">
+  <div class="sm-shell">
+    <div class="sm-section-head"><div><p class="sm-kicker">THE BUSINESS SIDE</p><h2>Same visitor. Far more useful conversation.</h2></div><button class="sm-btn sm-btn-ghost" type="button" data-sm-view-lead>See What Oyeola Would Receive</button></div>
+    <div class="sm-data-compare">
+      <article>
+        <p class="sm-kicker">NORMAL CONTACT FORM</p>
+        <div class="sm-contact-example"><span>Name</span><span>Email</span><span>Message</span><blockquote>“Hi, I’m interested. Please send information.”</blockquote></div>
+      </article>
+      <div class="sm-vs">VS</div>
+      <article>
+        <p class="sm-kicker">SMART MATCH LEAD</p>
+        <div class="sm-rich-lead" data-sm-rich-lead>
+          <span>Goal</span><span>Requirements</span><span>Budget context</span><span>Priorities</span><span>Recommended option</span><span>Alternative</span><span>Urgency</span><span>Next action</span>
+        </div>
+      </article>
+    </div>
+    <div class="sm-parallel">
+      <p class="sm-kicker">NOW IMAGINE THIS FOR YOUR CUSTOMERS.</p>
+      <h3>The same system can learn about your customer and send <em>you</em> a qualified enquiry.</h3>
+      <div class="sm-parallel-tags"><span>what they want</span><span>what matters</span><span>which option fits</span><span>budget context</span><span>urgency</span><span>relevant selections</span><span>next action</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sm-section sm-contact-section" id="discuss">
+  <div class="sm-shell sm-contact-grid">
+    <div>
+      <p class="sm-kicker">ZERO-REPETITION ENQUIRY</p>
+      <h2>Don’t explain the same thing twice.</h2>
+      <p>Once you complete Smart Match, your decision problem, answers, recommendation and website status are carried into the enquiry automatically. We only ask for what is still missing.</p>
+    </div>
+    <form class="sm-contact-form" data-lead-form data-reset="false" data-success="YOUR SMART MATCH BRIEF IS READY. We’ve carried your answers into the enquiry so you don’t have to explain everything again.">
+      <input type="hidden" name="type" value="smart-match-enquiry">
+      <input type="hidden" name="service_type" value="Oyeola Smart Match">
+      <input type="hidden" name="smart_match_summary" data-sm-lead-summary>
+      <input type="hidden" name="desired_result" data-sm-lead-result>
+      <input type="hidden" name="business_url" data-sm-lead-url>
+      <label>Name<input name="name" autocomplete="name" required></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <label>Anything else you'd like us to know?<textarea name="problem" rows="4"></textarea></label>
+      <button class="sm-btn" type="submit">Discuss My Smart Match System</button>
+      <p class="form-status sm-form-status" data-form-status aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="sm-section" id="faq">
+  <div class="sm-shell">
+    <div class="sm-section-head"><div><p class="sm-kicker">SMART FAQ</p><h2>Practical questions before you build.</h2></div></div>
+    <div class="sm-faq" data-sm-faq>
+      <details><summary>Can this work with my existing website?</summary><p>Yes. The implementation approach depends on your platform and how much logic, data and automation the experience needs.</p></details>
+      <details><summary>Does it require AI?</summary><p>No. Strong matching can be built with transparent rule-based logic. AI should only be added when it genuinely improves a defined part of the experience.</p></details>
+      <details><summary>Can the recommendation logic use my own rules?</summary><p>Yes. Your real service rules, eligibility criteria, product attributes, pricing behaviour and business constraints can drive the recommendation.</p></details>
+      <details><summary>Can prices update automatically?</summary><p>Yes, where your pricing data and platform support it. Fixed, tiered, calculated and indicative ranges can all be handled differently.</p></details>
+      <details><summary>Can it connect to my CRM?</summary><p>Yes. A completed match can pass structured fields into tools such as Airtable, Zoho, Pipedrive and other CRM or automation systems.</p></details>
+      <details><summary>Can customers receive their result by email?</summary><p>Yes. A live implementation can deliver a result or blueprint by email without forcing the customer to create an account.</p></details>
+      <details><summary>Can this work without customer accounts?</summary><p>Yes. The entire matching journey can work without authentication. Accounts are optional when cross-device saved history or private data is genuinely useful.</p></details>
+      <details><summary>Can I change questions myself?</summary><p>Yes. The engine can be connected to editable CMS or database content so questions, answers, weights and result copy can be managed without redesigning the interface.</p></details>
+      <details><summary>Can this work with hundreds of products?</summary><p>Yes, but the architecture changes. Product data, filters, scoring and inventory may need CMS, database or API integration rather than simple static rules.</p></details>
+      <details><summary>Can this integrate with booking?</summary><p>Yes. The recommendation can finish by opening the correct service, specialist, appointment type or booking path.</p></details>
+      <details><summary>Can Oyeola build only this system without redesigning my whole site?</summary><p>Yes. Smart Match can be introduced as a focused customer-journey feature when the rest of the website is already working well.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sm-final">
+  <div class="sm-shell sm-final-inner">
+    <p class="sm-kicker">YOUR WEBSITE CAN DO MORE THAN EXPLAIN.</p>
+    <h2>It can ask. Understand. Narrow the options. Recommend. Explain. Remember. Qualify. And move the right customer forward.</h2>
+    <div class="sm-actions">
+      <a class="sm-btn" href="#discuss" data-sm-final-cta>BUILD MY SMART MATCH</a>
+      <button class="sm-btn sm-btn-ghost" type="button" data-sm-reset>Test Again</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<aside class="sm-tools" data-sm-tools>
+  <button class="sm-tools-toggle" type="button" aria-expanded="false" data-sm-tools-toggle>Demo Tools</button>
+  <div class="sm-tools-panel" data-sm-tools-panel hidden>
+    <div class="sm-tools-head"><strong>Demo Tools</strong><button type="button" aria-label="Close demo tools" data-sm-tools-close>×</button></div>
+    <button type="button" data-sm-reset>Reset Demo</button>
+    <button type="button" data-sm-preset="homebuilder">Load Example Business</button>
+    <button type="button" data-sm-preset="software">Online Software Example</button>
+    <button type="button" data-sm-preset="professional">Professional Services Example</button>
+    <button type="button" data-sm-preset="product">Product Company Example</button>
+    <button type="button" data-sm-test-another>Test Another Result</button>
+    <button type="button" data-sm-preview-customer>View Customer Experience</button>
+    <button type="button" data-sm-view-lead>View Business Lead</button>
+    <button type="button" data-sm-view-logic>View Matching Logic</button>
+  </div>
+</aside>
+
+<div class="sm-modal" data-sm-modal hidden>
+  <div class="sm-modal-backdrop" data-sm-modal-close></div>
+  <section class="sm-modal-card" role="dialog" aria-modal="true" aria-labelledby="sm-modal-title">
+    <div class="sm-modal-head"><div><p class="sm-kicker" data-sm-modal-kicker>SMART MATCH</p><h2 id="sm-modal-title" data-sm-modal-title></h2></div><button type="button" aria-label="Close dialog" data-sm-modal-close>×</button></div>
+    <div class="sm-modal-body" data-sm-modal-body></div>
+  </section>
+</div>
+
+<footer class="sm-footer">
+  <div class="sm-shell sm-footer-grid">
+    <div><img src="assets/logos/logo-horizontal-dark.svg" alt="Oyeola Online"><p>Websites that help customers decide.</p></div>
+    <div><strong>Explore</strong><a href="#smart-match">Smart Match</a><a href="websites.html">Interactive Websites</a><a href="websites.html">Website Design</a><a href="operations.html">Automation</a><a href="contact.html">Contact</a></div>
+  </div>
+  <div class="sm-shell sm-footer-bottom"><span>© 2026 Oyeola Online</span><span>This is an Oyeola interactive system demonstration. Recommendations demonstrate the technology and are not project quotations.</span></div>
+</footer>
+
+<script src="assets/js/smart-match.js"></script>
+<script src="assets/js/forms.js"></script>
+</body>
+</html>
