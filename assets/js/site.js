@@ -160,7 +160,22 @@
     }));
   }
 
-  const workFilters = $$('[data-work-filter]');
+  $('.project-card').forEach(card => {
+    const preview = $('.browser-mockup', card);
+    const link = $('.text-link[href]', card);
+    if (!preview || !link || preview.tagName === 'A' || preview.dataset.projectLinked) return;
+    preview.dataset.projectLinked = 'true';
+    preview.setAttribute('role','link');
+    preview.setAttribute('tabindex','0');
+    preview.style.cursor = 'pointer';
+    const go = () => { location.href = link.href; };
+    preview.addEventListener('click', go);
+    preview.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); go(); }
+    });
+  });
+
+  const workFilters = $('[data-work-filter]');
   if (workFilters.length) {
     const cards = $$('.project-card');
     workFilters.forEach(button => button.addEventListener('click', () => {
