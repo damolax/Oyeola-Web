@@ -5,7 +5,7 @@
   }
   function animateStats(){
     const section=$('[data-cms-stats]'); if(!section)return;
-    const nums=$('[data-stat-value]',section);
+    const nums=$$('[data-stat-value]',section);
     let played=false;
     const run=()=>{ if(played)return; played=true; nums.forEach((el,idx)=>{
       const end=Number(el.dataset.value||0),suffix=el.dataset.suffix||'';
