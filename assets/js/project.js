@@ -2,11 +2,49 @@
  const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
  const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
  const slug=new URLSearchParams(location.search).get('slug')||location.pathname.split('/').filter(Boolean).pop()?.replace('.html','');
+ const STATIC_PROJECTS={
+  'busy-moms-money-reset-hyperlinked-planner':{
+    slug:'busy-moms-money-reset-hyperlinked-planner',
+    title:"The Busy Mom's Money Reset - Hyperlinked Planner",
+    excerpt:'A 60-page premium hyperlinked iPad money planner built around a clear money-reset workflow.',
+    data:{
+      industry:'Digital Planner / Personal Finance',platform:'Hyperlinked PDF',service:'Digital Planner Design',year:'2026',
+      thumbnail_url:'https://br-super-moon-b5rfh8yp.storage.c-7.us-east-2.aws.neon.tech/oyeola-media/portfolio/planners/busy-moms-money-reset-cover.jpg',hero_image_url:'https://br-super-moon-b5rfh8yp.storage.c-7.us-east-2.aws.neon.tech/oyeola-media/portfolio/planners/busy-moms-money-reset-cover.jpg',sample_pdf_url:'https://br-super-moon-b5rfh8yp.storage.c-7.us-east-2.aws.neon.tech/oyeola-media/portfolio/planners/busy-moms-money-reset-watermarked.pdf',download_url:'https://br-super-moon-b5rfh8yp.storage.c-7.us-east-2.aws.neon.tech/oyeola-media/portfolio/planners/busy-moms-money-reset-watermarked.pdf',
+      gallery:[{url:'https://br-super-moon-b5rfh8yp.storage.c-7.us-east-2.aws.neon.tech/oyeola-media/portfolio/planners/busy-moms-money-reset-cover.jpg',caption:'Planner cover',type:'image'}],
+      skills:['Hyperlink Architecture','Digital Planner UX','PDF Navigation','Information Architecture','Page System Design'],
+      story:{
+        goal:'Create a planner that helps busy mothers move from money overwhelm to a repeatable reset routine.',
+        challenge:'The planner needed to hold many financial workflows without feeling heavy while keeping navigation fast on a tablet.',
+        solution:'A 60-page system with a central home page, category menus, right-edge navigation tabs and linked worksheets across income, bills, spending, savings, debt and monthly reset sections.',
+        result:'A planner that can be explored like a small app, with fast jumps between sections and a complete money-reset flow.'
+      },
+      branding:{logo_designed:false,identity_designed:true},protected_sample:true
+    }
+  },
+  'busy-moms-money-reset-printable-planner':{
+    slug:'busy-moms-money-reset-printable-planner',
+    title:"The Busy Mom's Money Reset - Printable Planner",
+    excerpt:'A printable companion edition built for clear at-home planning and repeat use.',
+    data:{
+      industry:'Printable Planner / Personal Finance',platform:'Printable PDF',service:'Digital Planner Design',year:'2026',
+      thumbnail_url:'https://br-super-moon-b5rfh8yp.storage.c-7.us-east-2.aws.neon.tech/oyeola-media/portfolio/planners/busy-moms-money-reset-cover.jpg',hero_image_url:'https://br-super-moon-b5rfh8yp.storage.c-7.us-east-2.aws.neon.tech/oyeola-media/portfolio/planners/busy-moms-money-reset-cover.jpg',gallery:[{url:'https://br-super-moon-b5rfh8yp.storage.c-7.us-east-2.aws.neon.tech/oyeola-media/portfolio/planners/busy-moms-money-reset-cover.jpg',caption:'Printable planner cover',type:'image'}],
+      skills:['Printable Product Design','Information Architecture','Financial Planner Layout','Page System Design','PDF Production'],
+      story:{
+        goal:'Create a printable version that keeps the same money-reset structure while working naturally on paper.',
+        challenge:'The layouts needed enough writing space and repeated planning systems without feeling crowded.',
+        solution:'US Letter and A4 printable editions with a consistent visual system covering paychecks, bills, spending, savings, debt and monthly resets.',
+        result:'A cohesive printable product that extends the planner system beyond tablet use.'
+      },
+      branding:{logo_designed:false,identity_designed:true}
+    }
+  }
+ };
  let gallery=[],index=0;
  function setMain(i){if(!gallery.length)return;index=(i+gallery.length)%gallery.length;const item=gallery[index],img=$('[data-project-main-image]');img.src=item.url;img.alt=item.caption||'';$('[data-gallery-count]').textContent=(index+1)+' / '+gallery.length;$$('[data-thumb]').forEach((t,n)=>t.classList.toggle('active',n===index))}
  async function load(){
    let project=null;
    try{const r=await fetch('/api/content?type=project');const d=await r.json();project=(d.items||[]).find(x=>x.slug===slug)}catch{}
+   if(!project) project=STATIC_PROJECTS[slug]||null;
    if(!project){$('[data-project-title]').textContent='Project not found';$('[data-project-excerpt]').textContent='This portfolio story is not published yet.';return}
    const d=project.data||{},summary=project.excerpt||d.excerpt||d.summary||'';
    document.title=project.title+' | Oyeola Online'; $('[data-project-title]').textContent=project.title;$('[data-project-excerpt]').textContent=summary;
