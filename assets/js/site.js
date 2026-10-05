@@ -185,7 +185,7 @@
       return first.getBoundingClientRect().width + gap;
     };
     const update = () => {
-      const isMobile = window.matchMedia('(max-width: 680px)').matches;
+      const isMobile = window.matchMedia('(max-width: 820px)').matches;
       controls.hidden = !isMobile;
       if (!isMobile) return;
       const max = Math.max(0, grid.scrollWidth - grid.clientWidth);
