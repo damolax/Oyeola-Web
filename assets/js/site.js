@@ -160,49 +160,73 @@
     }));
   }
 
-  const enhanceFeatureRail = grid => {
-    if (!grid || grid.dataset.railReady === 'true' || grid.children.length < 2) return;
-    grid.dataset.railReady = 'true';
+
+  const enhanceMobileCardRail = grid => {
+    if (!grid || grid.dataset.mobileRailReady === 'true' || grid.children.length < 2) return;
+    grid.dataset.mobileRailReady = 'true';
 
     const rail = document.createElement('div');
-    rail.className = 'feature-rail';
+    rail.className = 'mobile-card-rail';
     const parent = grid.parentNode;
     parent.insertBefore(rail, grid);
     rail.appendChild(grid);
 
     const controls = document.createElement('div');
-    controls.className = 'feature-rail-controls';
-    controls.innerHTML = '<button type="button" class="feature-rail-btn feature-rail-prev" aria-label="Previous features">←</button><button type="button" class="feature-rail-btn feature-rail-next" aria-label="Next features">→</button>';
+    controls.className = 'mobile-card-rail-controls';
+    controls.innerHTML = '<button type="button" class="mobile-card-rail-btn mobile-card-rail-prev" aria-label="Previous item">←</button><button type="button" class="mobile-card-rail-btn mobile-card-rail-next" aria-label="Next item">→</button>';
     rail.appendChild(controls);
 
-    const prev = $('.feature-rail-prev', controls);
-    const next = $('.feature-rail-next', controls);
-
-    const scrollAmount = () => {
+    const prev = $('.mobile-card-rail-prev', controls);
+    const next = $('.mobile-card-rail-next', controls);
+    const cardWidth = () => {
       const first = grid.firstElementChild;
-      if (!first) return Math.max(280, grid.clientWidth * .78);
-      const style = getComputedStyle(grid);
-      const gap = parseFloat(style.columnGap || style.gap || 0) || 0;
+      if (!first) return grid.clientWidth;
+      const gap = parseFloat(getComputedStyle(grid).columnGap || getComputedStyle(grid).gap || 0) || 0;
       return first.getBoundingClientRect().width + gap;
     };
-
     const update = () => {
+      const isMobile = window.matchMedia('(max-width: 680px)').matches;
+      controls.hidden = !isMobile;
+      if (!isMobile) return;
       const max = Math.max(0, grid.scrollWidth - grid.clientWidth);
       prev.disabled = grid.scrollLeft <= 4;
       next.disabled = grid.scrollLeft >= max - 4;
-      rail.classList.toggle('feature-rail-static', max <= 4);
     };
 
-    prev.addEventListener('click', () => grid.scrollBy({left:-scrollAmount(),behavior:'smooth'}));
-    next.addEventListener('click', () => grid.scrollBy({left:scrollAmount(),behavior:'smooth'}));
+    prev.addEventListener('click', () => grid.scrollBy({left:-cardWidth(),behavior:'smooth'}));
+    next.addEventListener('click', () => grid.scrollBy({left:cardWidth(),behavior:'smooth'}));
     grid.addEventListener('scroll', update, {passive:true});
     window.addEventListener('resize', update);
     requestAnimationFrame(update);
   };
 
-  $$('.feature-grid').forEach(enhanceFeatureRail);
+  $('.feature-grid, .service-grid, .capability-strip').forEach(enhanceMobileCardRail);
 
-  $$('.project-card').forEach(card => {
+  const workCarousel = $('[data-home-work-carousel]');
+  if (workCarousel) {
+    const track = $('[data-home-work-track]', workCarousel);
+    const prev = $('[data-home-work-prev]', workCarousel);
+    const next = $('[data-home-work-next]', workCarousel);
+    const step = () => {
+      const first = track?.firstElementChild;
+      if (!first || !track) return 320;
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0) || 0;
+      return first.getBoundingClientRect().width + gap;
+    };
+    const update = () => {
+      if (!track) return;
+      const max = Math.max(0, track.scrollWidth - track.clientWidth);
+      if (prev) prev.disabled = track.scrollLeft <= 4;
+      if (next) next.disabled = track.scrollLeft >= max - 4;
+    };
+    prev?.addEventListener('click', () => track.scrollBy({left:-step(),behavior:'smooth'}));
+    next?.addEventListener('click', () => track.scrollBy({left:step(),behavior:'smooth'}));
+    track?.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    requestAnimationFrame(update);
+  }
+
+  $('.project-card').forEach(card => {
     const preview = $('.browser-mockup', card);
     const link = $('.text-link[href]', card);
     if (!preview || !link || preview.tagName === 'A' || preview.dataset.projectLinked) return;
