@@ -200,7 +200,7 @@
     requestAnimationFrame(update);
   };
 
-  $('.feature-grid, .service-grid, .capability-strip').forEach(enhanceMobileCardRail);
+  document.querySelectorAll('.feature-grid, .service-grid, .capability-strip').forEach(enhanceMobileCardRail);
 
   const workCarousel = $('[data-home-work-carousel]');
   if (workCarousel) {
@@ -226,7 +226,7 @@
     requestAnimationFrame(update);
   }
 
-  $('.project-card').forEach(card => {
+  document.querySelectorAll('.project-card').forEach(card => {
     const preview = $('.browser-mockup', card);
     const link = $('.text-link[href]', card);
     if (!preview || !link || preview.tagName === 'A' || preview.dataset.projectLinked) return;
