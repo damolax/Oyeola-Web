@@ -16,10 +16,14 @@
     : path.includes('about') ? 'about'
     : path.includes('contact') || path.includes('start-here') ? 'contact' : '';
 
+  const header
+
   const header = $('.site-header');
   if (header) {
-    header.outerHTML = `<header class="site-header"><div class="container nav"><a class="brand brand-lockup" href="${root}index.html" aria-label="Oyeola Online home"><img data-theme-logo src="${root}assets/logos/${theme==='light'?'logo-horizontal-light.svg':'logo-horizontal-dark.svg'}" alt="Oyeola Online"></a><nav class="nav-links" aria-label="Primary navigation"><a class="${active === 'services' ? 'active' : ''}" href="${root}services.html">Services</a><a class="${active === 'work' ? 'active' : ''}" href="${root}work.html">Work</a><a class="${active === 'demos' ? 'active' : ''}" href="${root}demos.html">Interactive Demos</a><a class="${active === 'about' ? 'active' : ''}" href="${root}about.html">About</a><a class="${active === 'contact' ? 'active' : ''}" href="${root}contact.html">Contact</a><button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme"><span data-theme-icon>${theme==='light'?'☀':'◐'}</span></button><a class="btn small" href="${root}start-here.html">Start a Project</a></nav><button class="menu-btn" aria-label="Open navigation" aria-expanded="false">Menu</button></div></header>`;
+    header.outerHTML = `<header class="site-header"><div class="container nav"><a class="brand brand-lockup" href="${root}index.html" aria-label="Oyeola home"><img data-theme-logo src="${root}assets/logos/${theme==='light'?'logo-horizontal-light.svg':'logo-horizontal-dark.svg'}" alt="Oyeola"></a><nav class="nav-links" aria-label="Primary navigation"><a class="${active === 'services' ? 'active' : ''}" href="${root}services.html">Services</a><a class="${active === 'work' ? 'active' : ''}" href="${root}work.html">Work</a><a class="${active === 'demos' ? 'active' : ''}" href="${root}demos.html">Interactive Demos</a><a class="${active === 'about' ? 'active' : ''}" href="${root}about.html">About</a><a class="${active === 'contact' ? 'active' : ''}" href="${root}contact.html">Contact</a><button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme"><span data-theme-icon>${theme==='light'?'☀':'◐'}</span></button><a class="btn small" href="${root}start-here.html">Start a Project</a></nav><button class="menu-btn" aria-label="Open navigation" aria-expanded="false">Menu</button></div></header>`;
   }
+
+  let icon
 
   let icon = document.querySelector('link[rel="icon"]');
   if (!icon) {
@@ -32,8 +36,10 @@
 
   const footer = $('footer.footer');
   if (footer) {
-    footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-light.svg?v=20261004" alt="Oyeola Online"></a><p>Websites people can use, not just look at.</p></div><div><strong>Services</strong><p><a href="${root}websites.html">Website Design</a><br><a href="${root}demos.html">Interactive Experiences</a><br><a href="${root}operations.html">Operations Systems</a><br><a href="${root}digital-planners.html">Digital Planners</a></p></div><div><strong>Explore</strong><p><a href="${root}work.html">Client Work</a><br><a href="${root}demos.html">Interactive Demos</a><br><a href="${root}testimonials.html">Testimonials</a><br><a href="${root}about.html">About</a></p></div><div><strong>Contact</strong><p><a href="${root}contact.html">Start a Project</a><br><a href="mailto:oyeolawebmaster@gmail.com">Email</a><br><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener">LinkedIn</a><br><a href="${root}privacy.html">Privacy</a></p></div></div><div class="footer-bottom"><span>© 2026 Oyeola Online</span><span>Design what happens next.</span></div></div></footer>`;
+    footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-light.svg?v=20261005" alt="Oyeola"></a><p>Websites, interactive customer experiences and digital systems built around what people need to do next.</p></div><div><strong>Explore</strong><p><a href="${root}services.html">Services</a><br><a href="${root}work.html">Work</a><br><a href="${root}demos.html">Interactive Demos</a><br><a href="${root}about.html">About</a></p></div><div><strong>Capabilities</strong><p><a href="${root}websites.html">Website Design</a><br><a href="${root}operations.html">Operations Systems</a><br><a href="${root}digital-planners.html">Digital Planners</a><br><a href="${root}testimonials.html">Testimonials</a></p></div><div><strong>Contact</strong><p><a href="${root}contact.html">Start a project</a><br><a href="mailto:oyeolawebmaster@gmail.com">Email</a><br><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener">LinkedIn</a><br><a href="${root}privacy.html">Privacy</a></p></div></div><div class="footer-bottom"><span>© 2026 Oyeola</span><span>Websites people can use, not just look at.</span></div></div></footer>`;
   }
+
+  const themeToggle
 
   const themeToggle = $('.theme-toggle');
   const applyTheme = next => {
@@ -159,7 +165,73 @@
     }));
   }
 
-  $('.project-card').forEach(card => {
+
+  const enhanceMobileCardRail = grid => {
+    if (!grid || grid.dataset.mobileRailReady === 'true' || grid.children.length < 2) return;
+    grid.dataset.mobileRailReady = 'true';
+
+    const rail = document.createElement('div');
+    rail.className = 'mobile-card-rail';
+    const parent = grid.parentNode;
+    parent.insertBefore(rail, grid);
+    rail.appendChild(grid);
+
+    const controls = document.createElement('div');
+    controls.className = 'mobile-card-rail-controls';
+    controls.innerHTML = '<button type="button" class="mobile-card-rail-btn mobile-card-rail-prev" aria-label="Previous item">←</button><button type="button" class="mobile-card-rail-btn mobile-card-rail-next" aria-label="Next item">→</button>';
+    rail.appendChild(controls);
+
+    const prev = $('.mobile-card-rail-prev', controls);
+    const next = $('.mobile-card-rail-next', controls);
+    const cardWidth = () => {
+      const first = grid.firstElementChild;
+      if (!first) return grid.clientWidth;
+      const gap = parseFloat(getComputedStyle(grid).columnGap || getComputedStyle(grid).gap || 0) || 0;
+      return first.getBoundingClientRect().width + gap;
+    };
+    const update = () => {
+      const isMobile = window.matchMedia('(max-width: 680px)').matches;
+      controls.hidden = !isMobile;
+      if (!isMobile) return;
+      const max = Math.max(0, grid.scrollWidth - grid.clientWidth);
+      prev.disabled = grid.scrollLeft <= 4;
+      next.disabled = grid.scrollLeft >= max - 4;
+    };
+
+    prev.addEventListener('click', () => grid.scrollBy({left:-cardWidth(),behavior:'smooth'}));
+    next.addEventListener('click', () => grid.scrollBy({left:cardWidth(),behavior:'smooth'}));
+    grid.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    requestAnimationFrame(update);
+  };
+
+  document.querySelectorAll('.feature-grid, .service-grid, .capability-strip').forEach(enhanceMobileCardRail);
+
+  const workCarousel = $('[data-home-work-carousel]');
+  if (workCarousel) {
+    const track = $('[data-home-work-track]', workCarousel);
+    const prev = $('[data-home-work-prev]', workCarousel);
+    const next = $('[data-home-work-next]', workCarousel);
+    const step = () => {
+      const first = track?.firstElementChild;
+      if (!first || !track) return 320;
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0) || 0;
+      return first.getBoundingClientRect().width + gap;
+    };
+    const update = () => {
+      if (!track) return;
+      const max = Math.max(0, track.scrollWidth - track.clientWidth);
+      if (prev) prev.disabled = track.scrollLeft <= 4;
+      if (next) next.disabled = track.scrollLeft >= max - 4;
+    };
+    prev?.addEventListener('click', () => track.scrollBy({left:-step(),behavior:'smooth'}));
+    next?.addEventListener('click', () => track.scrollBy({left:step(),behavior:'smooth'}));
+    track?.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    requestAnimationFrame(update);
+  }
+
+  document.querySelectorAll('.project-card').forEach(card => {
     const preview = $('.browser-mockup', card);
     const link = $('.text-link[href]', card);
     if (!preview || !link || preview.tagName === 'A' || preview.dataset.projectLinked) return;
@@ -174,7 +246,7 @@
     });
   });
 
-  const workFilters = $('[data-work-filter]');
+  const workFilters = $$('[data-work-filter]');
   if (workFilters.length) {
     const cards = $$('.project-card');
     workFilters.forEach(button => button.addEventListener('click', () => {
