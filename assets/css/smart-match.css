@@ -384,3 +384,11 @@ html[data-theme="light"] .sm-tools-panel>button,
 html[data-theme="light"] .sm-tools-head button,
 html[data-theme="light"] .sm-modal-head button{color:#0a140c!important}
 @media(max-width:720px){.sm-shell{width:min(calc(100% - 28px),1220px)}.sm-hero{padding:48px 0}.sm-section{padding:48px 0}}
+
+/* Simplified public presentation */
+.sm-page #business-view,
+.sm-page #faq{display:none!important}
+.sm-page .sm-section-tight{padding-top:42px!important;padding-bottom:42px!important}
+.sm-page .sm-section-tight .sm-editorial{max-width:900px}
+.sm-page .sm-final{padding:64px 0!important}
+.sm-page .sm-final h2{max-width:860px;margin-inline:auto}
