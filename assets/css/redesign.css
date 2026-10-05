@@ -680,3 +680,85 @@ html[data-theme="light"] .feature-rail-btn{background:#fff!important;color:#0a14
   .feature-rail-btn{width:38px;height:38px}
   .feature-rail .feature-grid{grid-auto-columns:88%;gap:10px!important}
 }
+
+/* Launch-readiness pass */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video,canvas{max-width:100%}
+.testimonial-grid{align-items:stretch}
+.testimonial-card-full{display:flex;flex-direction:column}
+.testimonial-card-full blockquote{flex:1}
+
+html[data-theme="light"] body{background:#f7faf5!important;color:#0a140c!important}
+html[data-theme="light"] main{background:#f7faf5!important}
+html[data-theme="light"] .section,
+html[data-theme="light"] .section.paper,
+html[data-theme="light"] .section.soft,
+html[data-theme="light"] .section.alt{background:#f7faf5!important;color:#0a140c!important}
+html[data-theme="light"] .surface,
+html[data-theme="light"] .service-tile,
+html[data-theme="light"] .feature-card,
+html[data-theme="light"] .work-card,
+html[data-theme="light"] .testimonial-card,
+html[data-theme="light"] .review-card,
+html[data-theme="light"] .project-card,
+html[data-theme="light"] .planner-portfolio-card,
+html[data-theme="light"] .planner-feature-strip article,
+html[data-theme="light"] .capability-strip article,
+html[data-theme="light"] .service-related-work article,
+html[data-theme="light"] .service-process-wide article,
+html[data-theme="light"] .how-work-step{
+  background:#fff!important;color:#0a140c!important;border-color:rgba(23,74,31,.13)!important
+}
+html[data-theme="light"] .section-head h2,
+html[data-theme="light"] .copy h2,
+html[data-theme="light"] .service-tile h3,
+html[data-theme="light"] .feature-card h3,
+html[data-theme="light"] .work-card h3,
+html[data-theme="light"] .testimonial-card blockquote,
+html[data-theme="light"] .review-card blockquote,
+html[data-theme="light"] .review-card p,
+html[data-theme="light"] .project-copy h3,
+html[data-theme="light"] .planner-portfolio-card h3{color:#0a140c!important}
+html[data-theme="light"] p,
+html[data-theme="light"] li,
+html[data-theme="light"] .lead,
+html[data-theme="light"] .section-head p,
+html[data-theme="light"] .service-tile p,
+html[data-theme="light"] .feature-card p,
+html[data-theme="light"] .work-card p,
+html[data-theme="light"] .project-copy p,
+html[data-theme="light"] .planner-portfolio-card p,
+html[data-theme="light"] .testimonial-source span,
+html[data-theme="light"] .review-meta span{color:#607064!important}
+html[data-theme="light"] .eyebrow,
+html[data-theme="light"] .accent,
+html[data-theme="light"] .text-link,
+html[data-theme="light"] .testimonial-stars{color:#20862d!important}
+html[data-theme="light"] .site-header{background:rgba(247,250,245,.94)!important;border-bottom-color:rgba(23,74,31,.12)!important}
+html[data-theme="light"] .nav-links>a:not(.btn){color:#314235!important}
+html[data-theme="light"] .nav-links>a:not(.btn):hover,
+html[data-theme="light"] .nav-links>a.active{color:#0a140c!important}
+html[data-theme="light"] .hero-shell{
+  background:radial-gradient(circle at 82% 28%,rgba(99,244,109,.14),transparent 35%),linear-gradient(145deg,#ffffff 0%,#f4f8f1 62%,#eef7ed 100%)!important;
+  border-color:rgba(23,74,31,.12)!important
+}
+html[data-theme="light"] .hero-badge{background:rgba(255,255,255,.9)!important;border-color:rgba(23,74,31,.18)!important}
+html[data-theme="light"] .hero-badge strong{color:#0a140c!important}
+html[data-theme="light"] .hero-badge span,
+html[data-theme="light"] .hero-proof-row span{color:#607064!important}
+html[data-theme="light"] .btn.secondary,
+html[data-theme="light"] .btn.ghost{background:#fff!important;color:#0a140c!important;border-color:rgba(23,74,31,.16)!important}
+html[data-theme="light"] .cta-band{background:#d8f8da!important;color:#0a140c!important}
+html[data-theme="light"] .cta-band h2,
+html[data-theme="light"] .cta-band .eyebrow{color:#0a140c!important}
+html[data-theme="light"] input,
+html[data-theme="light"] textarea,
+html[data-theme="light"] select{background:#fff!important;color:#0a140c!important;border-color:rgba(23,74,31,.16)!important}
+html[data-theme="light"] input::placeholder,
+html[data-theme="light"] textarea::placeholder{color:#7b887e!important}
+
+@media(max-width:700px){
+  .testimonial-grid{grid-template-columns:1fr!important}
+  .section{padding:54px 0!important}
+  .page-hero,.service-hero,.case-hero{padding:52px 0 42px!important}
+}
