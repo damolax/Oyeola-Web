@@ -16,14 +16,10 @@
     : path.includes('about') ? 'about'
     : path.includes('contact') || path.includes('start-here') ? 'contact' : '';
 
-  const header
-
   const header = $('.site-header');
   if (header) {
     header.outerHTML = `<header class="site-header"><div class="container nav"><a class="brand brand-lockup" href="${root}index.html" aria-label="Oyeola home"><img data-theme-logo src="${root}assets/logos/${theme==='light'?'logo-horizontal-light.svg':'logo-horizontal-dark.svg'}" alt="Oyeola"></a><nav class="nav-links" aria-label="Primary navigation"><a class="${active === 'services' ? 'active' : ''}" href="${root}services.html">Services</a><a class="${active === 'work' ? 'active' : ''}" href="${root}work.html">Work</a><a class="${active === 'demos' ? 'active' : ''}" href="${root}demos.html">Interactive Demos</a><a class="${active === 'about' ? 'active' : ''}" href="${root}about.html">About</a><a class="${active === 'contact' ? 'active' : ''}" href="${root}contact.html">Contact</a><button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme"><span data-theme-icon>${theme==='light'?'☀':'◐'}</span></button><a class="btn small" href="${root}start-here.html">Start a Project</a></nav><button class="menu-btn" aria-label="Open navigation" aria-expanded="false">Menu</button></div></header>`;
   }
-
-  let icon
 
   let icon = document.querySelector('link[rel="icon"]');
   if (!icon) {
@@ -38,8 +34,6 @@
   if (footer) {
     footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-light.svg?v=20261005" alt="Oyeola"></a><p>Websites, interactive customer experiences and digital systems built around what people need to do next.</p></div><div><strong>Explore</strong><p><a href="${root}services.html">Services</a><br><a href="${root}work.html">Work</a><br><a href="${root}demos.html">Interactive Demos</a><br><a href="${root}about.html">About</a></p></div><div><strong>Capabilities</strong><p><a href="${root}websites.html">Website Design</a><br><a href="${root}operations.html">Operations Systems</a><br><a href="${root}digital-planners.html">Digital Planners</a><br><a href="${root}testimonials.html">Testimonials</a></p></div><div><strong>Contact</strong><p><a href="${root}contact.html">Start a project</a><br><a href="mailto:oyeolawebmaster@gmail.com">Email</a><br><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener">LinkedIn</a><br><a href="${root}privacy.html">Privacy</a></p></div></div><div class="footer-bottom"><span>© 2026 Oyeola</span><span>Websites people can use, not just look at.</span></div></div></footer>`;
   }
-
-  const themeToggle
 
   const themeToggle = $('.theme-toggle');
   const applyTheme = next => {
