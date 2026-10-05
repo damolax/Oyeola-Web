@@ -11,7 +11,7 @@
   const isHome = path === '/' || /\/index(?:\.html)?$/.test(path);
   const active = isHome ? 'home'
     : path.includes('/case-studies/') || /\/work(?:\.html)?$/.test(path) ? 'work'
-    : path.includes('demos') || path.includes('demo-') || path.includes('smart-match') || path.includes('configure') || path.includes('planner-demo') ? 'demos'
+    : path.includes('demos') || path.includes('demo-') || path.includes('experience-') || path.includes('smart-match') || path.includes('configure') || path.includes('planner-demo') ? 'demos'
     : path.includes('/services/') || path.includes('services') || path.includes('websites') || path.includes('operations') || path.includes('digital-planners') ? 'services'
     : path.includes('about') ? 'about'
     : path.includes('contact') || path.includes('start-here') ? 'contact' : '';
