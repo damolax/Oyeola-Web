@@ -295,3 +295,10 @@ html[data-theme="light"] .cfg-tools-panel>button,
 html[data-theme="light"] .cfg-tools-head button,
 html[data-theme="light"] .cfg-modal-head button{color:#0a140c!important}
 @media(max-width:720px){.cfg-shell{width:min(calc(100% - 28px),1220px)}.cfg-hero{padding:48px 0}.cfg-section,.cfg-result-section{padding:48px 0}}
+
+/* Simplified public presentation */
+.cfg-page .cfg-problem,
+.cfg-page #business-view{display:none!important}
+.cfg-page #how-it-works{padding-top:52px!important;padding-bottom:52px!important}
+.cfg-page .cfg-final{padding:64px 0!important}
+.cfg-page .cfg-final h2{max-width:860px;margin-inline:auto}
