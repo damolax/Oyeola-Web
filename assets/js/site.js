@@ -160,6 +160,48 @@
     }));
   }
 
+  const enhanceFeatureRail = grid => {
+    if (!grid || grid.dataset.railReady === 'true' || grid.children.length < 2) return;
+    grid.dataset.railReady = 'true';
+
+    const rail = document.createElement('div');
+    rail.className = 'feature-rail';
+    const parent = grid.parentNode;
+    parent.insertBefore(rail, grid);
+    rail.appendChild(grid);
+
+    const controls = document.createElement('div');
+    controls.className = 'feature-rail-controls';
+    controls.innerHTML = '<button type="button" class="feature-rail-btn feature-rail-prev" aria-label="Previous features">←</button><button type="button" class="feature-rail-btn feature-rail-next" aria-label="Next features">→</button>';
+    rail.appendChild(controls);
+
+    const prev = $('.feature-rail-prev', controls);
+    const next = $('.feature-rail-next', controls);
+
+    const scrollAmount = () => {
+      const first = grid.firstElementChild;
+      if (!first) return Math.max(280, grid.clientWidth * .78);
+      const style = getComputedStyle(grid);
+      const gap = parseFloat(style.columnGap || style.gap || 0) || 0;
+      return first.getBoundingClientRect().width + gap;
+    };
+
+    const update = () => {
+      const max = Math.max(0, grid.scrollWidth - grid.clientWidth);
+      prev.disabled = grid.scrollLeft <= 4;
+      next.disabled = grid.scrollLeft >= max - 4;
+      rail.classList.toggle('feature-rail-static', max <= 4);
+    };
+
+    prev.addEventListener('click', () => grid.scrollBy({left:-scrollAmount(),behavior:'smooth'}));
+    next.addEventListener('click', () => grid.scrollBy({left:scrollAmount(),behavior:'smooth'}));
+    grid.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    requestAnimationFrame(update);
+  };
+
+  $('.feature-grid').forEach(enhanceFeatureRail);
+
   $('.project-card').forEach(card => {
     const preview = $('.browser-mockup', card);
     const link = $('.text-link[href]', card);
@@ -175,7 +217,7 @@
     });
   });
 
-  const workFilters = $('[data-work-filter]');
+  const workFilters = $$('[data-work-filter]');
   if (workFilters.length) {
     const cards = $$('.project-card');
     workFilters.forEach(button => button.addEventListener('click', () => {
