@@ -200,9 +200,9 @@
     requestAnimationFrame(update);
   };
 
-  $('.feature-grid').forEach(enhanceFeatureRail);
+  $$('.feature-grid').forEach(enhanceFeatureRail);
 
-  $('.project-card').forEach(card => {
+  $$('.project-card').forEach(card => {
     const preview = $('.browser-mockup', card);
     const link = $('.text-link[href]', card);
     if (!preview || !link || preview.tagName === 'A' || preview.dataset.projectLinked) return;
