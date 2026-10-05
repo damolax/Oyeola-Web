@@ -58,5 +58,5 @@
     const items=await get('review'); if(!items.length)return;
     host.innerHTML=items.map(i=>{const d=i.data||{},stars='★'.repeat(Math.max(1,Math.min(5,Number(d.rating)||5)));return `<article class="review-card"><div class="testimonial-stars">${stars}</div><span class="proof-tag">${d.service||'Client project'}</span><blockquote>“${d.full_review||i.excerpt||''}”</blockquote><div class="review-meta"><strong>${d.source||'Client feedback'}</strong><span>${d.project_slug||d.reviewer_label||''}</span></div></article>`}).join('');
   }
-  hydrateStats(); hydrateFeaturedReviews(); hydrateProjects(); hydratePlannerProjects(); hydrateTestimonials();
+  hydrateStats(); hydrateProjects(); hydratePlannerProjects(); hydrateTestimonials();
 })();
