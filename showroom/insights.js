@@ -1,18 +1,368 @@
 (()=>{'use strict';
 const projects={
- arc:{name:'Arc & Acre',type:'Landscape & outdoor design',tone:'#244838',intro:'A premium outdoor-design journey that moves from inspiration to a well-structured project enquiry.',wins:[['Show the result first','Large outdoor photography and project pages help visitors picture the space they want.'],['Keep the choice simple','Garden, poolside and courtyard paths reduce the decisions needed to get started.'],['Capture a useful brief','The project builder lets a visitor choose their space, budget and timeline, then copy or prepare an email.']],references:[['Yardzen','https://yardzen.com/','Strong design packages and quiz. Arc & Acre tests a shorter route to an initial brief.'],['Bower & Branch','https://bowerandbranch.com/pages/design-studio','Clear design process. Arc & Acre puts the service type choice earlier.'],['ShrubHub','https://www.shrubhub.com/','3D visuals and pricing. Arc & Acre chooses a quieter, editorial presentation.']],status:'Original website concept · Example projects and imagery'},
- still:{name:'Stillform',type:'Reformer Pilates & wellness',tone:'#203B40',intro:'A calm studio experience built around helping a new visitor pick a class without feeling lost.',wins:[['Give beginners a starting point','A short first-visit guide and class finder recommend a suitable example class.'],['Make the timetable usable','People can filter sample sessions by day, level and time of day.'],['Make the next step clear','Each class leads to a detailed page and an enquiry summary, without implying a confirmed booking.']],references:[['Elroisè Wellness Center','https://www.elroisewellnesscenter.com/','Clearly presents services and booking details. Stillform focuses narrowly on Pilates class fit.'],['BR Reformer Studios','https://brreformerstudios.com/lagos-membership/','Offers clear membership routes. Stillform lets visitors explore example class times first.'],['Sage & She Wellness','https://www.sageandshewellness.com/pricing','Shows packs and class options. Stillform adds a guided first-class suggestion.']],status:'Original website concept · No real class availability'},
- pet:{name:'Kindred Pet',type:'Veterinary & pet care',tone:'#184C4A',intro:'A caring veterinary-style website designed to help pet owners understand care options and find the next step.',wins:[['Start with a real question','Service paths explain routine care, new pets, dental topics and sick visits in simple language.'],['Separate urgent situations','Emergency guidance stays visible. The example guide does not pretend to diagnose an animal.'],['Prepare without guessing','A first-visit checklist and clear enquiry brief explain what happens next.']],references:[['Modern Animal','https://www.modernanimal.com/','Helpful clinic and care discovery. Kindred Pet starts with a clear visit topic.'],['Bond Vet','https://bondvet.com/','Distinct urgent and primary care. Kindred Pet makes the emergency route especially visible.'],['Small Door Veterinary','https://www.smalldoorvet.com/','Easy booking and service explanation. Kindred Pet prioritises first-visit preparation.']],status:'Original website concept · Not a veterinary provider'},
- objects:{name:'Objects In Motion',type:'Kinetic sculpture & artist portfolio',tone:'#2A3836',intro:'An art-led experience that treats each kinetic sculpture as a distinctive work, while making commissions straightforward to enquire about.',wins:[['Make the artwork the hero','Large photography and motion-led presentation give the sculptures space to tell their story.'],['Invite deeper exploration','Work details, collecting information and an in-room visualisation route turn browsing into informed interest.'],['Clarify the commission journey','A dedicated commission path helps collectors move from inspiration to a useful request.']],references:[['Studio DRIFT','https://studiodrift.com/','A strong art-first presentation. This site puts one artist’s available work and commissions closer to the front.'],['Random International','https://www.random-international.com/','Immersive installation storytelling. This site is geared to collectors of individual kinetic pieces.'],['teamLab','https://www.teamlab.art/','Makes the artistic experience central. This site pairs visual storytelling with practical commission paths.']],status:'Client review website · Not presented as the live shop'},
- apartment:{name:'Arbequina Apartment',type:'Holiday apartment & travel',tone:'#24483F',intro:'A destination-led apartment website where the guest can see the stay, understand the location and move towards an enquiry.',wins:[['Sell the stay, not just a listing','A photo-led first impression places the property and amenities before distractions.'],['Answer practical questions early','Guests can explore the apartment, gallery, local area and stay information in separate clear pages.'],['Bring availability closer','A prominent check-availability path is accessible from the home page and mobile experience.']],references:[['Airbnb','https://www.airbnb.com/','Broad discovery and guest reviews. A dedicated property site can keep attention on one particular stay.'],['Plum Guide','https://www.plumguide.com/','Strong curated-property storytelling. This site focuses on one apartment and its local details.'],['Vrbo','https://www.vrbo.com/','Rich rental search and guest information. This site offers a simpler single-property experience.']],status:'Published property website · Booking availability depends on connected provider'},
- tillman:{name:'Tillman Tough',type:'Professional tools & equipment',tone:'#2D4038',intro:'A business buying experience built to help contractors find exact items and build a useful commercial request.',wins:[['Search like a trade buyer','Search by product, model, brand or SKU rather than relying on category browsing.'],['Compare with confidence','Product pages and comparisons help buyers review alternatives before contacting the seller.'],['Handle business purchasing','Bulk-order, sourcing and quote routes are more helpful than one generic contact form.']],references:[['Grainger','https://www.grainger.com/','Deep industrial catalogue and procurement functions. This preview focuses on a clear quote-first journey.'],['Zoro','https://www.zoro.com/','Broad product search and purchasing. This preview surfaces business buying tools prominently.'],['McMaster-Carr','https://www.mcmaster.com/','Exceptional specification-first catalogue navigation. This preview also guides users through sourcing enquiries.']],status:'Commercial website preview · Catalogue is for review; not a live checkout'}
+ "arc": {
+  "name": "Arc & Acre",
+  "type": "Landscape design · Premium enquiries",
+  "tone": "#244838",
+  "intro": "If you design beautiful outdoor spaces, your visitors need to picture what is possible before they request a quote. This website turns that first spark of interest into a clear project conversation.",
+  "potential": "Instead of losing an interested visitor after they browse a gallery, you give them a simple way to describe their space, priorities and budget. That could mean fewer vague messages and more useful project enquiries.",
+  "wins": [
+   [
+    "Turn beautiful photography into business",
+    "Your visitors see gardens, pools and courtyards in context, then move directly to the service that matches their vision. Every image has a job beyond looking good."
+   ],
+   [
+    "Remove the 'where do I start?' problem",
+    "Three clear outdoor-service paths help your prospects self-select, without working through a long menu of offers or complicated packages."
+   ],
+   [
+    "Make enquiries easier to qualify",
+    "The interactive brief collects project type, style, budget and timing. Your prospect can review the summary before contacting you, so the first conversation can start further along."
+   ]
+  ],
+  "references": [
+   [
+    "Yardzen",
+    "https://yardzen.com/",
+    "Yardzen makes its design packages and planning quiz easy to discover. Your version could offer a quicker first enquiry for people who want to discuss an individual project before selecting a package."
+   ],
+   [
+    "Bower & Branch",
+    "https://bowerandbranch.com/pages/design-studio",
+    "Bower & Branch explains its process and plant expertise. Your version could put the visitor's immediate choice, garden, courtyard or poolside, closer to the top."
+   ],
+   [
+    "ShrubHub",
+    "https://www.shrubhub.com/",
+    "ShrubHub puts 3D concepts and package pricing front and centre. Your version could use a calmer, luxury-focused presentation and a short project brief to attract considered enquiries."
+   ]
+  ],
+  "platforms": [
+   [
+    "Webflow",
+    "Suggested for an editorial portfolio, polished interactions and project CMS."
+   ],
+   [
+    "Wix Studio",
+    "A good option for easy visual updates, responsive design and enquiry forms."
+   ],
+   [
+    "WordPress",
+    "A strong option for a larger project library, SEO articles and flexible forms."
+   ]
+  ],
+  "status": "Original portfolio concept. Images and example projects are illustrative."
+ },
+ "still": {
+  "name": "Stillform",
+  "type": "Wellness studio · Class discovery",
+  "tone": "#203B40",
+  "intro": "If someone is curious about Pilates but has never booked a class, confusion can stop them. This design answers the questions that often come before a first visit.",
+  "potential": "When a prospect knows which class suits their level, what to expect and how to take the next step, they have more reasons to enquire rather than keep searching. A real booking calendar could turn that interest into a reservation.",
+  "wins": [
+   [
+    "Give first-timers confidence",
+    "Your new visitors can follow a short class finder, read a first-visit guide and see why a particular class might suit them. They do not need to understand Pilates jargon first."
+   ],
+   [
+    "Make class choice feel simple",
+    "A timetable filters by day, experience and time, saving visitors from scrolling through every session to find one they can attend."
+   ],
+   [
+    "Keep the enquiry close to the class",
+    "Each detailed class page leads to an enquiry with a summary of the visitor's choices. A production version could connect this journey to real availability and payments."
+   ]
+  ],
+  "references": [
+   [
+    "Elroisè Wellness Center",
+    "https://www.elroisewellnesscenter.com/",
+    "Elroisè presents wellness services and ways to book. Your version could focus the entire first impression on helping someone choose a Pilates class."
+   ],
+   [
+    "BR Reformer Studios",
+    "https://brreformerstudios.com/lagos-membership/",
+    "BR makes packages and membership options discoverable. Your version could first help a visitor identify an appropriate class and time before asking them to commit to a plan."
+   ],
+   [
+    "Sage & She Wellness",
+    "https://www.sageandshewellness.com/pricing",
+    "Sage & She shows class options and pricing. Your version could guide a beginner to one recommended class instead of leaving them to compare every option alone."
+   ]
+  ],
+  "platforms": [
+   [
+    "Wix Studio",
+    "Suggested for a visually rich studio site with connected scheduling and memberships."
+   ],
+   [
+    "WordPress",
+    "Flexible for class schedules, booking plugins, subscriptions and SEO content."
+   ],
+   [
+    "Webflow",
+    "Good for expressive branding when paired with a genuine booking provider."
+   ]
+  ],
+  "status": "Original studio concept. Timetable sessions are examples, not live bookable slots."
+ },
+ "pet": {
+  "name": "Kindred Pet",
+  "type": "Veterinary practice · Clear care paths",
+  "tone": "#184C4A",
+  "intro": "When someone's pet needs care, they want reassurance and a clear next step, not a confusing website. This design helps people understand their options and know when to contact a real clinic.",
+  "potential": "A clearer difference between routine visits, new-pet care and urgent help could reduce hesitation and misdirected enquiries. Visitors are more likely to find the right information before contacting your practice.",
+  "wins": [
+   [
+    "Answer the question behind the search",
+    "Clear pages for wellness, new pets, dental health and sick visits help visitors find relevant information without decoding a long list of medical services."
+   ],
+   [
+    "Make urgent situations unmistakable",
+    "Emergency guidance has its own prominent route. This is essential for trust because an ordinary contact form must never look like an emergency service."
+   ],
+   [
+    "Prepare pet owners for a first appointment",
+    "A first-visit guide and visit-type chooser explain useful next steps. With a real clinic connected, this journey could lead to better-prepared appointment requests."
+   ]
+  ],
+  "references": [
+   [
+    "Modern Animal",
+    "https://www.modernanimal.com/",
+    "Modern Animal makes clinics and care options discoverable. Your version could introduce the visit purpose before asking the visitor to find a location."
+   ],
+   [
+    "Bond Vet",
+    "https://bondvet.com/",
+    "Bond Vet distinguishes wellness and urgent care. Your version could make the emergency instructions even more immediately visible across the site."
+   ],
+   [
+    "Small Door Veterinary",
+    "https://www.smalldoorvet.com/",
+    "Small Door explains its services and membership approach. Your version could give first-time pet owners a shorter checklist and clearer starting point."
+   ]
+  ],
+  "platforms": [
+   [
+    "WordPress",
+    "Suggested for structured service pages, searchable information and real clinic integrations."
+   ],
+   [
+    "Wix Studio",
+    "Useful for a manageable practice site, contact workflows and supported bookings."
+   ],
+   [
+    "Webflow",
+    "Good for strong visual presentation with an integrated third-party scheduler."
+   ]
+  ],
+  "status": "Original veterinary website concept, not a medical provider. No real appointments or clinical outcomes are claimed."
+ },
+ "objects": {
+  "name": "Objects In Motion",
+  "type": "Artist portfolio · Collector enquiries",
+  "tone": "#2A3836",
+  "intro": "If you create one-of-a-kind work, a basic gallery rarely tells its full story. This design presents the artwork as an experience, then makes the commission route easy to find.",
+  "potential": "Visitors can understand the detail and craft behind individual pieces before reaching out. That can create better-informed collector conversations instead of a generic 'How much?' message.",
+  "wins": [
+   [
+    "Give each piece room to impress",
+    "Large imagery and individual artwork pages make the objects themselves the focal point, letting potential collectors appreciate movement, scale and craftsmanship."
+   ],
+   [
+    "Help a prospect imagine ownership",
+    "Dedicated work pages, collection information and an in-room viewing concept move the visitor from interest to a more concrete idea of the piece in their space."
+   ],
+   [
+    "Make commissions a natural next step",
+    "A visible commission journey encourages serious prospects to share what they have in mind, rather than leaving them to hunt for a contact address."
+   ]
+  ],
+  "references": [
+   [
+    "Studio DRIFT",
+    "https://studiodrift.com/",
+    "Studio DRIFT makes artistic storytelling central. Your website could take that immersive approach while giving individual buyers a more obvious commission route."
+   ],
+   [
+    "Random International",
+    "https://www.random-international.com/",
+    "Random International foregrounds its installations and concepts. Your version could connect those visual moments to specific available works and enquiry choices."
+   ],
+   [
+    "teamLab",
+    "https://www.teamlab.art/",
+    "teamLab puts the experience of art first. Your portfolio could borrow that sense of wonder while keeping collection and commission information close at hand."
+   ]
+  ],
+  "platforms": [
+   [
+    "Webflow",
+    "Suggested for art-led layouts, fine animation and structured artwork collections."
+   ],
+   [
+    "Wix Studio",
+    "Great for an artist-managed portfolio with flexible galleries and forms."
+   ],
+   [
+    "WordPress",
+    "Useful for larger archives, exhibitions, articles and custom enquiries."
+   ]
+  ],
+  "status": "Client review build. The displayed preview is not represented as the artist's live shop."
+ },
+ "apartment": {
+  "name": "Arbequina Apartment",
+  "type": "Hospitality · Guest enquiries",
+  "tone": "#24483F",
+  "intro": "If you own a holiday property, guests want to imagine staying there and quickly answer practical questions. This design makes that journey feel more personal than a crowded listings page.",
+  "potential": "Instead of sending guests through multiple unrelated property listings, this site gives your apartment their full attention. Clear amenities, room photos and availability links could turn interest into more qualified direct enquiries.",
+  "wins": [
+   [
+    "Show the stay before the sales pitch",
+    "Large property images and a warm first impression help visitors picture the apartment, its surroundings and the experience they'll have."
+   ],
+   [
+    "Answer booking doubts early",
+    "Separate apartment, gallery and area pages give guests the facts they need, like room arrangements, local amenities and the neighbourhood."
+   ],
+   [
+    "Make the availability path obvious",
+    "A visible availability action on desktop and mobile helps an interested guest move to the next step without starting their search over again."
+   ]
+  ],
+  "references": [
+   [
+    "Airbnb",
+    "https://www.airbnb.com/",
+    "Airbnb is excellent at discovery and social proof. Your dedicated site could keep attention on your own property and give guests a direct relationship with you."
+   ],
+   [
+    "Plum Guide",
+    "https://www.plumguide.com/",
+    "Plum Guide invests in curated home storytelling. Your site could offer that editorial feeling while providing detailed information about one particular stay."
+   ],
+   [
+    "Vrbo",
+    "https://www.vrbo.com/",
+    "Vrbo supports browsing many rentals. Your property website could reduce distractions by concentrating on a single apartment and its direct-booking journey."
+   ]
+  ],
+  "platforms": [
+   [
+    "Wix Studio",
+    "Suggested for polished hospitality pages and an owner-friendly editing experience."
+   ],
+   [
+    "WordPress",
+    "Strong for property content, local SEO and connecting an established booking engine."
+   ],
+   [
+    "Webflow",
+    "Good for an editorial property experience paired with a real booking system."
+   ]
+  ],
+  "status": "Published property website. Availability and booking confirmation depend on the connected booking provider."
+ },
+ "tillman": {
+  "name": "Tillman Tough",
+  "type": "Commercial tools · Quote requests",
+  "tone": "#2D4038",
+  "intro": "If your customers buy tools for serious work, they often know the exact part, brand or model they need. This site is organised around that buying behaviour.",
+  "potential": "Faster part discovery, useful comparisons and a separate business quote journey could help more buyers find what they came for. Instead of abandoning a long catalogue, they can prepare a sourcing or bulk-order request.",
+  "wins": [
+   [
+    "Let trade buyers search their way",
+    "Search for product names, SKUs, models and brands helps customers arrive at a relevant item without navigating several catalogue levels."
+   ],
+   [
+    "Reduce uncertainty before the quote",
+    "Product detail and comparison tools make it easier to check the fit of different items before committing to a purchase enquiry."
+   ],
+   [
+    "Build a path for bigger orders",
+    "Dedicated bulk order, sourcing and quote flows acknowledge that commercial procurement is different from a consumer checkout."
+   ]
+  ],
+  "references": [
+   [
+    "Grainger",
+    "https://www.grainger.com/",
+    "Grainger offers extensive industrial product discovery and procurement support. Your site could present a smaller, tailored catalogue with a highly visible quote path."
+   ],
+   [
+    "Zoro",
+    "https://www.zoro.com/",
+    "Zoro is built around broad supply search and purchasing. Your version could give contractors faster access to bulk and sourcing enquiries."
+   ],
+   [
+    "McMaster-Carr",
+    "https://www.mcmaster.com/",
+    "McMaster-Carr excels at specification-led navigation. Your catalogue could use exact part search and product comparisons while making customer support easy to request."
+   ]
+  ],
+  "platforms": [
+   [
+    "WordPress",
+    "Suggested with WooCommerce for a scalable catalogue, product data and quote extensions."
+   ],
+   [
+    "Wix Studio",
+    "An option for a smaller catalogue and enquiries with supported integrations."
+   ],
+   [
+    "Webflow",
+    "Good for an editorial B2B presentation with external commerce/quote tools."
+   ]
+  ],
+  "status": "Client commercial preview. Catalogue and purchasing paths are not presented as live fulfilment."
+ }
 };
 const current=(()=>{const explicit=document.currentScript?.getAttribute('data-project');if(explicit&&projects[explicit])return explicit;const path=location.pathname; if(path.includes('arc-and-acre'))return'arc';if(path.includes('stillform'))return'still';if(path.includes('kindred-pet'))return'pet';const param=new URLSearchParams(location.search).get('site');return projects[param]?param:null})();
-let shell,root,trigger,backdrop,panel,lastFocus;
+let shell,root,trigger,backdrop,panel,lastFocus,selectedId=current;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
-const styles=`:host{all:initial}*,*::before,*::after{box-sizing:border-box}.widget{font-family:Arial,Helvetica,sans-serif;color:#21392E}.trigger{position:fixed;right:22px;bottom:23px;z-index:2147483000;display:flex;align-items:center;gap:10px;border:1px solid #d5e6d5;border-radius:100px;background:#183E2D;color:#fff;padding:13px 17px;box-shadow:0 10px 32px #021a1440;font-size:12px;font-weight:700;letter-spacing:.01em;cursor:pointer;min-height:48px;transition:transform .2s}.trigger:hover{transform:translateY(-3px)}.trigger span:first-child{font-size:18px;line-height:1}.backdrop{position:fixed;inset:0;background:#09251ac9;z-index:2147483001;display:none;align-items:center;justify-content:flex-end;padding:18px}.backdrop.open{display:flex}.panel{width:min(540px,100%);height:min(785px,calc(100vh - 36px));border-radius:20px;background:#F9F8F2;box-shadow:0 28px 75px #001b1659;display:flex;flex-direction:column;overflow:hidden;color:#1B3127}.panel-top{background:#183E2D;color:#fff;padding:28px 28px 24px;display:flex;justify-content:space-between;align-items:flex-start;gap:15px}.panel-top p{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:#D0E5D1;margin:0 0 14px;font-weight:700}.panel-top h2{font:400 38px/1.04 Georgia,serif;letter-spacing:-.04em;margin:0}.panel-top .desc{font-size:12px;color:#D8E9DC;line-height:1.55;margin:11px 0 0}.close{border:1px solid #ffffff69;border-radius:50%;background:transparent;color:#fff;min-width:37px;min-height:37px;font-size:23px;cursor:pointer}.scroll{overflow:auto;padding:24px 28px 30px;overscroll-behavior:contain}.eyebrow{font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#467259;margin:0 0 14px}.intro{font-size:14px;line-height:1.65;margin:0 0 22px;color:#40564B}.wins{list-style:none;padding:0;margin:0 0 30px}.wins li{padding:16px 0;border-top:1px solid #D5E0D6;display:flex;gap:15px}.wins .n{color:#A26B4D;font:400 22px Georgia,serif;min-width:30px}.wins b{display:block;font-size:13px;margin-bottom:6px}.wins p{font-size:12px;color:#53665B;line-height:1.6;margin:0}.ref{border:1px solid #D8E4D9;border-radius:10px;padding:14px;margin-bottom:10px;background:#fff}.ref a{font-size:13px;color:#1F5A40;text-decoration:underline;text-underline-offset:3px;font-weight:700}.ref p{font-size:12px;color:#53665B;line-height:1.6;margin:7px 0 0}.note{font-size:11px;color:#607165;line-height:1.6;margin-top:16px}.status{border-top:1px solid #D8E4D9;padding-top:12px;color:#496354}.foot{display:flex;gap:11px;align-items:center;justify-content:space-between;padding:16px 28px;background:#EBF3E9;border-top:1px solid #D4E2D7;font-size:11px}.foot a{color:#194C35;font-weight:800;text-decoration:underline}.foot button{border:1px solid #1F4B32;background:#1F4B32;color:#fff;border-radius:100px;padding:11px 14px;font-size:11px;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #D28B6B;outline-offset:3px}@media(max-width:580px){.trigger{right:13px;bottom:13px;padding:12px 14px}.backdrop{padding:0}.panel{border-radius:0;width:100vw;height:100dvh;max-height:none}.panel-top{padding:21px}.panel-top h2{font-size:32px}.scroll{padding:21px}.foot{padding:12px 20px}}@media(prefers-reduced-motion:reduce){.trigger{transition:none}}`;
-function create(){if(shell)return;shell=document.createElement('div');shell.id='oyeola-insight-widget';document.body.appendChild(shell);root=shell.attachShadow({mode:'open'});const st=document.createElement('style');st.textContent=styles;root.append(st);const host=document.createElement('div');host.className='widget';root.append(host);host.innerHTML='<button type="button" class="trigger" aria-label="Read Oyeola Web design notes"><span aria-hidden="true">✦</span><span>Why this design?</span></button><div class="backdrop" aria-hidden="true"><section role="dialog" aria-modal="true" aria-labelledby="notes-heading" class="panel"><div class="panel-top"><div><p>Oyeola Web / The thinking behind it</p><h2 id="notes-heading">Design notes</h2><p class="desc">Why this experience was built this way</p></div><button class="close" type="button" aria-label="Close design notes">×</button></div><div class="scroll"></div><div class="foot"><a href="/showroom" target="_blank" rel="noopener">See all websites ↗</a><button class="foot-close" type="button">Back to website ↗</button></div></section></div>';trigger=host.querySelector('.trigger');backdrop=host.querySelector('.backdrop');panel=host.querySelector('.panel');trigger.addEventListener('click',()=>open(current||'arc'));host.querySelector('.close').addEventListener('click',close);host.querySelector('.foot-close').addEventListener('click',close);backdrop.addEventListener('click',e=>{if(e.target===backdrop)close()});document.addEventListener('keydown',e=>{if(!backdrop.classList.contains('open'))return;if(e.key==='Escape'){e.preventDefault();close()}if(e.key==='Tab'){const items=[...root.querySelectorAll('button,a')].filter(el=>el.offsetParent!==null);const first=items.find(el=>el!==trigger),last=items.at(-1);if(e.shiftKey&&root.activeElement===first){e.preventDefault();last?.focus()}else if(!e.shiftKey&&root.activeElement===last){e.preventDefault();first?.focus()}}})}
-function open(id){const p=projects[id];if(!p)return;create();lastFocus=document.activeElement;panel.querySelector('.panel-top').style.background=p.tone;panel.querySelector('#notes-heading').textContent=p.name;panel.querySelector('.desc').textContent=p.type;panel.querySelector('.scroll').innerHTML='<p class="eyebrow">The idea</p><p class="intro">'+esc(p.intro)+'</p><p class="eyebrow">Three decisions behind the design</p><ol class="wins">'+p.wins.map((v,i)=>'<li><span class="n">0'+(i+1)+'</span><div><b>'+esc(v[0])+'</b><p>'+esc(v[1])+'</p></div></li>').join('')+'</ol><p class="eyebrow">Industry reference points</p>'+p.references.map(v=>'<div class="ref"><a href="'+esc(v[1])+'" rel="noopener noreferrer" target="_blank">'+esc(v[0])+' ↗</a><p>'+esc(v[2])+'</p></div>').join('')+'<p class="note status">'+esc(p.status)+'</p><p class="note">These are design comparisons and ideas to test, not evidence of higher conversions or superior performance.</p>';backdrop.classList.add('open');backdrop.setAttribute('aria-hidden','false');panel.querySelector('.scroll').scrollTop=0;panel.querySelector('.close').focus();}
+const styles=`:host{all:initial}*,*::before,*::after{box-sizing:border-box}.widget{font-family:Arial,Helvetica,sans-serif;color:#21392E}.trigger{position:fixed;right:22px;bottom:23px;z-index:2147483000;display:flex;align-items:center;gap:10px;border:1px solid #d5e6d5;border-radius:100px;background:#183E2D;color:#fff;padding:13px 17px;box-shadow:0 10px 32px #021a1440;font-size:12px;font-weight:700;letter-spacing:.01em;cursor:pointer;min-height:48px;transition:transform .2s}.trigger:hover{transform:translateY(-3px)}.trigger span:first-child{font-size:18px;line-height:1}.backdrop{position:fixed;inset:0;background:#09251ac9;z-index:2147483001;display:none;align-items:center;justify-content:flex-end;padding:18px}.backdrop.open{display:flex}.panel{width:min(540px,100%);height:min(785px,calc(100vh - 36px));border-radius:20px;background:#F9F8F2;box-shadow:0 28px 75px #001b1659;display:flex;flex-direction:column;overflow:hidden;color:#1B3127}.panel-top{background:#183E2D;color:#fff;padding:28px 28px 24px;display:flex;justify-content:space-between;align-items:flex-start;gap:15px}.panel-top p{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:#D0E5D1;margin:0 0 14px;font-weight:700}.panel-top h2{font:400 38px/1.04 Georgia,serif;letter-spacing:-.04em;margin:0}.panel-top .desc{font-size:12px;color:#D8E9DC;line-height:1.55;margin:11px 0 0}.close{border:1px solid #ffffff69;border-radius:50%;background:transparent;color:#fff;min-width:37px;min-height:37px;font-size:23px;cursor:pointer}.scroll{overflow:auto;padding:24px 28px 30px;overscroll-behavior:contain}.eyebrow{font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#467259;margin:0 0 14px}.intro{font-size:14px;line-height:1.65;margin:0 0 22px;color:#40564B}.wins{list-style:none;padding:0;margin:0 0 30px}.wins li{padding:16px 0;border-top:1px solid #D5E0D6;display:flex;gap:15px}.wins .n{color:#A26B4D;font:400 22px Georgia,serif;min-width:30px}.wins b{display:block;font-size:13px;margin-bottom:6px}.wins p{font-size:12px;color:#53665B;line-height:1.6;margin:0}.ref{border:1px solid #D8E4D9;border-radius:10px;padding:14px;margin-bottom:10px;background:#fff}.ref a{font-size:13px;color:#1F5A40;text-decoration:underline;text-underline-offset:3px;font-weight:700}.ref p{font-size:12px;color:#53665B;line-height:1.6;margin:7px 0 0}.note{font-size:11px;color:#607165;line-height:1.6;margin-top:16px}.status{border-top:1px solid #D8E4D9;padding-top:12px;color:#496354}.foot{display:flex;gap:11px;align-items:center;justify-content:space-between;padding:16px 28px;background:#EBF3E9;border-top:1px solid #D4E2D7;font-size:11px}.foot a{color:#194C35;font-weight:800;text-decoration:underline}.foot button{border:1px solid #1F4B32;background:#1F4B32;color:#fff;border-radius:100px;padding:11px 14px;font-size:11px;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #D28B6B;outline-offset:3px}@media(max-width:580px){.trigger{right:13px;bottom:13px;padding:12px 14px}.backdrop{padding:0}.panel{border-radius:0;width:100vw;height:100dvh;max-height:none}.panel-top{padding:21px}.panel-top h2{font-size:32px}.scroll{padding:21px}.foot{padding:12px 20px}}@media(prefers-reduced-motion:reduce){.trigger{transition:none}}
+.conversion{background:#E4EFE3;border-left:4px solid #4D8D60;border-radius:8px;padding:20px;margin:0 0 27px;color:#1A422B}
+.conversion p{font-size:10px;letter-spacing:.12em;font-weight:800;color:#397452;margin:0 0 9px}
+.conversion strong{display:block;font-size:13px;line-height:1.65;font-weight:700}
+.platform-heading{margin-top:29px!important}
+.platform-intro{font-size:12px;color:#53665B;line-height:1.65;margin:0 0 15px}
+.platform-rows{display:grid;gap:10px}
+.platform-row{border:1px solid #D9E6D8;border-radius:10px;background:#fff;padding:13px 15px}
+.platform-row.recommended{background:#EAF3E8;border-color:#AFD1B6}
+.platform-row>div{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.platform-row strong{font-size:13px}
+.platform-row p{font-size:12px;color:#53665B;line-height:1.6;margin:7px 0 0}
+.chosen{font-size:9px;letter-spacing:.045em;text-transform:uppercase;border-radius:99px;background:#245A3D;color:#fff;padding:4px 8px;font-weight:800}
+.consult{display:block;background:#245B3D;border-radius:40px;color:#fff!important;text-align:center;font-weight:800;font-size:12px;padding:16px;margin-top:24px;text-decoration:none}
+.consult:hover{background:#367653}
+`;
+function create(){if(shell)return;shell=document.createElement('div');shell.id='oyeola-insight-widget';document.body.appendChild(shell);root=shell.attachShadow({mode:'open'});const st=document.createElement('style');st.textContent=styles;root.append(st);const host=document.createElement('div');host.className='widget';root.append(host);host.innerHTML='<button type="button" class="trigger" aria-label="Read Oyeola Web design notes"><span aria-hidden="true">✦</span><span>Why this design?</span></button><div class="backdrop" aria-hidden="true"><section role="dialog" aria-modal="true" aria-labelledby="notes-heading" class="panel"><div class="panel-top"><div><p>Oyeola Web / For your business</p><h2 id="notes-heading">Design notes</h2><p class="desc">Why this experience was built this way</p></div><button class="close" type="button" aria-label="Close design notes">×</button></div><div class="scroll"></div><div class="foot"><a href="/showroom" target="_blank" rel="noopener">See all websites ↗</a><button class="foot-close" type="button">Back to website ↗</button></div></section></div>';trigger=host.querySelector('.trigger');backdrop=host.querySelector('.backdrop');panel=host.querySelector('.panel');trigger.addEventListener('click',()=>open(selectedId||current||'arc'));host.querySelector('.close').addEventListener('click',close);host.querySelector('.foot-close').addEventListener('click',close);backdrop.addEventListener('click',e=>{if(e.target===backdrop)close()});document.addEventListener('keydown',e=>{if(!backdrop.classList.contains('open'))return;if(e.key==='Escape'){e.preventDefault();close()}if(e.key==='Tab'){const items=[...root.querySelectorAll('button,a')].filter(el=>el.offsetParent!==null);const first=items.find(el=>el!==trigger),last=items.at(-1);if(e.shiftKey&&root.activeElement===first){e.preventDefault();last?.focus()}else if(!e.shiftKey&&root.activeElement===last){e.preventDefault();first?.focus()}}})}
+function open(id){
+const p=projects[id];if(!p)return;create();selectedId=id;lastFocus=document.activeElement;
+panel.querySelector('.panel-top').style.background=p.tone;
+panel.querySelector('#notes-heading').textContent=p.name;
+panel.querySelector('.desc').textContent=p.type;
+const winRows=p.wins.map((v,i)=>'<li><span class="n">0'+(i+1)+'</span><div><b>'+esc(v[0])+'</b><p>'+esc(v[1])+'</p></div></li>').join('');
+const competitorRows=p.references.map(v=>'<div class="ref"><a href="'+esc(v[1])+'" rel="noopener noreferrer" target="_blank">'+esc(v[0])+' ↗</a><p>'+esc(v[2])+'</p></div>').join('');
+const platformRows=p.platforms.map((v,i)=>'<div class="platform-row'+(i===0?' recommended':'')+'"><div><strong>'+esc(v[0])+'</strong>'+(i===0?'<span class="chosen">Suggested fit</span>':'')+'</div><p>'+esc(v[1])+'</p></div>').join('');
+panel.querySelector('.scroll').innerHTML=
+'<p class="eyebrow">Imagine this for your business</p>'+
+'<p class="intro">'+esc(p.intro)+'</p>'+
+'<div class="conversion"><p>THE BUSINESS OPPORTUNITY</p><strong>'+esc(p.potential)+'</strong></div>'+
+'<p class="eyebrow">Three ways this could help you win enquiries</p>'+
+'<ol class="wins">'+winRows+'</ol>'+
+'<p class="eyebrow">What competitors do well, and what you could do differently</p>'+
+competitorRows+
+'<p class="eyebrow platform-heading">Which platform should power your website?</p>'+
+'<p class="platform-intro">You can create a similar customer journey using Wix Studio, WordPress or Webflow. The right platform depends on how you want to manage content, enquiries, bookings and integrations.</p>'+
+'<div class="platform-rows">'+platformRows+'</div>'+
+'<p class="note status">'+esc(p.status)+'</p>'+
+'<p class="note">These are customer-experience opportunities and design hypotheses, not measured conversion rates or a promise to outperform the businesses linked above.</p>'+
+'<a class="consult" href="/contact.html">Discuss a website for your business ↗</a>';
+backdrop.classList.add('open');backdrop.setAttribute('aria-hidden','false');panel.querySelector('.scroll').scrollTop=0;panel.querySelector('.close').focus();
+}
 function close(){backdrop?.classList.remove('open');backdrop?.setAttribute('aria-hidden','true');if(lastFocus?.isConnected)lastFocus.focus();else trigger?.focus();}
 window.OyeolaInsights={open,projects};function init(){if(current){create();if(new URLSearchParams(location.search).get('insights')==='1')open(current)}document.querySelectorAll('[data-design-note]').forEach(b=>{b.addEventListener('click',e=>{e.preventDefault();open(b.getAttribute('data-design-note'))})})}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
