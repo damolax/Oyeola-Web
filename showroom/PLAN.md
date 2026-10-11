@@ -1,6 +1,6 @@
 # Oyeola Web | Five real website builds
 Created: 11 October 2026
-Status: website 01 built, websites 02–05 planned
+Status: websites 01 and 02 built; websites 03–05 planned
 
 These are **full multi-page websites**, not isolated feature demos. Every new brand is an **original concept**, not a claim that its business exists or that the images show its completed client projects. Do not invent customers, reviews, awards, team credentials, real booking availability or sales results.
 
@@ -30,18 +30,18 @@ These are **full multi-page websites**, not isolated feature demos. Every new br
 **Truth & media:** photo illustrations are credited to Unsplash, no real Arc & Acre client projects are claimed.
 
 ## 02 | Stillform | Reformer Pilates studio
-**Status:** design planned, not yet built.
+**Status: BUILT AND PUBLISHED.** Main URL: `/showroom/stillform/index.html`. 11 main/detail HTML pages, stylesheet, and JavaScript.
 **Brand:** warm modern wellness; soft movement, clear structure.
 **Colours:** deep blue-green #203A40; cream #F7F1E9; peach #E4B6A7; seafoam #D5E5DE; ink #19272B.
-**Fonts:** Fraunces (display, H1 72px desktop/44px mobile, H2 46px); Manrope (body 16px, buttons 13px, labels 11px).
-**Hero:** "Move well. Feel stronger." / "Pilates that fits your everyday life."
-**Features:** functional class timetable filter (level/day), clear first-class guidance, membership and pack comparison, instructor profiles only when verified, FAQ, booking handoff after genuine calendar connection.
-**Conversion goal:** first booking and intro-offer interest, with clear class level and time.
+**Fonts:** Fraunces (display, H1 clamp(67px,7.15vw,117px) desktop/59–77px mobile, H2 43–78px); Manrope (body 16px, buttons 11–12px, labels 10–11px).
+**Hero:** "Move how you feel." / "Strong movement. Calm mind. Your kind of pace."
+**Features implemented:** four class-detail pages; filterable example timetable (day, level, morning/evening); first-class chooser; starter guide; clear membership pathways without invented prices; enquiry form with live brief, copy/download and transparent mailto handoff. No fake live slots, checkouts, trainers or medical claims.
+**Conversion goal:** qualified first-class enquiry with clear class level and chosen time; live booking would require a real studio calendar.
 **Competitors:**
-1. Elroisè Wellness Center — https://www.elroisewellnesscenter.com/ — clear service categories and visible booking pricing. Improve with a dedicated new-visitor path rather than placing all services in one stream.
-2. BR Reformer Studios — https://brreformerstudios.com/lagos-membership/ — clear membership and intro offer. Improve with direct class-level filtering before committing to an offer.
-3. Sage & She — https://sageandshewellness.com/ — clear packs and community invite. Improve with an upfront "Which class fits me?" decision and simpler mobile schedule.
-**Why designed to help:** less confusion about first visit, level, price and booking. Measure intro click-through and booking completion after launch.
+1. Elroisè Wellness Center — https://www.elroisewellnesscenter.com/ — visible Pilates service lengths, book-now buttons and prices. Our proposed difference: dedicate the entire site to clear Pilates class levels and a first-visit route.
+2. BR Reformer Studios — https://brreformerstudios.com/lagos-membership/ — clear starter routes and membership choices. Our proposed difference: show class and time filters before a long membership decision.
+3. Sage & She — https://www.sageandshewellness.com/pricing — clear drop-in/class packs and varied class types. Our proposed difference: a short "Which class fits me?" tool that sends users straight to suitable class details.
+**Why designed to help:** fewer decisions before an enquiry; visible class difficulty; real class detail pages; relevant filtered example timetable; no unsupported prices or booking claims. This is an unmeasured UX hypothesis. Measure click-through and enquiry completion with a real studio analytics setup.
 
 ## 03 | Kindred Pet | Veterinary care
 **Status:** design planned, not yet built.
