@@ -13,3 +13,15 @@
 @media(max-width:720px){.headin{min-height:70px}.head nav{gap:15px;flex-wrap:wrap;justify-content:flex-end}.head nav a{font-size:11px}.head .nav-cta{display:none}.hero-layout{grid-template-columns:1fr}.hero{padding-top:70px}.hero-accent{display:none}.hero h1{font-size:clamp(56px,10.5vw,83px)}.collection-top{display:block}.collection-side{margin-top:18px}.site-count{display:none}.approach-grid{grid-template-columns:1fr}.approach-grid article{min-height:130px}.final-layout{display:block}.final-layout .btn{margin-top:28px}}
 @media(max-width:570px){.wrap{width:calc(100% - 34px)}.topbar{font-size:8px}.headin{gap:12px}.logo{font-size:22px}.head nav{gap:9px}.head nav a:not(.btn){font-size:10px}.head nav a[href="/work.html"]{display:none}.hero{padding:60px 0 17px}.hero h1{font-size:clamp(52px,12.2vw,72px)}.hero-lead{font-size:13px}.hero-actions{gap:9px}.hero-actions .btn{font-size:11px}.hero-base{margin-top:50px;font-size:9px}.collection{padding:69px 0 85px}.collection h2,.approach h2,.final-cta h2{font-size:clamp(42px,10.2vw,55px)}.project-grid{grid-template-columns:1fr;gap:21px}.site-content{padding:22px}.site-intro{min-height:0}.collection-top{margin-bottom:30px}.site-visual{aspect-ratio:1.45}.approach{padding:70px 0}.footer-main{display:block}.footer-main nav{margin-top:24px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.site-card,.site-visual img,.btn{transition:none!important;transform:none!important}}
+/* Reuse original Oyeola brand artwork from the main website. */
+.head .logo,.footer .logo{display:inline-flex;align-items:center;min-width:0;max-width:210px;flex-shrink:0;line-height:0}
+.head .logo .brand-logo,.footer .logo .brand-logo{width:205px;height:auto;max-width:100%;display:block;object-fit:contain}
+.footer .logo .brand-logo{filter:none;width:195px}
+.platform-suggestions{margin:0 0 19px;padding-top:14px;border-top:1px solid #e6ede4}
+.platform-caption{font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:#526F59;display:flex;justify-content:space-between;align-items:center;gap:9px}
+.best-label{color:#9B6248;font-size:9px;font-weight:700;letter-spacing:0;text-transform:none}
+.platform-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.platform-tags>span{font-size:10px;white-space:nowrap;padding:6px 9px;border-radius:5px;border:1px solid #d9e5d9;color:#516F5A;font-weight:700;background:#fafcf9}
+.platform-tags>span.preferred{background:#dceddf;border-color:#bedbc5;color:#195432}
+@media(max-width:720px){.head .logo,.footer .logo{max-width:175px}.head .logo .brand-logo{width:175px}}
+@media(max-width:570px){.headin{flex-wrap:wrap;justify-content:space-between}.head .logo,.footer .logo{max-width:165px}.head .logo .brand-logo{width:165px}}
