@@ -36,3 +36,5 @@ if(form){
  });
 }
 })();
+
+;(()=>{if(!document.querySelector('script[data-oyeola-insights]')){const el=document.createElement('script');el.src='/showroom/insights.js';el.dataset.oyeolaInsights='true';document.head.appendChild(el)}})();

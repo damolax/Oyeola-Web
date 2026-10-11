@@ -37,3 +37,5 @@ if(form){
  form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const s=getState();const subject=encodeURIComponent('Arc & Acre website enquiry from '+s.name);const body=encodeURIComponent(briefText(s));status.textContent='Your email app will open with the project brief. You must press Send there.';location.href='mailto:oyeolawebmaster@gmail.com?subject='+subject+'&body='+body});
 }
 })();
+
+;(()=>{if(!document.querySelector('script[data-oyeola-insights]')){const el=document.createElement('script');el.src='/showroom/insights.js';el.dataset.oyeolaInsights='true';document.head.appendChild(el)}})();
