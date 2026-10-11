@@ -937,3 +937,11 @@ html[data-theme="light"] .mobile-card-rail-btn{background:rgba(255,255,255,.96)!
 @media(max-width:820px){
   .service-grid,.feature-grid,.capability-strip{grid-template-columns:none!important}
 }
+
+/* Portfolio proof media */
+.project-video{border:1px solid var(--oy-line);border-radius:24px;overflow:hidden;background:#050706;box-shadow:var(--oy-shadow)}
+.project-video video{display:block;width:100%;height:auto;max-height:760px;background:#000}
+.project-fullpage{margin:0;border:1px solid var(--oy-line);border-radius:24px;overflow:hidden;background:#fff}
+.project-fullpage img{display:block;width:100%;height:auto}
+html[data-theme="light"] .project-video,
+html[data-theme="light"] .project-fullpage{border-color:rgba(23,74,31,.13)!important}
