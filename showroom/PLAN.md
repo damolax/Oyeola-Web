@@ -1,6 +1,6 @@
 # Oyeola Web | Five real website builds
 Created: 11 October 2026
-Status: websites 01 and 02 built; websites 03–05 planned
+Status: websites 01, 02 and 03 built; websites 04–05 planned
 
 These are **full multi-page websites**, not isolated feature demos. Every new brand is an **original concept**, not a claim that its business exists or that the images show its completed client projects. Do not invent customers, reviews, awards, team credentials, real booking availability or sales results.
 
@@ -44,18 +44,18 @@ These are **full multi-page websites**, not isolated feature demos. Every new br
 **Why designed to help:** fewer decisions before an enquiry; visible class difficulty; real class detail pages; relevant filtered example timetable; no unsupported prices or booking claims. This is an unmeasured UX hypothesis. Measure click-through and enquiry completion with a real studio analytics setup.
 
 ## 03 | Kindred Pet | Veterinary care
-**Status:** design planned, not yet built.
+**Status: BUILT AND PUBLISHED.** Main URL: `/showroom/kindred-pet/index.html`. 11 HTML content pages, a responsive stylesheet, shared JS interaction and favicon.
 **Brand:** warm, trustworthy and clinical without being cold.
 **Colours:** dark teal #184C4A, pale linen #F7F5ED, warm coral #E79C81, light sage #DDE9DD.
-**Fonts:** Lora (headings H1 68px/H2 44px); Sora (body 16px, UI 13px).
-**Hero:** "Care for every paw." / "Clear answers. Gentle care. Easy appointments."
-**Features:** pet/visit-type chooser, clinic locator based on real locations, service detail pages, actual availability integration only after a vet provider connects, transparent "what to expect" and emergency disclaimer.
-**Conversion goal:** correctly routed care appointment without misleading urgency.
+**Fonts:** Lora (headings, H1 desktop clamp(65px,7.2vw,113px), mobile clamp(60px,14vw,78px); H2 responsive 42–71px). Sora (body 15–16px, UI 10–13px).
+**Hero:** "Care for every paw." / "Thoughtful pet care, made easier to understand."
+**Implemented features:** care service directory and 4 in-depth service detail pages; visit guide for cats and dogs that only points to information pages (never diagnosis/triage); separate emergency guidance with external generic map search; first-visit checklist; about page; sample enquiry builder with live summary, copy, download and mailto to Oyeola Web. No real veterinarians, clinic, location, pricing, patient records or appointment availability are claimed. All pages disclose that the brand is an original portfolio concept.
+**Conversion goal:** understandable service choice and qualified *sample enquiry*; a real care appointment would require connected veterinary staff, clinic details, consent/privacy workflows and a verified booking provider.
 **Competitors:**
 1. Modern Animal — https://www.modernanimal.com/ — booking and nearby-clinic search. Improve by showing typical appointment purpose and preparation before asking a visitor to download an app.
 2. Bond Vet — https://bondvet.com/ — primary and urgent care paths. Improve by making these paths visually distinct in one first screen.
 3. Small Door Veterinary — https://www.smalldoorvet.com/ — quality proof and easy booking. Improve with upfront next-step guidance for first-time pet parents.
-**Why designed to help:** clearer service choice and reassurance. No claims of clinical outcomes or emergency care before verified.
+**Why designed to help:** a top-level emergency route, unambiguous service paths, no false staff credibility, and a working first-enquiry summary. This remains a UX hypothesis with no measured conversion results.
 
 ## 04 | Modu Atelier | Made-to-order furniture
 **Status:** design planned, not yet built.
