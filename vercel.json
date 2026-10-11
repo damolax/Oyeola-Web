@@ -18,172 +18,172 @@
     },
     {
       "source": "/demos",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demos.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/smart-match",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/smart-match.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/configure",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/configure.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/operations-demo",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/operations-demo.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/planner-demo",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/planner-demo.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-wedding",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-wedding.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-ecommerce",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-ecommerce.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-travel",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-travel.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-real-estate",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-real-estate.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-hospitality",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-hospitality.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-beauty",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-beauty.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-therapy",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-therapy.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-professional-services",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-professional-services.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-home-services",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-home-services.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-education",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-education.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-saas",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-saas.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-nonprofit",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     },
     {
       "source": "/demo-nonprofit.html",
-      "destination": "/work",
+      "destination": "/showroom",
       "permanent": false
     }
   ]
