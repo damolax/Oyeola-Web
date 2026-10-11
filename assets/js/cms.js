@@ -49,7 +49,7 @@
     if(!items.length)return;
     host.innerHTML=items.map(i=>{
       const d=i.data||{},img=d.thumbnail_url||d.hero_image_url||d.cover_url||'',href='project.html?slug='+encodeURIComponent(i.slug);
-      return `<article class="planner-portfolio-card"><a class="planner-device-card" href="${href}">${img?`<img src="${img}" alt="${i.title}">`:''}</a><div><p class="eyebrow">${d.platform||'Digital Planner'}</p><h3>${i.title}</h3><p>${i.excerpt||d.summary||''}</p><div class="actions"><a class="btn small" href="${href}">View project</a>${d.sample_pdf_url?`<a class="btn small secondary" href="${d.sample_pdf_url}" target="_blank" rel="noopener">Try watermarked PDF</a>`:''}</div></div></article>`;
+      return `<article class="planner-portfolio-card"><a class="planner-device-card" href="${href}">${img?`<img src="${img}" alt="${i.title}">`:''}</a><div><p class="eyebrow">${d.platform||'Digital Planner'}</p><h3>${i.title}</h3><p>${i.excerpt||d.summary||''}</p><div class="actions"><a class="btn small" href="${href}">View project</a></div></div></article>`;
     }).join('');
   }
 

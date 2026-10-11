@@ -81,29 +81,9 @@
    const full=d.fullpage_image_url||d.full_page_url;
    if(full){$('[data-project-fullpage-section]').hidden=false;$('[data-project-fullpage]').src=full;$('[data-project-fullpage]').alt=project.title+' full-page website preview'}
 
-   if(d.sample_pdf_url){
-     const section=$('[data-project-pdf-section]'); section.hidden=false;
-     $('[data-project-pdf]').src=d.sample_pdf_url+'#toolbar=1&navpanes=0&view=FitH';
-     $('[data-project-pdf-open]').href=d.sample_pdf_url;
-     $('[data-project-pdf-download]').href=d.download_url||d.sample_pdf_url;
-     $('[data-project-pdf-download]').setAttribute('download',(project.slug||'oyeola-planner-sample')+'.pdf');
-   }
 
    $('[data-project-tools]').innerHTML=(d.tools||[]).map(x=>`<span>${esc(x)}</span>`).join('');
    $('[data-project-skills]').innerHTML=(d.skills||[]).map(x=>`<span>${esc(x)}</span>`).join('');
-   const demo=d.related_demo||d.related_demo_slug;
-   const demoBtn=$('[data-project-demo]');
-   if(demo){
-     const routes={
-       wedding:'demo-wedding.html',ecommerce:'demo-ecommerce.html',travel:'demo-travel.html',
-       realestate:'demo-real-estate.html',hospitality:'demo-hospitality.html',beauty:'demo-beauty.html',
-       therapy:'demo-therapy.html',professional:'demo-professional-services.html',
-       homeservices:'demo-home-services.html',education:'demo-education.html',saas:'demo-saas.html',
-       nonprofit:'demo-nonprofit.html',operations:'operations-demo.html',planner:'planner-demo.html',
-       'smart-match':'smart-match.html',configure:'configure.html'
-     };
-     demoBtn.href=routes[String(demo).toLowerCase()]||'demos.html';
-   }else{demoBtn.hidden=true}
  }
  load();
 })();

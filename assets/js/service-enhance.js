@@ -125,10 +125,6 @@
       '</div></div></section>';
   }
 
-  html += '<section class="section soft"><div class="container"><div class="surface"><div class="section-head"><div><p class="eyebrow">Related demo</p>' +
-    '<h2>See one interaction on its own page.</h2><p>Use the feature first. Then decide whether something similar belongs in your own customer journey.</p></div></div>' +
-    '<a class="btn" href="'+cfg.demo+'">Open related demo</a></div></div></section>';
-
   wrap.innerHTML = html;
   hero.insertAdjacentElement('afterend', wrap);
 })();

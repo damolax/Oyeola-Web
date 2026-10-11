@@ -20,7 +20,7 @@
 
     const header = $('.site-header');
   if (header) {
-    header.outerHTML = `<header class="site-header"><div class="container nav"><a class="brand brand-lockup" href="${root}index.html" aria-label="Oyeola Online home"><img data-theme-logo src="${root}assets/logos/${theme==='light'?'logo-horizontal-light.svg':'logo-horizontal-dark.svg'}" alt="Oyeola Online"></a><nav class="nav-links" id="primary-nav" aria-label="Primary navigation"><a class="${active==='work'?'active':''}" href="${root}work.html">Work</a><details class="nav-services ${active==='services'?'is-active':''}"><summary>Services <span aria-hidden="true">⌄</span></summary><div class="nav-services-menu"><a href="${root}services.html">All services</a><a href="${root}websites.html">Website design</a><a href="${root}operations.html">Automation & systems</a><a href="${root}digital-planners.html">Digital planners</a></div></details><a class="${active==='demos'?'active':''}" href="${root}demos.html">Interactive demos</a><a class="${active==='about'?'active':''}" href="${root}about.html">About</a><button class="theme-toggle" type="button" aria-label="Switch to ${theme==='light'?'dark':'light'} mode" title="Switch theme"><span data-theme-icon aria-hidden="true">${theme==='light'?'☀':'◐'}</span></button><a class="btn small nav-cta" href="${root}contact.html">Start a project ↗</a></nav><button class="menu-btn" type="button" aria-controls="primary-nav" aria-label="Open navigation" aria-expanded="false">Menu</button></div></header>`;
+    header.outerHTML = `<header class="site-header"><div class="container nav"><a class="brand brand-lockup" href="${root}index.html" aria-label="Oyeola Online home"><img data-theme-logo src="${root}assets/logos/${theme==='light'?'logo-horizontal-light.svg':'logo-horizontal-dark.svg'}" alt="Oyeola Online"></a><nav class="nav-links" id="primary-nav" aria-label="Primary navigation"><a class="${active==='work'?'active':''}" href="${root}work.html">Work</a><details class="nav-services ${active==='services'?'is-active':''}"><summary>Services <span aria-hidden="true">⌄</span></summary><div class="nav-services-menu"><a href="${root}services.html">All services</a><a href="${root}websites.html">Website design</a><a href="${root}operations.html">Automation & systems</a><a href="${root}digital-planners.html">Digital planners</a></div></details><a class="${active==='about'?'active':''}" href="${root}about.html">About</a><button class="theme-toggle" type="button" aria-label="Switch to ${theme==='light'?'dark':'light'} mode" title="Switch theme"><span data-theme-icon aria-hidden="true">${theme==='light'?'☀':'◐'}</span></button><a class="btn small nav-cta" href="${root}contact.html">Start a project ↗</a></nav><button class="menu-btn" type="button" aria-controls="primary-nav" aria-label="Open navigation" aria-expanded="false">Menu</button></div></header>`;
   }
 
   let icon = document.querySelector('link[rel="icon"]');
@@ -34,7 +34,7 @@
 
   const footer = $('footer.footer');
   if (footer) {
-    footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-light.svg" alt="Oyeola Online"></a><p>Thoughtful websites, useful systems, better digital experiences.</p></div><div><strong>Explore</strong><p><a href="${root}work.html">Selected work</a><br><a href="${root}demos.html">Interactive demos</a><br><a href="${root}about.html">About Oyeola</a></p></div><div><strong>Services</strong><p><a href="${root}websites.html">Website design</a><br><a href="${root}operations.html">Automation & systems</a><br><a href="${root}digital-planners.html">Digital planners</a></p></div><div><strong>Let's talk</strong><p><a href="${root}contact.html">Start a project</a><br><a href="mailto:oyeolawebmaster@gmail.com">Email</a><br><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} Oyeola Online</span><span><a href="${root}privacy.html">Privacy</a> · Designed for clarity.</span></div></div></footer>`;
+    footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-light.svg" alt="Oyeola Online"></a><p>Thoughtful websites, useful systems, better digital experiences.</p></div><div><strong>Explore</strong><p><a href="${root}work.html">Selected work</a><br><a href="${root}about.html">About Oyeola</a></p></div><div><strong>Services</strong><p><a href="${root}websites.html">Website design</a><br><a href="${root}operations.html">Automation & systems</a><br><a href="${root}digital-planners.html">Digital planners</a></p></div><div><strong>Let's talk</strong><p><a href="${root}contact.html">Start a project</a><br><a href="mailto:oyeolawebmaster@gmail.com">Email</a><br><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} Oyeola Online</span><span><a href="${root}privacy.html">Privacy</a> · Designed for clarity.</span></div></div></footer>`;
   }
 
   const themeToggle = $('.theme-toggle');
@@ -114,19 +114,19 @@
       let title = '', copy = '', href = '', label = '';
       if (state.area === 'website') {
         title = 'Start with a website experience.';
-        copy = 'Try a relevant industry demo first, then run the Website Check if you want a diagnosis of the current site.';
-        href = 'demos.html';
-        label = 'Open the Demo Lab';
+        copy = 'See my website work, then run the Website Check to spot issues.';
+        href = 'work.html';
+        label = 'See my work';
       } else if (state.area === 'operations') {
         title = 'Start with the Operations Check.';
         copy = 'Find where status, handoffs, reporting, capacity or reliance on memory is creating unnecessary coordination.';
         href = 'operations-check.html';
         label = 'Check my operations';
       } else {
-        title = 'Inspect the planner sample first.';
-        copy = 'See how a premium planner handles writing space, navigation and page structure, then decide what your own buyer needs.';
-        href = 'planner-demo.html';
-        label = 'See the planner sample';
+        title = 'See my digital planner projects first.';
+        copy = 'See how the planner is designed, then tell me what you need.';
+        href = 'digital-planners.html';
+        label = 'See planner work';
       }
       result.innerHTML = `<p class="eyebrow">Recommended next step</p><h3>${title}</h3><p>${copy}</p><a class="btn small" href="${href}">${label}</a>`;
       result.classList.remove('hidden');
