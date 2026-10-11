@@ -52,3 +52,5 @@ const form=$('[data-enquiry]');if(form){
  form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const s=current();status.textContent='Your email app will open. You must press Send there; no class has been booked.';location.href='mailto:oyeolawebmaster@gmail.com?subject='+encodeURIComponent('Stillform concept enquiry: '+(label(s.choice)))+'&body='+encodeURIComponent(brief(s))});
 }
 })();
+
+;(()=>{if(!document.querySelector('script[data-oyeola-insights]')){const el=document.createElement('script');el.src='/showroom/insights.js';el.dataset.oyeolaInsights='true';document.head.appendChild(el)}})();
