@@ -30,12 +30,11 @@
   const configs = {
     'wix-website-design': {name:'Wix Website Design', count:'150+', countLabel:'website design projects completed', process:generic.website, tools:['wix','figma','googleanalytics','googlesearchconsole'], demo:'../demo-beauty.html', projects:[
       ['One Love Beauty','../assets/portfolio/thumbs/one-love-beauty.jpg','../case-studies/one-love-beauty.html','Beauty · Booking'],
-      ['Bare Canvas Media','../assets/portfolio/thumbs/bare-canvas-media.jpg','../case-studies/bare-canvas-media.html','Agency · Wix Studio'],
+      ['3 Nails 1 Cross','../assets/portfolio/thumbs/three-nails-one-cross.jpg','../case-studies/three-nails-one-cross.html','Ecommerce · Wix'],
       ['ZenTravels','../assets/portfolio/thumbs/zentravels.jpg','../case-studies/zentravels.html','Travel']
     ]},
     'wix-studio-websites': {name:'Wix Studio', count:'150+', countLabel:'website design projects completed', process:generic.website, tools:['wixstudio','figma','googleanalytics','googlesearchconsole'], demo:'../demo-professional-services.html', projects:[
       ['Bare Canvas Media','../assets/portfolio/thumbs/bare-canvas-media.jpg','../case-studies/bare-canvas-media.html','Agency · Wix Studio'],
-      ['One Love Beauty','../assets/portfolio/thumbs/one-love-beauty.jpg','../case-studies/one-love-beauty.html','Booking'],
       ['Latonya Speaks','../assets/portfolio/thumbs/latonya-speaks.jpg','../case-studies/latonya-speaks.html','Personal brand']
     ]},
     'wordpress-website-design': {name:'WordPress', count:'150+', countLabel:'website design projects completed', process:generic.website, tools:['wordpress','figma','woocommerce','googleanalytics','googlesearchconsole'], demo:'../demo-professional-services.html', projects:[
@@ -67,8 +66,7 @@
       ['Optimize','Test mobile shopping, product discovery, tracking and the purchase journey.']
     ], tools:['shopify','woocommerce','wix','figma','googleanalytics'], demo:'../demo-ecommerce.html', projects:[
       ['3 Nails 1 Cross','../assets/portfolio/thumbs/three-nails-one-cross.jpg','../case-studies/three-nails-one-cross.html','Ecommerce'],
-      ['VapourVend','../assets/portfolio/thumbs/vapourvend.jpg','../case-studies/vapourvend.html','Ecommerce'],
-      ['ZenTravels','../assets/portfolio/thumbs/zentravels.jpg','../case-studies/zentravels.html','Travel']
+      ['VapourVend','../assets/portfolio/thumbs/vapourvend.jpg','../case-studies/vapourvend.html','Ecommerce']
     ]},
     'analytics-tracking': {name:'Analytics & Tracking', count:'10+', countLabel:'analytics and reporting tools used', process:generic.analytics, tools:['googleanalytics','googletagmanager','googlesearchconsole','looker','microsoftclarity'], demo:'../demo-saas.html', projects:[
       ['Shop & Ship Express Analytics','../assets/portfolio/thumbs/shop-ship-express-analytics.jpg','../case-studies/shop-ship-express-analytics.html','Analytics'],
