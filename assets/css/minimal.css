@@ -1,0 +1,31 @@
+/* Calm, simple page spacing and clear text */
+.hero{padding:24px 0!important}
+.hero-shell .hero-grid{padding:38px 48px 0!important;gap:25px!important}
+.hero-shell .hero-copy{align-self:center;padding:16px 0 28px!important}
+.hero-shell .hero-copy .display{font-size:clamp(40px,5.5vw,70px)!important;max-width:14ch!important;line-height:1.05!important}
+.hero-shell .hero-copy .lead{font-size:clamp(16px,1.65vw,19px)!important;max-width:37ch!important}
+.hero-portrait{margin-top:0!important;align-items:flex-end!important}
+.hero-portrait img{max-height:500px!important}
+.page-hero,.service-hero,.case-hero{padding:50px 0 38px!important}
+.page-hero .display,.service-hero h1,.case-content h1{font-size:clamp(38px,4.8vw,59px)!important;line-height:1.08!important}
+.page-hero .lead{font-size:clamp(15px,1.4vw,18px)!important;max-width:44ch!important}
+.section{padding:64px 0!important}
+.section-head{gap:24px!important;margin-bottom:27px!important}
+.section-head h2,.copy h2{font-size:clamp(30px,4vw,46px)!important;line-height:1.12!important}
+.section-head>div>p:not(.eyebrow){font-size:14px!important;line-height:1.55!important}
+.service-tile,.feature-card,.demo-directory-card{min-height:0!important}
+.service-tile h3,.feature-card h3{font-size:20px!important}
+.service-tile p,.feature-card p{font-size:13px!important;line-height:1.55!important}
+.portfolio-grid .project-copy p,.home-work-track .work-card p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.testimonial-card-full blockquote{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden}
+.cta-band .container{padding-top:32px!important;padding-bottom:32px!important}
+.cta-band h2{font-size:clamp(28px,3.5vw,42px)!important}
+.simple-details{border:1px solid var(--oy-line-strong);border-radius:18px;background:var(--oy-panel);padding:0 22px}
+.simple-details>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 2px;font-size:16px;font-weight:700}
+.simple-details>summary::-webkit-details-marker{display:none}
+.simple-details>summary span{color:var(--oy-green);font-size:23px}
+.simple-details[open]>summary span{transform:rotate(45deg)}
+.simple-details>.tool-list,.simple-details>.demo-directory{padding-bottom:24px}
+html[data-theme="light"] .simple-details{background:#fff;border-color:#c2d7c4;color:#142718}
+@media(max-width:900px){.hero-shell .hero-grid{grid-template-columns:1fr!important;padding:28px 26px 0!important}.hero-portrait{min-height:0!important;max-height:300px;overflow:hidden}.hero-portrait img{max-height:300px!important}}
+@media(max-width:680px){.hero{padding:14px 0 20px!important}.hero-shell .hero-grid{padding:25px 22px 0!important;gap:10px!important}.hero-shell .hero-copy .display{font-size:clamp(38px,10vw,54px)!important}.page-hero,.service-hero,.case-hero{padding:38px 0 30px!important}.page-hero .display,.service-hero h1{font-size:clamp(35px,9vw,49px)!important}.section{padding:50px 0!important}.simple-details{padding:0 15px}}
