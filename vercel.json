@@ -15,6 +15,176 @@
       "source": "/workflow-check.html",
       "destination": "/operations-check",
       "permanent": true
+    },
+    {
+      "source": "/demos",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demos.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/smart-match",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/smart-match.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/configure",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/configure.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/operations-demo",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/operations-demo.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/planner-demo",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/planner-demo.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-wedding",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-wedding.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-ecommerce",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-ecommerce.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-travel",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-travel.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-real-estate",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-real-estate.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-hospitality",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-hospitality.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-beauty",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-beauty.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-therapy",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-therapy.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-professional-services",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-professional-services.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-home-services",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-home-services.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-education",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-education.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-saas",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-saas.html",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-nonprofit",
+      "destination": "/showroom",
+      "permanent": false
+    },
+    {
+      "source": "/demo-nonprofit.html",
+      "destination": "/showroom",
+      "permanent": false
     }
   ]
 }

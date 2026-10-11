@@ -33,7 +33,7 @@
     "image": "/mnt/data/Rental Host Ontario _ Guestwork Property Management.png",
     "website": "https://guestwork.ca/",
     "needed": "A property management website that speaks directly to rental owners and shows a simple consultation path.",
-    "matters": "The site guides rental owners from \u201cI need help managing my property\u201d to \u201cI understand the service and can request a consultation.\u201d"
+    "matters": "The site guides rental owners from “I need help managing my property” to “I understand the service and can request a consultation.”"
   },
   {
     "slug": "bare-canvas-media",
@@ -50,10 +50,10 @@
   {
     "slug": "zentravels",
     "title": "ZenTravels",
-    "platform": "GoDaddy",
+    "platform": "Wix",
     "category": "Travel Website",
-    "service": "godaddy-website-design",
-    "service_label": "GoDaddy Website Design",
+    "service": "wix-website-design",
+    "service_label": "Wix Website Design",
     "image": "/mnt/data/Plan Your Dream Vacation.png",
     "website": "zentravels.us",
     "needed": "A travel website that helps visitors discover vacation types, offers, resources, and contact options.",
@@ -81,7 +81,7 @@
     "image": "/mnt/data/(1) - Let me know if you have any questions!.png",
     "website": "",
     "needed": "A personal brand website for speaking, coaching, consulting, events, and contact.",
-    "matters": "The site helps the visitor see the speaker\u2019s work, understand the offer, and take the next step."
+    "matters": "The site helps the visitor see the speaker’s work, understand the offer, and take the next step."
   },
   {
     "slug": "somatra-healing",
@@ -102,10 +102,10 @@
     "category": "Portfolio Website",
     "service": "wix-website-design",
     "service_label": "Wix Website Design",
-    "image": "/mnt/data/DaVinci Resolve Craftsman \u2013 Expert Video Editor(1).png",
+    "image": "/mnt/data/DaVinci Resolve Craftsman – Expert Video Editor(1).png",
     "website": "https://www.davinciresolvecraftsman.com/",
     "needed": "A video editing portfolio site that shows services, sample work, packages, process, and booking path.",
-    "matters": "The site helps prospects quickly see the editor\u2019s style, services, prices, and next step."
+    "matters": "The site helps prospects quickly see the editor’s style, services, prices, and next step."
   },
   {
     "slug": "bambo-oladipo",
