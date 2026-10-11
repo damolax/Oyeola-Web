@@ -18,7 +18,7 @@ $$('[data-project-list]').forEach(grid=>{
  const buttons=$$('[data-filter]');buttons.forEach(b=>b.addEventListener('click',()=>{buttons.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render(b.dataset.filter)}));render('all');
 });
 if($('[data-project-detail]')){
- const s=studies.find(x=>x.id===new URLSearchParams(location.search).get('id'))||studies[0];
+ const s=studies.find(x=>x.id===(new URLSearchParams(location.search).get('id')||location.pathname.match(/project-([a-z-]+)(?:\\.html)?$/)?.[1]))||studies[0];
  document.title=s.name+' | Arc & Acre';
  $('[data-project-detail]').innerHTML='<section class="detail-hero"><div class="detail-copy"><p class="eyebrow">Concept study / '+s.label+'</p><h1 class="serif">'+s.name+'</h1><p>'+s.lead+'</p><a class="btn" href="start.html?space='+encodeURIComponent(s.type)+'">Plan a similar space ↗</a></div><div class="detail-visual"><img src="'+IMG(s.image,1600)+'" alt="Outdoor moodboard for '+s.name+'"></div></section><section class="section"><div class="container"><div class="prose"><p class="eyebrow">Design notes</p><h2>The idea behind this space.</h2><p>'+s.detail+'</p><p>'+s.principle+'</p></div><div class="facts" style="margin-top:40px">'+s.features.map((f,i)=>'<div class="fact"><p class="eyebrow">0'+(i+1)+'</p><h3>'+f+'</h3></div>').join('')+'</div><p style="font-size:12px;margin-top:22px;color:#68766a">This is a design concept. Photography is for inspiration, not a completed Arc & Acre project.</p></div></section>';
 }
