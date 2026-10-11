@@ -1,10 +1,10 @@
 (()=>{'use strict';
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>Array.from(r.querySelectorAll(s));
 const services={
- 'wellness':{title:'Wellness & checkups',detail:'Routine visits and a plan for keeping track of everyday care.',url:'service-wellness.html',note:'For planned checkups and ongoing care conversations.'},
- 'new-pet':{title:'Puppies & kittens',detail:'A first-visit route for new pets and their families.',url:'service-new-pet.html',note:'For new pet questions, first exams and the next steps.'},
- 'dental':{title:'Dental health',detail:'A conversation about your pet’s teeth, gums and oral health.',url:'service-dental.html',note:'For dental questions that are not an emergency.'},
- 'sick':{title:'Sick visits',detail:'Help preparing a request to speak with a veterinary clinic.',url:'service-sick.html',note:'For new concerns that are not a life-threatening emergency.'}
+ 'wellness':{title:'Wellness & checkups',detail:'Routine visits and a plan for keeping track of everyday care.',url:'/showroom/kindred-pet/service-wellness.html',note:'For planned checkups and ongoing care conversations.'},
+ 'new-pet':{title:'Puppies & kittens',detail:'A first-visit route for new pets and their families.',url:'/showroom/kindred-pet/service-new-pet.html',note:'For new pet questions, first exams and the next steps.'},
+ 'dental':{title:'Dental health',detail:'A conversation about your pet’s teeth, gums and oral health.',url:'/showroom/kindred-pet/service-dental.html',note:'For dental questions that are not an emergency.'},
+ 'sick':{title:'Sick visits',detail:'Help preparing a request to speak with a veterinary clinic.',url:'/showroom/kindred-pet/service-sick.html',note:'For new concerns that are not a life-threatening emergency.'}
 };
 const menu=$('[data-nav]'),menuBtn=$('[data-menu]');
 menuBtn?.addEventListener('click',()=>{const open=!menu.classList.contains('open');menu.classList.toggle('open',open);menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'×':'☰';document.body.classList.toggle('lock',open)});
@@ -13,7 +13,7 @@ const guide=$('[data-care-guide]');if(guide){
  const type=$('[data-need]',guide),pet=$('[data-pet]',guide),result=$('[data-guide-result]');
  const render=()=>{let need=type.value,animal=pet.value,svc=services[need]||services.wellness;
  const emergency=need==='emergency';
- result.innerHTML=emergency?'<p class="kicker light">Do not wait for an online form</p><h2>Find emergency care now.</h2><p>This is a website concept, not a clinic or emergency service. Contact a nearby 24-hour veterinary emergency hospital immediately. If you suspect poisoning, contact an emergency vet or animal poison service right away.</p><a class="button light" href="emergency.html">Read emergency guidance ↗</a>':'<p class="kicker light">A place to start</p><h2>'+svc.title+'</h2><p>'+svc.note+' These are sample service paths, not a diagnosis or an appointment decision.</p><div class="line"><span>Your pet</span><span>'+ (animal==='cat'?'Cat':animal==='dog'?'Dog':'Not chosen')+'</span></div><div class="line"><span>Visit type</span><span>'+svc.title+'</span></div><a class="button light" href="'+svc.url+'">Explore this service ↗</a><p style="font-size:11px;margin-top:17px">If your pet seems seriously unwell, seek urgent veterinary help instead of using this tool.</p>';
+ result.innerHTML=emergency?'<p class="kicker light">Do not wait for an online form</p><h2>Find emergency care now.</h2><p>This is a website concept, not a clinic or emergency service. Contact a nearby 24-hour veterinary emergency hospital immediately. If you suspect poisoning, contact an emergency vet or animal poison service right away.</p><a class="button light" href="/showroom/kindred-pet/emergency.html">Read emergency guidance ↗</a>':'<p class="kicker light">A place to start</p><h2>'+svc.title+'</h2><p>'+svc.note+' These are sample service paths, not a diagnosis or an appointment decision.</p><div class="line"><span>Your pet</span><span>'+ (animal==='cat'?'Cat':animal==='dog'?'Dog':'Not chosen')+'</span></div><div class="line"><span>Visit type</span><span>'+svc.title+'</span></div><a class="button light" href="'+svc.url+'">Explore this service ↗</a><p style="font-size:11px;margin-top:17px">If your pet seems seriously unwell, seek urgent veterinary help instead of using this tool.</p>';
  };
  type.addEventListener('change',render);pet.addEventListener('change',render);render();
 }
