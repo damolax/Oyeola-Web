@@ -5,7 +5,7 @@ const projects={
   "type": "Landscape design · Premium enquiries",
   "tone": "#244838",
   "intro": "If you design beautiful outdoor spaces, your visitors need to picture what is possible before they request a quote. This website turns that first spark of interest into a clear project conversation.",
-  "potential": "Instead of losing an interested visitor after they browse a gallery, you give them a simple way to describe their space, priorities and budget. That could mean fewer vague messages and more useful project enquiries.",
+  "potential": "Instead of losing an interested visitor after they browse a gallery, you give them a simple way to describe their space, priorities and budget. That can mean fewer vague messages and more useful project enquiries.",
   "wins": [
    [
     "Turn beautiful photography into business",
@@ -24,17 +24,17 @@ const projects={
    [
     "Yardzen",
     "https://yardzen.com/",
-    "Yardzen makes its design packages and planning quiz easy to discover. Your version could offer a quicker first enquiry for people who want to discuss an individual project before selecting a package."
+    "Yardzen makes its design packages and planning quiz easy to discover. Your version can offer a quicker first enquiry for people who want to discuss an individual project before selecting a package."
    ],
    [
     "Bower & Branch",
     "https://bowerandbranch.com/pages/design-studio",
-    "Bower & Branch explains its process and plant expertise. Your version could put the visitor's immediate choice, garden, courtyard or poolside, closer to the top."
+    "Bower & Branch explains its process and plant expertise. Your version can put the visitor's immediate choice, garden, courtyard or poolside, closer to the top."
    ],
    [
     "ShrubHub",
     "https://www.shrubhub.com/",
-    "ShrubHub puts 3D concepts and package pricing front and centre. Your version could use a calmer, luxury-focused presentation and a short project brief to attract considered enquiries."
+    "ShrubHub puts 3D concepts and package pricing front and centre. Your version can use a calmer, luxury-focused presentation and a short project brief to attract considered enquiries."
    ]
   ],
   "platforms": [
@@ -58,7 +58,7 @@ const projects={
   "type": "Wellness studio · Class discovery",
   "tone": "#203B40",
   "intro": "If someone is curious about Pilates but has never booked a class, confusion can stop them. This design answers the questions that often come before a first visit.",
-  "potential": "When a prospect knows which class suits their level, what to expect and how to take the next step, they have more reasons to enquire rather than keep searching. A real booking calendar could turn that interest into a reservation.",
+  "potential": "When a prospect knows which class suits their level, what to expect and how to take the next step, they have more reasons to enquire rather than keep searching. A real booking calendar can turn that interest into a reservation.",
   "wins": [
    [
     "Give first-timers confidence",
@@ -70,14 +70,14 @@ const projects={
    ],
    [
     "Keep the enquiry close to the class",
-    "Each detailed class page leads to an enquiry with a summary of the visitor's choices. A production version could connect this journey to real availability and payments."
+    "Each detailed class page leads to an enquiry with a summary of the visitor's choices. A production version can connect this journey to real availability and payments."
    ]
   ],
   "references": [
    [
     "Elroisè Wellness Center",
     "https://www.elroisewellnesscenter.com/",
-    "Elroisè presents wellness services and ways to book. Your version could focus the entire first impression on helping someone choose a Pilates class."
+    "Elroisè presents wellness services and ways to book. Your version can focus the entire first impression on helping someone choose a Pilates class."
    ],
    [
     "BR Reformer Studios",
@@ -111,7 +111,7 @@ const projects={
   "type": "Veterinary practice · Clear care paths",
   "tone": "#184C4A",
   "intro": "When someone's pet needs care, they want reassurance and a clear next step, not a confusing website. This design helps people understand their options and know when to contact a real clinic.",
-  "potential": "A clearer difference between routine visits, new-pet care and urgent help could reduce hesitation and misdirected enquiries. Visitors are more likely to find the right information before contacting your practice.",
+  "potential": "A clearer difference between routine visits, new-pet care and urgent help helps reduce hesitation and misdirected enquiries. Visitors are more likely to find the right information before contacting your practice.",
   "wins": [
    [
     "Answer the question behind the search",
@@ -123,7 +123,7 @@ const projects={
    ],
    [
     "Prepare pet owners for a first appointment",
-    "A first-visit guide and visit-type chooser explain useful next steps. With a real clinic connected, this journey could lead to better-prepared appointment requests."
+    "A first-visit guide and visit-type chooser explain useful next steps. With a real clinic connected, this journey can lead to better-prepared appointment requests."
    ]
   ],
   "references": [
@@ -135,12 +135,12 @@ const projects={
    [
     "Bond Vet",
     "https://bondvet.com/",
-    "Bond Vet distinguishes wellness and urgent care. Your version could make the emergency instructions even more immediately visible across the site."
+    "Bond Vet distinguishes wellness and urgent care. Your version can make the emergency instructions even more immediately visible across the site."
    ],
    [
     "Small Door Veterinary",
     "https://www.smalldoorvet.com/",
-    "Small Door explains its services and membership approach. Your version could give first-time pet owners a shorter checklist and clearer starting point."
+    "Small Door explains its services and membership approach. Your version can give first-time pet owners a shorter checklist and clearer starting point."
    ]
   ],
   "platforms": [
@@ -183,12 +183,12 @@ const projects={
    [
     "Studio DRIFT",
     "https://studiodrift.com/",
-    "Studio DRIFT makes artistic storytelling central. Your website could take that immersive approach while giving individual buyers a more obvious commission route."
+    "Studio DRIFT makes artistic storytelling central. Your website can take that immersive approach while giving individual buyers a more obvious commission route."
    ],
    [
     "Random International",
     "https://www.random-international.com/",
-    "Random International foregrounds its installations and concepts. Your version could connect those visual moments to specific available works and enquiry choices."
+    "Random International foregrounds its installations and concepts. Your version can connect those visual moments to specific available works and enquiry choices."
    ],
    [
     "teamLab",
@@ -217,7 +217,7 @@ const projects={
   "type": "Hospitality · Guest enquiries",
   "tone": "#24483F",
   "intro": "If you own a holiday property, guests want to imagine staying there and quickly answer practical questions. This design makes that journey feel more personal than a crowded listings page.",
-  "potential": "Instead of sending guests through multiple unrelated property listings, this site gives your apartment their full attention. Clear amenities, room photos and availability links could turn interest into more qualified direct enquiries.",
+  "potential": "Instead of sending guests through multiple unrelated property listings, this site gives your apartment their full attention. Clear amenities, room photos and availability links can turn interest into more qualified direct enquiries.",
   "wins": [
    [
     "Show the stay before the sales pitch",
@@ -236,17 +236,17 @@ const projects={
    [
     "Airbnb",
     "https://www.airbnb.com/",
-    "Airbnb is excellent at discovery and social proof. Your dedicated site could keep attention on your own property and give guests a direct relationship with you."
+    "Airbnb is excellent at discovery and social proof. Your dedicated site can keep attention on your own property and give guests a direct relationship with you."
    ],
    [
     "Plum Guide",
     "https://www.plumguide.com/",
-    "Plum Guide invests in curated home storytelling. Your site could offer that editorial feeling while providing detailed information about one particular stay."
+    "Plum Guide invests in curated home storytelling. Your site can offer that editorial feeling while providing detailed information about one particular stay."
    ],
    [
     "Vrbo",
     "https://www.vrbo.com/",
-    "Vrbo supports browsing many rentals. Your property website could reduce distractions by concentrating on a single apartment and its direct-booking journey."
+    "Vrbo supports browsing many rentals. Your property website helps reduce distractions by concentrating on a single apartment and its direct-booking journey."
    ]
   ],
   "platforms": [
@@ -270,7 +270,7 @@ const projects={
   "type": "Commercial tools · Quote requests",
   "tone": "#2D4038",
   "intro": "If your customers buy tools for serious work, they often know the exact part, brand or model they need. This site is organised around that buying behaviour.",
-  "potential": "Faster part discovery, useful comparisons and a separate business quote journey could help more buyers find what they came for. Instead of abandoning a long catalogue, they can prepare a sourcing or bulk-order request.",
+  "potential": "Faster part discovery, useful comparisons and a separate business quote journey can help more buyers find what they came for. Instead of abandoning a long catalogue, they can prepare a sourcing or bulk-order request.",
   "wins": [
    [
     "Let trade buyers search their way",
@@ -289,17 +289,17 @@ const projects={
    [
     "Grainger",
     "https://www.grainger.com/",
-    "Grainger offers extensive industrial product discovery and procurement support. Your site could present a smaller, tailored catalogue with a highly visible quote path."
+    "Grainger offers extensive industrial product discovery and procurement support. Your site can present a smaller, tailored catalogue with a highly visible quote path."
    ],
    [
     "Zoro",
     "https://www.zoro.com/",
-    "Zoro is built around broad supply search and purchasing. Your version could give contractors faster access to bulk and sourcing enquiries."
+    "Zoro is built around broad supply search and purchasing. Your version can give contractors faster access to bulk and sourcing enquiries."
    ],
    [
     "McMaster-Carr",
     "https://www.mcmaster.com/",
-    "McMaster-Carr excels at specification-led navigation. Your catalogue could use exact part search and product comparisons while making customer support easy to request."
+    "McMaster-Carr excels at specification-led navigation. Your catalogue can use exact part search and product comparisons while making customer support easy to request."
    ]
   ],
   "platforms": [
@@ -338,7 +338,7 @@ const styles=`:host{all:initial}*,*::before,*::after{box-sizing:border-box}.widg
 .consult{display:block;background:#245B3D;border-radius:40px;color:#fff!important;text-align:center;font-weight:800;font-size:12px;padding:16px;margin-top:24px;text-decoration:none}
 .consult:hover{background:#367653}
 `;
-function create(){if(shell)return;shell=document.createElement('div');shell.id='oyeola-insight-widget';document.body.appendChild(shell);root=shell.attachShadow({mode:'open'});const st=document.createElement('style');st.textContent=styles;root.append(st);const host=document.createElement('div');host.className='widget';root.append(host);host.innerHTML='<button type="button" class="trigger" aria-label="Read Oyeola Web design notes"><span aria-hidden="true">✦</span><span>Why this design?</span></button><div class="backdrop" aria-hidden="true"><section role="dialog" aria-modal="true" aria-labelledby="notes-heading" class="panel"><div class="panel-top"><div><p>Oyeola Web / For your business</p><h2 id="notes-heading">Design notes</h2><p class="desc">Why this experience was built this way</p></div><button class="close" type="button" aria-label="Close design notes">×</button></div><div class="scroll"></div><div class="foot"><a href="/showroom" target="_blank" rel="noopener">See all websites ↗</a><button class="foot-close" type="button">Back to website ↗</button></div></section></div>';trigger=host.querySelector('.trigger');backdrop=host.querySelector('.backdrop');panel=host.querySelector('.panel');trigger.addEventListener('click',()=>open(selectedId||current||'arc'));host.querySelector('.close').addEventListener('click',close);host.querySelector('.foot-close').addEventListener('click',close);backdrop.addEventListener('click',e=>{if(e.target===backdrop)close()});document.addEventListener('keydown',e=>{if(!backdrop.classList.contains('open'))return;if(e.key==='Escape'){e.preventDefault();close()}if(e.key==='Tab'){const items=[...root.querySelectorAll('button,a')].filter(el=>el.offsetParent!==null);const first=items.find(el=>el!==trigger),last=items.at(-1);if(e.shiftKey&&root.activeElement===first){e.preventDefault();last?.focus()}else if(!e.shiftKey&&root.activeElement===last){e.preventDefault();first?.focus()}}})}
+function create(){if(shell)return;shell=document.createElement('div');shell.id='oyeola-insight-widget';document.body.appendChild(shell);root=shell.attachShadow({mode:'open'});const st=document.createElement('style');st.textContent=styles;root.append(st);const host=document.createElement('div');host.className='widget';root.append(host);host.innerHTML='<button type="button" class="trigger" aria-label="Read Oyeola Web design notes"><span aria-hidden="true">✦</span><span>Why this design?</span></button><div class="backdrop" aria-hidden="true"><section role="dialog" aria-modal="true" aria-labelledby="notes-heading" class="panel"><div class="panel-top"><div><p>Oyeola Web · Your website strategy</p><h2 id="notes-heading">Design notes</h2><p class="desc">What this experience can do for your customers</p></div><button class="close" type="button" aria-label="Close design notes">×</button></div><div class="scroll"></div><div class="foot"><a href="/showroom" target="_blank" rel="noopener">See all websites ↗</a><button class="foot-close" type="button">Back to website ↗</button></div></section></div>';trigger=host.querySelector('.trigger');backdrop=host.querySelector('.backdrop');panel=host.querySelector('.panel');trigger.addEventListener('click',()=>open(selectedId||current||'arc'));host.querySelector('.close').addEventListener('click',close);host.querySelector('.foot-close').addEventListener('click',close);backdrop.addEventListener('click',e=>{if(e.target===backdrop)close()});document.addEventListener('keydown',e=>{if(!backdrop.classList.contains('open'))return;if(e.key==='Escape'){e.preventDefault();close()}if(e.key==='Tab'){const items=[...root.querySelectorAll('button,a')].filter(el=>el.offsetParent!==null);const first=items.find(el=>el!==trigger),last=items.at(-1);if(e.shiftKey&&root.activeElement===first){e.preventDefault();last?.focus()}else if(!e.shiftKey&&root.activeElement===last){e.preventDefault();first?.focus()}}})}
 function open(id){
 const p=projects[id];if(!p)return;create();selectedId=id;lastFocus=document.activeElement;
 panel.querySelector('.panel-top').style.background=p.tone;
@@ -346,21 +346,21 @@ panel.querySelector('#notes-heading').textContent=p.name;
 panel.querySelector('.desc').textContent=p.type;
 const winRows=p.wins.map((v,i)=>'<li><span class="n">0'+(i+1)+'</span><div><b>'+esc(v[0])+'</b><p>'+esc(v[1])+'</p></div></li>').join('');
 const competitorRows=p.references.map(v=>'<div class="ref"><a href="'+esc(v[1])+'" rel="noopener noreferrer" target="_blank">'+esc(v[0])+' ↗</a><p>'+esc(v[2])+'</p></div>').join('');
-const platformRows=p.platforms.map((v,i)=>'<div class="platform-row'+(i===0?' recommended':'')+'"><div><strong>'+esc(v[0])+'</strong>'+(i===0?'<span class="chosen">Suggested fit</span>':'')+'</div><p>'+esc(v[1])+'</p></div>').join('');
+const platformRows=p.platforms.map((v,i)=>'<div class="platform-row'+(i===0?' recommended':'')+'"><div><strong>'+esc(v[0])+'</strong>'+(i===0?'<span class="chosen">A great fit</span>':'')+'</div><p>'+esc(v[1])+'</p></div>').join('');
 panel.querySelector('.scroll').innerHTML=
-'<p class="eyebrow">Imagine this for your business</p>'+
+'<p class="eyebrow">Your business. A clearer way to grow.</p>'+
 '<p class="intro">'+esc(p.intro)+'</p>'+
-'<div class="conversion"><p>THE BUSINESS OPPORTUNITY</p><strong>'+esc(p.potential)+'</strong></div>'+
-'<p class="eyebrow">Three ways this could help you win enquiries</p>'+
+'<div class="conversion"><p>THE OPPORTUNITY FOR YOUR BUSINESS</p><strong>'+esc(p.potential)+'</strong></div>'+
+'<p class="eyebrow">Three ways to turn interest into action</p>'+
 '<ol class="wins">'+winRows+'</ol>'+
-'<p class="eyebrow">What competitors do well, and what you could do differently</p>'+
+'<p class="eyebrow">How you can stand out from competitors</p>'+
 competitorRows+
-'<p class="eyebrow platform-heading">Which platform should power your website?</p>'+
-'<p class="platform-intro">You can create a similar customer journey using Wix Studio, WordPress or Webflow. The right platform depends on how you want to manage content, enquiries, bookings and integrations.</p>'+
+'<p class="eyebrow platform-heading">Your website. Your choice of platform.</p>'+
+'<p class="platform-intro">We can bring this experience to life on Wix Studio, WordPress or Webflow, complete with the features your business needs.</p>'+
 '<div class="platform-rows">'+platformRows+'</div>'+
-'<p class="note status">'+esc(p.status)+'</p>'+
-'<p class="note">These are customer-experience opportunities and design hypotheses, not measured conversion rates or a promise to outperform the businesses linked above.</p>'+
-'<a class="consult" href="/contact.html">Discuss a website for your business ↗</a>';
+
+
+'<a class="consult" href="/contact.html">Build a website like this ↗</a>';
 backdrop.classList.add('open');backdrop.setAttribute('aria-hidden','false');panel.querySelector('.scroll').scrollTop=0;panel.querySelector('.close').focus();
 }
 function close(){backdrop?.classList.remove('open');backdrop?.setAttribute('aria-hidden','true');if(lastFocus?.isConnected)lastFocus.focus();else trigger?.focus();}
