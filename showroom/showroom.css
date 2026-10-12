@@ -41,3 +41,6 @@
 .site-card.tillman .site-content{background:#e7e9e7}.site-card.tillman .site-visual img{filter:contrast(1.15)}
 .site-card.objects .site-content{background:#eaeae7}.site-card.objects .site-visual img{filter:grayscale(1)}
 .site-card.apartment .site-content{background:#f5e9d6}
+
+/* Small-screen polish */
+@media(max-width:420px){.wrap{width:calc(100% - 28px)}.hero h1{font-size:clamp(48px,13vw,72px)}.site-card{min-width:0}.site-content{min-width:0}.feature-chips{flex-wrap:wrap}.site-actions{flex-wrap:wrap}.headin{gap:10px}.logo .brand-logo{max-width:145px}.collection h2{overflow-wrap:break-word}}
