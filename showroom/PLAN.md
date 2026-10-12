@@ -1,6 +1,6 @@
 # Oyeola Online | Five real website builds
 Created: 11 October 2026
-Status: websites 01, 02 and 03 built; websites 04–05 planned
+Status: websites 01–04 built; website 05 planned
 
 These are **full multi-page websites**, not isolated feature demos. Every new brand is an **original concept**, not a claim that its business exists or that the images show its completed client projects. Do not invent customers, reviews, awards, team credentials, real booking availability or sales results.
 
@@ -58,18 +58,18 @@ These are **full multi-page websites**, not isolated feature demos. Every new br
 **Why designed to help:** a top-level emergency route, unambiguous service paths, no false staff credibility, and a working first-enquiry summary. This remains a UX hypothesis with no measured conversion results.
 
 ## 04 | Modu Atelier | Made-to-order furniture
-**Status:** design planned, not yet built.
+**Status: BUILT AND PUBLISHED.** Main URL: `/showroom/modu-atelier/index.html`. Fourteen full pages: home, searchable/filterable collection, six dedicated product pages, materials and four-swatch picker, room measurement guide, studio approach, about, locally saved configurations and functional design enquiry. Includes responsive CSS and JavaScript.
 **Brand:** sculptural, calm, crafted.
 **Colours:** charcoal #29241F, chalk #F7F4EC, sienna #AA5B3F, clay #D6C7B8, cream #EDE9E0.
 **Fonts:** Cormorant Garamond (H1 84px/H2 54px), DM Sans (body 16px, controls 13px).
 **Hero:** "Furniture made to fit." / "Choose the shape, size and finish."
-**Features:** product browsing and category filters, material swatches, measurements and room-fit helper, configurable price estimates only after supplier price data, saved designs, sample request and clear shipping lead times when confirmed.
+**Features implemented:** product-category and name filters, six detail pages with selectable finishes, widths and feet, a first-pass room/doorway measurement checker, save/remove shortlist in browser storage, select up to four sample colours, an enquiry form prefilling the chosen configuration and finish samples, live summary and copy/download/mailto handoff. No prices, checkout, live inventory or manufacturing delivery promises because no supplier is connected.
 **Conversion goal:** a confident fabric sample or custom furniture enquiry.
 **Competitors:**
 1. Interior Define — https://swatches.interiordefine.com/ — exceptional sampling and fabric filters. Improve by putting dimension-fit guidance immediately after picking a fabric.
 2. BenchMade Modern — https://benchmademodern.com/collections/sofas — structured customization and concierge guidance. Improve with a quick "Will this fit?" check before selection fatigue.
 3. Joybird — https://joybird.com/samples/ — free swatch kit and product personalization. Improve by keeping the chosen swatch, measurements and saved design in one consistent summary.
-**Why designed to help:** lower design decision load; track swatch requests and completed configurations.
+**Why designed to help:** customers can bring piece, size, finish and room context together rather than beginning with a vague request. Comparable competitors offer swatches, sizing and customisation; Modu deliberately keeps them in a single short enquiry path. These are design intentions, not measured conversion results.
 
 ## 05 | Common Ground | Specialty coffee subscription
 **Status:** design planned, not yet built.
@@ -98,4 +98,4 @@ These are **full multi-page websites**, not isolated feature demos. Every new br
 - 3 Nails 1 Cross: Wix.
 
 ## Next build
-Continue **one full website at a time**. Next after Arc & Acre is Stillform Pilates. Research industry real competitors again before building. Do not invent live timetable, payments or class prices.
+Continue **one full website at a time**. Arc & Acre, Stillform, Kindred Pet and Modu Atelier are built. **Common Ground specialty coffee is the fifth planned build.** Research relevant real competitors again before building. Do not invent live timetable, payments or class prices.
