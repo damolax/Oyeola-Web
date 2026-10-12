@@ -245,18 +245,36 @@
     });
   });
 
+  // One stable event handler also handles CMS cards injected after page load.
   const workFilters = $$('[data-work-filter]');
-  if (workFilters.length) {
-    const cards = $$('.project-card');
+  const workGrid = $('[data-cms-projects]');
+  if (workFilters.length && workGrid) {
+    let currentFilter = 'all';
+    const categoryOf = card => {
+      if (card.dataset.workCategory) return card.dataset.workCategory;
+      const text = (card.textContent || '').toLowerCase();
+      return /planner|hyperlinked pdf|digital product|ebook/.test(text) ? 'products'
+        : /analytics|automation|operations system|dashboard/.test(text) ? 'systems' : 'websites';
+    };
+    const applyFilter = () => {
+      const cards = $$('.project-card', workGrid);
+      let visible = 0;
+      for (const card of cards) {
+        const show = currentFilter === 'all' || categoryOf(card) === currentFilter;
+        card.hidden = !show;
+        if (show) visible++;
+      }
+      const count = $('#work-count');
+      if (count) count.textContent = visible + (visible === 1 ? ' project' : ' projects');
+    };
     workFilters.forEach(button => button.addEventListener('click', () => {
-      workFilters.forEach(b => b.classList.remove('active'));
-      button.classList.add('active');
-      const filter = button.dataset.workFilter;
-      cards.forEach(card => {
-        const haystack = (card.textContent || '').toLowerCase();
-        card.hidden = filter !== 'all' && !haystack.includes(filter);
-      });
+      currentFilter = button.dataset.workFilter || 'all';
+      workFilters.forEach(b => { b.classList.toggle('active', b===button); b.setAttribute('aria-pressed', String(b===button)); });
+      applyFilter();
     }));
+    new MutationObserver(mutations => { if (mutations.some(m => m.type === 'childList')) applyFilter(); })
+      .observe(workGrid, {childList:true});
+    applyFilter();
   }
 
   window.oyeolaTrack = window.oyeolaTrack || ((eventName, detail = {}) => {

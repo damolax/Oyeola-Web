@@ -25,3 +25,7 @@
 .platform-tags>span.preferred{background:#dceddf;border-color:#bedbc5;color:#195432}
 @media(max-width:720px){.head .logo,.footer .logo{max-width:175px}.head .logo .brand-logo{width:175px}}
 @media(max-width:570px){.headin{flex-wrap:wrap;justify-content:space-between}.head .logo,.footer .logo{max-width:165px}.head .logo .brand-logo{width:165px}}
+
+/* Keep the portfolio work in view sooner on desktop and mobile. */
+@media(min-width:721px){.hero{padding-top:52px;padding-bottom:8px}.hero-layout{min-height:255px}.hero h1{font-size:clamp(51px,6.0vw,78px);line-height:1.02;margin:17px 0 18px}.hero-actions{margin-top:22px}.hero-accent{width:245px;height:245px}.hero-accent span{font-size:64px}.hero-base{margin-top:21px;padding:16px 0}.collection{padding-top:77px}}
+@media(max-width:720px){.hero{padding-top:47px;padding-bottom:9px}.hero h1{font-size:clamp(43px,10vw,69px);margin:13px 0 18px}.hero-base{margin-top:28px;padding:16px 0}.collection{padding-top:58px}}
