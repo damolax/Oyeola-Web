@@ -1,5 +1,44 @@
 [
   {
+    "slug": "local-legends-training",
+    "title": "Local Legends Training",
+    "platform": "WordPress",
+    "category": "Youth Sports Website",
+    "service": "wordpress-website-design",
+    "service_label": "WordPress Website Design",
+    "image": "https://images.pexels.com/photos/1752757/pexels-photo-1752757.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "website": "",
+    "needed": "Help young athletes and their families understand the philosophy, training options and commitment expected before applying.",
+    "matters": "A focused WordPress website that leads with consistency, structure and implementation, introduces the founder, then presents training routes and a clear application CTA.",
+    "case_study_url": "/case-studies/local-legends-training"
+  },
+  {
+    "slug": "k-pet-supplies-and-more",
+    "title": "K Pet Supplies & More",
+    "platform": "Shopify",
+    "category": "Pet Ecommerce Website",
+    "service": "ecommerce-website",
+    "service_label": "Shopify Ecommerce Website Design",
+    "image": "https://www.kpetsuppliesandmore.com/cdn/shop/files/kpetsuppliesandmore_banner_2.png?v=1775247287&width=1370",
+    "website": "",
+    "needed": "Organise a wide pet-care product range into familiar shopping paths with simple product discovery and reassurance.",
+    "matters": "The Shopify site includes featured products, five focused categories, a targeted product story, FAQs and community content.",
+    "case_study_url": "/case-studies/k-pet-supplies-and-more"
+  },
+  {
+    "slug": "warranty-wizards-figma",
+    "title": "Warranty Wizards",
+    "platform": "Figma",
+    "category": "Landing Page UI/UX Design",
+    "service": "website-growth-setup",
+    "service_label": "Figma Landing Page UI/UX",
+    "image": "/assets/portfolio/thumbs/warranty-wizards-figma.svg",
+    "website": "",
+    "needed": "Make home and auto warranty coverage clear and give visitors an immediate path to request a quote.",
+    "matters": "A Figma homepage concept using a coverage promise, vehicle and contact quote form, repair-cost comparison, benefits, process explanation and FAQs. Design-only, not a launched website.",
+    "case_study_url": "/case-studies/warranty-wizards-figma"
+  },
+  {
     "slug": "one-love-beauty",
     "title": "One Love Beauty",
     "platform": "Wix",
