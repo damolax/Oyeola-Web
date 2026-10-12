@@ -1,5 +1,17 @@
 (()=>{'use strict';
 const projects={
+ "common": {
+  "name":"Common Ground",
+  "type":"Independent café · Guest discovery and community",
+  "tone":"#294A34",
+  "intro":"A neighbourhood café has a small window to answer a visitor's biggest questions: what is on the menu, what does the place feel like and how do I get there? Common Ground builds that customer journey around warmth and clarity.",
+  "potential":"Putting a readable menu, location guidance and event enquiries on one clear site can reduce dependence on social-media DMs. A production version would connect to real opening hours, enquiries and the café's existing ordering or booking service.",
+  "wins":[["Make the menu useful, not hidden","Customers filter coffee, kitchen and bakery items directly on the page with descriptions and sample prices rather than downloading a PDF."],["Turn atmosphere into trust","Photography, warm editorial typography and an easy-to-follow story make it clear what kind of café experience the business offers."],["Give each visitor a next step","Visitors can explore sample events, preview an enquiry and find the information needed for a visit. The demonstration never pretends to send a booking."]],
+  "references":[["Nivo Digital café examples","https://nivo.co.uk/inspiration/best-cafe-websites/","Independent café sites benefit from pairing recognisable character with straightforward menu, booking and location routes."],["HubSpot café website examples","https://blog.hubspot.com/website/coffee-shops-websites","The best practical café experiences answer questions about atmosphere, menu and location quickly."]],
+  "platforms":[["WordPress","Suggested for flexible editable menus, event posts, local SEO and booking integrations."],["Wix Studio","A good fit when the café team wants intuitive site editing and a streamlined visual workflow."],["Webflow","Useful for carefully art-directed pages and a structured CMS for menus and events."]],
+  "status":"Original Oyeola Online portfolio concept. All café details, events, prices and imagery are illustrative; no live reservations are taken."
+ },
+
  "arc": {
   "name": "Arc & Acre",
   "type": "Landscape design · Premium enquiries",
