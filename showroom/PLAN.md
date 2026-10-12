@@ -1,4 +1,4 @@
-# Oyeola Web | Five real website builds
+# Oyeola Online | Five real website builds
 Created: 11 October 2026
 Status: websites 01, 02 and 03 built; websites 04–05 planned
 
@@ -20,7 +20,7 @@ These are **full multi-page websites**, not isolated feature demos. Every new br
 **Fonts:** DM Serif Display for headings, DM Sans for body and controls. H1 clamp(68px,7.3vw,120px) desktop, 59–83px mobile. H2 clamp(43px,5vw,70px). Body 16px, labels 10–12px.
 **Hero:** "Life grows outside." / "Gardens made for how you live."
 **Pages:** Home; Projects (category filters); Project details (six concept studies); Services (garden, pool & terrace, courtyard); Approach; Start Project (working brief builder).
-**Real user actions:** Filter and open project cards; navigate among 6 pages; choose a space/style/budget/timeline; see a live brief; copy, download, or open a prefilled email to Oyeola Web. Email handoff requires the visitor to press Send. No fake payment or actual booking.
+**Real user actions:** Filter and open project cards; navigate among 6 pages; choose a space/style/budget/timeline; see a live brief; copy, download, or open a prefilled email to Oyeola Online. Email handoff requires the visitor to press Send. No fake payment or actual booking.
 **Business goal:** help a high-intent visitor find the right design service and contact the studio with a useful brief.
 **Competitor benchmark:**
 1. Yardzen — https://yardzen.com/ — does well: clear packages and a planning quiz. Our testable improvement: an earlier direct link from visual inspiration to a lightweight brief, with no package-choice wall.
@@ -49,7 +49,7 @@ These are **full multi-page websites**, not isolated feature demos. Every new br
 **Colours:** dark teal #184C4A, pale linen #F7F5ED, warm coral #E79C81, light sage #DDE9DD.
 **Fonts:** Lora (headings, H1 desktop clamp(65px,7.2vw,113px), mobile clamp(60px,14vw,78px); H2 responsive 42–71px). Sora (body 15–16px, UI 10–13px).
 **Hero:** "Care for every paw." / "Thoughtful pet care, made easier to understand."
-**Implemented features:** care service directory and 4 in-depth service detail pages; visit guide for cats and dogs that only points to information pages (never diagnosis/triage); separate emergency guidance with external generic map search; first-visit checklist; about page; sample enquiry builder with live summary, copy, download and mailto to Oyeola Web. No real veterinarians, clinic, location, pricing, patient records or appointment availability are claimed. All pages disclose that the brand is an original portfolio concept.
+**Implemented features:** care service directory and 4 in-depth service detail pages; visit guide for cats and dogs that only points to information pages (never diagnosis/triage); separate emergency guidance with external generic map search; first-visit checklist; about page; sample enquiry builder with live summary, copy, download and mailto to Oyeola Online. No real veterinarians, clinic, location, pricing, patient records or appointment availability are claimed. All pages disclose that the brand is an original portfolio concept.
 **Conversion goal:** understandable service choice and qualified *sample enquiry*; a real care appointment would require connected veterinary staff, clinic details, consent/privacy workflows and a verified booking provider.
 **Competitors:**
 1. Modern Animal — https://www.modernanimal.com/ — booking and nearby-clinic search. Improve by showing typical appointment purpose and preparation before asking a visitor to download an app.
@@ -90,7 +90,7 @@ These are **full multi-page websites**, not isolated feature demos. Every new br
 2. Arbequina Apartment — private client reference; view the portfolio case study at `/case-studies/arbequina-apartment.html`. Holiday rental experience with gallery, area information and an availability path.
 3. Tillman Tough — https://tillman-tough.vercel.app/ ; https://github.com/damolax/krella-tillman . Commercial e-commerce review build with catalogue, product search and trade ordering.
 
-## Confirmed platform labels for Oyeola Web project cards
+## Confirmed platform labels for Oyeola Online project cards
 - One Love Beauty: Wix.
 - Guestwork Property Management: WordPress.
 - Bare Canvas Media: Wix Studio.
