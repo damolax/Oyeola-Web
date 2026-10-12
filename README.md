@@ -99,3 +99,7 @@ The website keeps hard-coded fallback content so the public site remains usable 
 ## Database schema
 
 The live Neon schema is documented in `neon/schema.sql`.
+
+## Showroom update
+
+Modu Atelier is the fourth full website concept in `/showroom/modu-atelier/` (14 pages). Images are illustrative, and interactions prepare design enquiries rather than real orders.
