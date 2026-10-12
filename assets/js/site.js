@@ -115,14 +115,14 @@
       let title = '', copy = '', href = '', label = '';
       if (state.area === 'website') {
         title = 'Start with a website experience.';
-        copy = 'See my website work, then run the Website Check to spot issues.';
+        copy = 'Explore my website work, then tell me what you want to improve.';
         href = 'work.html';
         label = 'See my work';
       } else if (state.area === 'operations') {
-        title = 'Start with the Operations Check.';
+        title = 'Make your day-to-day work easier.';
         copy = 'Find where status, handoffs, reporting, capacity or reliance on memory is creating unnecessary coordination.';
-        href = 'operations-check.html';
-        label = 'Check my operations';
+        href = 'contact.html';
+        label = 'Discuss your workflow';
       } else {
         title = 'See my digital planner projects first.';
         copy = 'See how the planner is designed, then tell me what you need.';

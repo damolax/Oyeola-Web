@@ -7,13 +7,33 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/website-check",
+      "destination": "/websites",
+      "permanent": true
+    },
+    {
+      "source": "/website-check.html",
+      "destination": "/websites",
+      "permanent": true
+    },
+    {
+      "source": "/operations-check",
+      "destination": "/operations",
+      "permanent": true
+    },
+    {
+      "source": "/operations-check.html",
+      "destination": "/operations",
+      "permanent": true
+    },
+    {
       "source": "/workflow-check",
-      "destination": "/operations-check",
+      "destination": "/operations",
       "permanent": true
     },
     {
       "source": "/workflow-check.html",
-      "destination": "/operations-check",
+      "destination": "/operations",
       "permanent": true
     },
     {
