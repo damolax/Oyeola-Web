@@ -1,5 +1,17 @@
 (()=>{'use strict';
 const projects={
+ "fieldnote": {
+ "name":"Fieldnote Books",
+ "type":"Independent bookshop · Discovery and community",
+ "tone":"#40513A",
+ "intro":"An independent bookshop needs more than an attractive catalogue. Readers want help choosing their next book, while the business needs reasons for people to return after their first visit. Fieldnote designs around discovery and belonging.",
+ "potential":"A searchable collection and saved reading list can make choosing a book feel personal. Events and a reader newsletter create additional opportunities to reconnect. A production shop would connect real stock, checkout, event booking and opt-in email marketing.",
+ "wins":[["Make discovery inviting","Visitors can search by title, mood or genre and instantly filter the example collection."],["Keep a reader's curiosity alive","A working on-page reading list lets shoppers shortlist favourite books instead of losing them as they browse."],["Build a community, not just transactions","Event enquiry previews and a newsletter section illustrate paths for turning occasional browsers into returning readers."]],
+ "references":[["Bookshop.org","https://bookshop.org/","An established example of online book discovery supporting independent bookshops."],["Waterstones","https://www.waterstones.com/","Demonstrates reader browsing, category exploration and event-led discovery."]],
+ "platforms":[["Shopify","Suggested when live inventory, ecommerce, collections and order management are priorities."],["WordPress","An alternative when literary articles, community content and a flexible events calendar are central."],["Wix Studio","Useful for a visually distinctive brochure and event site with simpler editorial updates."]],
+ "status":"Original portfolio concept, not a client commission. All sample book titles, events, forms and newsletter interactions are illustrative; nothing is sold or submitted."
+ },
+
  "common": {
   "name":"Common Ground",
   "type":"Independent café · Guest discovery and community",
