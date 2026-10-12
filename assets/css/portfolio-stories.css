@@ -1,0 +1,39 @@
+/* Warranty Wizards Figma UI/UX case study, Oyeola Online */
+.oy-warranty-story{--story-accent:#2464af}
+.oy-warranty-opening{background:linear-gradient(145deg,#f3f6fc,#e8eff9 56%,#fff)}
+.oy-warranty-story .oy-project-intro h1{max-width:13.5ch}
+.ww-browser{border:1px solid #d4dfed;box-shadow:0 18px 70px #244a811f;background:#fff;overflow:hidden;border-radius:16px;min-height:500px;color:#163561;isolation:isolate;font-family:'Poppins',Arial,sans-serif}
+.ww-browser-header{display:flex;align-items:center;gap:13px;white-space:nowrap;padding:12px 15px;color:#18375a;font-size:7px;letter-spacing:.03em;font-weight:800}
+.ww-logo{display:flex;align-items:center;gap:3px;font-size:20px;line-height:1;font-weight:800;margin-right:auto}.ww-logo>span{font-size:18px;color:#2464b2}.ww-logo small{font-size:6px;letter-spacing:.04em;max-width:49px;white-space:normal;line-height:1.1;margin-left:4px}
+.ww-browser-header>b{background:#2663af;color:#fff;border-radius:3px;padding:8px;font-size:7px;margin-left:3px}
+.ww-hero{height:205px;background:linear-gradient(180deg,#f6faff 2%,#e8f4fc 80%,#bfd4eb);position:relative;overflow:hidden;padding:28px 21px 8px;text-align:center}
+.ww-hero>p{color:#316cac;font-size:8px;letter-spacing:.18em;font-weight:800;margin:0 0 8px}
+.ww-hero>h2{font-weight:800;color:#142e50;font-size:22px;letter-spacing:-.045em;line-height:1.15;margin:0 0 5px}
+.ww-hero>h2 em{font-style:normal;color:#3171bf}
+.ww-hero>span{font-size:8px;color:#556b83}
+.ww-hero-objects{display:flex;align-items:end;justify-content:center;gap:30px;position:absolute;bottom:-46px;left:0;right:0}
+.ww-house{color:#fff;background:#2b5f99;border:5px solid #3d7ac0;box-shadow:0 5px 0 #1c426c,0 10px 30px #143c6b30;font-size:105px;height:110px;width:235px;line-height:95px;transform:skew(-7deg)}
+.ww-car{height:50px;width:190px;border-radius:58% 45% 20% 20%;background:linear-gradient(#c2d9ec,#718a9f);border-bottom:7px solid #263d55;color:#263d55;text-align:center;line-height:37px;font-size:45px;position:relative;box-shadow:0 8px 18px #233c522b}
+.ww-car>span{position:absolute;bottom:-18px;left:16px;right:16px;font-size:27px;line-height:1;color:#20354d;display:flex;justify-content:space-between}
+.ww-form{background:#1e569d;color:white;padding:22px 28px 22px;min-height:201px}
+.ww-form-label{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;margin-bottom:14px}
+.ww-form-label>span{font-size:9px;letter-spacing:.1em;color:#e0edfb}
+.ww-form-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ww-form-cols>div{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ww-form-cols i{font-style:normal;background:#eff6fd;color:#58728a;border-radius:2px;padding:9px 8px;font-size:8px;min-width:0}
+.ww-quote{display:block;background:#fff;color:#1f59a2;font-size:9px;text-align:center;padding:10px 15px;border-radius:4px;font-weight:800;margin:12px auto 0;max-width:190px}
+.ww-browser-foot{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:18px 20px;background:#fff}
+.ww-browser-foot>div{border:1px solid #d7e3ee;padding:11px;border-radius:5px}
+.ww-browser-foot span{display:block;font-size:8px;color:#4f80b1;letter-spacing:.1em;margin-bottom:4px}
+.ww-browser-foot b{font-size:11px;line-height:1.3}
+.ww-palette{background:#fff;color:#193b62;border:1px solid #d9e4ee;border-radius:15px;overflow:hidden}
+.ww-palette-top{background:linear-gradient(135deg,#123267,#295c9f);color:white;padding:31px 30px;display:flex;flex-direction:column;gap:9px}
+.ww-palette-top span{font-size:10px;letter-spacing:.13em;font-weight:800}.ww-palette-top b{font-size:32px;letter-spacing:-.04em}
+.ww-swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:16px}
+.ww-swatches span{min-height:94px;display:flex;align-items:end;padding:10px;font-size:10px;font-weight:800;border:1px solid #e6eaf2}
+.ww-palette-type{padding:19px 25px 29px}
+.ww-palette-type small{letter-spacing:.14em;color:#5582af;font-size:9px;font-weight:800}
+.ww-palette-type strong{font-size:clamp(23px,3vw,34px);line-height:1.2;letter-spacing:-.048em;display:block;margin:13px 0}
+.ww-palette-type p{font-size:12px;line-height:1.7;color:#54718f}
+.ww-note{font-size:11px!important;line-height:1.75!important;margin-top:21px!important;color:var(--oy-muted)}
+@media(max-width:620px){.ww-browser{min-height:0}.ww-browser-header{gap:8px;padding:12px}.ww-browser-header>span:nth-of-type(n+2){display:none}.ww-hero>h2{font-size:19px}.ww-house{width:170px;height:100px;font-size:75px;line-height:90px}.ww-car{width:130px}.ww-form{padding:17px}.ww-form-cols{gap:9px}.ww-form-cols>div{grid-template-columns:1fr 1fr}.ww-browser-foot{padding:11px}.ww-swatches{gap:5px;padding:10px}.ww-swatches span{min-height:70px;padding:6px;font-size:8px}}
