@@ -29,3 +29,15 @@
 /* Keep the portfolio work in view sooner on desktop and mobile. */
 @media(min-width:721px){.hero{padding-top:52px;padding-bottom:8px}.hero-layout{min-height:255px}.hero h1{font-size:clamp(51px,6.0vw,78px);line-height:1.02;margin:17px 0 18px}.hero-actions{margin-top:22px}.hero-accent{width:245px;height:245px}.hero-accent span{font-size:64px}.hero-base{margin-top:21px;padding:16px 0}.collection{padding-top:77px}}
 @media(max-width:720px){.hero{padding-top:47px;padding-bottom:9px}.hero h1{font-size:clamp(43px,10vw,69px);margin:13px 0 18px}.hero-base{margin-top:28px;padding:16px 0}.collection{padding-top:58px}}
+
+
+/* Distinct project art direction in the showroom: visual previews are not a single template. */
+.site-card.fieldnote{background:#1b1d17;color:#f3f0e5}.site-card.fieldnote .site-content{background:#1b1d17;color:#f3f0e5}.site-card.fieldnote .site-type,.site-card.fieldnote .site-intro{color:#ccd2a8}.site-card.fieldnote .feature-chips span{background:#dceb73;color:#151a12;border-color:#dceb73}.site-card.fieldnote .site-visual img{filter:contrast(1.2) grayscale(.9)}
+.site-card.common .site-visual{border-radius:47% 47% 0 0}.site-card.common .site-content{background:#ffdf77;color:#502d23}.site-card.common .site-visual img{filter:saturate(1.3)}
+.site-card.modu .site-visual img{filter:saturate(.5)}.site-card.modu .site-content{background:#f0ece5}
+.site-card.arc .site-visual img{filter:saturate(.75) brightness(.8)}.site-card.arc .site-content{background:#d8e2d4}
+.site-card.still .site-content{background:#e1ebe7}.site-card.still .site-visual{border-radius:42% 42% 0 0}
+.site-card.pet .site-content{background:#dbeded}.site-card.pet .site-visual{border-radius:22px}
+.site-card.tillman .site-content{background:#e7e9e7}.site-card.tillman .site-visual img{filter:contrast(1.15)}
+.site-card.objects .site-content{background:#eaeae7}.site-card.objects .site-visual img{filter:grayscale(1)}
+.site-card.apartment .site-content{background:#f5e9d6}
