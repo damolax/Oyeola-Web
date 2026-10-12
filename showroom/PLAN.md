@@ -85,9 +85,9 @@ These are **full multi-page websites**, not isolated feature demos. Every new br
 3. Blue Bottle Coffee — https://bluebottlecoffee.com/us/eng/subscriptions — clear delivery cadence and brew guidance. Improve with a compact comparison showing coffee, frequency, cost and cancellation terms at once.
 **Why designed to help:** less uncertainty about flavour and recurring cost. Verify conversion performance only after instrumentation.
 
-## Three existing GitHub website builds selected for the showroom
+## Additional website experiences in the showroom
 1. Objects In Motion — https://objects-in-motion.vercel.app/ ; https://github.com/damolax/Object-in-motion . Multi-page kinetic sculpture review build; code marks it noindex and not the live Wix store.
-2. Arbequina Apartment — https://arbequina-apartment.vercel.app/ ; https://github.com/damolax/arbequina-apartment . Multi-page holiday rental site with gallery, area and booking information.
+2. Arbequina Apartment — private client reference; view the portfolio case study at `/case-studies/arbequina-apartment.html`. Holiday rental experience with gallery, area information and an availability path.
 3. Tillman Tough — https://tillman-tough.vercel.app/ ; https://github.com/damolax/krella-tillman . Commercial e-commerce review build with catalogue, product search and trade ordering.
 
 ## Confirmed platform labels for Oyeola Web project cards
