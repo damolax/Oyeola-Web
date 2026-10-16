@@ -1,0 +1,61 @@
+name: Package Oyeola Brand Logos
+
+on:
+  push:
+    paths:
+      - '.github/workflows/package-brand-logos.yml'
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build organized brand package
+        shell: bash
+        run: |
+          set -e
+          mkdir -p "brand-package/01 — Primary Logos"
+          mkdir -p "brand-package/02 — Logo Marks & Badge"
+          mkdir -p "brand-package/03 — Favicons & App Icons"
+
+          cp assets/logos/logo-horizontal-light.svg "brand-package/01 — Primary Logos/Oyeola-Online-Horizontal-Light.svg"
+          cp assets/logos/logo-horizontal-dark.svg "brand-package/01 — Primary Logos/Oyeola-Online-Horizontal-Dark.svg"
+          cp assets/logos/logo-stacked-dark.svg "brand-package/01 — Primary Logos/Oyeola-Online-Stacked-Dark.svg"
+          cp assets/logos/logo-wordmark.svg "brand-package/01 — Primary Logos/Oyeola-Online-Wordmark.svg"
+
+          cp assets/logos/logo-mark.svg "brand-package/02 — Logo Marks & Badge/Oyeola-Online-Mark.svg"
+          cp assets/logos/logo-badge.svg "brand-package/02 — Logo Marks & Badge/Oyeola-Online-Badge.svg"
+
+          cp assets/logos/favicon.svg "brand-package/03 — Favicons & App Icons/Oyeola-Online-Favicon.svg"
+          cp assets/logos/favicon-32.png "brand-package/03 — Favicons & App Icons/Oyeola-Online-Favicon-32.png"
+          cp assets/logos/favicon.ico "brand-package/03 — Favicons & App Icons/Oyeola-Online-Favicon.ico"
+          cp assets/logos/icon-192.png "brand-package/03 — Favicons & App Icons/Oyeola-Online-App-Icon-192.png"
+          cp assets/logos/icon-512.png "brand-package/03 — Favicons & App Icons/Oyeola-Online-App-Icon-512.png"
+
+          cat > "brand-package/README — Logo Guide.txt" <<'EOF'
+          OYEOLA ONLINE — LOGO PACKAGE
+
+          01 — Primary Logos
+          Horizontal Light: use on light backgrounds.
+          Horizontal Dark: use on dark backgrounds.
+          Stacked Dark: use when a square/tall logo lockup works better.
+          Wordmark: typography-only version.
+
+          02 — Logo Marks & Badge
+          Mark: compact standalone symbol.
+          Badge: square branded badge lockup.
+
+          03 — Favicons & App Icons
+          Favicon SVG/PNG/ICO: browser tabs and bookmarks.
+          192px / 512px icons: app, PWA and large icon usage.
+
+          Source: Oyeola Online website repository.
+          Production website: https://oyeolaonline.com
+          EOF
+
+      - name: Upload brand package
+        uses: actions/upload-artifact@v4
+        with:
+          name: Oyeola-Online-Brand-Logos
+          path: brand-package/
+          retention-days: 1
