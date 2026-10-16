@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin
+Disallow: /admin/
 Disallow: /api/
-Sitemap: https://oyeola-web.vercel.app/sitemap.xml
+
+Sitemap: https://oyeolaonline.com/sitemap.xml
