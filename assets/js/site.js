@@ -146,7 +146,7 @@
     fallback.textContent = monogram;
     img.replaceWith(fallback);
   };
-  $('.tool-chip-visual img').forEach(img => {
+  $$('.tool-chip-visual img').forEach(img => {
     img.addEventListener('error', () => replaceBrokenToolLogo(img), {once:true});
     if (img.complete && img.naturalWidth === 0) replaceBrokenToolLogo(img);
   });
