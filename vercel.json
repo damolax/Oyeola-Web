@@ -14,18 +14,7 @@
           "value": "oyeola-web.vercel.app"
         }
       ],
-      "destination": "https://oyeolaonline.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.oyeolaonline.com"
-        }
-      ],
-      "destination": "https://oyeolaonline.com/:path*",
+      "destination": "https://www.oyeolaonline.com/:path*",
       "permanent": true
     },
     {
