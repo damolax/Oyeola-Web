@@ -1,4 +1,7 @@
 (() => {
+
+    const instagramIcon = `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.4" cy="6.7" r="1.15" fill="currentColor"/></svg>`;
+    const linkedinIcon = `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="8" cy="8" r="1.35" fill="currentColor"/><path d="M6.8 10.7h2.4v6.6H6.8zM11.1 10.7h2.3v.9c.7-.8 1.6-1.2 2.7-1.2 2.1 0 3.1 1.3 3.1 3.7v3.2h-2.4v-3c0-1.2-.4-1.8-1.4-1.8-1.1 0-1.8.8-1.8 2.1v2.7h-2.5z" fill="currentColor"/></svg>`;
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const path = location.pathname.toLowerCase();
@@ -11,8 +14,7 @@
   const isHome = path === '/' || /\/index(?:\.html)?$/.test(path);
   const active = isHome ? 'home'
     : path.includes('/case-studies/') || /\/work(?:\.html)?$/.test(path) || /\/project(?:\.html)?$/.test(path) ? 'work'
-    : path.includes('demos') || path.includes('demo-') || path.includes('smart-match') || path.includes('configure') || path.includes('planner-demo') ? 'demos'
-    : path.includes('/showroom/') ? 'showroom'
+    : path.includes('demos') || path.includes('demo-') || path.includes('smart-match') || path.includes('configure') || path.includes('planner-demo') || path.includes('/showroom/') ? 'showroom'
     : path.includes('/services/') || path.includes('services') || path.includes('website') || path.includes('operations') || path.includes('digital-planners') ? 'services'
     : path.includes('about') ? 'about' : '';
   const loaderStartedAt = performance.now();
@@ -89,13 +91,12 @@
             <a class="${active==='work'?'active':''}" href="${root}work.html"><span>01</span>Work</a>
             <a class="${active==='showroom'?'active':''}" href="${root}showroom/index.html"><span>02</span>Live websites</a>
             <a class="${active==='services'?'active':''}" href="${root}services.html"><span>03</span>Services</a>
-            <a class="${active==='demos'?'active':''}" href="${root}demos.html"><span>04</span>Demo Lab</a>
-            <a class="${active==='about'?'active':''}" href="${root}about.html"><span>05</span>About</a>
-            <a href="${root}contact.html"><span>06</span>Contact</a>
+            <a class="${active==='about'?'active':''}" href="${root}about.html"><span>04</span>About</a>
+            <a href="${root}contact.html"><span>05</span>Contact</a>
           </nav>
           <div class="studio-menu-meta">
             <div><small>Services</small><a href="${root}websites.html">Website design</a><a href="${root}operations.html">Automation & systems</a><a href="${root}digital-planners.html">Digital planners</a></div>
-            <div><small>Connect</small><a href="mailto:oyeolawebmaster@gmail.com">Email</a><a href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
+            <div><small>Connect</small><a href="mailto:oyeolawebmaster@gmail.com">Email</a><a href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="${root}privacy.html">Privacy policy</a></div>
             <div class="studio-menu-cta"><small>Have a project?</small><a href="${root}contact.html">Let's build it <span aria-hidden="true">↗</span></a></div>
           </div>
         </div>
@@ -114,7 +115,7 @@
 
   const footer = $('footer.footer');
   if (footer) {
-    footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-light.svg" alt="Oyeola Online"></a><p>Thoughtful websites, useful systems, better digital experiences.</p></div><div><strong>Explore</strong><p><a href="${root}work.html">Selected work</a><br><a href="${root}showroom/index.html">Live websites</a><br><a href="${root}about.html">About Oyeola Online</a></p></div><div><strong>Services</strong><p><a href="${root}websites.html">Website design</a><br><a href="${root}operations.html">Automation & systems</a><br><a href="${root}digital-planners.html">Digital planners</a></p></div><div><strong>Let's talk</strong><p><a href="${root}contact.html">Start a project</a><br><a href="mailto:oyeolawebmaster@gmail.com">Email</a><br><a href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer">Instagram @oyeola3168 ↗</a><br><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} Oyeola Online</span><span><a href="${root}privacy.html">Privacy</a> · Designed for clarity.</span></div></div></footer>`;
+    footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-light.svg" alt="Oyeola Online"></a><p>Thoughtful websites, useful systems, better digital experiences.</p><div class="footer-socials"><a class="social-icon-link" href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer" aria-label="Oyeola on Instagram">${instagramIcon}</a><a class="social-icon-link" href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer" aria-label="Oyekunle Olalekan on LinkedIn">${linkedinIcon}</a></div></div><div><strong>Explore</strong><p><a href="${root}work.html">Selected work</a><br><a href="${root}showroom/index.html">Live websites</a><br><a href="${root}about.html">About Oyeola Online</a></p></div><div><strong>Services</strong><p><a href="${root}websites.html">Website design</a><br><a href="${root}operations.html">Automation & systems</a><br><a href="${root}digital-planners.html">Digital planners</a></p></div><div><strong>Let's talk</strong><p><a href="${root}contact.html">Start a project</a><br><a href="mailto:oyeolawebmaster@gmail.com">oyeolawebmaster@gmail.com</a></p><a class="footer-privacy-link" href="${root}privacy.html">Privacy policy</a></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} Oyeola Online</span><span><a href="${root}privacy.html">Privacy policy</a> · Designed for clarity.</span></div></div></footer>`;
   }
 
   const themeToggle = $('.theme-toggle');
@@ -130,6 +131,25 @@
     if (themeIcon) themeIcon.textContent = next === 'light' ? '☀' : '◐';
   };
   themeToggle?.addEventListener('click', () => applyTheme(theme === 'light' ? 'dark' : 'light'));
+
+
+  const replaceBrokenToolLogo = img => {
+    if (!img || img.dataset.fallbackApplied === 'true') return;
+    img.dataset.fallbackApplied = 'true';
+    const chip = img.closest('.tool-chip-visual');
+    const label = chip?.querySelector(':scope > span:last-child')?.textContent?.trim() || img.alt.replace(/\s+logo$/i,'').trim() || 'Tool';
+    const words = label.split(/\s+/).filter(Boolean);
+    const monogram = (words.length > 1 ? words.slice(0,2).map(word => word[0]).join('') : label.slice(0,2)).toUpperCase();
+    const fallback = document.createElement('span');
+    fallback.className = 'tool-monogram tool-monogram-fallback';
+    fallback.setAttribute('aria-hidden','true');
+    fallback.textContent = monogram;
+    img.replaceWith(fallback);
+  };
+  $('.tool-chip-visual img').forEach(img => {
+    img.addEventListener('error', () => replaceBrokenToolLogo(img), {once:true});
+    if (img.complete && img.naturalWidth === 0) replaceBrokenToolLogo(img);
+  });
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduceMotion) {
@@ -334,6 +354,35 @@
     prev?.addEventListener('click', () => track.scrollBy({left:-step(),behavior:'smooth'}));
     next?.addEventListener('click', () => track.scrollBy({left:step(),behavior:'smooth'}));
     track?.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    requestAnimationFrame(update);
+  }
+
+
+  const showroomCarousel = $('[data-showroom-carousel]');
+  if (showroomCarousel) {
+    const track = $('[data-showroom-track]', showroomCarousel);
+    const prev = $('[data-showroom-prev]', showroomCarousel);
+    const next = $('[data-showroom-next]', showroomCarousel);
+    const step = () => {
+      const first = track?.firstElementChild;
+      if (!first || !track) return 320;
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0) || 0;
+      return first.getBoundingClientRect().width + gap;
+    };
+    const update = () => {
+      if (!track) return;
+      const max = Math.max(0, track.scrollWidth - track.clientWidth);
+      if (prev) prev.disabled = track.scrollLeft <= 4;
+      if (next) next.disabled = track.scrollLeft >= max - 4;
+    };
+    prev?.addEventListener('click', () => track.scrollBy({left:-step(),behavior:'smooth'}));
+    next?.addEventListener('click', () => track.scrollBy({left:step(),behavior:'smooth'}));
+    track?.addEventListener('scroll', update, {passive:true});
+    track?.addEventListener('keydown', event => {
+      if (event.key === 'ArrowRight') { event.preventDefault(); track.scrollBy({left:step(),behavior:'smooth'}); }
+      if (event.key === 'ArrowLeft') { event.preventDefault(); track.scrollBy({left:-step(),behavior:'smooth'}); }
+    });
     window.addEventListener('resize', update);
     requestAnimationFrame(update);
   }
