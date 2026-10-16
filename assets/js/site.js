@@ -76,31 +76,31 @@
           </button>
         </div>
       </div>
-      <div class="studio-menu" id="studio-menu" aria-hidden="true" hidden>
-        <div class="studio-menu-backdrop" data-menu-backdrop></div>
-        <div class="studio-menu-panel" role="dialog" aria-modal="true" aria-label="Site menu">
-          <div class="container studio-menu-inner">
-            <div class="studio-menu-top">
-              <span>Explore Oyeola Online</span>
-              <button class="studio-menu-close" type="button" aria-label="Close menu">Close <span aria-hidden="true">×</span></button>
-            </div>
-            <nav class="studio-menu-nav" aria-label="Primary navigation">
-              <a class="${active==='work'?'active':''}" href="${root}work.html"><span>01</span>Work</a>
-              <a class="${active==='showroom'?'active':''}" href="${root}showroom/index.html"><span>02</span>Live websites</a>
-              <a class="${active==='services'?'active':''}" href="${root}services.html"><span>03</span>Services</a>
-              <a class="${active==='demos'?'active':''}" href="${root}demos.html"><span>04</span>Demo Lab</a>
-              <a class="${active==='about'?'active':''}" href="${root}about.html"><span>05</span>About</a>
-              <a href="${root}contact.html"><span>06</span>Contact</a>
-            </nav>
-            <div class="studio-menu-meta">
-              <div><small>Services</small><a href="${root}websites.html">Website design</a><a href="${root}operations.html">Automation & systems</a><a href="${root}digital-planners.html">Digital planners</a></div>
-              <div><small>Connect</small><a href="mailto:oyeolawebmaster@gmail.com">Email</a><a href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
-              <div class="studio-menu-cta"><small>Have a project?</small><a href="${root}contact.html">Let's build it <span aria-hidden="true">↗</span></a></div>
-            </div>
+    </header>
+    <div class="studio-menu" id="studio-menu" aria-hidden="true" hidden>
+      <div class="studio-menu-backdrop" data-menu-backdrop></div>
+      <div class="studio-menu-panel" role="dialog" aria-modal="true" aria-label="Site menu">
+        <div class="container studio-menu-inner">
+          <div class="studio-menu-top">
+            <span>Explore Oyeola Online</span>
+            <button class="studio-menu-close" type="button" aria-label="Close menu">Close <span aria-hidden="true">×</span></button>
+          </div>
+          <nav class="studio-menu-nav" aria-label="Primary navigation">
+            <a class="${active==='work'?'active':''}" href="${root}work.html"><span>01</span>Work</a>
+            <a class="${active==='showroom'?'active':''}" href="${root}showroom/index.html"><span>02</span>Live websites</a>
+            <a class="${active==='services'?'active':''}" href="${root}services.html"><span>03</span>Services</a>
+            <a class="${active==='demos'?'active':''}" href="${root}demos.html"><span>04</span>Demo Lab</a>
+            <a class="${active==='about'?'active':''}" href="${root}about.html"><span>05</span>About</a>
+            <a href="${root}contact.html"><span>06</span>Contact</a>
+          </nav>
+          <div class="studio-menu-meta">
+            <div><small>Services</small><a href="${root}websites.html">Website design</a><a href="${root}operations.html">Automation & systems</a><a href="${root}digital-planners.html">Digital planners</a></div>
+            <div><small>Connect</small><a href="mailto:oyeolawebmaster@gmail.com">Email</a><a href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
+            <div class="studio-menu-cta"><small>Have a project?</small><a href="${root}contact.html">Let's build it <span aria-hidden="true">↗</span></a></div>
           </div>
         </div>
       </div>
-    </header>`;
+    </div>`;
   }
 
   let icon = document.querySelector('link[rel="icon"]');
