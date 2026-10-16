@@ -7,6 +7,28 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "oyeola-web.vercel.app"
+        }
+      ],
+      "destination": "https://oyeolaonline.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.oyeolaonline.com"
+        }
+      ],
+      "destination": "https://oyeolaonline.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/website-check",
       "destination": "/websites",
       "permanent": true
@@ -39,172 +61,278 @@
     {
       "source": "/demos",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demos.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/smart-match",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/smart-match.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/configure",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/configure.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/operations-demo",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/operations-demo.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/planner-demo",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/planner-demo.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-wedding",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-wedding.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-ecommerce",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-ecommerce.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-travel",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-travel.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-real-estate",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-real-estate.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-hospitality",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-hospitality.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-beauty",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-beauty.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-therapy",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-therapy.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-professional-services",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-professional-services.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-home-services",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-home-services.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-education",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-education.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-saas",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-saas.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-nonprofit",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/demo-nonprofit.html",
       "destination": "/showroom",
-      "permanent": false
+      "permanent": true
+    }
+  ],
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/assets/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/showroom/modu-atelier/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/showroom/kindred-pet/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/showroom/stillform/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/showroom/arc-and-acre/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/showroom/common-ground/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/showroom/fieldnote-books/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/showroom/preview-:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/seo-plan",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/admin/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
     }
   ]
 }
