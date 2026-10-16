@@ -2411,3 +2411,32 @@ html[data-theme="light"] .privacy-summary{background:#fff;border-color:rgba(23,7
   .showroom-home-track img,.social-icon-link{transition:none!important}
 }
 
+/* SEO content overview */
+.seo-service-copy{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px
+}
+.seo-service-copy article{
+  padding:26px;
+  border:1px solid var(--oy-line);
+  border-radius:20px;
+  background:linear-gradient(155deg,#0b110c,#080b09)
+}
+.seo-service-copy h3{
+  margin:0 0 12px;
+  font-size:22px;
+  line-height:1.15;
+  letter-spacing:-.035em
+}
+.seo-service-copy p{
+  margin:0 0 18px;
+  color:var(--oy-muted);
+  font-size:14.5px;
+  line-height:1.72
+}
+.seo-service-copy p a{color:var(--oy-green);text-decoration:underline;text-underline-offset:3px}
+html[data-theme="light"] .seo-service-copy article{background:#fff;border-color:rgba(23,74,31,.13)}
+html[data-theme="light"] .seo-service-copy p{color:#536357}
+@media(max-width:900px){.seo-service-copy{grid-template-columns:1fr}}
+
