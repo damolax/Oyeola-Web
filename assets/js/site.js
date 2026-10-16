@@ -411,11 +411,11 @@
   if (portfolioTrack) {
     const prev = $('[data-portfolio-prev]');
     const next = $('[data-portfolio-next]');
-    const filters = $('[data-portfolio-filter]');
+    const filters = $$('[data-portfolio-filter]');
     const count = $('[data-portfolio-count]');
     let activeFilter = 'all';
 
-    const visibleCards = () => $('.portfolio-slide', portfolioTrack).filter(card => !card.hidden);
+    const visibleCards = () => $$('.portfolio-slide', portfolioTrack).filter(card => !card.hidden);
     const step = () => {
       const card = visibleCards()[0];
       if (!card) return portfolioTrack.clientWidth * .9;
@@ -431,7 +431,7 @@
     const applyFilter = key => {
       activeFilter = key || 'all';
       let shown = 0;
-      $('.portfolio-slide', portfolioTrack).forEach(card => {
+      $$('.portfolio-slide', portfolioTrack).forEach(card => {
         const show = activeFilter === 'all' || card.dataset.workCategory === activeFilter;
         card.hidden = !show;
         if (show) shown++;
