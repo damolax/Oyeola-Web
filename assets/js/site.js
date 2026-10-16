@@ -57,6 +57,26 @@
   window.setTimeout(finishSiteLoad, 9000);
 
   const pageMain = document.querySelector('main');
+
+  // Search-friendly breadcrumb structured data for indexable public pages.
+  const robotsMeta = document.querySelector('meta[name="robots"]')?.content?.toLowerCase() || '';
+  const currentPath = location.pathname.replace(/\.html$/,'').replace(/\/$/,'') || '/';
+  const isDemoChild = currentPath.startsWith('/showroom/') && currentPath !== '/showroom';
+  if (currentPath !== '/' && !robotsMeta.includes('noindex') && !isDemoChild && !document.getElementById('oyeola-breadcrumb-schema')) {
+    const pageLabel = (document.querySelector('h1')?.textContent || document.title.split('|')[0] || 'Page').replace(/\s+/g,' ').trim();
+    const items = [{ '@type':'ListItem', position:1, name:'Oyeola Online', item:'https://oyeolaonline.com/' }];
+    if (currentPath.startsWith('/services/')) {
+      items.push({ '@type':'ListItem', position:2, name:'Services', item:'https://oyeolaonline.com/services' });
+    } else if (currentPath.startsWith('/case-studies/')) {
+      items.push({ '@type':'ListItem', position:2, name:'Work', item:'https://oyeolaonline.com/work' });
+    }
+    items.push({ '@type':'ListItem', position:items.length + 1, name:pageLabel, item:'https://oyeolaonline.com' + currentPath });
+    const schema = document.createElement('script');
+    schema.id = 'oyeola-breadcrumb-schema';
+    schema.type = 'application/ld+json';
+    schema.textContent = JSON.stringify({ '@context':'https://schema.org', '@type':'BreadcrumbList', itemListElement:items });
+    document.head.appendChild(schema);
+  }
   if(pageMain && !pageMain.id)pageMain.id = 'main-content';
   if(pageMain && !document.querySelector('.skip-link'))document.body.insertAdjacentHTML('afterbegin','<a class="skip-link" href="#main-content">Skip to content</a>');
 
