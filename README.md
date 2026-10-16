@@ -1,5 +1,7 @@
 # Oyeola Online
 
+**Live website:** https://oyeolaonline.com
+
 Founder-led digital studio for websites, operations systems and premium digital products.
 
 The public site is deployed on Vercel. The application backend now uses **Neon only** for CMS data, admin sessions, leads and media storage. Supabase is not part of the Oyeola architecture.
@@ -103,3 +105,7 @@ The live Neon schema is documented in `neon/schema.sql`.
 ## Showroom update
 
 Modu Atelier is the fourth full website concept in `/showroom/modu-atelier/` (14 pages). Images are illustrative, and interactions prepare design enquiries rather than real orders.
+
+## Public services
+
+Oyeola Online provides website design and redesign, Wix and Wix Studio design, WordPress and ecommerce website work, business automation and CRM systems, and custom digital planner design.
