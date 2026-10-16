@@ -15,6 +15,45 @@
     : path.includes('/showroom/') ? 'showroom'
     : path.includes('/services/') || path.includes('services') || path.includes('website') || path.includes('operations') || path.includes('digital-planners') ? 'services'
     : path.includes('about') ? 'about' : '';
+  const loaderStartedAt = performance.now();
+  if (!document.querySelector('.site-loader')) {
+    document.body.classList.add('site-loading');
+    document.body.insertAdjacentHTML('afterbegin', `
+      <div class="site-loader" role="status" aria-label="Loading Oyeola Online">
+        <div class="site-loader-mark" aria-hidden="true">
+          <svg viewBox="0 0 128 72" role="presentation">
+            <defs>
+              <linearGradient id="oyLoaderInfinityGradient" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0" stop-color="#08c83d"/>
+                <stop offset=".52" stop-color="#20ef58"/>
+                <stop offset="1" stop-color="#a4ff4f"/>
+              </linearGradient>
+            </defs>
+            <path class="loader-infinity-ghost" pathLength="100" d="M9 37C9 20 28 12 42 27L64 50C78 65 101 59 101 36C101 16 79 10 65 26L43 50C29 65 9 58 9 37Z"/>
+            <path class="loader-infinity-draw" pathLength="100" d="M9 37C9 20 28 12 42 27L64 50C78 65 101 59 101 36C101 16 79 10 65 26L43 50C29 65 9 58 9 37Z"/>
+          </svg>
+        </div>
+      </div>
+    `);
+  }
+  const siteLoader = document.querySelector('.site-loader');
+  let loaderFinished = false;
+  const finishSiteLoad = () => {
+    if (loaderFinished || !siteLoader) return;
+    loaderFinished = true;
+    const minimumIntro = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 120 : 720;
+    const wait = Math.max(0, minimumIntro - (performance.now() - loaderStartedAt));
+    window.setTimeout(() => {
+      siteLoader.classList.add('is-loaded');
+      document.body.classList.remove('site-loading');
+      document.documentElement.classList.add('site-ready');
+      window.setTimeout(() => siteLoader.remove(), 760);
+    }, wait);
+  };
+  if (document.readyState === 'complete') finishSiteLoad();
+  else window.addEventListener('load', finishSiteLoad, { once:true });
+  window.setTimeout(finishSiteLoad, 9000);
+
   const pageMain = document.querySelector('main');
   if(pageMain && !pageMain.id)pageMain.id = 'main-content';
   if(pageMain && !document.querySelector('.skip-link'))document.body.insertAdjacentHTML('afterbegin','<a class="skip-link" href="#main-content">Skip to content</a>');
@@ -22,7 +61,46 @@
     const header = $('.site-header');
   if (header) {
     const brandMark = `<span class="brand-infinity" aria-hidden="true"><svg viewBox="0 0 128 72" role="presentation"><defs><linearGradient id="oyInfinityGradient" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#08c83d"/><stop offset=".52" stop-color="#20ef58"/><stop offset="1" stop-color="#a4ff4f"/></linearGradient></defs><path class="brand-infinity-base" pathLength="100" d="M9 37C9 20 28 12 42 27L64 50C78 65 101 59 101 36C101 16 79 10 65 26L43 50C29 65 9 58 9 37Z"/><path class="brand-infinity-flow" pathLength="100" d="M9 37C9 20 28 12 42 27L64 50C78 65 101 59 101 36C101 16 79 10 65 26L43 50C29 65 9 58 9 37Z"/></svg></span>`;
-    header.outerHTML = `<header class="site-header studio-header"><div class="container studio-header-row"><a class="studio-brand" href="${root}index.html" aria-label="Oyeola Online home">${brandMark}<span class="studio-brand-type"><strong>OYEOLA</strong><small>ONLINE</small></span></a><div class="studio-header-actions"><button class="theme-toggle" type="button" aria-label="Switch to ${theme==='light'?'dark':'light'} mode" title="Switch theme"><span data-theme-icon aria-hidden="true">${theme==='light'?'☀':'◐'}</span></button><a class="studio-project-cta" href="${root}contact.html">Start a project <span aria-hidden="true">↗</span></a><button class="studio-menu-btn" type="button" aria-controls="studio-menu" aria-label="Open menu" aria-expanded="false"><span>Menu</span><i aria-hidden="true"></i></button></div></div><div class="studio-menu" id="studio-menu" hidden><div class="container studio-menu-inner"><div class="studio-menu-top"><span>Explore Oyeola Online</span><button class="studio-menu-close" type="button" aria-label="Close menu">Close <span aria-hidden="true">×</span></button></div><nav class="studio-menu-nav" aria-label="Primary navigation"><a class="${active==='work'?'active':''}" href="${root}work.html"><span>01</span>Work</a><a class="${active==='showroom'?'active':''}" href="${root}showroom/index.html"><span>02</span>Live websites</a><a class="${active==='services'?'active':''}" href="${root}services.html"><span>03</span>Services</a><a class="${active==='demos'?'active':''}" href="${root}demos.html"><span>04</span>Demo Lab</a><a class="${active==='about'?'active':''}" href="${root}about.html"><span>05</span>About</a><a href="${root}contact.html"><span>06</span>Contact</a></nav><div class="studio-menu-meta"><div><small>Services</small><a href="${root}websites.html">Website design</a><a href="${root}operations.html">Automation & systems</a><a href="${root}digital-planners.html">Digital planners</a></div><div><small>Connect</small><a href="mailto:oyeolawebmaster@gmail.com">Email</a><a href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><div class="studio-menu-cta"><small>Have a project?</small><a href="${root}contact.html">Let's build it <span aria-hidden="true">↗</span></a></div></div></div></div></header>`;
+    header.outerHTML = `<header class="site-header studio-header">
+      <div class="container studio-header-row">
+        <a class="studio-brand" href="${root}index.html" aria-label="Oyeola Online home">
+          ${brandMark}
+          <span class="studio-brand-type"><strong>OYEOLA</strong><small>ONLINE</small></span>
+        </a>
+        <div class="studio-header-actions">
+          <button class="theme-toggle" type="button" aria-label="Switch to ${theme==='light'?'dark':'light'} mode" title="Switch theme"><span data-theme-icon aria-hidden="true">${theme==='light'?'☀':'◐'}</span></button>
+          <a class="studio-project-cta" href="${root}contact.html">Start a project <span class="studio-project-cta-icon" aria-hidden="true">↗</span></a>
+          <button class="studio-menu-btn" type="button" aria-controls="studio-menu" aria-label="Open menu" aria-expanded="false">
+            <span class="studio-menu-label">Menu</span>
+            <span class="studio-menu-orb" aria-hidden="true"><span></span><span></span></span>
+          </button>
+        </div>
+      </div>
+      <div class="studio-menu" id="studio-menu" aria-hidden="true" hidden>
+        <div class="studio-menu-backdrop" data-menu-backdrop></div>
+        <div class="studio-menu-panel" role="dialog" aria-modal="true" aria-label="Site menu">
+          <div class="container studio-menu-inner">
+            <div class="studio-menu-top">
+              <span>Explore Oyeola Online</span>
+              <button class="studio-menu-close" type="button" aria-label="Close menu">Close <span aria-hidden="true">×</span></button>
+            </div>
+            <nav class="studio-menu-nav" aria-label="Primary navigation">
+              <a class="${active==='work'?'active':''}" href="${root}work.html"><span>01</span>Work</a>
+              <a class="${active==='showroom'?'active':''}" href="${root}showroom/index.html"><span>02</span>Live websites</a>
+              <a class="${active==='services'?'active':''}" href="${root}services.html"><span>03</span>Services</a>
+              <a class="${active==='demos'?'active':''}" href="${root}demos.html"><span>04</span>Demo Lab</a>
+              <a class="${active==='about'?'active':''}" href="${root}about.html"><span>05</span>About</a>
+              <a href="${root}contact.html"><span>06</span>Contact</a>
+            </nav>
+            <div class="studio-menu-meta">
+              <div><small>Services</small><a href="${root}websites.html">Website design</a><a href="${root}operations.html">Automation & systems</a><a href="${root}digital-planners.html">Digital planners</a></div>
+              <div><small>Connect</small><a href="mailto:oyeolawebmaster@gmail.com">Email</a><a href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
+              <div class="studio-menu-cta"><small>Have a project?</small><a href="${root}contact.html">Let's build it <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>`;
   }
 
   let icon = document.querySelector('link[rel="icon"]');
@@ -94,22 +172,42 @@
   const menu = $('.studio-menu-btn');
   const menuPanel = $('.studio-menu');
   const menuClose = $('.studio-menu-close');
+  const menuBackdrop = $('[data-menu-backdrop]');
+  let menuHideTimer = 0;
+
   const setMenu = open => {
     if (!menu || !menuPanel) return;
+    window.clearTimeout(menuHideTimer);
     menu.setAttribute('aria-expanded', String(open));
     menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    menuPanel.hidden = !open;
-    document.body.classList.toggle('studio-menu-open', open);
-    if (open) requestAnimationFrame(() => menuPanel.classList.add('is-open'));
-    else menuPanel.classList.remove('is-open');
+    menuPanel.setAttribute('aria-hidden', String(!open));
+
+    if (open) {
+      menuPanel.hidden = false;
+      document.body.classList.add('studio-menu-open');
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        menuPanel.classList.add('is-open');
+        menuClose?.focus({preventScroll:true});
+      }));
+      return;
+    }
+
+    menuPanel.classList.remove('is-open');
+    document.body.classList.remove('studio-menu-open');
+    const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 650;
+    menuHideTimer = window.setTimeout(() => {
+      if (menu.getAttribute('aria-expanded') === 'false') menuPanel.hidden = true;
+    }, delay);
   };
+
   menu?.addEventListener('click', () => setMenu(menu.getAttribute('aria-expanded') !== 'true'));
-  menuClose?.addEventListener('click', () => { setMenu(false); menu?.focus(); });
+  menuClose?.addEventListener('click', () => { setMenu(false); menu?.focus({preventScroll:true}); });
+  menuBackdrop?.addEventListener('click', () => { setMenu(false); menu?.focus({preventScroll:true}); });
   $$('.studio-menu a').forEach(link => link.addEventListener('click', () => setMenu(false)));
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && menu?.getAttribute('aria-expanded') === 'true') {
       setMenu(false);
-      menu.focus();
+      menu.focus({preventScroll:true});
     }
   });
 
