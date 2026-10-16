@@ -21,7 +21,8 @@
 
     const header = $('.site-header');
   if (header) {
-    header.outerHTML = `<header class="site-header"><div class="container nav"><a class="brand brand-lockup" href="${root}index.html" aria-label="Oyeola Online home"><img data-theme-logo src="${root}assets/logos/${theme==='light'?'logo-horizontal-light.svg':'logo-horizontal-dark.svg'}" alt="Oyeola Online"></a><nav class="nav-links" id="primary-nav" aria-label="Primary navigation"><a class="${active==='work'?'active':''}" href="${root}work.html">Work</a><a class="${active==='showroom'?'active':''}" href="${root}showroom/index.html">Live websites</a><details class="nav-services ${active==='services'?'is-active':''}"><summary>Services <span aria-hidden="true">⌄</span></summary><div class="nav-services-menu"><a href="${root}services.html">All services</a><a href="${root}websites.html">Website design</a><a href="${root}operations.html">Automation & systems</a><a href="${root}digital-planners.html">Digital planners</a></div></details><a class="${active==='about'?'active':''}" href="${root}about.html">About</a><button class="theme-toggle" type="button" aria-label="Switch to ${theme==='light'?'dark':'light'} mode" title="Switch theme"><span data-theme-icon aria-hidden="true">${theme==='light'?'☀':'◐'}</span></button><a class="btn small nav-cta" href="${root}contact.html">Start a project ↗</a></nav><button class="menu-btn" type="button" aria-controls="primary-nav" aria-label="Open navigation" aria-expanded="false">Menu</button></div></header>`;
+    const brandMark = `<span class="brand-infinity" aria-hidden="true"><svg viewBox="0 0 128 72" role="presentation"><defs><linearGradient id="oyInfinityGradient" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#08c83d"/><stop offset=".52" stop-color="#20ef58"/><stop offset="1" stop-color="#a4ff4f"/></linearGradient></defs><path class="brand-infinity-base" pathLength="100" d="M9 37C9 20 28 12 42 27L64 50C78 65 101 59 101 36C101 16 79 10 65 26L43 50C29 65 9 58 9 37Z"/><path class="brand-infinity-flow" pathLength="100" d="M9 37C9 20 28 12 42 27L64 50C78 65 101 59 101 36C101 16 79 10 65 26L43 50C29 65 9 58 9 37Z"/></svg></span>`;
+    header.outerHTML = `<header class="site-header studio-header"><div class="container studio-header-row"><a class="studio-brand" href="${root}index.html" aria-label="Oyeola Online home">${brandMark}<span class="studio-brand-type"><strong>OYEOLA</strong><small>ONLINE</small></span></a><div class="studio-header-actions"><button class="theme-toggle" type="button" aria-label="Switch to ${theme==='light'?'dark':'light'} mode" title="Switch theme"><span data-theme-icon aria-hidden="true">${theme==='light'?'☀':'◐'}</span></button><a class="studio-project-cta" href="${root}contact.html">Start a project <span aria-hidden="true">↗</span></a><button class="studio-menu-btn" type="button" aria-controls="studio-menu" aria-label="Open menu" aria-expanded="false"><span>Menu</span><i aria-hidden="true"></i></button></div></div><div class="studio-menu" id="studio-menu" hidden><div class="container studio-menu-inner"><div class="studio-menu-top"><span>Explore Oyeola Online</span><button class="studio-menu-close" type="button" aria-label="Close menu">Close <span aria-hidden="true">×</span></button></div><nav class="studio-menu-nav" aria-label="Primary navigation"><a class="${active==='work'?'active':''}" href="${root}work.html"><span>01</span>Work</a><a class="${active==='showroom'?'active':''}" href="${root}showroom/index.html"><span>02</span>Live websites</a><a class="${active==='services'?'active':''}" href="${root}services.html"><span>03</span>Services</a><a class="${active==='demos'?'active':''}" href="${root}demos.html"><span>04</span>Demo Lab</a><a class="${active==='about'?'active':''}" href="${root}about.html"><span>05</span>About</a><a href="${root}contact.html"><span>06</span>Contact</a></nav><div class="studio-menu-meta"><div><small>Services</small><a href="${root}websites.html">Website design</a><a href="${root}operations.html">Automation & systems</a><a href="${root}digital-planners.html">Digital planners</a></div><div><small>Connect</small><a href="mailto:oyeolawebmaster@gmail.com">Email</a><a href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><div class="studio-menu-cta"><small>Have a project?</small><a href="${root}contact.html">Let's build it <span aria-hidden="true">↗</span></a></div></div></div></div></header>`;
   }
 
   let icon = document.querySelector('link[rel="icon"]');
@@ -90,18 +91,27 @@
     document.body.classList.add('motion-loaded');
   }
 
-  const menu = $('.menu-btn');
-  const nav = $('.nav-links');
-  if (menu && nav) {
-    menu.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      menu.setAttribute('aria-expanded', String(open));
-    });
-    $$('.nav-links a').forEach(link => link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      menu.setAttribute('aria-expanded', 'false');
-    }));
-  }
+  const menu = $('.studio-menu-btn');
+  const menuPanel = $('.studio-menu');
+  const menuClose = $('.studio-menu-close');
+  const setMenu = open => {
+    if (!menu || !menuPanel) return;
+    menu.setAttribute('aria-expanded', String(open));
+    menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menuPanel.hidden = !open;
+    document.body.classList.toggle('studio-menu-open', open);
+    if (open) requestAnimationFrame(() => menuPanel.classList.add('is-open'));
+    else menuPanel.classList.remove('is-open');
+  };
+  menu?.addEventListener('click', () => setMenu(menu.getAttribute('aria-expanded') !== 'true'));
+  menuClose?.addEventListener('click', () => { setMenu(false); menu?.focus(); });
+  $$('.studio-menu a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menu?.getAttribute('aria-expanded') === 'true') {
+      setMenu(false);
+      menu.focus();
+    }
+  });
 
   const finder = $('[data-finder]');
   if (finder) {
@@ -228,6 +238,56 @@
     track?.addEventListener('scroll', update, {passive:true});
     window.addEventListener('resize', update);
     requestAnimationFrame(update);
+  }
+
+  const portfolioTrack = $('[data-portfolio-track]');
+  if (portfolioTrack) {
+    const prev = $('[data-portfolio-prev]');
+    const next = $('[data-portfolio-next]');
+    const filters = $('[data-portfolio-filter]');
+    const count = $('[data-portfolio-count]');
+    let activeFilter = 'all';
+
+    const visibleCards = () => $('.portfolio-slide', portfolioTrack).filter(card => !card.hidden);
+    const step = () => {
+      const card = visibleCards()[0];
+      if (!card) return portfolioTrack.clientWidth * .9;
+      const style = getComputedStyle(portfolioTrack);
+      const gap = parseFloat(style.columnGap || style.gap || 0) || 0;
+      return card.getBoundingClientRect().width + gap;
+    };
+    const update = () => {
+      const max = Math.max(0, portfolioTrack.scrollWidth - portfolioTrack.clientWidth);
+      if (prev) prev.disabled = portfolioTrack.scrollLeft <= 4;
+      if (next) next.disabled = portfolioTrack.scrollLeft >= max - 4;
+    };
+    const applyFilter = key => {
+      activeFilter = key || 'all';
+      let shown = 0;
+      $('.portfolio-slide', portfolioTrack).forEach(card => {
+        const show = activeFilter === 'all' || card.dataset.workCategory === activeFilter;
+        card.hidden = !show;
+        if (show) shown++;
+      });
+      filters.forEach(button => {
+        const on = button.dataset.portfolioFilter === activeFilter;
+        button.classList.toggle('active', on);
+        button.setAttribute('aria-pressed', String(on));
+      });
+      if (count) count.textContent = shown + (shown === 1 ? ' project' : ' projects') + ' to explore';
+      portfolioTrack.scrollTo({left:0,behavior:'smooth'});
+      requestAnimationFrame(update);
+    };
+    prev?.addEventListener('click', () => portfolioTrack.scrollBy({left:-step(),behavior:'smooth'}));
+    next?.addEventListener('click', () => portfolioTrack.scrollBy({left:step(),behavior:'smooth'}));
+    portfolioTrack.addEventListener('scroll', update, {passive:true});
+    filters.forEach(button => button.addEventListener('click', () => applyFilter(button.dataset.portfolioFilter)));
+    window.addEventListener('resize', update);
+    portfolioTrack.addEventListener('keydown', event => {
+      if (event.key === 'ArrowRight') { event.preventDefault(); portfolioTrack.scrollBy({left:step(),behavior:'smooth'}); }
+      if (event.key === 'ArrowLeft') { event.preventDefault(); portfolioTrack.scrollBy({left:-step(),behavior:'smooth'}); }
+    });
+    applyFilter('all');
   }
 
   document.querySelectorAll('.project-card').forEach(card => {
