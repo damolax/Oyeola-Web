@@ -445,8 +445,8 @@
       portfolioTrack.scrollTo({left:0,behavior:'smooth'});
       requestAnimationFrame(update);
     };
-    prev?.addEventListener('click', () => portfolioTrack.scrollBy({left:-step(),behavior:'smooth'}));
-    next?.addEventListener('click', () => portfolioTrack.scrollBy({left:step(),behavior:'smooth'}));
+    prev?.addEventListener('click', () => { portfolioTrack.scrollBy({left:-step(),behavior:'smooth'}); window.setTimeout(update, 350); });
+    next?.addEventListener('click', () => { portfolioTrack.scrollBy({left:step(),behavior:'smooth'}); window.setTimeout(update, 350); });
     portfolioTrack.addEventListener('scroll', update, {passive:true});
     filters.forEach(button => button.addEventListener('click', () => applyFilter(button.dataset.portfolioFilter)));
     window.addEventListener('resize', update);
