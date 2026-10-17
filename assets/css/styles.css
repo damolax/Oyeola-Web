@@ -2522,3 +2522,19 @@ html[data-theme="light"] .oy-project-story .oy-project-opening .lead{color:#4c62
 
 /* Ensure orbit always animates on wide screens, even where generic reduced-motion overrides exist */
 .hero-portrait .hero-infinity-orbit .orbit-moving-segment{animation:oyInfinitySegmentTravel 7s linear infinite!important;stroke-dasharray:10 90!important;stroke-dashoffset:0}
+
+/* Definitive single-orbit override: retire legacy rotating circular layer at ALL breakpoints. */
+html body .hero .hero-portrait::before,
+html body .hero-shell .hero-portrait::before{
+  content:none!important;display:none!important;animation:none!important;
+  background:none!important;opacity:0!important;
+}
+html body .hero .hero-portrait::after{
+  content:none!important;display:none!important;animation:none!important;
+}
+html body .hero .hero-infinity-orbit{position:absolute!important;inset:0!important;display:grid!important;place-items:center!important;z-index:1!important;pointer-events:none!important}
+html body .hero .hero-infinity-orbit .orbit-moving-segment{
+  fill:none!important;stroke:#63f46d!important;stroke-width:5!important;stroke-linecap:round!important;
+  stroke-dasharray:10 90!important;
+  animation:oyInfinitySegmentTravel 7s linear infinite!important;
+}
