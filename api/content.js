@@ -1,5 +1,5 @@
 import { getSql, mapItem } from './_neon.js';
-const TYPES=new Set(['project','review','service','tool','skill','credential','demo','stat','setting']);
+const TYPES=new Set(['project','review','service','tool','skill','credential','demo','stat','setting','blog']);
 
 export default async function handler(req,res){
   if(req.method!=='GET') return res.status(405).json({error:'Method not allowed'});

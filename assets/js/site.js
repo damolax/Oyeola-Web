@@ -9,14 +9,14 @@
   const systemLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
   let theme = savedTheme || (systemLight ? 'light' : 'dark');
   document.documentElement.dataset.theme = theme;
-  const nested = /\/(services|case-studies)\//.test(path);
+  const nested = /\/(services|case-studies|blog)\//.test(path);
   const root = nested ? '../' : '';
   const isHome = path === '/' || /\/index(?:\.html)?$/.test(path);
   const active = isHome ? 'home'
     : path.includes('/case-studies/') || /\/work(?:\.html)?$/.test(path) || /\/project(?:\.html)?$/.test(path) ? 'work'
     : path.includes('demos') || path.includes('demo-') || path.includes('smart-match') || path.includes('configure') || path.includes('planner-demo') || path.includes('/showroom/') ? 'showroom'
     : path.includes('/services/') || path.includes('services') || path.includes('website') || path.includes('operations') || path.includes('digital-planners') ? 'services'
-    : path.includes('about') ? 'about' : '';
+    : path.includes('/blog') ? 'blog' : path.includes('about') ? 'about' : '';
   const loaderStartedAt = performance.now();
   if (!document.querySelector('.site-loader')) {
     document.body.classList.add('site-loading');
@@ -134,12 +134,13 @@
             <a class="${active==='work'?'active':''}" href="${root}work.html"><span>01</span>Work</a>
             <a class="${active==='showroom'?'active':''}" href="${root}showroom/index.html"><span>02</span>Live websites</a>
             <a class="${active==='services'?'active':''}" href="${root}services.html"><span>03</span>Services</a>
-            <a class="${active==='about'?'active':''}" href="${root}about.html"><span>04</span>About</a>
-            <a href="${root}contact.html"><span>05</span>Contact</a>
+            <a class="${active==='blog'?'active':''}" href="${root}blog.html"><span>04</span>Journal</a>
+            <a class="${active==='about'?'active':''}" href="${root}about.html"><span>05</span>About</a>
+            <a href="${root}contact.html"><span>06</span>Contact</a>
           </nav>
           <div class="studio-menu-meta">
             <div><small>Services</small><a href="${root}websites.html">Website design</a><a href="${root}operations.html">Automation & systems</a><a href="${root}digital-planners.html">Digital planners</a></div>
-            <div><small>Connect</small><a href="mailto:oyeolawebmaster@gmail.com">Email</a><a href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="${root}privacy.html">Privacy policy</a></div>
+            <div><small>Connect</small><a href="mailto:hello@oyeolaonline.com">Email</a><a href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="${root}privacy.html">Privacy policy</a></div>
             <div class="studio-menu-cta"><small>Have a project?</small><a href="${root}contact.html">Let's build it <span aria-hidden="true">↗</span></a></div>
           </div>
         </div>
@@ -158,7 +159,7 @@
 
   const footer = $('footer.footer');
   if (footer) {
-    footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-light.svg" alt="Oyeola Online"></a><p>Thoughtful websites, useful systems, better digital experiences.</p><div class="footer-socials"><a class="social-icon-link" href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer" aria-label="Oyeola on Instagram">${instagramIcon}</a><a class="social-icon-link" href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer" aria-label="Oyekunle Olalekan on LinkedIn">${linkedinIcon}</a></div></div><div><strong>Explore</strong><p><a href="${root}work.html">Selected work</a><br><a href="${root}showroom/index.html">Live websites</a><br><a href="${root}about.html">About Oyeola Online</a></p></div><div><strong>Services</strong><p><a href="${root}websites.html">Website design</a><br><a href="${root}operations.html">Automation & systems</a><br><a href="${root}digital-planners.html">Digital planners</a></p></div><div><strong>Let's talk</strong><p><a href="${root}contact.html">Start a project</a><br><a href="mailto:oyeolawebmaster@gmail.com">oyeolawebmaster@gmail.com</a></p><a class="footer-privacy-link" href="${root}privacy.html">Privacy policy</a></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} Oyeola Online</span><span>Designed for clarity.</span></div></div></footer>`;
+    footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-dark.svg" alt="Oyeola Online"></a><p>Thoughtful websites, useful systems, better digital experiences.</p><div class="footer-socials"><a class="social-icon-link" href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer" aria-label="Oyeola on Instagram">${instagramIcon}</a><a class="social-icon-link" href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer" aria-label="Oyekunle Olalekan on LinkedIn">${linkedinIcon}</a></div></div><div><strong>Explore</strong><p><a href="${root}work.html">Selected work</a><br><a href="${root}showroom/index.html">Live websites</a><br><a href="${root}about.html">About Oyeola Online</a><br><a href="${root}blog.html">Journal</a></p></div><div><strong>Services</strong><p><a href="${root}websites.html">Website design</a><br><a href="${root}operations.html">Automation & systems</a><br><a href="${root}digital-planners.html">Digital planners</a></p></div><div><strong>Let's talk</strong><p><a href="${root}contact.html">Start a project</a><br><a href="mailto:hello@oyeolaonline.com">hello@oyeolaonline.com</a></p><a class="footer-privacy-link" href="${root}privacy.html">Privacy policy</a></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} Oyeola Online</span><span>Designed for clarity.</span></div></div></footer>`;
   }
 
   const themeToggle = $('.theme-toggle');
@@ -547,4 +548,7 @@
   if (document.getElementById('website-check-form') || document.getElementById('operations-check')) load('assets/js/checks.js');
   if (document.querySelector('[data-demo-lab]')) load('assets/js/demo-lab.js');
   load('assets/js/refinement.js');
+  load('assets/js/cursor.js');
+  load('assets/js/portfolio-hydration.js');
+  if(path.includes('/case-studies/') || /\/project(?:\.html)?$/.test(path) || path.includes('/blog/')) load('assets/js/portfolio-lightbox.js');
 })();
