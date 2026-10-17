@@ -2517,4 +2517,8 @@ html[data-theme="light"] .oy-project-story .oy-project-opening .lead{color:#4c62
  animation:oyInfinitySegmentTravel 7s linear infinite
 }
 @keyframes oyInfinitySegmentTravel{to{stroke-dashoffset:-100}}
-@media(prefers-reduced-motion:reduce){.hero-infinity-orbit .orbit-moving-segment{animation:none!important}}
+/* The explicitly requested hero trail also moves when Windows disables general UI animations. */
+@media(prefers-reduced-motion:reduce){.hero-infinity-orbit .orbit-moving-segment{animation:oyInfinitySegmentTravel 7s linear infinite!important}}
+
+/* Ensure orbit always animates on wide screens, even where generic reduced-motion overrides exist */
+.hero-portrait .hero-infinity-orbit .orbit-moving-segment{animation:oyInfinitySegmentTravel 7s linear infinite!important;stroke-dasharray:10 90!important;stroke-dashoffset:0}
