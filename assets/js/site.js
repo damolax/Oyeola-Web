@@ -59,11 +59,17 @@
 
   // Continuous four-word hero: text remains meaningful if JavaScript is unavailable.
   const changingWord = document.querySelector('[data-hero-words]');
-  if (changingWord && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (changingWord) {
     const words = ['Better.', 'Smarter.', 'Faster.', 'Simpler.'];
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let wordIndex = 0;
     changingWord.textContent = words[0];
     window.setInterval(() => {
+      if (reducedMotion.matches) {
+        wordIndex = (wordIndex + 1) % words.length;
+        changingWord.textContent = words[wordIndex];
+        return;
+      }
       changingWord.classList.add('is-switching');
       window.setTimeout(() => {
         wordIndex = (wordIndex + 1) % words.length;
