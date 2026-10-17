@@ -2503,3 +2503,30 @@ html[data-theme="light"] .oy-project-story .oy-project-opening .lead{color:#4c62
   .hero-changing-word{transition:none!important}
   .hero-portrait::before,.hero-portrait::after,.studio-brand .brand-infinity-flow,.site-loader-mark{animation:none!important}
 }
+
+/* Infinity-orbit light trail behind hero portrait — desktop + mobile */
+.hero-portrait{position:relative!important;isolation:isolate!important}
+.hero-portrait::before{
+  content:""!important;position:absolute!important;
+  left:50%!important;top:50%!important;inset:auto!important;
+  width:min(94%,540px)!important;height:auto!important;aspect-ratio:1.65!important;
+  border-radius:0!important;
+  background:none!important;
+  -webkit-mask:none!important;mask:none!important;
+  filter:none!important;
+  transform:translate(-50%,-50%)!important;
+  animation:none!important;
+  opacity:1!important;z-index:1!important;
+  pointer-events:none!important;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 365'%3E%3Cdefs%3E%3Cfilter id='g'%3E%3CfeGaussianBlur stdDeviation='4'/%3E%3C/filter%3E%3C/defs%3E%3Cpath d='M 300 182 C 215 40 35 42 35 182 C 35 325 215 326 300 182 C 385 40 565 42 565 182 C 565 325 385 326 300 182' fill='none' stroke='%2335f56b' stroke-width='13' opacity='.25' filter='url(%23g)'/%3E%3Cpath d='M 300 182 C 215 40 35 42 35 182 C 35 325 215 326 300 182 C 385 40 565 42 565 182 C 565 325 385 326 300 182' fill='none' stroke='%2335f56b' stroke-width='3.3' opacity='.67'/%3E%3C/svg%3E")!important;
+  background-size:contain!important;background-repeat:no-repeat!important;background-position:center!important;
+}
+.hero-portrait .hero-infinity-orbit{
+  position:absolute;inset:0;z-index:3;pointer-events:none;
+  overflow:visible;display:grid;place-items:center;
+}
+.hero-infinity-orbit svg{width:min(94%,540px);height:auto;overflow:visible;filter:drop-shadow(0 0 10px rgba(62,247,109,.24))}
+.hero-infinity-orbit .orbit-track{fill:none;stroke:rgba(99,244,109,.36);stroke-width:2}
+.hero-infinity-orbit .orbit-glow{fill:#9effa2;filter:drop-shadow(0 0 7px #40ff78) drop-shadow(0 0 16px rgba(64,255,120,.85))}
+.hero-portrait::after{z-index:0!important}
+@media(prefers-reduced-motion:reduce){.hero-infinity-orbit .orbit-glow{filter:drop-shadow(0 0 6px #40ff78)}}
