@@ -43,7 +43,7 @@
   const finishSiteLoad = () => {
     if (loaderFinished || !siteLoader) return;
     loaderFinished = true;
-    const minimumIntro = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 120 : 720;
+    const minimumIntro = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 120 : 1150;
     const wait = Math.max(0, minimumIntro - (performance.now() - loaderStartedAt));
     window.setTimeout(() => {
       siteLoader.classList.add('is-loaded');
@@ -55,6 +55,23 @@
   if (document.readyState === 'complete') finishSiteLoad();
   else window.addEventListener('load', finishSiteLoad, { once:true });
   window.setTimeout(finishSiteLoad, 9000);
+
+
+  // Continuous four-word hero: text remains meaningful if JavaScript is unavailable.
+  const changingWord = document.querySelector('[data-hero-words]');
+  if (changingWord && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const words = ['Better.', 'Smarter.', 'Faster.', 'Simpler.'];
+    let wordIndex = 0;
+    changingWord.textContent = words[0];
+    window.setInterval(() => {
+      changingWord.classList.add('is-switching');
+      window.setTimeout(() => {
+        wordIndex = (wordIndex + 1) % words.length;
+        changingWord.textContent = words[wordIndex];
+        changingWord.classList.remove('is-switching');
+      }, 260);
+    }, 2800);
+  }
 
   const pageMain = document.querySelector('main');
 
