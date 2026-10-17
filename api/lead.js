@@ -1,7 +1,7 @@
 import { getSql } from './_neon.js';
 import crypto from 'node:crypto';
 const allowedTypes=new Set(['contact','website-check','operations-check','planner-download','start-here']);
-const fallbackEmail='oyeolawebmaster@gmail.com';
+const fallbackEmail='hello@oyeolaonline.com';
 const clean=(v,max=2000)=>String(v??'').trim().slice(0,max);
 const recentAttempts=new Map();
 function isRateLimited(req){

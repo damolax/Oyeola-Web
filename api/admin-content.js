@@ -1,5 +1,5 @@
 import { getSql, authorizeAdmin, mapItem } from './_neon.js';
-const TYPES=new Set(['project','review','service','tool','skill','credential','demo','stat','setting','lead']);
+const TYPES=new Set(['project','review','service','tool','skill','credential','demo','stat','setting','blog','lead']);
 
 export default async function handler(req,res){
   let sql;
