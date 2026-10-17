@@ -5,3 +5,5 @@ Disallow: /admin/
 Disallow: /api/
 
 Sitemap: https://oyeolaonline.com/sitemap.xml
+
+Sitemap: https://oyeolaonline.com/blog-sitemap.xml

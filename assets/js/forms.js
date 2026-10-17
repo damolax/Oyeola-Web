@@ -2,7 +2,7 @@
   const forms = [...document.querySelectorAll('[data-lead-form]')];
   if (!forms.length) return;
 
-  const fallbackEmail = 'oyeolawebmaster@gmail.com';
+  const fallbackEmail = 'hello@oyeolaonline.com';
   const pageParams = new URLSearchParams(location.search);
   const contextFields = ['demo','result','source','utm_source','utm_medium','utm_campaign'];
   forms.forEach(form => {

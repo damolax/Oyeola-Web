@@ -350,5 +350,15 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/blog/:slug",
+      "destination": "/api/blog-page?slug=:slug"
+    },
+    {
+      "source": "/blog-sitemap.xml",
+      "destination": "/api/blog-sitemap"
+    }
   ]
 }
