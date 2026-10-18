@@ -38,7 +38,7 @@ export default async function handler(req,res){
         return res.status(429).json({error:'Too many sign-in attempts. Try again later.'});
       let rows=await sql`SELECT * FROM portal_users WHERE email=${email} LIMIT 1`;
       let user=rows[0];
-      if(!user){
+      if(!user || (user.role!=='owner' && user.account_status==='pending')){
         // One-time owner bridge: existing /admin owner must authenticate with
         // the actual legacy admin password. No setup key is exposed publicly.
         const old=await sql`SELECT auth_user_id,password_hash,setup_used FROM cms_admin_config WHERE id=1`;
