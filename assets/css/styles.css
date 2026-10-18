@@ -2685,3 +2685,7 @@ html[data-theme="light"] .case-story-hero .case-quick-facts>div{background:#fff!
 .oy-authentic-gallery img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;cursor:zoom-in}
 .oy-authentic-gallery figcaption{padding:10px 0 0;text-align:center;color:var(--oy-muted);font-size:12px}
 .oy-original-portfolio-showcase .section-head p{font-size:14px!important;line-height:1.65!important}
+
+/* Unified footer brand: original white-on-dark Oyeola SVG; keep its actual colors. */
+html body footer.footer .footer-logo{display:inline-flex!important;align-items:center!important;background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;opacity:1!important}
+html body footer.footer .footer-logo img{display:block!important;width:190px!important;max-width:100%!important;height:auto!important;filter:none!important;opacity:1!important;mix-blend-mode:normal!important;object-fit:contain!important}
