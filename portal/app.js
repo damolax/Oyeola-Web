@@ -140,7 +140,7 @@ async function savePost(){
  editing=result.post;await refreshPosts();return result.post;
 }
 async function submitPost(){
- if(!editing||editing.status==='draft') await savePost();
+ await savePost();
  const result=await api('/api/portal-posts?action=submit',json({id:editing.id}));
  setMsg('Article submitted to the editorial queue.');
  await refreshPosts();openPost(result.post);
