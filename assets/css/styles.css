@@ -2689,3 +2689,14 @@ html[data-theme="light"] .case-story-hero .case-quick-facts>div{background:#fff!
 /* Unified footer brand: original white-on-dark Oyeola SVG; keep its actual colors. */
 html body footer.footer .footer-logo{display:inline-flex!important;align-items:center!important;background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;opacity:1!important}
 html body footer.footer .footer-logo img{display:block!important;width:190px!important;max-width:100%!important;height:auto!important;filter:none!important;opacity:1!important;mix-blend-mode:normal!important;object-fit:contain!important}
+
+/* Analytics consent UI: unobtrusive, legible in either theme. */
+.oy-consent-banner{position:fixed;z-index:10001;left:clamp(12px,2vw,30px);bottom:clamp(12px,2vw,30px);width:min(640px,calc(100vw - 24px));background:#10271b;color:#ecf8ef;border:1px solid rgba(153,243,162,.45);box-shadow:0 16px 55px rgba(0,0,0,.25);border-radius:14px;padding:18px 20px;display:flex;gap:20px;align-items:center}
+.oy-consent-banner strong{display:block;font-size:14px;color:#f9fff9;line-height:1.4}
+.oy-consent-banner p{margin:5px 0 0;font-size:12px!important;line-height:1.65!important;color:#c0d9c4!important}
+.oy-consent-banner a{color:#a4ffb0!important;text-decoration:underline;text-underline-offset:3px}
+.oy-consent-actions{display:flex;gap:9px;flex-shrink:0}
+.oy-consent-actions button{white-space:nowrap;border-radius:999px;padding:10px 14px;min-height:40px;font-size:12px;font-weight:650;background:transparent;color:#f6fff7;border:1px solid #71947a;cursor:pointer}
+.oy-consent-actions [data-allow]{background:#63f46d;color:#112018;border-color:#63f46d}
+.footer-cookie-link{font-size:12px!important}
+@media(max-width:650px){.oy-consent-banner{flex-direction:column;align-items:stretch;padding:16px}.oy-consent-actions button{flex:1}}
