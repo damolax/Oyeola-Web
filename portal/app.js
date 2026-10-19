@@ -81,17 +81,25 @@ async function refreshUsers(){
 function makeBlock(type){return {type,text:'',level:2,items:[],rows:[['Column A','Column B'],['Value A','Value B']],ordered:false,url:'',slug:'',alt:'',caption:''}}
 const mayEditPost=p=>!p||(['draft','revision_requested','rejected'].includes(p.status)&&(canReview()||p.author_id===user?.id));
 const mayDeletePost=p=>!!p&&(canManage()||p.author_id===user?.id);
+
 function renderBlocks(){
+ const locked=!mayEditPost(editing),disabled=locked?' disabled':'';
+ const published=posts.filter(p=>p.status==='published'&&p.id!==editing?.id);
+ const options=(selected='')=>'<option value="">Choose an article…</option>'+published.map(p=>'<option value="'+esc(p.slug)+'"'+(p.slug===selected?' selected':'')+'>'+esc(p.title)+'</option>').join('');
  $('#block-list').innerHTML=blocks.map((b,i)=>{
-   let field='';
-   if(b.type==='divider')field='<div class="rule-demo"></div>';
-   else if(b.type==='list')field=`<label>Items, one per line<textarea rows="5" data-field="items" data-i="${i}">${esc((b.items||[]).join('\n'))}</textarea></label><label class="inline"><input type="checkbox" data-field="ordered" data-i="${i}" ${b.ordered?'checked':''}> Numbered list</label>`;
-   else if(b.type==='image')field=`<label>Image HTTPS URL<input data-field="url" data-i="${i}" type="url" value="${esc(b.url||'')}" placeholder="https://..."></label><label>Alternative text<input data-field="alt" data-i="${i}" value="${esc(b.alt||'')}"></label><label>Caption<input data-field="caption" data-i="${i}" value="${esc(b.caption||'')}"></label>`;
-   else field=`<label>${b.type==='heading'?'Heading text':b.type==='quote'?'Pull quote':'Paragraph'}<textarea data-field="text" data-i="${i}" rows="${b.type==='paragraph'?6:3}" placeholder="Start writing...">${esc(b.text||'')}</textarea></label>`+
-       (b.type==='heading'? `<label class="short-label">Heading size<select data-field="level" data-i="${i}"><option value="2" ${b.level===2?'selected':''}>H2</option><option value="3" ${b.level===3?'selected':''}>H3</option><option value="4" ${b.level===4?'selected':''}>H4</option></select></label>`:'');
-   return `<div class="story-block"><div class="story-block-heading"><span>${String(i+1).padStart(2,'0')} · ${esc(b.type)}</span><button class="text-button" type="button" data-remove-block="${i}">Remove ×</button></div>${field}</div>`;
+  let field='';
+  if(b.type==='divider')field='<div class="rule-demo"></div>';
+  else if(b.type==='list')field=`<label>Items, one per line<textarea rows="5" data-field="items" data-i="${i}"${disabled}>${esc((b.items||[]).join('\\n'))}</textarea></label><label class="inline"><input type="checkbox" data-field="ordered" data-i="${i}" ${b.ordered?'checked':''}${disabled}> Numbered list</label>`;
+  else if(b.type==='image')field=`<label>Upload article image <small>(PNG/JPEG/WebP/GIF, max 2 MB)</small><input type="file" accept="image/png,image/jpeg,image/webp,image/gif" data-upload-block="${i}"${disabled}></label>${b.url?'<div class="upload-preview"><img src="'+esc(b.url)+'" alt="'+esc(b.alt||'Article image')+'"></div>':''}<label>Alternative text<input data-field="alt" data-i="${i}" value="${esc(b.alt||'')}"${disabled}></label><label>Caption<input data-field="caption" data-i="${i}" value="${esc(b.caption||'')}"${disabled}></label>`;
+  else if(b.type==='table')field=`<label>Table (tabs separate columns, lines separate rows)<textarea rows="7" class="table-input" data-field="rows" data-i="${i}"${disabled}>${esc((b.rows||[]).map(row=>row.join('\\t')).join('\\n'))}</textarea></label><small class="muted">The first row is the heading. Maximum 30 rows and 8 columns.</small>`;
+  else if(b.type==='related_article')field=`<label>Related blog<select data-field="slug" data-i="${i}"${disabled}>${options(b.slug||'')}</select></label><label>Visible link name<input data-field="text" data-i="${i}" value="${esc(b.text||'Continue reading')}"${disabled}></label>`;
+  else field=`<label>${b.type==='heading'?'Heading text':b.type==='quote'?'Pull quote':'Paragraph'}<textarea data-field="text" data-i="${i}" rows="${b.type==='paragraph'?6:3}" placeholder="Start writing…"${disabled}>${esc(b.text||'')}</textarea></label>`+
+   (b.type==='heading'?`<label class="short-label">Heading size<select data-field="level" data-i="${i}"${disabled}><option value="2" ${b.level===2?'selected':''}>H2</option><option value="3" ${b.level===3?'selected':''}>H3</option><option value="4" ${b.level===4?'selected':''}>H4</option></select></label>`:'')+
+   (b.type==='paragraph'&&published.length?`<label class="blog-link-picker" ${(b.text||'').includes('/blog')?'':'hidden'}>Link another blog<select data-insert-blog="${i}"${disabled}>${options()}</select></label>`:'');
+  return `<div class="story-block"><div class="story-block-heading"><span>${String(i+1).padStart(2,'0')} · ${esc(b.type.replace('_',' '))}</span><button class="text-button" type="button" data-remove-block="${i}"${disabled}>Remove ×</button></div>${field}</div>`;
  }).join('')||'<p class="muted">Add a paragraph or another story block to start.</p>';
 }
+
 function openPost(p=null){
  editing=p||null;
  titleManuallyEdited=!!p;
