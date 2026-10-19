@@ -72,3 +72,21 @@ CREATE TABLE IF NOT EXISTS portal_rate_limits (
 
 -- Media library, scheduling, threaded reviews and revision rollback are
 -- intentionally deferred until object storage and production DB are connected.
+
+-- Soft deletion preserves audit history and allows editorial recovery.
+ALTER TABLE portal_posts ADD COLUMN IF NOT EXISTS deleted_at timestamptz;
+CREATE INDEX IF NOT EXISTS portal_posts_visible_idx ON portal_posts(updated_at DESC) WHERE deleted_at IS NULL;
+
+-- Small editorial uploads (2 MB maximum per file), served only to signed-in
+-- editorial users or the public after a referencing blog post is published.
+-- Use object storage for larger media libraries in a future phase.
+CREATE TABLE IF NOT EXISTS portal_media (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  uploader_id uuid NOT NULL REFERENCES portal_users(id),
+  filename text NOT NULL,
+  mime_type text NOT NULL CHECK (mime_type IN ('image/jpeg','image/png','image/webp','image/gif')),
+  data_base64 text NOT NULL,
+  byte_length integer NOT NULL CHECK (byte_length BETWEEN 1 AND 2097152),
+  created_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS portal_media_uploader_idx ON portal_media(uploader_id,created_at DESC);
