@@ -10,7 +10,7 @@
 </head><body>
 <div id="auth-view" class="auth-shell">
  <div class="auth-intro">
-  <a class="brand brand-inverse" href="/"><span class="brand-mark">✦</span> Oyeola <span>Online</span></a>
+  <a class="brand brand-inverse" href="/"><img class="brand-logo" src="/assets/logos/favicon.svg" width="38" height="38" alt=""> Oyeola <span>Online</span></a>
   <p class="eyebrow">Editorial workspace</p>
   <h1>Better stories.<br><em>Thoughtfully published.</em></h1>
   <p>One private place for writing, review, approval and publication. Built for the people behind Oyeola's journal.</p>
@@ -39,7 +39,7 @@
 </div>
 <div id="studio" class="studio" hidden>
  <aside class="sidebar">
-  <a class="brand brand-inverse" href="/"><span class="brand-mark">✦</span> Oyeola <span>Online</span></a>
+  <a class="brand brand-inverse" href="/"><img class="brand-logo" src="/assets/logos/favicon.svg" width="38" height="38" alt=""> Oyeola <span>Online</span></a>
   <div class="sidebar-caption">Content Studio <span class="green-dot"></span></div>
   <nav aria-label="Studio navigation">
    <button class="nav-item active" data-page="overview"><span>◫</span> Overview</button>
@@ -75,14 +75,14 @@
   <section id="editor-page" class="page" hidden>
    <form id="editor-form"><div class="editor-toolbar"><button class="text-button" id="back-to-articles" type="button">← All articles</button><span class="pill" id="editor-state">Draft</span><div class="spacer"></div>
     <button class="outline" id="save-draft" type="submit">Save draft</button><button class="primary" id="submit-review" type="button">Submit for review →</button>
-    <button class="primary" id="publish-article" type="button" hidden>Publish approved article ↗</button></div>
-    <div id="review-notice" class="review-notice" hidden></div>
+    <button class="primary" id="publish-article" type="button" hidden>Publish approved article ↗</button><button class="danger" id="delete-article" type="button" hidden>Delete article</button></div>
+    <div id="review-notice" class="review-notice" hidden></div><p class="editor-tip">Tip: write <code>/blog</code> inside a paragraph to insert a link to another published article. Tables support tab-separated columns and new lines for rows.</p>
     <div class="editor-grid">
       <div class="editor-main"><div class="panel editor-paper"><label class="eyebrow" for="post-title">Article title</label><input id="post-title" class="title-input" required minlength="4" maxlength="200" placeholder="Give your story a great title">
       <label class="eyebrow" for="post-excerpt">Introduction / excerpt</label><textarea id="post-excerpt" rows="3" maxlength="800" placeholder="A compelling summary for readers and search results"></textarea>
       <div class="divider"></div><div class="panel-heading"><div><p class="eyebrow">Story builder</p><h3>Article content</h3></div></div>
-      <div id="block-list"></div><div class="add-block"><label for="block-type">Insert a block</label><select id="block-type"><option value="paragraph">Paragraph</option><option value="heading">Heading</option><option value="quote">Quote</option><option value="list">List</option><option value="image">Image</option><option value="divider">Divider</option></select><button class="outline" id="add-block" type="button">+ Add block</button></div></div></div>
-      <aside class="editor-details"><div class="panel"><p class="eyebrow">Publishing details</p><label>Permalink<input id="post-slug" required pattern="[a-z0-9]+(-[a-z0-9]+)*" placeholder="your-article-title"></label><label>Category<input id="post-category" maxlength="80" placeholder="Insights"></label><label>Tags <small>(comma-separated)</small><input id="post-tags" placeholder="Design, Strategy"></label><label>Cover image URL <small>(HTTPS)</small><input id="post-cover" type="url" placeholder="https://..."></label><label>Cover image description<input id="post-cover-alt" maxlength="250" placeholder="Describe the cover image"></label><div class="divider"></div><p class="eyebrow">Search preview</p><label>SEO title<input id="post-seo-title" maxlength="160" placeholder="Search result title"></label><label>SEO description<textarea id="post-seo-description" maxlength="320" rows="4" placeholder="Describe why this article is worth reading"></textarea></label></div></aside>
+      <div id="block-list"></div><div class="add-block"><label for="block-type">Insert a block</label><select id="block-type"><option value="paragraph">Paragraph</option><option value="heading">Heading</option><option value="quote">Quote</option><option value="list">List</option><option value="image">Image upload</option><option value="table">Table</option><option value="related_article">Related blog link</option><option value="divider">Divider</option></select><button class="outline" id="add-block" type="button">+ Add block</button></div></div></div>
+      <aside class="editor-details"><div class="panel"><p class="eyebrow">Publishing details</p><label>Permalink<input id="post-slug" required pattern="[a-z0-9]+(-[a-z0-9]+)*" placeholder="your-article-title"></label><label>Category<input id="post-category" maxlength="80" placeholder="Insights"></label><label>Tags <small>(comma-separated)</small><input id="post-tags" placeholder="Design, Strategy"></label><label>Upload cover image <small>(PNG, JPEG, WebP or GIF; max 2 MB)</small><input id="post-cover-upload" type="file" accept="image/png,image/jpeg,image/webp,image/gif"></label><input id="post-cover" type="hidden"><div id="post-cover-preview" class="cover-preview" hidden></div><button id="post-cover-clear" type="button" class="text-button">Remove cover image</button><label>Cover image description<input id="post-cover-alt" maxlength="250" placeholder="Describe the cover image"></label><div class="divider"></div><p class="eyebrow">Search preview</p><label>SEO title<input id="post-seo-title" maxlength="160" placeholder="Search result title"></label><label>SEO description<textarea id="post-seo-description" maxlength="320" rows="4" placeholder="Describe why this article is worth reading"></textarea></label></div></aside>
     </div>
    </form>
   </section>
