@@ -12,7 +12,7 @@ export const publicPost=p=>({
   id:p.id,author_id:p.author_id,author_name:p.author_name||'',
   reviewer_id:p.reviewer_id,title:p.title,slug:p.slug,excerpt:p.excerpt,
   content:p.content||{},status:p.status,review_message:p.review_message||'',
-  created_at:p.created_at,updated_at:p.updated_at,published_at:p.published_at
+  created_at:p.created_at,updated_at:p.updated_at,published_at:p.published_at,deleted_at:p.deleted_at||null
 });
 export const hasRole=(u,allowed)=>u?.account_status==='active'&&allowed.includes(u.role);
 export const isEditor=u=>hasRole(u,reviewRoles);
@@ -48,7 +48,7 @@ export function cleanContent(content){
   const c=content&&typeof content==='object'&&!Array.isArray(content)?content:{};
   const raw=Array.isArray(c.blocks)?c.blocks:[];
   if(raw.length>100) throw new Error('A maximum of 100 content blocks is supported.');
-  const permitted=new Set(['paragraph','heading','quote','list','image','divider']);
+  const permitted=new Set(['paragraph','heading','quote','list','image','divider','table','related_article']);
   const blocks=raw.map(b=>{
     const type=String(b.type||'paragraph');
     if(!permitted.has(type))throw new Error('Unsupported content block.');
@@ -56,18 +56,24 @@ export function cleanContent(content){
     if(type==='heading') obj.level=[2,3,4].includes(Number(b.level))?Number(b.level):2;
     if(type==='image'){
       const url=String(b.url||'');
-      if(url&&!/^https:\/\/[^\s]+$/i.test(url))throw new Error('Image URLs must be HTTPS.');
+      if(url&&!/^https:\/\/[^\s]+$/i.test(url)&&!/^\/(?:api\/portal-media\?id=[a-f0-9-]{36}|assets\/blog\/[a-z0-9/_.-]+)$/i.test(url))throw new Error('Use an uploaded image or an HTTPS URL.');
       obj.url=url.slice(0,1500);obj.alt=sanitizeText(b.alt,250);obj.caption=sanitizeText(b.caption,400);
     }
     if(type==='list'){
       obj.ordered=!!b.ordered;
       obj.items=(Array.isArray(b.items)?b.items:[]).slice(0,100).map(s=>sanitizeText(s,1000));
     }
+    if(type==='table')obj.rows=(Array.isArray(b.rows)?b.rows:[]).slice(0,30).map(row=>(Array.isArray(row)?row:[]).slice(0,8).map(cell=>sanitizeText(cell,1200)));
+    if(type==='related_article'){
+      obj.slug=String(b.slug||'').trim().toLowerCase();
+      if(!validSlug(obj.slug))throw new Error('Choose a valid related article.');
+      obj.text=sanitizeText(b.text||'Continue reading',200);
+    }
     return obj;
   });
   const tags=(Array.isArray(c.tags)?c.tags:[]).slice(0,12).map(v=>sanitizeText(v,50)).filter(Boolean);
   return {blocks,tags,category:sanitizeText(c.category,80),
-    cover_url:/^https:\/\//i.test(c.cover_url||'')?String(c.cover_url).slice(0,1500):'',
+    cover_url:(/^https:\/\//i.test(c.cover_url||'')||/^\/(?:api\/portal-media\?id=[a-f0-9-]{36}|assets\/blog\/[a-z0-9/_.-]+)$/i.test(c.cover_url||''))?String(c.cover_url).slice(0,1500):'',
     cover_alt:sanitizeText(c.cover_alt,250),
     seo_title:sanitizeText(c.seo_title,160),
     seo_description:sanitizeText(c.seo_description,320)};
