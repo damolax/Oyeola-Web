@@ -4,7 +4,7 @@ function esc(v){return String(v??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&
 
 function safeUrl(v){const value=String(v||'').trim();if(/^\/(?:api\/portal-media\?id=[a-f0-9-]{36}|assets\/blog\/[a-z0-9/_.-]+)$/i.test(value))return value;try{const u=new URL(value);return u.protocol==='https:'?u.href:''}catch{return''}}
 
-function rich(v){const linked=String(v||'').replace(/\[\[blog:([a-z0-9-]+)\|([^\]|]{1,200})\]\]/g,(_,slug,name)=>'<a href="/blog/'+slug+'">'+esc(name)+'</a>');return sanitizeHtml(linked,{allowedTags:['strong','b','em','i','u','s','a','br','code'],allowedAttributes:{a:['href','title','rel']},allowedSchemes:['https','http','mailto'],transformTags:{a:(tag,attrs)=>({tagName:'a',attribs:{...attrs,rel:/^https?:\/\//i.test(attrs.href||'')?'noopener noreferrer':undefined}})}})}
+function rich(v){const linked=String(v||'').replace(/\[\[blog:([a-z0-9-]+)\|([^\]|]{1,200})\]\]/g,(_,slug,name)=>'<a href="/blog/'+slug+'">'+esc(name)+'</a>').replace(/\[([^\]\n]{1,140})\]\((https:\/\/[^\s)]+|\/[a-z0-9/_-]+)\)/gi,(_,label,url)=>'<a href="'+esc(url)+'">'+esc(label)+'</a>');return sanitizeHtml(linked,{allowedTags:['strong','b','em','i','u','s','a','br','code'],allowedAttributes:{a:['href','title','rel']},allowedSchemes:['https','http','mailto'],transformTags:{a:(tag,attrs)=>({tagName:'a',attribs:{...attrs,rel:/^https?:\/\//i.test(attrs.href||'')?'noopener noreferrer':undefined}})}})}
 
 function readTime(blocks){const txt=(blocks||[]).map(b=>[b.text,b.caption,...(b.items||[]),...(b.rows||[]).flat()].filter(x=>typeof x==='string').map(x=>x.replace(/<[^>]*>/g,' ')).join(' ')).join(' ');return Math.max(1,Math.ceil(txt.trim().split(/\s+/).filter(Boolean).length/220))}
 
