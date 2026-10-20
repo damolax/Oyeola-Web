@@ -29,6 +29,17 @@ export default async function handler(req,res){
  if(req.method!=='GET')return res.status(405).end();
  const slug=String(req.query.slug||'').toLowerCase();
  if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug))return res.status(404).send('Article not found');
+ // Preview-only smoke check; this route will not be merged into production.
+ if(slug==='preview-health'){
+   res.setHeader('X-Robots-Tag','noindex, nofollow');
+   res.setHeader('Cache-Control','no-store');
+   try{
+     const sql=getSql();
+     const rows=await sql`SELECT 1 AS ok`;
+     return res.status(200).json({function:'running',database:rows?.[0]?.ok===1?'connected':'unavailable'});
+   }catch(e){console.error('Preview blog health failed',e);return res.status(503).json({function:'running',database:'unavailable'});}
+ }
+
  try{
    const sql=getSql();
    const rows=await sql`select * from cms_items where item_type='blog' and status='published' and slug=${slug} limit 1`;
