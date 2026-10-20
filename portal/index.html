@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#143623">
+<title>Content Studio — Oyeola Online</title>
+<link rel="icon" href="/assets/logos/favicon.svg">
+<link rel="stylesheet" href="/portal/portal.css">
+<script defer src="/portal/app.js"></script>
+</head><body>
+<div id="auth-view" class="auth-shell">
+ <div class="auth-intro">
+  <a class="brand brand-inverse" href="/"><img class="brand-logo" src="/assets/logos/favicon.svg" width="38" height="38" alt=""> Oyeola <span>Online</span></a>
+  <p class="eyebrow">Editorial workspace</p>
+  <h1>Better stories.<br><em>Thoughtfully published.</em></h1>
+  <p>One private place for writing, review, approval and publication. Built for the people behind Oyeola's journal.</p>
+  <div class="auth-points"><span>01 · Draft with focus</span><span>02 · Refine together</span><span>03 · Publish with purpose</span></div>
+ </div>
+ <section class="auth-card" aria-label="Editorial portal access">
+  <div class="auth-card-top"><span class="pill">Private publishing studio</span><a href="/" class="subtle-link">Back to website ↗</a></div>
+  <div class="tab-strip"><button type="button" class="active" data-auth-tab="login">Sign in</button><button type="button" data-auth-tab="register">Apply to contribute</button></div>
+  <form id="login-form" class="stack">
+    <h2>Welcome back.</h2><p>Continue your work on the journal.</p>
+    <label>Email address<input required name="email" autocomplete="email" type="email" placeholder="you@example.com"></label>
+    <label>Password<input required name="password" autocomplete="current-password" type="password" placeholder="Your password"></label>
+    <button class="primary full" type="submit">Enter Content Studio →</button>
+  </form>
+  <form id="register-form" class="stack" hidden>
+    <h2>Join the contributors.</h2>
+    <p>New accounts are reviewed by the Oyeola editorial team before access is granted.</p>
+    <label>Full name<input required name="display_name" maxlength="120" autocomplete="name" placeholder="Your name"></label>
+    <label>Email address<input required name="email" autocomplete="email" type="email" placeholder="you@example.com"></label>
+    <label>Password (12+ characters)<input required name="password" autocomplete="new-password" type="password" minlength="12"></label>
+    <button class="primary full" type="submit">Submit contributor request →</button>
+  </form>
+  <p id="auth-message" class="message" role="status" aria-live="polite"></p>
+  <small>Publishing access is granted only after approval. Your application is not automatically accepted.</small>
+ </section>
+</div>
+<div id="studio" class="studio" hidden>
+ <aside class="sidebar">
+  <a class="brand brand-inverse" href="/"><img class="brand-logo" src="/assets/logos/favicon.svg" width="38" height="38" alt=""> Oyeola <span>Online</span></a>
+  <div class="sidebar-caption">Content Studio <span class="green-dot"></span></div>
+  <nav aria-label="Studio navigation">
+   <button class="nav-item active" data-page="overview"><span>◫</span> Overview</button>
+   <button class="nav-item" data-page="articles"><span>▤</span> All articles</button>
+   <button class="nav-item" data-page="reviews" data-review-only><span>✓</span> Review queue</button>
+   <button class="nav-item" data-page="contributors" data-owner-only><span>♧</span> Contributors</button>
+  </nav>
+  <div class="sidebar-bottom"><a href="/blog" target="_blank" rel="noopener">Read public journal ↗</a><a href="/" target="_blank" rel="noopener">Visit Oyeola Online ↗</a>
+   <div class="identity"><div class="avatar" id="user-initial">O</div><div><strong id="user-name">Editorial account</strong><small id="user-role">Contributor</small></div></div>
+   <button class="signout" id="sign-out" type="button">Sign out</button>
+  </div>
+ </aside>
+ <main class="main">
+  <header class="topbar"><div><span class="eyebrow">Oyeola / Editorial</span><h1 id="page-heading">Overview</h1></div>
+   <div class="topbar-actions"><span class="environment">● Private workspace</span><button class="primary" id="new-article" type="button">+ New article</button></div>
+  </header>
+  <div id="global-message" class="message toast" role="status" aria-live="polite"></div>
+  <section id="overview-page" class="page">
+   <div class="welcome"><div><span class="eyebrow">Welcome to your workspace</span><h2 id="welcome-heading">Where good ideas get published.</h2><p>Keep drafts moving through thoughtful editorial review.</p></div><button class="outline" id="welcome-create" type="button">Start writing ↗</button></div>
+   <div class="metrics"><div class="metric"><span>All articles</span><strong id="stat-total">—</strong><small>Visible to your account</small></div>
+    <div class="metric"><span>Drafts</span><strong id="stat-draft">—</strong><small>Still being developed</small></div>
+    <div class="metric"><span>Awaiting review</span><strong id="stat-review">—</strong><small>Submitted articles</small></div>
+    <div class="metric"><span>Published</span><strong id="stat-published">—</strong><small>Live on the journal</small></div></div>
+   <div class="panel"><div class="panel-heading"><div><p class="eyebrow">Editorial activity</p><h3>Recently updated</h3></div><button class="text-button" data-page="articles">See all articles →</button></div><div id="recent-articles"></div></div>
+  </section>
+  <section id="articles-page" class="page" hidden>
+    <div class="panel"><div class="panel-heading"><div><p class="eyebrow">Publishing library</p><h3>All articles</h3></div><div class="filters"><input id="article-search" type="search" placeholder="Search titles or authors" aria-label="Search articles">
+    <select id="article-status" aria-label="Filter by status"><option value="all">All statuses</option><option value="draft">Draft</option><option value="in_review">In review</option><option value="revision_requested">Revisions needed</option><option value="approved">Approved</option><option value="published">Published</option><option value="rejected">Rejected</option></select></div></div>
+    <div id="article-list"></div></div>
+  </section>
+  <section id="reviews-page" class="page" hidden><div class="panel"><div class="panel-heading"><div><p class="eyebrow">Review desk</p><h3>Submissions awaiting feedback</h3></div></div><div id="review-list"></div></div></section>
+  <section id="contributors-page" class="page" hidden><div class="panel"><div class="panel-heading"><div><p class="eyebrow">Team access</p><h3>Contributors &amp; approvals</h3></div></div><div id="contributor-list"></div></div></section>
+  <section id="editor-page" class="page" hidden>
+   <form id="editor-form"><div class="editor-toolbar"><button class="text-button" id="back-to-articles" type="button">← All articles</button><span class="pill" id="editor-state">Draft</span><div class="spacer"></div>
+    <button class="outline" id="save-draft" type="submit">Save draft</button><button class="primary" id="submit-review" type="button">Submit for review →</button>
+    <button class="primary" id="publish-article" type="button" hidden>Publish approved article ↗</button><button class="danger" id="delete-article" type="button" hidden>Delete article</button></div>
+    <div id="review-notice" class="review-notice" hidden></div><p class="editor-tip">Tip: write <code>/blog</code> inside a paragraph to insert a link to another published article. Tables support tab-separated columns and new lines for rows.</p>
+    <div class="editor-grid">
+      <div class="editor-main"><div class="panel editor-paper"><label class="eyebrow" for="post-title">Article title</label><input id="post-title" class="title-input" required minlength="4" maxlength="200" placeholder="Give your story a great title">
+      <label class="eyebrow" for="post-excerpt">Introduction / excerpt</label><textarea id="post-excerpt" rows="3" maxlength="800" placeholder="A compelling summary for readers and search results"></textarea>
+      <div class="divider"></div><div class="panel-heading"><div><p class="eyebrow">Story builder</p><h3>Article content</h3></div></div>
+      <div id="block-list"></div><div class="add-block"><label for="block-type">Insert a block</label><select id="block-type"><option value="paragraph">Paragraph</option><option value="heading">Heading</option><option value="quote">Quote</option><option value="list">List</option><option value="image">Image upload</option><option value="table">Table</option><option value="related_article">Related blog link</option><option value="divider">Divider</option></select><button class="outline" id="add-block" type="button">+ Add block</button></div></div></div>
+      <aside class="editor-details"><div class="panel"><p class="eyebrow">Publishing details</p><label>Permalink<input id="post-slug" required pattern="[a-z0-9]+(-[a-z0-9]+)*" placeholder="your-article-title"></label><label>Category<input id="post-category" maxlength="80" placeholder="Insights"></label><label>Tags <small>(comma-separated)</small><input id="post-tags" placeholder="Design, Strategy"></label><label>Upload cover image <small>(PNG, JPEG, WebP or GIF; max 2 MB)</small><input id="post-cover-upload" type="file" accept="image/png,image/jpeg,image/webp,image/gif"></label><input id="post-cover" type="hidden"><div id="post-cover-preview" class="cover-preview" hidden></div><button id="post-cover-clear" type="button" class="text-button">Remove cover image</button><label>Cover image description<input id="post-cover-alt" maxlength="250" placeholder="Describe the cover image"></label><div class="divider"></div><p class="eyebrow">Search preview</p><label>SEO title<input id="post-seo-title" maxlength="160" placeholder="Search result title"></label><label>SEO description<textarea id="post-seo-description" maxlength="320" rows="4" placeholder="Describe why this article is worth reading"></textarea></label></div></aside>
+    </div>
+   </form>
+  </section>
+ </main>
+</div>
+</body></html>
