@@ -3,6 +3,20 @@ const TYPES=new Set(['project','review','service','tool','skill','credential','d
 
 export default async function handler(req,res){
   if(req.method!=='GET') return res.status(405).json({error:'Method not allowed'});
+  // Temporary production diagnostics; no credentials or connection strings are exposed.
+  if(String(req.query.health||'')==='1'){
+    res.setHeader('Cache-Control','no-store');
+    res.setHeader('X-Robots-Tag','noindex, nofollow');
+    const configured=['DATABASE_URL','NEON_DATABASE_URL','POSTGRES_URL_NON_POOLING','POSTGRES_PRISMA_URL'].filter(k=>!!process.env[k]);
+    try{
+      const sql=getSql();
+      const result=await sql`SELECT 1 AS ok`;
+      return res.status(200).json({function:'running',database:result?.[0]?.ok===1?'connected':'unexpected',configuredCount:configured.length});
+    }catch(e){
+      console.error('Production database health check failed',e);
+      return res.status(503).json({function:'running',database:configured.length?'connection_failed':'not_configured',configuredCount:configured.length,errorCode:String(e?.code||'unknown').slice(0,20)});
+    }
+  }
   const type=String(req.query.type||'').trim();
   if(type && !TYPES.has(type)) return res.status(400).json({error:'Invalid content type'});
   try{
