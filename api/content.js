@@ -17,8 +17,8 @@ export default async function handler(req,res){
     try{const u=new URL(raw);parseable=['postgres:','postgresql:'].includes(u.protocol)&&!!u.hostname&&!!u.username;neonHost=u.hostname.endsWith('.neon.tech')}catch{}
     try{
       const sql=getSql();
-      const result=await sql`SELECT 1 AS ok`;
-      return res.status(200).json({database:result?.[0]?.ok===1?'connected':'unexpected',selectedKey:key,startsPostgres,hasWrappingQuotes,hasWhitespace,parseable,neonHost});
+      const result=await sql`SELECT current_database() = 'oyeola_web' AS correct_database, to_regclass('public.cms_items') IS NOT NULL AS has_items_table, (SELECT count(*) FROM information_schema.tables WHERE table_schema='public' AND table_name='cms_items') AS table_count`;
+      return res.status(200).json({database:'connected',correctDatabase:result?.[0]?.correct_database===true,hasItemsTable:result?.[0]?.has_items_table===true,selectedKey:key,startsPostgres,hasWrappingQuotes,hasWhitespace,parseable,neonHost});
     }catch(error){
       console.error('Content database diagnostic failed',error);
       return res.status(503).json({database:'failed',selectedKey:key,startsPostgres,hasWrappingQuotes,hasWhitespace,parseable,neonHost,errorClass:String(error?.constructor?.name||'Error').slice(0,50),errorCode:String(error?.code||'unknown').slice(0,40)});
@@ -35,6 +35,6 @@ export default async function handler(req,res){
     return res.status(200).json({items:rows.map(mapItem),backend:'neon'});
   }catch(error){
     console.error('Neon content read failed',error);
-    return res.status(503).json({error:'Neon database is not configured on this deployment.'});
+    return res.status(503).json({error:'Database content request failed',errorClass:String(error?.constructor?.name||'Error').slice(0,50),errorCode:String(error?.code||'unknown').slice(0,40)});
   }
 }
