@@ -154,8 +154,9 @@
     icon.rel = 'icon';
     document.head.appendChild(icon);
   }
-  icon.href = `${root}assets/logos/favicon.svg`;
-  icon.type = 'image/svg+xml';
+  icon.href = `${root}assets/logos/favicon-96.png`;
+  icon.type = 'image/png';
+  icon.sizes = '96x96';
 
   const footer = $('footer.footer');
   if (footer) {

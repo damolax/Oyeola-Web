@@ -24,8 +24,20 @@
   const loaded=await fetchPosts();
   const posts=loaded.posts.sort((a,b)=>new Date(b.created_at)-new Date(a.created_at));
   if(home){if(!posts.length){home.hidden=true}else{home.hidden=false;const track=$('[data-blog-track]',home);track.innerHTML=posts.slice(0,9).map(card).join('');const move=(dir)=>track.scrollBy({left:dir*Math.max(track.clientWidth*.75,280),behavior:'smooth'});$('[data-blog-prev]',home)?.addEventListener('click',()=>move(-1));$('[data-blog-next]',home)?.addEventListener('click',()=>move(1));}}
+  // Keep server-rendered article cards visible when the dynamic content API is unavailable.
+  if(list && (!posts.length || loaded.error) && list.querySelector('.blog-card')){
+   const search=$('#blog-search'), staticCards=[...list.querySelectorAll('.blog-card')];
+   const renderStatic=()=>{
+    const q=(search?.value||'').trim().toLowerCase();
+    let visible=0;
+    staticCards.forEach(node=>{const show=!q||node.textContent.toLowerCase().includes(q);node.style.display=show?'':'none';if(show)visible++});
+    let empty=list.querySelector('.blog-empty');
+    if(visible){empty?.remove()}else if(!empty){empty=document.createElement('p');empty.className='blog-empty';empty.textContent='No articles match your search.';list.appendChild(empty)}
+   };
+   search?.addEventListener('input',renderStatic);renderStatic();return;
+  }
   if(list&&loaded.error){list.innerHTML='<div class="blog-load-error" role="alert"><h3>Articles are temporarily unavailable</h3><p>'+esc(loaded.error)+'</p><button type="button" id="blog-retry">Try again</button></div>';$('#blog-retry')?.addEventListener('click',init);return}
-  if(list){const search=$('#blog-search');const render=()=>{const q=(search?.value||'').trim().toLowerCase();const shown=posts.filter(p=>!q||(p.title+' '+(p.data?.excerpt||'')).toLowerCase().includes(q));list.innerHTML=shown.map(card).join('');$('[data-blog-empty]').hidden=shown.length>0};search?.addEventListener('input',render);render();}
+  if(list){const search=$('#blog-search');const render=()=>{const q=(search?.value||'').trim().toLowerCase();const shown=posts.filter(p=>!q||(p.title+' '+(p.data?.excerpt||'')).toLowerCase().includes(q));list.innerHTML=shown.length?shown.map(card).join(''):'<p class="blog-empty">No articles match your search.</p>'};search?.addEventListener('input',render);render();}
  }
  init();
 })();
