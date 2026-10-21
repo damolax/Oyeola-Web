@@ -18,7 +18,7 @@ export default async function handler(req,res){
     try{
       const sql=getSql();
       const result=await sql`SELECT current_database() = 'oyeola_web' AS correct_database, to_regclass('public.cms_items') IS NOT NULL AS has_items_table, (SELECT count(*) FROM information_schema.tables WHERE table_schema='public' AND table_name='cms_items') AS table_count`;
-      return res.status(200).json({database:'connected',correctDatabase:result?.[0]?.correct_database===true,hasItemsTable:result?.[0]?.has_items_table===true,selectedKey:key,startsPostgres,hasWrappingQuotes,hasWhitespace,parseable,neonHost});
+      return res.status(200).json({database:'connected',correctDatabase:result?.[0]?.correct_database===true,hasItemsTable:result?.[0]?.has_items_table===true,correctProjectHost:parseable&&/^(ep-falling-queen-b57vnxc4(?:-pooler)?\.c-7\.us-east-2\.aws\.neon\.tech)$/i.test(new URL(raw).hostname),selectedKey:key,startsPostgres,hasWrappingQuotes,hasWhitespace,parseable,neonHost});
     }catch(error){
       console.error('Content database diagnostic failed',error);
       return res.status(503).json({database:'failed',selectedKey:key,startsPostgres,hasWrappingQuotes,hasWhitespace,parseable,neonHost,errorClass:String(error?.constructor?.name||'Error').slice(0,50),errorCode:String(error?.code||'unknown').slice(0,40)});
