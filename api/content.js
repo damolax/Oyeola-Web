@@ -18,7 +18,10 @@ export default async function handler(req,res){
     try{
       const sql=getSql();
       const result=await sql`SELECT 1 AS ok`;
-      return res.status(200).json({function:'running',database:result?.[0]?.ok===1?'connected':'unexpected',configuredCount:configured.length,connectionShape});
+      let cmsCheck;
+      try{const rows=await sql`SELECT count(*)::int AS total FROM cms_items WHERE item_type='blog' AND status='published'`;cmsCheck={ok:true,publishedBlogCount:rows[0]?.total||0}}
+      catch(err){cmsCheck={ok:false,errorClass:String(err?.constructor?.name||'unknown').slice(0,40),errorCode:String(err?.code||'unknown').slice(0,30),errorMessage:String(err?.message||'unknown').slice(0,140)}}
+      return res.status(200).json({function:'running',database:result?.[0]?.ok===1?'connected':'unexpected',configuredCount:configured.length,connectionShape,cmsCheck});
     }catch(e){
       console.error('Production database health check failed',e);
       return res.status(503).json({function:'running',database:configured.length?'connection_failed':'not_configured',configuredCount:configured.length,connectionShape,errorCode:String(e?.code||'unknown').slice(0,20),errorClass:String(e?.constructor?.name||'unknown').slice(0,60),errorMessage:String(e?.message||'unknown').slice(0,180).replace(/postgres(?:ql)?:\/\/\S+/g,'[redacted]')});
