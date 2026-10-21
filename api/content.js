@@ -14,7 +14,7 @@ export default async function handler(req,res){
       return res.status(200).json({function:'running',database:result?.[0]?.ok===1?'connected':'unexpected',configuredCount:configured.length});
     }catch(e){
       console.error('Production database health check failed',e);
-      return res.status(503).json({function:'running',database:configured.length?'connection_failed':'not_configured',configuredCount:configured.length,errorCode:String(e?.code||'unknown').slice(0,20)});
+      return res.status(503).json({function:'running',database:configured.length?'connection_failed':'not_configured',configuredCount:configured.length,errorCode:String(e?.code||'unknown').slice(0,20),errorClass:String(e?.constructor?.name||'unknown').slice(0,60),errorMessage:String(e?.message||'unknown').slice(0,180).replace(/postgres(?:ql)?:\/\/\S+/g,'[redacted]')});
     }
   }
   const type=String(req.query.type||'').trim();
