@@ -63,3 +63,33 @@
 @media(prefers-reduced-motion:reduce){.blog-card,.blog-card-image img{transition:none!important}}
 
 [data-blog-home][hidden]{display:none!important}
+
+/* Long-form journal improvements: calm rhythm, readable tables and related reading */
+.blog-card-image{position:relative}
+.blog-card-image img{display:block}
+.blog-article-heading{max-width:820px}
+.blog-cover{background:var(--oy-bg-soft);aspect-ratio:16/10}
+.blog-cover img{height:100%;object-fit:cover}
+.blog-body{font-size:16px}
+.blog-body>p{line-height:1.95;margin-bottom:27px}
+.blog-body strong{color:var(--oy-text);font-weight:750}
+.blog-body h2{scroll-margin-top:90px;letter-spacing:-.04em}
+.blog-body blockquote p{margin:0}
+.blog-body figure img{display:block;max-height:760px;object-fit:contain;background:var(--oy-panel)}
+.blog-table-wrap{max-width:100%;box-shadow:0 2px 18px #00000005}
+.blog-table-wrap td,.blog-table-wrap th{vertical-align:top;min-width:100px;line-height:1.7}
+.blog-table-wrap tr:nth-child(even) td{background:color-mix(in srgb,var(--oy-panel),transparent 55%)}
+.blog-table-wrap th{font-weight:750;white-space:normal}
+.blog-related-inline{margin:36px 0;padding:19px 22px;background:var(--oy-panel);border:1px solid var(--oy-line);border-left:3px solid var(--oy-green);border-radius:0 14px 14px 0;display:grid;gap:7px}
+.blog-related-inline span{color:var(--oy-muted);font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:750}
+.blog-related-inline a{font-size:17px;font-weight:800}
+.blog-related-posts{max-width:900px;margin:65px auto 0;border-top:1px solid var(--oy-line);padding-top:30px}
+.blog-related-posts h2{font-size:clamp(22px,2.5vw,30px);margin:0 0 20px}
+.blog-related-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.blog-related-links a{padding:20px;background:var(--oy-panel);border:1px solid var(--oy-line);border-radius:13px;line-height:1.5;text-decoration:none;font-weight:750}
+.blog-related-links a:hover{border-color:var(--oy-green)}
+.blog-load-error{grid-column:1/-1;text-align:center;padding:36px;border:1px solid var(--oy-line);border-radius:16px;background:var(--oy-panel);color:var(--oy-text)}
+.blog-load-error h3{margin:0 0 10px}
+.blog-load-error p{max-width:520px;margin:0 auto 20px;color:var(--oy-muted);line-height:1.65}
+.blog-load-error button{border-radius:9px;padding:11px 23px;border:1px solid var(--oy-green);background:transparent;color:var(--oy-green);font-weight:800;cursor:pointer}
+@media(max-width:620px){.blog-cover{aspect-ratio:16/11}.blog-article-heading{margin-bottom:24px}.blog-body>p{line-height:1.83}.blog-body h2{margin-top:37px}.blog-related-posts{margin-top:44px}}
