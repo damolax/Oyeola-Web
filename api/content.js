@@ -8,13 +8,20 @@ export default async function handler(req,res){
     res.setHeader('Cache-Control','no-store');
     res.setHeader('X-Robots-Tag','noindex, nofollow');
     const configured=['DATABASE_URL','NEON_DATABASE_URL','POSTGRES_URL_NON_POOLING','POSTGRES_PRISMA_URL'].filter(k=>!!process.env[k]);
+    const connectionShape=['DATABASE_URL','NEON_DATABASE_URL','POSTGRES_URL_NON_POOLING','POSTGRES_PRISMA_URL'].map(key=>{
+      const raw=process.env[key];
+      if(!raw)return {key,present:false};
+      let valid=false,neonHost=false,hasDatabase=false,startsPostgres=false;
+      try{const u=new URL(raw);startsPostgres=['postgresql:','postgres:'].includes(u.protocol);valid=startsPostgres&&!!u.username&&!!u.password&&!!u.hostname;neonHost=u.hostname.endsWith('.neon.tech');hasDatabase=u.pathname.length>1}catch{}
+      return {key,present:true,valid,neonHost,hasDatabase,startsPostgres};
+    });
     try{
       const sql=getSql();
       const result=await sql`SELECT 1 AS ok`;
-      return res.status(200).json({function:'running',database:result?.[0]?.ok===1?'connected':'unexpected',configuredCount:configured.length});
+      return res.status(200).json({function:'running',database:result?.[0]?.ok===1?'connected':'unexpected',configuredCount:configured.length,connectionShape});
     }catch(e){
       console.error('Production database health check failed',e);
-      return res.status(503).json({function:'running',database:configured.length?'connection_failed':'not_configured',configuredCount:configured.length,errorCode:String(e?.code||'unknown').slice(0,20),errorClass:String(e?.constructor?.name||'unknown').slice(0,60),errorMessage:String(e?.message||'unknown').slice(0,180).replace(/postgres(?:ql)?:\/\/\S+/g,'[redacted]')});
+      return res.status(503).json({function:'running',database:configured.length?'connection_failed':'not_configured',configuredCount:configured.length,connectionShape,errorCode:String(e?.code||'unknown').slice(0,20),errorClass:String(e?.constructor?.name||'unknown').slice(0,60),errorMessage:String(e?.message||'unknown').slice(0,180).replace(/postgres(?:ql)?:\/\/\S+/g,'[redacted]')});
     }
   }
   const type=String(req.query.type||'').trim();
