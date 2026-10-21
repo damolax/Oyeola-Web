@@ -20,7 +20,16 @@ export default async function handler(req,res){
       const result=await sql`SELECT 1 AS ok`;
       let cmsCheck;
       try{const rows=await sql`SELECT count(*)::int AS total FROM cms_items WHERE item_type='blog' AND status='published'`;cmsCheck={ok:true,publishedBlogCount:rows[0]?.total||0}}
-      catch(err){cmsCheck={ok:false,errorClass:String(err?.constructor?.name||'unknown').slice(0,40),errorCode:String(err?.code||'unknown').slice(0,30),errorMessage:String(err?.message||'unknown').slice(0,140)}}
+      catch(err){cmsCheck={ok:false,errorClass:String(err?.constructor?.name||'unknown').slice(0,40),errorCode:String(err?.code||'unknown').slice(0,30),errorMessage:String(err?.message||'unknown').slice(0,140)};
+        try{
+          const {neon}=await import('@neondatabase/serverless');
+          const url=new URL(process.env.DATABASE_URL||'');
+          url.pathname='/oyeola_web';
+          const alt=neon(url.toString());
+          const altRows=await alt`SELECT count(*)::int AS total FROM cms_items WHERE item_type='blog' AND status='published'`;
+          cmsCheck.alternateOyeolaDatabase={ok:true,publishedBlogCount:altRows[0]?.total||0};
+        }catch(altErr){cmsCheck.alternateOyeolaDatabase={ok:false,errorCode:String(altErr?.code||'unknown').slice(0,30),errorClass:String(altErr?.constructor?.name||'unknown').slice(0,40)}}
+      }
       return res.status(200).json({function:'running',database:result?.[0]?.ok===1?'connected':'unexpected',configuredCount:configured.length,connectionShape,cmsCheck});
     }catch(e){
       console.error('Production database health check failed',e);
