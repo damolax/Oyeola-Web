@@ -1,4 +1,19 @@
 (() => {
+  // Google Analytics 4 — owner's Oyeola Online property.
+  // Shared script powers tracking on public pages without adding divergent tags to each HTML file.
+  const analyticsId = "G-29W0G2F42Q";
+  const existingGoogleTag = document.querySelector('script[src*="googletagmanager.com/gtag/js?id='+analyticsId+'"]');
+  if (!existingGoogleTag) {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
+    window.gtag('js', new Date());
+    window.gtag('config', analyticsId);
+    const gtagScript = document.createElement('script');
+    gtagScript.async = true;
+    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id='+analyticsId;
+    document.head.appendChild(gtagScript);
+  }
+
 
     const instagramIcon = `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.4" cy="6.7" r="1.15" fill="currentColor"/></svg>`;
     const linkedinIcon = `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="8" cy="8" r="1.35" fill="currentColor"/><path d="M6.8 10.7h2.4v6.6H6.8zM11.1 10.7h2.3v.9c.7-.8 1.6-1.2 2.7-1.2 2.1 0 3.1 1.3 3.1 3.7v3.2h-2.4v-3c0-1.2-.4-1.8-1.4-1.8-1.1 0-1.8.8-1.8 2.1v2.7h-2.5z" fill="currentColor"/></svg>`;

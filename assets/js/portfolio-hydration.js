@@ -6,15 +6,15 @@
  const allowed=x=>{try{const u=new URL(x,location.origin);return ['https:','http:'].includes(u.protocol)?u.href:''}catch{return''}};
  fetch('/api/content?type=project').then(r=>r.ok?r.json():{items:[]}).then(({items=[]})=>{
   const bySlug=new Map(items.map(x=>[x.slug,x]));
-  for(const a of list){const m=a.getAttribute('href')?.match(/case-studies\/([^/?#]+)(?:\.html)?/);if(!m)continue;const slug=m[1].replace(/\.html$/,'');const data=bySlug.get(slug)?.data||{};const url=allowed(data.fullpage_image_url||data.hero_image_url);if(!url)continue;const image=a.querySelector('img');if(image&&image.src!==url){image.src=url;image.alt=(bySlug.get(slug)?.title||slug)+' — original project screenshot';image.style.objectPosition='top center';image.style.objectFit='contain';image.loading='lazy';}}
+  for(const a of list){const m=a.getAttribute('href')?.match(/case-studies\/([^/?#]+)(?:\.html)?/);if(!m)continue;const slug=m[1].replace(/\.html$/,'');const data=bySlug.get(slug)?.data||{};const url=allowed(data.fullpage_image_url||data.hero_image_url);if(!url)continue;const image=a.querySelector('img');if(image&&image.dataset.oyeolaOriginal!=='true'&&image.src!==url){image.src=url;image.alt=(bySlug.get(slug)?.title||slug)+' — original project screenshot';image.style.objectPosition='top center';image.style.objectFit='contain';image.loading='lazy';}}
   if(!isCase)return;
   const slug=location.pathname.split('/').pop().replace(/\.html$/,''),record=bySlug.get(slug),d=record?.data||{},url=allowed(d.fullpage_image_url||d.hero_image_url);if(!url)return;
   const title=record?.title||document.querySelector('h1')?.textContent||'Portfolio project';
   const hero=document.querySelector('.case-screen');
-  if(hero){hero.innerHTML='<img class="oy-original-hero oy-can-zoom" src="'+esc(url)+'" alt="'+esc(title)+' — original full-page screenshot" tabindex="0" role="button" title="Open full-resolution screenshot">';hero.classList.add('oy-has-original');}
+  if(hero&&!hero.querySelector('img[data-oyeola-original="true"]')){hero.innerHTML='<img class="oy-original-hero oy-can-zoom" src="'+esc(url)+'" alt="'+esc(title)+' — original full-page screenshot" tabindex="0" role="button" title="Open full-resolution screenshot">';hero.classList.add('oy-has-original');}
   const stage=document.querySelector('.oy-project-opening .oy-project-stage');
-  if(stage){stage.innerHTML='<img class="oy-original-hero oy-can-zoom" src="'+esc(url)+'" alt="'+esc(title)+' — original website screenshot" tabindex="0" role="button" title="Open full-resolution screenshot">';stage.classList.add('oy-has-original');}
-  const illustrative=document.querySelector('.project-video img');if(illustrative){illustrative.src=url;illustrative.alt=title+' original screenshot';illustrative.style.objectFit='contain'}
+  if(stage&&!stage.querySelector('img[data-oyeola-original="true"]')){stage.innerHTML='<img class="oy-original-hero oy-can-zoom" src="'+esc(url)+'" alt="'+esc(title)+' — original website screenshot" tabindex="0" role="button" title="Open full-resolution screenshot">';stage.classList.add('oy-has-original');}
+  const illustrative=document.querySelector('.project-video img');if(illustrative&&!illustrative.dataset.oyeolaOriginal){illustrative.src=url;illustrative.alt=title+' original screenshot';illustrative.style.objectFit='contain'}
   const note=document.querySelector('.case-study-visual-note');if(note)note.remove();
   const insertAfter=document.querySelector('.case-hero,.oy-project-opening');if(!insertAfter)return;
   if(!document.querySelector('[data-original-portfolio-showcase]')){
