@@ -3,7 +3,12 @@
  const list=document.querySelectorAll('a[href*="case-studies/"]');
  if(!isCase&&!list.length)return;
  const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const allowed=x=>{try{const u=new URL(x,location.origin);return ['https:','http:'].includes(u.protocol)?u.href:''}catch{return''}};
+ const allowed=x=>{
+  if(typeof x!=='string')return'';
+  const value=x.trim();
+  if(!value||/^(?:undefined|null)$/i.test(value))return'';
+  try{const u=new URL(value,location.origin);return ['https:','http:'].includes(u.protocol)?u.href:''}catch{return''}
+ };
  fetch('/api/content?type=project').then(r=>r.ok?r.json():{items:[]}).then(({items=[]})=>{
   const bySlug=new Map(items.map(x=>[x.slug,x]));
   for(const a of list){const m=a.getAttribute('href')?.match(/case-studies\/([^/?#]+)(?:\.html)?/);if(!m)continue;const slug=m[1].replace(/\.html$/,'');const data=bySlug.get(slug)?.data||{};const url=allowed(data.fullpage_image_url||data.hero_image_url);if(!url)continue;const image=a.querySelector('img');if(image&&image.src!==url){image.src=url;image.alt=(bySlug.get(slug)?.title||slug)+' — original project screenshot';image.style.objectPosition='top center';image.style.objectFit='contain';image.loading='lazy';}}
