@@ -17,8 +17,38 @@
   const img=event.target;if(img?.tagName!=='IMG'||!img.closest('.blog-card-image'))return;
   const place=img.parentElement;img.remove();place.innerHTML='<span class="blog-card-placeholder">Oyeola<br>Journal</span>';
  },true);
+ function initReadingProgress(){
+  const article=$('.blog-article');
+  if(!article)return;
+  const progress=document.createElement('div');
+  progress.className='blog-reading-progress';
+  progress.setAttribute('role','progressbar');
+  progress.setAttribute('aria-label','Article reading progress');
+  progress.setAttribute('aria-valuemin','0');
+  progress.setAttribute('aria-valuemax','100');
+  progress.setAttribute('aria-valuenow','0');
+  progress.innerHTML='<span></span>';
+  document.body.prepend(progress);
+  const fill=progress.firstElementChild;
+  let scheduled=false;
+  const update=()=>{
+   const start=article.getBoundingClientRect().top+window.scrollY;
+   const finish=Math.max(start+article.offsetHeight-window.innerHeight,start+1);
+   const value=Math.min(1,Math.max(0,(window.scrollY-start)/(finish-start)));
+   const percent=Math.round(value*100);
+   fill.style.transform=`scaleX(${value})`;
+   progress.setAttribute('aria-valuenow',String(percent));
+   scheduled=false;
+  };
+  const schedule=()=>{if(!scheduled){scheduled=true;requestAnimationFrame(update)}};
+  addEventListener('scroll',schedule,{passive:true});
+  addEventListener('resize',schedule,{passive:true});
+  if('ResizeObserver'in window)new ResizeObserver(schedule).observe(article);
+  schedule();
+ }
  async function init(){
   document.querySelectorAll('.blog-local-time').forEach(el=>{if(el.dateTime)el.textContent=fmtDate(el.dateTime)});
+  initReadingProgress();
   const home=$('[data-blog-home]'),list=$('[data-blog-list]');
   if(!home&&!list)return;
   const loaded=await fetchPosts();
@@ -41,3 +71,4 @@
  }
  init();
 })();
+
