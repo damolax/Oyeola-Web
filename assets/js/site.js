@@ -17,46 +17,6 @@
     : path.includes('demos') || path.includes('demo-') || path.includes('smart-match') || path.includes('configure') || path.includes('planner-demo') || path.includes('/showroom/') ? 'showroom'
     : path.includes('/services/') || path.includes('services') || path.includes('website') || path.includes('operations') || path.includes('digital-planners') ? 'services'
     : path.includes('/blog') ? 'blog' : path.includes('about') ? 'about' : '';
-  const loaderStartedAt = performance.now();
-  if (!document.querySelector('.site-loader')) {
-    document.body.classList.add('site-loading');
-    document.body.insertAdjacentHTML('afterbegin', `
-      <div class="site-loader" role="status" aria-label="Loading Oyeola Online">
-        <div class="site-loader-mark" aria-hidden="true">
-          <svg viewBox="0 0 128 72" role="presentation">
-            <defs>
-              <linearGradient id="oyLoaderInfinityGradient" x1="0" y1="1" x2="1" y2="0">
-                <stop offset="0" stop-color="#08c83d"/>
-                <stop offset=".52" stop-color="#20ef58"/>
-                <stop offset="1" stop-color="#a4ff4f"/>
-              </linearGradient>
-            </defs>
-            <path class="loader-infinity-ghost" pathLength="100" d="M9 37C9 20 28 12 42 27L64 50C78 65 101 59 101 36C101 16 79 10 65 26L43 50C29 65 9 58 9 37Z"/>
-            <path class="loader-infinity-draw" pathLength="100" d="M9 37C9 20 28 12 42 27L64 50C78 65 101 59 101 36C101 16 79 10 65 26L43 50C29 65 9 58 9 37Z"/>
-          </svg>
-        </div>
-      </div>
-    `);
-  }
-  const siteLoader = document.querySelector('.site-loader');
-  let loaderFinished = false;
-  const finishSiteLoad = () => {
-    if (loaderFinished || !siteLoader) return;
-    loaderFinished = true;
-    const minimumIntro = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 120 : 1150;
-    const wait = Math.max(0, minimumIntro - (performance.now() - loaderStartedAt));
-    window.setTimeout(() => {
-      siteLoader.classList.add('is-loaded');
-      document.body.classList.remove('site-loading');
-      document.documentElement.classList.add('site-ready');
-      window.setTimeout(() => siteLoader.remove(), 760);
-    }, wait);
-  };
-  if (document.readyState === 'complete') finishSiteLoad();
-  else window.addEventListener('load', finishSiteLoad, { once:true });
-  window.setTimeout(finishSiteLoad, 9000);
-
-
   // Continuous four-word hero: text remains meaningful if JavaScript is unavailable.
   const changingWord = document.querySelector('[data-hero-words]');
   if (changingWord) {
@@ -64,19 +24,16 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let wordIndex = 0;
     changingWord.textContent = words[0];
-    window.setInterval(() => {
-      if (reducedMotion.matches) {
-        wordIndex = (wordIndex + 1) % words.length;
-        changingWord.textContent = words[wordIndex];
-        return;
-      }
-      changingWord.classList.add('is-switching');
-      window.setTimeout(() => {
-        wordIndex = (wordIndex + 1) % words.length;
-        changingWord.textContent = words[wordIndex];
-        changingWord.classList.remove('is-switching');
-      }, 260);
-    }, 2800);
+    if (!reducedMotion.matches) {
+      window.setInterval(() => {
+        changingWord.classList.add('is-switching');
+        window.setTimeout(() => {
+          wordIndex = (wordIndex + 1) % words.length;
+          changingWord.textContent = words[wordIndex];
+          changingWord.classList.remove('is-switching');
+        }, 260);
+      }, 2800);
+    }
   }
 
   const pageMain = document.querySelector('main');
