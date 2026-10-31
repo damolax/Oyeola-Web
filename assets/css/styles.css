@@ -2598,6 +2598,7 @@ html[data-theme="dark"]{
 .text-link:hover,.btn.tertiary:hover{color:var(--oy-green-hi)!important;text-decoration:underline!important;text-underline-offset:4px}
 .studio-project-cta{padding:0 6px 0 18px!important;min-height:42px!important;background:#f8faf7!important;border-color:rgba(255,255,255,.15)!important}
 .studio-project-cta .studio-project-cta-icon{background:#63f46d!important}
+@media(max-width:700px){.studio-project-cta{display:none!important}}
 .cta-band{background:#091b10!important;padding:clamp(30px,4.5vw,55px) 0!important}
 .cta-band .cta-inner{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:28px!important;flex-wrap:wrap!important}
 .cta-band h2{font-size:clamp(24px,3.1vw,38px)!important;line-height:1.23!important;letter-spacing:-.035em!important;max-width:26ch!important;margin:9px 0 0!important}
