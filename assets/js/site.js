@@ -131,15 +131,15 @@
             <button class="studio-menu-close" type="button" aria-label="Close menu">Close <span aria-hidden="true">×</span></button>
           </div>
           <nav class="studio-menu-nav" aria-label="Primary navigation">
-            <a class="${active==='work'?'active':''}" href="${root}work.html"><span>01</span>Work</a>
-            <a class="${active==='showroom'?'active':''}" href="${root}showroom/index.html"><span>02</span>Live websites</a>
+            <a class="${active==='work'?'active':''}" href="${root}work.html"><span>01</span>My work</a>
+            <a class="${active==='showroom'?'active':''}" href="${root}showroom/index.html"><span>02</span>Website showroom</a>
             <a class="${active==='services'?'active':''}" href="${root}services.html"><span>03</span>Services</a>
-            <a class="${active==='blog'?'active':''}" href="${root}blog.html"><span>04</span>Journal</a>
+            <a class="${active==='blog'?'active':''}" href="${root}blog.html"><span>04</span>Insights</a>
             <a class="${active==='about'?'active':''}" href="${root}about.html"><span>05</span>About</a>
             <a href="${root}contact.html"><span>06</span>Contact</a>
           </nav>
           <div class="studio-menu-meta">
-            <div><small>Services</small><a href="${root}websites.html">Website design</a><a href="${root}operations.html">Automation & systems</a><a href="${root}digital-planners.html">Digital planners</a></div>
+            <div><small>Services</small><a href="${root}websites.html">Website design</a><a href="${root}services/ecommerce-website.html">Ecommerce websites</a><a href="${root}additional-services.html">Additional services</a></div>
             <div><small>Connect</small><a href="mailto:hello@oyeolaonline.com">Email</a><a href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="${root}privacy.html">Privacy policy</a></div>
             <div class="studio-menu-cta"><small>Have a project?</small><a href="${root}contact.html">Let's build it <span aria-hidden="true">↗</span></a></div>
           </div>
@@ -160,7 +160,7 @@
 
   const footer = $('footer.footer');
   if (footer) {
-    footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-dark.svg?v=20261018-footer1" alt="Oyeola Online — white lettering with green infinity mark"></a><p>Thoughtful websites, useful systems, better digital experiences.</p><div class="footer-socials"><a class="social-icon-link" href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer" aria-label="Oyeola on Instagram">${instagramIcon}</a><a class="social-icon-link" href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer" aria-label="Oyekunle Olalekan on LinkedIn">${linkedinIcon}</a></div></div><div><strong>Explore</strong><p><a href="${root}work.html">Selected work</a><br><a href="${root}showroom/index.html">Live websites</a><br><a href="${root}about.html">About Oyeola Online</a><br><a href="${root}blog.html">Journal</a></p></div><div><strong>Services</strong><p><a href="${root}websites.html">Website design</a><br><a href="${root}operations.html">Automation & systems</a><br><a href="${root}digital-planners.html">Digital planners</a></p></div><div><strong>Let's talk</strong><p><a href="${root}contact.html">Start a project</a><br><a href="mailto:hello@oyeolaonline.com">hello@oyeolaonline.com</a></p><a class="footer-privacy-link" href="${root}privacy.html">Privacy policy</a></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} Oyeola Online</span><span>Designed for clarity.</span></div></div></footer>`;
+    footer.outerHTML = `<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="footer-logo" href="${root}index.html"><img src="${root}assets/logos/logo-horizontal-dark.svg?v=20261018-footer1" alt="Oyeola Online — white lettering with green infinity mark"></a><p>Thoughtful websites. Better customer experiences.</p><div class="footer-socials"><a class="social-icon-link" href="https://www.instagram.com/oyeola3168/" target="_blank" rel="me noopener noreferrer" aria-label="Oyeola on Instagram">${instagramIcon}</a><a class="social-icon-link" href="https://www.linkedin.com/in/olalekan-oyekunle/" target="_blank" rel="noopener noreferrer" aria-label="Oyekunle Olalekan on LinkedIn">${linkedinIcon}</a></div></div><div><strong>Explore</strong><p><a href="${root}work.html">My work</a><br><a href="${root}showroom/index.html">Website showroom</a><br><a href="${root}about.html">About Oyeola Online</a><br><a href="${root}blog.html">Insights</a></p></div><div><strong>Services</strong><p><a href="${root}websites.html">Website design</a><br><a href="${root}services/ecommerce-website.html">Ecommerce websites</a><br><a href="${root}services/website-growth-setup.html">Website improvements</a><br><a href="${root}industries.html">Industries</a><br><a href="${root}platforms.html">Platforms</a><br><a href="${root}additional-services.html">Additional services</a></p></div><div><strong>Let's talk</strong><p><a href="${root}contact.html">Start a project</a><br><a href="mailto:hello@oyeolaonline.com">hello@oyeolaonline.com</a></p><a class="footer-privacy-link" href="${root}privacy.html">Privacy policy</a></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} Oyeola Online</span><span>Designed for clarity.</span></div></div></footer>`;
   }
 
   const themeToggle = $('.theme-toggle');
