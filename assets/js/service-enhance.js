@@ -95,13 +95,24 @@
   const toolNames={wix:'Wix',wixstudio:'Wix Studio',figma:'Figma',googleanalytics:'Google Analytics',googlesearchconsole:'Search Console',wordpress:'WordPress',woocommerce:'WooCommerce',godaddy:'GoDaddy',calendly:'Calendly',googlecalendar:'Google Calendar',shopify:'Shopify',googletagmanager:'Tag Manager',looker:'Looker Studio',microsoftclarity:'Microsoft Clarity',airtable:'Airtable',n8n:'n8n',pipedrive:'Pipedrive',zoho:'Zoho',googlesheets:'Google Sheets'};
   const logoUrl = name => 'https://cdn.simpleicons.org/' + encodeURIComponent(name) + '/63F46D';
 
+  // One targeted stylesheet for service pages, loaded after legacy theme rules.
+  if (!document.querySelector('[data-service-layout-css]')) {
+    const style = document.createElement('link');
+    style.rel = 'stylesheet';
+    style.href = '../assets/css/service-contact.css?v=20261121b';
+    style.dataset.serviceLayoutCss = 'true';
+    document.head.appendChild(style);
+  }
+
   const wrap = document.createElement('div');
 
-  let html = '<section class="service-proof-strip"><div class="container"><div class="service-proof-inner">' +
-    '<article><strong>'+cfg.count+'</strong><span>'+cfg.countLabel+'</span></article>' +
-    '<article><strong>400+</strong><span>Fiverr reviews</span></article>' +
-    '<article><strong>500+</strong><span>projects completed</span></article>' +
-    '</div></div></section>';
+  let html = '<section class="service-proof-strip" aria-labelledby="service-proof-heading"><div class="container"><div class="service-proof-shell">' +
+    '<div class="service-proof-heading"><p class="eyebrow">By the numbers</p><h2 id="service-proof-heading">Experience behind the work.</h2><p>A snapshot of projects and client feedback across Oyeola Online.</p></div>' +
+    '<div class="service-proof-inner" role="list">' +
+    '<article role="listitem"><span class="service-proof-index">01 / Project work</span><strong>'+cfg.count+'</strong><span class="service-proof-label">'+cfg.countLabel+'</span></article>' +
+    '<article role="listitem"><span class="service-proof-index">02 / Client feedback</span><strong>400+</strong><span class="service-proof-label">Fiverr reviews</span></article>' +
+    '<article role="listitem"><span class="service-proof-index">03 / Overall</span><strong>500+</strong><span class="service-proof-label">projects completed</span></article>' +
+    '</div></div></div></section>';
 
   html += '<section class="section how-work-section"><div class="container">' +
     '<div class="how-work-intro"><div><p class="eyebrow">How I work</p><h2>A clear process from first question to final test.</h2></div>' +
@@ -123,6 +134,11 @@
       '</div></div></section>';
   }
 
+  // The service offer comes first; proof, process, tools and related work follow.
+  // Append actual sections rather than a block wrapper so document structure stays clear.
   wrap.innerHTML = html;
-  hero.insertAdjacentElement('afterend', wrap);
+  const main = hero.closest('main');
+  if (main) {
+    while (wrap.firstElementChild) main.appendChild(wrap.firstElementChild);
+  }
 })();
