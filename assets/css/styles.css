@@ -2907,3 +2907,283 @@ body{line-height:1.6}
   :where(.service-tile,.feature-card,.project-card,.work-card,.studio-menu-panel){transition:none!important}
   :where(.hero-infinity-orbit,.orbit-moving-segment,.brand-infinity-flow){animation:none!important}
 }
+
+/* LIGHT EDITORIAL THEME — Oyeola Online, November 2026
+   Purpose-built daylight palette, hierarchy and components.
+   Only affects html[data-theme="light"]; dark mode is unchanged.
+   Keep originals, portfolio media and immersive showroom demos intact. */
+html[data-theme="light"]{
+  color-scheme:light;
+  --oy-bg:#f8faf6;
+  --oy-bg-soft:#eef4ee;
+  --oy-panel:#ffffff;
+  --oy-panel-2:#f2f6f1;
+  --oy-text:#13291c;
+  --oy-muted:#476052;
+  --oy-muted-2:#65786a;
+  --oy-green:#176b36;
+  --oy-green-hi:#10552c;
+  --oy-line:rgba(25,72,43,.16);
+  --oy-line-strong:rgba(24,96,48,.36);
+  --oy-shadow:0 14px 38px rgba(28,69,40,.055);
+  --bg:#f8faf6;
+  --paper:#ffffff;
+  --ink:#13291c;
+  --muted:#476052;
+  --line:#d7e3d9;
+  --line-soft:#e4ece5;
+  --soft:#eef4ee;
+  --soft-2:#f2f6f1;
+}
+html[data-theme="light"] body,
+html[data-theme="light"] main{
+  background:var(--oy-bg)!important;
+  color:var(--oy-text)!important;
+}
+html[data-theme="light"] ::selection{background:#c8edd0;color:#12321e}
+html[data-theme="light"] :is(.section,.section.soft,.section.alt,.section.paper){
+  color:var(--oy-text)!important;
+  border-bottom-color:var(--oy-line)!important;
+}
+html[data-theme="light"] .section{background:#f8faf6!important}
+html[data-theme="light"] .section.soft,
+html[data-theme="light"] .section.alt{background:#eff4ee!important}
+html[data-theme="light"] .section.paper{background:#ffffff!important}
+html[data-theme="light"] :is(.section-head h2,.copy h2,.hero h1,.page-hero h1,.service-hero h1,.founder-home-layout h2,.featured-portfolio-copy h3,.portfolio-slider-heading h2,.service-tile h3,.feature-card h3,.work-card h3,.project-copy h3,.testimonial-card h3,.toolbox-card h3,.education-card h3,.learning-card h3,.privacy-copy h2,.review-card h3,.case-content h1){
+  color:var(--oy-text)!important;
+}
+html[data-theme="light"] :is(.section-head p,.hero .lead,.page-hero .lead,.service-hero .lead,.founder-home-layout p,.copy p,.work-card p,.service-tile p,.feature-card p,.testimonial-source,.review-card>p,.portfolio-slider-heading p,.privacy-copy p,.case-content .lead){
+  color:var(--oy-muted)!important;
+}
+html[data-theme="light"] :is(.eyebrow,.accent,.text-link,.testimonial-stars,.kicker,.work-meta){
+  color:var(--oy-green)!important;
+}
+html[data-theme="light"] .text-link:hover,
+html[data-theme="light"] .btn.tertiary:hover{color:var(--oy-green-hi)!important}
+
+/* Crisp light navigation, with a real surface for mobile/full-screen menus. */
+html[data-theme="light"] .studio-header{
+  background:rgba(255,255,255,.96)!important;
+  border-bottom:1px solid #dfe9e0!important;
+  box-shadow:0 8px 30px rgba(24,54,34,.035)!important;
+}
+html[data-theme="light"] .studio-brand{color:#13291c!important}
+html[data-theme="light"] .studio-brand-type small{color:var(--oy-green)!important}
+html[data-theme="light"] .theme-toggle{
+  background:#f2f7f1!important;
+  color:#173d28!important;
+  border-color:#d6e4d9!important;
+}
+html[data-theme="light"] .studio-project-cta{
+  background:#173c27!important;
+  color:#ffffff!important;
+  border-color:#173c27!important;
+  box-shadow:none!important;
+}
+html[data-theme="light"] .studio-project-cta:hover{
+  background:#0e2c1c!important;
+  border-color:#0e2c1c!important;
+}
+html[data-theme="light"] .studio-project-cta .studio-project-cta-icon{
+  background:#a3f4ae!important;
+  color:#112d1b!important;
+}
+html[data-theme="light"] .studio-menu-btn{
+  background:#163822!important;
+  border-color:#163822!important;
+  color:#ffffff!important;
+}
+html[data-theme="light"] .studio-menu-panel{
+  background:radial-gradient(circle at 88% 8%,rgba(81,161,100,.11),transparent 30%),#f8faf6!important;
+  color:#13291c!important;
+  opacity:1!important;
+}
+html[data-theme="light"] .studio-menu-top{color:#617569!important;border-color:#dbe5dd!important}
+html[data-theme="light"] .studio-menu-close{
+  background:#fff!important;color:#173622!important;border-color:#d3e2d5!important;
+}
+html[data-theme="light"] .studio-menu-close span{
+  background:#195b30!important;color:#ffffff!important;
+}
+html[data-theme="light"] .studio-menu-nav a{
+  color:#173321!important;border-color:#dce8df!important;
+}
+html[data-theme="light"] .studio-menu-nav a>span{color:#617769!important}
+html[data-theme="light"] .studio-menu-nav a:is(:hover,.active){color:#176b36!important}
+html[data-theme="light"] .studio-menu-meta{border-top-color:#d9e5dc!important}
+html[data-theme="light"] .studio-menu-meta small{color:#617669!important}
+html[data-theme="light"] .studio-menu-meta a{color:#2c4d39!important}
+html[data-theme="light"] .studio-menu-meta a:hover,
+html[data-theme="light"] .studio-menu-cta a{color:#176b36!important}
+
+/* Daylight hero: distinct from the white content cards, preserve portrait/orbit. */
+html[data-theme="light"] .hero{
+  background:linear-gradient(180deg,#f8faf6 0%,#f0f5ee 100%)!important;
+  border-bottom-color:#dce8dd!important;
+}
+html[data-theme="light"] .hero-shell{
+  background:
+    radial-gradient(ellipse at 82% 40%,rgba(98,171,102,.17) 0,transparent 43%),
+    linear-gradient(116deg,#ffffff 0%,#f7faf5 54%,#edf5ed 100%)!important;
+  border-color:#d2e3d6!important;
+  box-shadow:0 22px 60px rgba(28,76,45,.07)!important;
+}
+html[data-theme="light"] .hero-shell::before{
+  background-image:linear-gradient(rgba(37,107,53,.034) 1px,transparent 1px),linear-gradient(90deg,rgba(37,107,53,.034) 1px,transparent 1px)!important;
+}
+html[data-theme="light"] .hero-shell .display{color:#10271a!important}
+html[data-theme="light"] .hero-shell .lead{color:#496050!important}
+html[data-theme="light"] .hero-portrait{filter:none!important}
+html[data-theme="light"] .hero-infinity-orbit svg{opacity:.75}
+html[data-theme="light"] .hero-badge,
+html[data-theme="light"] .hero-proof-row{
+  background:rgba(255,255,255,.88)!important;
+  border-color:#d4e6d8!important;
+  color:#1b3825!important;
+}
+html[data-theme="light"] .page-hero,
+html[data-theme="light"] .service-hero,
+html[data-theme="light"] .case-hero{
+  background:linear-gradient(160deg,#f2f7f0 0%,#fff 100%)!important;
+  border-color:#dde9df!important;
+}
+html[data-theme="light"] .breadcrumb{color:#587161!important}
+html[data-theme="light"] .founder-home-strip{
+  background:#ffffff!important;
+  border-bottom:1px solid #e0ebe2!important;
+}
+html[data-theme="light"] .founder-home-layout strong{color:#183321!important}
+
+/* Surface language: clean white cards, gentle depth, no colored haze. */
+html[data-theme="light"] :is(.surface,.service-tile,.demo-lab-card,.feature-card,.testimonial-card,.work-card,.project-card,.featured-portfolio,.review-card,.learning-card,.education-card,.toolbox-card,.story-timeline article,.proof-stat,.contact-box,.diagnostic,.lead-form,.case-block,.case-screen,.feature-box,.planner-portfolio-card,.privacy-summary,.simple-details,.demo-directory-card,.service-related-work article,.service-process-wide article,.how-work-step,.case-quick-facts>div,.case-platform-panel,.case-story-grid article){
+  background:#ffffff!important;
+  color:var(--oy-text)!important;
+  border:1px solid #dce8de!important;
+  box-shadow:0 8px 26px rgba(20,66,37,.035)!important;
+}
+html[data-theme="light"] :is(.service-tile,.feature-card,.demo-lab-card)::after{
+  background:radial-gradient(circle,rgba(35,138,62,.07),transparent 68%)!important;
+}
+html[data-theme="light"] :is(.service-tile,.feature-card,.project-card,.work-card,.demo-directory-card):hover{
+  border-color:#a8cab1!important;
+  box-shadow:0 16px 34px rgba(24,74,41,.09)!important;
+}
+html[data-theme="light"] :is(.service-icon,.demo-icon){
+  color:#176032!important;
+  background:linear-gradient(145deg,#e5f5e7,#f2f9f0)!important;
+  border-color:#cde5d1!important;
+}
+html[data-theme="light"] :is(.service-tile h3,.feature-card h3,.demo-lab-card h3,.project-card h3,.work-card h3,.review-card blockquote,.testimonial-card blockquote){
+  color:#173222!important;
+}
+html[data-theme="light"] :is(.service-tile p,.feature-card p,.demo-lab-card p,.work-card p,.project-copy p,.review-card>p,.education-card p,.learning-card p,.story-timeline p){
+  color:#4c6253!important;
+}
+
+/* Portfolio, showroom and carousels should read as one visual family. */
+html[data-theme="light"] .featured-portfolio-copy{background:#ffffff!important;color:#183321!important}
+html[data-theme="light"] .featured-portfolio-copy>p:not(.eyebrow){color:#526a58!important}
+html[data-theme="light"] .featured-portfolio-media{background:#e7eee8!important}
+html[data-theme="light"] .showroom-home-track>article,
+html[data-theme="light"] .home-work-track>.work-card{
+  background:#fff!important;
+  border-color:#dce8de!important;
+  box-shadow:0 6px 22px rgba(20,66,37,.04)!important;
+}
+html[data-theme="light"] :is(.showroom-arrow,.home-work-arrow,.portfolio-arrow,.feature-rail-btn){
+  color:#1c422b!important;
+  background:#ffffff!important;
+  border:1px solid #bfd5c3!important;
+  box-shadow:0 5px 15px rgba(20,66,37,.1)!important;
+}
+html[data-theme="light"] :is(.portfolio-filter,.demo-filter,.project-skill-tags span,.portfolio-skills span,.course-list span,.tool-chips span,.skills-cloud span){
+  color:#365542!important;
+  background:#f5f8f3!important;
+  border-color:#d4e2d7!important;
+}
+html[data-theme="light"] :is(.portfolio-filter,.demo-filter):is(.active,:hover){
+  color:#ffffff!important;
+  background:#1b6136!important;
+  border-color:#1b6136!important;
+}
+html[data-theme="light"] .simple-details>summary{color:#173522!important}
+html[data-theme="light"] .year-pill{background:#eaf4e9!important;color:#205f37!important;border-color:#cfe7d2!important}
+html[data-theme="light"] .toolbox-card .tool-monogram{background:#e4f3e7!important;color:#214c31!important}
+html[data-theme="light"] .review-meta{border-color:#dce8de!important}
+
+/* Forms: white panels, distinguished fields and readable focus states. */
+html[data-theme="light"] :is(.field input,.field select,.field textarea,.diagnostic input,.diagnostic select,.diagnostic textarea,.lead-form input,.lead-form select,.lead-form textarea){
+  background:#fbfdfb!important;
+  color:#162c1e!important;
+  border:1px solid #bed2c3!important;
+  border-radius:10px!important;
+}
+html[data-theme="light"] :is(.field input,.field select,.field textarea,.diagnostic input,.diagnostic select,.diagnostic textarea):focus{
+  border-color:#24834a!important;
+  box-shadow:0 0 0 3px rgba(36,131,74,.13)!important;
+}
+html[data-theme="light"] :is(input,textarea)::placeholder{color:#63776a!important;opacity:1}
+html[data-theme="light"] .field label{color:#264531!important}
+html[data-theme="light"] .contact-assurance,
+html[data-theme="light"] .form-note{color:#4a6352!important}
+
+/* Clear actions: lime is a filled CTA, forest green is a readable text link. */
+html[data-theme="light"] :is(.btn,.btn.light,.cta-band .btn){
+  background:#63ed78!important;
+  color:#0d2618!important;
+  border-color:#63ed78!important;
+}
+html[data-theme="light"] :is(.btn,.btn.light,.cta-band .btn):hover{
+  background:#a2f6ac!important;
+  border-color:#a2f6ac!important;
+}
+html[data-theme="light"] :is(.btn.secondary,.btn.ghost,.btn.is-secondary){
+  background:#ffffff!important;
+  color:#163d27!important;
+  border-color:#b8d2bf!important;
+}
+html[data-theme="light"] :is(.btn.secondary,.btn.ghost,.btn.is-secondary):hover{
+  background:#edf6ed!important;color:#13582c!important;border-color:#70af7f!important;
+}
+
+/* Intentional dark conversion moment, followed by the existing branded footer. */
+html[data-theme="light"] .cta-band{
+  background:#f8faf6!important;
+  border-top:0!important;
+  border-bottom:0!important;
+  color:#ffffff!important;
+  padding:clamp(32px,5vw,70px) 0!important;
+}
+html[data-theme="light"] .cta-band .container{
+  background:linear-gradient(115deg,#143825 0%,#0e2b1d 74%,#19452c 100%)!important;
+  border:1px solid #28583b!important;
+  border-radius:24px!important;
+  padding:clamp(26px,5vw,56px)!important;
+  box-shadow:0 18px 46px rgba(14,49,29,.11)!important;
+}
+html[data-theme="light"] .cta-band h2{color:#ffffff!important}
+html[data-theme="light"] .cta-band :is(p,.eyebrow){color:#b9ddc1!important}
+html[data-theme="light"] .footer{background:#10271b!important;border-color:#1c4229!important}
+
+/* Detail pages: small surfaces must not retain dark-theme panels. */
+html[data-theme="light"] :is(.privacy-summary,.project-main-media,.fullpage-viewer,.project-facts,.case-story-grid article,.case-platform-panel,.case-quick-facts>div){
+  background:#ffffff!important;border-color:#dce8de!important;
+}
+html[data-theme="light"] :is(.privacy-summary h2,.privacy-copy h2,.case-story-grid h2,.case-story-copy h2){color:#173522!important}
+html[data-theme="light"] :is(.privacy-summary p,.case-story-grid li,.case-story-copy p){color:#4d6655!important}
+html[data-theme="light"] .privacy-copy a{color:#176b36!important}
+html[data-theme="light"] .tool-logo-grid .tool-chip-visual{border-color:#dce7dc!important}
+
+/* Compact light-mode refinement, consistent with shared dark-mode grid. */
+@media(max-width:680px){
+  html[data-theme="light"] .hero-shell{
+    border-radius:20px!important;
+    box-shadow:0 12px 28px rgba(25,67,38,.05)!important;
+  }
+  html[data-theme="light"] .cta-band .container{
+    border-radius:18px!important;
+    padding:26px 22px!important;
+  }
+  html[data-theme="light"] .studio-menu-nav a{border-color:#e2ece4!important}
+  html[data-theme="light"] :is(.service-tile,.feature-card,.testimonial-card){box-shadow:none!important}
+}
