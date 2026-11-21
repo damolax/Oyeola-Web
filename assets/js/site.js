@@ -9,9 +9,12 @@
   const systemLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
   let theme = savedTheme || (systemLight ? 'light' : 'dark');
   document.documentElement.dataset.theme = theme;
-  const nested = /\/(services|case-studies|blog)\//.test(path);
-  const root = nested ? '../' : '';
-  const isHome = path === '/' || /\/index(?:\.html)?$/.test(path);
+  // Resolve links from the actual URL depth, including showroom folders.
+  // Treat only the domain root as home, not every nested index.html.
+  const pathParts = path.split('/').filter(Boolean);
+  const directoryDepth = path.endsWith('/') ? pathParts.length : Math.max(0, pathParts.length - 1);
+  const root = '../'.repeat(directoryDepth);
+  const isHome = path === '/' || path === '/index' || path === '/index.html';
   const active = isHome ? 'home'
     : path.includes('/case-studies/') || /\/work(?:\.html)?$/.test(path) || /\/project(?:\.html)?$/.test(path) ? 'work'
     : path.includes('demos') || path.includes('demo-') || path.includes('smart-match') || path.includes('configure') || path.includes('planner-demo') || path.includes('/showroom/') ? 'showroom'
@@ -65,11 +68,8 @@
     let wordIndex = 0;
     changingWord.textContent = words[0];
     window.setInterval(() => {
-      if (reducedMotion.matches) {
-        wordIndex = (wordIndex + 1) % words.length;
-        changingWord.textContent = words[wordIndex];
-        return;
-      }
+      // A static word is less distracting when reduced motion is requested.
+      if (reducedMotion.matches || document.hidden) return;
       changingWord.classList.add('is-switching');
       window.setTimeout(() => {
         wordIndex = (wordIndex + 1) % words.length;
@@ -270,9 +270,28 @@
   menuBackdrop?.addEventListener('click', () => { setMenu(false); menu?.focus({preventScroll:true}); });
   $$('.studio-menu a').forEach(link => link.addEventListener('click', () => setMenu(false)));
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && menu?.getAttribute('aria-expanded') === 'true') {
+    if (menu?.getAttribute('aria-expanded') !== 'true' || !menuPanel) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
       setMenu(false);
       menu.focus({preventScroll:true});
+      return;
+    }
+    if (event.key !== 'Tab') return;
+    // Keep keyboard focus inside the open modal navigation.
+    const focusable = $('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])', menuPanel)
+      .filter(element => element.getClientRects().length > 0);
+    if (!focusable.length) {
+      event.preventDefault();
+      return;
+    }
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if (!menuPanel.contains(document.activeElement) || (event.shiftKey && document.activeElement === first)) {
+      event.preventDefault();
+      (event.shiftKey ? last : first).focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
     }
   });
 
