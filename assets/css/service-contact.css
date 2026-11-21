@@ -1,0 +1,399 @@
+
+/* Oyeola Online — service and contact page layouts, November 2026.
+   Scoped refinements replace the old compressed statistic cards.
+   Keep dark and light themes intentional without changing portfolio media. */
+
+/* Shared services: credible metrics as one composed editorial panel */
+.service-proof-strip{
+  padding:clamp(42px,6vw,84px) 0!important;
+  border-block:1px solid var(--oy-line)!important;
+  background:var(--oy-bg-soft,#0e1912)!important;
+}
+.service-proof-shell{
+  display:grid;
+  grid-template-columns:minmax(0,.82fr) minmax(0,1.6fr);
+  align-items:center;
+  gap:clamp(30px,5vw,78px);
+}
+.service-proof-heading{min-width:0;max-width:420px}
+.service-proof-heading .eyebrow{margin:0 0 15px!important}
+.service-proof-heading h2{
+  font-size:clamp(28px,3.3vw,43px)!important;
+  line-height:1.13!important;
+  letter-spacing:-.045em;
+  color:var(--oy-text)!important;
+  margin:0 0 17px!important;
+  max-width:16ch;
+}
+.service-proof-heading>p:last-child{
+  max-width:37ch;
+  color:var(--oy-muted)!important;
+  font-size:14px;
+  line-height:1.8;
+  margin:0;
+}
+.service-proof-strip .service-proof-inner{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:0!important;
+  overflow:hidden;
+  background:var(--oy-panel)!important;
+  border:1px solid var(--oy-line-strong)!important;
+  border-radius:18px;
+  box-shadow:0 18px 46px rgba(0,0,0,.09);
+  min-width:0;
+}
+.service-proof-strip .service-proof-inner article,
+.service-proof-strip .service-proof-inner article:first-child,
+.service-proof-strip .service-proof-inner article:last-child{
+  padding:clamp(22px,2.8vw,36px) clamp(16px,2.4vw,29px)!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  min-height:188px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  min-width:0;
+}
+.service-proof-strip .service-proof-inner article+article{border-left:1px solid var(--oy-line)!important}
+.service-proof-strip .service-proof-index{
+  display:block;
+  font-size:10px!important;
+  color:var(--oy-muted)!important;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  margin:0 0 21px;
+}
+.service-proof-strip .service-proof-inner strong{
+  font-size:clamp(36px,3.7vw,53px)!important;
+  line-height:1!important;
+  color:var(--oy-green)!important;
+  font-weight:750;
+  letter-spacing:-.07em;
+  margin:0 0 12px!important;
+}
+.service-proof-strip .service-proof-label{
+  display:block;
+  font-size:clamp(11px,.95vw,13px)!important;
+  color:var(--oy-muted)!important;
+  font-weight:500;
+  line-height:1.55!important;
+  max-width:18ch;
+  margin:0!important;
+}
+.how-work-section .how-work-intro{gap:clamp(20px,4vw,58px);margin-bottom:34px}
+.how-work-section .how-work-intro h2{max-width:20ch;line-height:1.15!important}
+.how-work-section .how-work-intro>p{max-width:52ch;line-height:1.76}
+.how-work-section .service-process-wide{border-color:var(--oy-line)}
+.how-work-section .service-process-wide article{min-width:0;padding:27px clamp(15px,2vw,25px)!important}
+.how-work-section .service-process-wide article>strong{margin-bottom:28px}
+.how-work-section .service-process-wide article h3{font-size:clamp(17px,1.65vw,21px)!important;line-height:1.28}
+.how-work-section .service-process-wide article p{font-size:13px!important;line-height:1.7!important}
+.service-related-work article{min-width:0}
+.service-related-work article>div{padding:20px!important}
+.service-related-work img{object-fit:cover}
+.service-related-work h3{line-height:1.35}
+
+/* E-commerce: use real work as the visual, not a generic fake storefront. */
+.commerce-page{min-width:0}
+.commerce-page .commerce-hero.service-hero{
+  display:block!important;
+  min-height:0!important;
+  padding:clamp(50px,6vw,96px) 0!important;
+}
+.commerce-hero-layout{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,.93fr);
+  align-items:center;
+  gap:clamp(24px,5vw,78px);
+}
+.commerce-hero-copy,.commerce-featured-work{min-width:0}
+.commerce-page .commerce-hero .eyebrow{margin:0 0 20px}
+.commerce-page .commerce-hero h1{
+  max-width:15ch!important;
+  margin:0 0 22px!important;
+  font-size:clamp(44px,5.5vw,74px)!important;
+  line-height:1.08!important;
+  color:var(--oy-text)!important;
+  text-wrap:balance;
+}
+.commerce-page .commerce-hero-lead{
+  color:var(--oy-muted)!important;
+  max-width:48ch!important;
+  font-size:clamp(15px,1.3vw,18px)!important;
+  line-height:1.76!important;
+  margin:0!important;
+}
+.commerce-page .commerce-hero .actions{margin-top:30px!important;gap:21px!important}
+.commerce-platform-line{
+  display:flex;align-items:center;flex-wrap:wrap;
+  gap:8px 13px;
+  border-top:1px solid var(--oy-line);
+  padding-top:22px;margin-top:clamp(36px,4vw,56px);
+  font-size:12px;color:var(--oy-muted);
+}
+.commerce-platform-line>span{flex-basis:100%;font-size:10px;font-weight:650;letter-spacing:.12em;text-transform:uppercase}
+.commerce-platform-line strong{font-size:12px;color:var(--oy-text);font-weight:650}
+.commerce-featured-work{
+  display:block;
+  text-decoration:none;
+  border:1px solid var(--oy-line-strong);
+  border-radius:20px;
+  overflow:hidden;
+  background:var(--oy-panel);
+  box-shadow:0 24px 58px rgba(0,0,0,.14);
+}
+.commerce-image-wrap{
+  display:block;
+  min-height:280px;
+  overflow:hidden;
+  background:var(--oy-bg-soft);
+}
+.commerce-image-wrap img{
+  display:block;
+  width:100%;
+  height:clamp(290px,31vw,445px);
+  object-fit:cover;
+  object-position:top center;
+  transition:transform .36s ease;
+}
+.commerce-featured-work:hover .commerce-image-wrap img{transform:scale(1.025)}
+.commerce-image-caption{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:18px clamp(19px,2.4vw,30px);
+  border-top:1px solid var(--oy-line);
+}
+.commerce-image-caption small{
+  display:block;text-transform:uppercase;font-size:10px;letter-spacing:.13em;
+  color:var(--oy-muted);font-weight:650;margin-bottom:5px;
+}
+.commerce-image-caption strong{
+  display:block;font-size:17px;line-height:1.35;
+  color:var(--oy-text);font-weight:700;
+}
+.commerce-featured-arrow{
+  display:grid;place-items:center;flex:0 0 40px;
+  width:40px;height:40px;border-radius:50%;
+  border:1px solid var(--oy-line-strong);color:var(--oy-green);
+  transition:background-color .2s ease;
+}
+.commerce-featured-work:hover .commerce-featured-arrow{background:var(--oy-bg-soft)}
+.commerce-priorities{scroll-margin-top:100px}
+.commerce-focus-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--oy-grid-gap,18px)}
+.commerce-focus-card{
+  min-width:0;
+  background:var(--oy-panel);
+  border:1px solid var(--oy-line);
+  border-radius:18px;
+  padding:clamp(23px,2.8vw,34px);
+  min-height:254px;
+  display:flex;flex-direction:column;
+}
+.commerce-step{
+  display:block;font-size:11px;color:var(--oy-green);
+  text-transform:uppercase;letter-spacing:.08em;font-weight:700;
+  margin-bottom:clamp(35px,4vw,58px);
+}
+.commerce-step span{color:var(--oy-muted);padding-inline:5px}
+.commerce-focus-card h3{
+  color:var(--oy-text)!important;
+  font-size:clamp(20px,2vw,25px);
+  letter-spacing:-.035em;line-height:1.2;margin:0 0 10px;
+}
+.commerce-focus-card p{font-size:14px;line-height:1.74;color:var(--oy-muted)!important;margin:0}
+
+/* Contact: one focused two-column enquiry, no duplicate giant hero. */
+.contact-page{background:var(--oy-bg)!important}
+.contact-stage{padding:clamp(46px,6vw,92px) 0 clamp(64px,7vw,110px)}
+.contact-stage-grid{
+  display:grid!important;
+  grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr);
+  align-items:start;
+  gap:clamp(35px,6vw,100px);
+}
+.contact-stage-grid>*{min-width:0}
+.contact-intro{position:sticky;top:115px}
+.contact-intro .eyebrow{margin:0 0 22px}
+.contact-intro h1{
+  color:var(--oy-text)!important;
+  font-size:clamp(39px,5vw,66px)!important;
+  line-height:1.1!important;
+  letter-spacing:-.055em;
+  margin:0 0 22px;
+  max-width:13ch;
+}
+.contact-intro .contact-lead{
+  color:var(--oy-muted)!important;
+  font-size:clamp(15px,1.35vw,18px);
+  line-height:1.78;max-width:42ch;margin:0;
+}
+.contact-intro-rule{height:1px;background:var(--oy-line);margin:clamp(35px,4vw,52px) 0 25px}
+.contact-small-title{
+  color:var(--oy-muted)!important;
+  margin:0 0 14px;
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+}
+.contact-contact-links{display:grid}
+.contact-contact-links a{
+  display:grid;grid-template-columns:70px minmax(0,1fr) 16px;
+  gap:8px;align-items:center;
+  padding:15px 0;
+  border-bottom:1px solid var(--oy-line);
+  min-width:0;text-decoration:none;
+}
+.contact-contact-links a>span:first-child{font-size:11px;color:var(--oy-muted)}
+.contact-contact-links a strong{font-size:13px;color:var(--oy-text);font-weight:600;overflow-wrap:anywhere}
+.contact-contact-links a>span:last-child{color:var(--oy-green);font-size:15px}
+.contact-contact-links a:hover strong{color:var(--oy-green)}
+.contact-intro-note{font-size:12px!important;color:var(--oy-muted)!important;line-height:1.7;margin:23px 0 0}
+.contact-form-card.diagnostic{
+  background:var(--oy-panel)!important;
+  border:1px solid var(--oy-line)!important;
+  padding:clamp(23px,3.8vw,48px)!important;
+  border-radius:20px!important;
+  box-shadow:0 20px 55px rgba(0,0,0,.07)!important;
+  min-width:0;
+}
+.contact-form-heading{padding-bottom:29px;border-bottom:1px solid var(--oy-line)}
+.contact-form-overline{
+  display:block;font-size:10px;font-weight:750;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--oy-green);margin-bottom:13px;
+}
+.contact-form-heading h2{
+  color:var(--oy-text)!important;
+  font-size:clamp(24px,2.65vw,34px)!important;
+  line-height:1.2;letter-spacing:-.04em;margin:0 0 9px;
+}
+.contact-form-heading p{font-size:13px;color:var(--oy-muted)!important;line-height:1.65;margin:0}
+.contact-form-group{border:0!important;margin:0;padding:28px 0 0!important;min-width:0}
+.contact-form-group+ .contact-form-group{margin-top:22px;border-top:1px solid var(--oy-line)!important}
+.contact-form-group legend{
+  float:left;width:100%;padding:0 0 20px;margin:0;
+  color:var(--oy-text);font-weight:700;font-size:14px;line-height:1.4;
+}
+.contact-form-group legend span{font-size:11px;color:var(--oy-green);margin-right:12px;font-weight:750}
+.contact-form-group .form-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 16px!important;clear:both}
+.contact-form-card .field{margin:0!important;gap:8px!important;min-width:0}
+.contact-form-card .field.full{grid-column:1/-1}
+.contact-form-card .field label{
+  color:var(--oy-text);font-weight:600;
+  font-size:12px!important;line-height:1.5;
+}
+.contact-optional{font-weight:400;color:var(--oy-muted);font-size:11px}
+.contact-form-card :is(input,select,textarea){
+  width:100%;max-width:100%;min-width:0;
+  background:var(--oy-bg-soft)!important;
+  border:1px solid var(--oy-line-strong)!important;
+  border-radius:9px!important;
+  color:var(--oy-text)!important;
+  padding:12px 14px!important;
+  font-size:14px!important;
+  line-height:1.55!important;
+  outline:0;
+}
+.contact-form-card :is(input,select){min-height:49px!important}
+.contact-form-card textarea{min-height:110px;resize:vertical}
+.contact-form-card :is(input,textarea)::placeholder{color:var(--oy-muted)!important;opacity:.8}
+.contact-form-card :is(input,select,textarea):focus-visible{
+  outline:2px solid var(--oy-green)!important;outline-offset:2px!important;
+}
+.contact-form-footer{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding-top:28px}
+.contact-form-footer .btn{white-space:normal!important;min-height:50px!important}
+.contact-form-footer>p{
+  color:var(--oy-muted)!important;
+  font-size:11px;line-height:1.7;
+  margin:0;flex:1 1 190px;
+}
+.contact-form-footer>p a{color:var(--oy-green)!important;text-decoration:underline;text-underline-offset:3px}
+.contact-form-card .form-status{margin:16px 0 0;line-height:1.65;overflow-wrap:anywhere}
+.contact-form-card .form-status:empty{display:none}
+
+/* Light-theme parity for the new page structures. */
+html[data-theme="light"] .service-proof-strip{background:#eff5ef!important;border-color:#dce8de!important}
+html[data-theme="light"] .service-proof-strip .service-proof-inner{
+  background:#ffffff!important;border-color:#d6e3d8!important;
+  box-shadow:0 14px 32px rgba(25,69,41,.06)!important;
+}
+html[data-theme="light"] .service-proof-strip .service-proof-inner article{background:transparent!important}
+html[data-theme="light"] .service-proof-strip .service-proof-inner article+article{border-color:#dde9df!important}
+html[data-theme="light"] .service-proof-strip .service-proof-inner strong{color:#176b36!important}
+html[data-theme="light"] .commerce-featured-work,
+html[data-theme="light"] .commerce-focus-card,
+html[data-theme="light"] .contact-form-card.diagnostic{
+  background:#ffffff!important;border-color:#d7e5da!important;
+  box-shadow:0 14px 34px rgba(26,70,39,.055)!important;
+}
+html[data-theme="light"] .commerce-image-wrap{background:#eef3ef}
+html[data-theme="light"] .commerce-page .commerce-hero{background:linear-gradient(145deg,#f4f8f3 0%,#ffffff 100%)!important}
+html[data-theme="light"] .commerce-page .commerce-hero h1{color:#13291c!important}
+html[data-theme="light"] .commerce-focus-card p,
+html[data-theme="light"] .commerce-page .commerce-hero-lead{color:#476052!important}
+html[data-theme="light"] .contact-stage{background:linear-gradient(135deg,#f4f8f3 0%,#f9fbf7 45%,#f3f7f2 100%)}
+html[data-theme="light"] .contact-form-card :is(input,select,textarea){
+  color:#142d1d!important;background:#f8faf7!important;border-color:#c4d9c9!important;
+}
+html[data-theme="light"] .contact-form-card :is(input,textarea)::placeholder{color:#627568!important}
+html[data-theme="light"] .contact-form-card .field label{color:#23432c!important}
+html[data-theme="light"] .contact-form-group+.contact-form-group{border-color:#e1eae1!important}
+
+/* Each breakpoint has deliberate grouping, rather than squeezed columns. */
+@media(max-width:1100px){
+  .service-proof-shell{grid-template-columns:1fr;gap:25px}
+  .service-proof-heading{max-width:620px}
+  .service-proof-heading h2{max-width:none}
+  .contact-stage-grid{gap:clamp(25px,4vw,54px)}
+}
+@media(max-width:900px){
+  .commerce-hero-layout{grid-template-columns:1fr!important}
+  .commerce-featured-work{max-width:680px}
+  .commerce-focus-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .commerce-focus-card:last-child{grid-column:1/-1;min-height:190px}
+  .contact-stage-grid{grid-template-columns:1fr!important}
+  .contact-intro{position:static;max-width:750px}
+  .contact-intro h1{max-width:18ch}
+}
+@media(max-width:700px){
+  .service-proof-strip{padding:43px 0!important}
+  .service-proof-strip .service-proof-inner{
+    grid-template-columns:1fr!important;
+  }
+  .service-proof-strip .service-proof-inner article,
+  .service-proof-strip .service-proof-inner article:first-child,
+  .service-proof-strip .service-proof-inner article:last-child{
+    min-height:0;padding:22px 24px!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,105px) minmax(0,1fr);
+    gap:4px 13px;align-items:center;
+  }
+  .service-proof-strip .service-proof-inner article+article{
+    border-left:0!important;border-top:1px solid var(--oy-line)!important;
+  }
+  .service-proof-strip .service-proof-index{
+    grid-column:1/-1;margin:0 0 7px;font-size:10px!important;
+  }
+  .service-proof-strip .service-proof-inner strong{font-size:38px!important;margin:0!important}
+  .service-proof-strip .service-proof-label{font-size:12px!important;max-width:28ch;margin:0!important}
+  .how-work-section .service-process-wide article{padding:20px 0!important;min-height:0}
+  .how-work-section .service-process-wide article>strong{margin:0 0 10px}
+  .commerce-focus-grid{grid-template-columns:1fr}
+  .commerce-focus-card,.commerce-focus-card:last-child{grid-column:auto;min-height:0;padding:24px}
+  .commerce-step{margin-bottom:27px}
+  .commerce-page .commerce-hero.service-hero{padding:44px 0!important}
+  .commerce-page .commerce-hero h1{font-size:clamp(36px,8.5vw,49px)!important}
+  .commerce-image-wrap{min-height:0}
+  .commerce-image-wrap img{height:275px}
+  .contact-stage{padding:42px 0 60px}
+  .contact-intro h1{font-size:clamp(36px,8.5vw,49px)!important}
+  .contact-intro-rule{margin:28px 0 14px}
+  .contact-form-group .form-grid{grid-template-columns:1fr!important}
+  .contact-form-card.diagnostic{padding:22px!important}
+  .contact-form-group legend{padding-bottom:17px}
+}
+@media(prefers-reduced-motion:reduce){
+  .commerce-image-wrap img{transition:none!important}
+}
