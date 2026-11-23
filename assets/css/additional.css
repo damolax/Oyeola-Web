@@ -1,0 +1,185 @@
+/* Oyeola additional services & Klaviyo project — responsive, theme-aware */
+.additional-services-page .page-hero .lead{max-width:65ch}
+.additional-services-page .service-grid{gap:clamp(16px,2.2vw,25px)!important;align-items:stretch}
+.additional-services-page .service-tile{display:flex;flex-direction:column;align-items:flex-start;gap:0;min-height:220px}
+.additional-services-page .service-tile h3{margin:12px 0 10px}
+.additional-services-page .service-tile p{margin:0 0 23px;line-height:1.72}
+.additional-services-page .service-tile .text-link{margin-top:auto}
+.additional-services-page .service-icon{flex-shrink:0}
+.additional-services-page .additional-work-section{background:var(--oy-bg-soft)!important}
+.additional-work-heading{max-width:680px;margin-bottom:27px}
+.additional-work-heading h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.043em;line-height:1.17;margin:9px 0 13px;color:var(--oy-text)}
+.additional-work-heading p:not(.eyebrow){color:var(--oy-muted);font-size:14px;line-height:1.75}
+.additional-klaviyo-feature{
+  display:grid;
+  grid-template-columns:minmax(0,.97fr) minmax(0,1.03fr);
+  min-width:0;
+  overflow:hidden;
+  border-radius:23px;
+  border:1px solid var(--oy-line-strong);
+  background:var(--oy-panel);
+  box-shadow:0 20px 50px rgba(0,0,0,.09);
+}
+.additional-klaviyo-copy{
+  padding:clamp(28px,4.6vw,57px);
+  display:flex;flex-direction:column;align-items:flex-start;
+  min-width:0;
+}
+.additional-klaviyo-copy .eyebrow{margin:0 0 15px}
+.additional-klaviyo-copy h3{
+  font-size:clamp(28px,3.35vw,45px);
+  line-height:1.15;letter-spacing:-.047em;
+  margin:0 0 18px;color:var(--oy-text);
+  max-width:19ch;
+}
+.additional-klaviyo-copy>p:not(.eyebrow){color:var(--oy-muted);font-size:14px;line-height:1.78;max-width:53ch;margin:0 0 19px}
+.additional-klaviyo-tags{display:flex;flex-wrap:wrap;gap:8px;margin:5px 0 27px}
+.additional-klaviyo-tags span{
+  padding:7px 11px;
+  border-radius:100px;
+  border:1px solid var(--oy-line);
+  background:var(--oy-bg-soft);
+  color:var(--oy-text);
+  font-size:11px;
+  line-height:1.4;
+}
+.additional-klaviyo-copy>.text-link{margin-top:auto}
+
+/* Typeset project identifier; no pretend screenshot or fabricated outcome chart. */
+.klaviyo-project-art,
+.klaviyo-work-art{
+  background:linear-gradient(138deg,#133d2d 0%,#0b2c22 100%);
+  color:#f8f4e8;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:340px;
+  padding:clamp(25px,3.5vw,43px);
+  overflow:hidden;
+}
+.klaviyo-project-art::before,.klaviyo-work-art::before{
+  content:"";
+  position:absolute;
+  top:-50%;left:48%;
+  width:80%;aspect-ratio:1;
+  border:1px solid rgba(250,237,189,.16);
+  border-radius:50%;
+  box-shadow:0 0 0 55px rgba(245,226,162,.024),0 0 0 110px rgba(245,226,162,.022);
+  pointer-events:none;
+}
+.klaviyo-art-top{display:flex;justify-content:space-between;gap:16px;align-items:center;z-index:1}
+.klaviyo-art-top strong{font-size:13px;letter-spacing:.075em}
+.klaviyo-art-top span{
+  font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+  padding:7px 9px;border:1px solid rgba(238,236,206,.36);
+  border-radius:6px;
+  color:#f5e9c6;
+}
+.klaviyo-art-center{position:relative;z-index:1;margin:35px 0}
+.klaviyo-art-count{font-size:clamp(70px,8.5vw,130px);letter-spacing:-.11em;line-height:.95;font-weight:700;color:#eee1bc}
+.klaviyo-art-center>span:last-child{display:block;margin-top:14px;color:#f5f0db;font-weight:650;font-size:clamp(15px,1.8vw,23px);line-height:1.25}
+.klaviyo-art-bottom{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.klaviyo-art-bottom>span{
+  padding:10px 8px;
+  border:1px solid rgba(240,229,195,.2);
+  color:#f7f1e1;
+  background:rgba(255,255,255,.045);
+  border-radius:7px;
+  font-size:10px;line-height:1.35;
+}
+.additional-services-page .additional-support-note{padding:clamp(23px,3.5vw,35px)!important}
+.additional-services-page .additional-support-note .section-head{margin-bottom:18px!important}
+.additional-services-page .additional-support-note h2{font-size:clamp(25px,3vw,37px)!important}
+.additional-services-page .additional-support-note p{max-width:66ch;line-height:1.73}
+
+/* Compact portfolio visual, matching case study without mislabeling it as a screenshot. */
+.portfolio-slide .klaviyo-work-art{
+  min-height:246px;
+  height:100%;
+  padding:24px;
+}
+.portfolio-slide .klaviyo-art-count{font-size:81px}
+.portfolio-slide .klaviyo-art-center{margin:22px 0}
+.portfolio-slide .klaviyo-art-center>span:last-child{font-size:15px}
+.portfolio-slide .klaviyo-art-bottom{gap:6px}
+.portfolio-slide .klaviyo-art-bottom>span{font-size:9px;padding:8px 6px}
+.portfolio-slide .klaviyo-art-top strong{font-size:11px}
+.portfolio-slide .klaviyo-art-top span{font-size:8px}
+.portfolio-slide .klaviyo-portfolio-visual{overflow:hidden;display:block;text-decoration:none}
+.klaviyo-portfolio-visual:hover .klaviyo-work-art{background:linear-gradient(138deg,#164f39,#0b2c22)}
+
+/* Project details: compact editorial hierarchy and meaningful deliverable cards. */
+.klaviyo-case .case-intro{padding:clamp(48px,7vw,95px) 0;background:var(--oy-bg-soft);border-bottom:1px solid var(--oy-line)}
+.klaviyo-case .case-intro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:clamp(30px,5vw,68px);align-items:center}
+.klaviyo-case .case-intro-grid>*{min-width:0}
+.klaviyo-case .case-intro .eyebrow{margin:0 0 18px}
+.klaviyo-case .case-intro h1{
+  font-size:clamp(36px,5vw,68px)!important;
+  line-height:1.08;letter-spacing:-.05em;
+  margin:0 0 23px;
+  max-width:15ch;color:var(--oy-text);
+}
+.klaviyo-case .case-intro .lead{font-size:clamp(15px,1.4vw,18px);line-height:1.76;color:var(--oy-muted);max-width:52ch;margin:0 0 30px}
+.klaviyo-case .case-back{display:inline-block;color:var(--oy-green);margin-bottom:24px;font-size:12px;font-weight:700;text-decoration:none}
+.klaviyo-case .case-back:hover{text-decoration:underline;text-underline-offset:3px}
+.klaviyo-case .case-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:35px}
+.klaviyo-case .case-facts>div{border-top:1px solid var(--oy-line);padding:17px 0 0}
+.klaviyo-case .case-facts span{display:block;color:var(--oy-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px}
+.klaviyo-case .case-facts strong{color:var(--oy-text);font-size:13px}
+.klaviyo-case .case-section-head{max-width:710px;margin:0 0 36px}
+.klaviyo-case .case-section-head h2{font-size:clamp(30px,3.8vw,48px);line-height:1.15;letter-spacing:-.044em;color:var(--oy-text);margin:7px 0 13px}
+.klaviyo-case .case-section-head p{font-size:15px;color:var(--oy-muted);line-height:1.76}
+.klaviyo-deliverables{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(15px,2vw,24px)}
+.klaviyo-deliverable{
+  min-width:0;
+  background:var(--oy-panel);
+  border:1px solid var(--oy-line);
+  border-radius:17px;
+  padding:clamp(23px,2.7vw,34px);
+  display:flex;flex-direction:column;min-height:226px;
+}
+.klaviyo-deliverable .email-number{font-size:11px;font-weight:700;color:var(--oy-green);letter-spacing:.09em;margin-bottom:auto}
+.klaviyo-deliverable h3{color:var(--oy-text);font-size:clamp(19px,1.8vw,23px);line-height:1.26;letter-spacing:-.03em;margin:31px 0 10px}
+.klaviyo-deliverable p{color:var(--oy-muted);font-size:13px;line-height:1.7;margin:0}
+.klaviyo-case .case-summary-section{background:var(--oy-bg-soft)}
+.klaviyo-case .case-summary-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(25px,5vw,75px);align-items:start}
+.klaviyo-case .case-summary-grid h2{font-size:clamp(28px,3.5vw,44px);line-height:1.18;color:var(--oy-text);margin:0;max-width:17ch}
+.klaviyo-case .case-summary-grid p{color:var(--oy-muted);line-height:1.85;margin:0 0 17px;font-size:15px}
+.klaviyo-case .case-summary-grid ul{margin:12px 0 0;padding-left:20px}
+.klaviyo-case .case-summary-grid li{color:var(--oy-muted);line-height:1.75;font-size:14px;padding-left:5px;margin:0 0 9px}
+.klaviyo-case .case-summary-grid strong{color:var(--oy-text)}
+/* Color and contrast are explicit so light mode cannot inherit white headings. */
+html[data-theme="light"] .additional-services-page :is(.page-hero,.section,.additional-work-section) :is(h1,h2,h3,p:not(.eyebrow)){color:#193423!important}
+html[data-theme="light"] .additional-services-page :is(.service-tile p,.additional-work-heading p,.additional-klaviyo-copy>p:not(.eyebrow)){color:#486052!important}
+html[data-theme="light"] .additional-klaviyo-feature{background:#ffffff;border-color:#dbe6df;box-shadow:0 16px 34px rgba(17,57,32,.06)}
+html[data-theme="light"] .additional-klaviyo-tags span{color:#173522!important;background:#f3f8f2!important;border-color:#dce8df}
+html[data-theme="light"] .additional-services-page .additional-work-section{background:#eef4ed!important}
+html[data-theme="light"] .klaviyo-case .case-intro{background:#f0f6ee!important}
+html[data-theme="light"] .klaviyo-case .case-summary-section{background:#eff5ee!important}
+html[data-theme="light"] .klaviyo-case :is(.case-intro h1,.case-section-head h2,.case-summary-grid h2,.case-facts strong,.klaviyo-deliverable h3){color:#193423!important}
+html[data-theme="light"] .klaviyo-case :is(.lead,.case-section-head p,.case-summary-grid p,.case-summary-grid li,.klaviyo-deliverable p){color:#486052!important}
+html[data-theme="light"] .klaviyo-deliverable{background:#fff!important;border-color:#dbe8dd!important}
+@media(max-width:900px){
+  .additional-klaviyo-feature{grid-template-columns:1fr}
+  .klaviyo-project-art{min-height:340px}
+  .klaviyo-case .case-intro-grid{grid-template-columns:1fr}
+  .klaviyo-case .case-intro-grid>.klaviyo-project-art{max-width:650px}
+  .klaviyo-case .case-summary-grid{grid-template-columns:1fr}
+  .klaviyo-deliverables{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:650px){
+  .additional-services-page .service-grid{grid-template-columns:1fr!important}
+  .additional-klaviyo-copy{padding:26px 22px}
+  .additional-klaviyo-copy h3{font-size:30px}
+  .klaviyo-project-art{min-height:300px;padding:25px 22px}
+  .klaviyo-art-bottom{gap:6px}
+  .klaviyo-art-bottom>span{font-size:9px;padding:9px 6px}
+  .klaviyo-case .case-intro h1{font-size:clamp(36px,8vw,48px)!important}
+  .klaviyo-case .case-facts{grid-template-columns:1fr 1fr}
+  .klaviyo-deliverables{grid-template-columns:1fr}
+  .klaviyo-deliverable{min-height:175px;padding:23px}
+  .klaviyo-deliverable h3{margin-top:23px}
+  .portfolio-slide .klaviyo-work-art{min-height:225px}
+}
+@media(prefers-reduced-motion:reduce){.klaviyo-portfolio-visual *{transition:none!important}}
