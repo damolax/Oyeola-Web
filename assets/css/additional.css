@@ -201,3 +201,57 @@ html[data-theme="light"] .klaviyo-deliverable{background:#fff!important;border-c
   .portfolio-slide .klaviyo-art-count{font-size:clamp(48px,12vw,68px)!important}
   .portfolio-slide .klaviyo-art-bottom{display:none}
 }
+
+/* Aster & Bloom / authentic Project 1 visuals — maintain Oyeola shell, show original work */
+.portfolio-slide .aster-portfolio-image{
+  display:grid!important;place-items:center!important;
+  overflow:hidden!important;background:#f7f5f0!important;
+  padding:clamp(6px,1vw,12px)!important;
+}
+.portfolio-slide .aster-portfolio-image img{
+  width:100%!important;height:100%!important;max-width:100%!important;
+  object-fit:contain!important;object-position:center!important;
+  background:#fff!important;border-radius:6px;
+}
+.aster-feature-cover{display:grid;place-items:center;min-width:0;background:#f8f6f1;padding:clamp(12px,2vw,24px)}
+.aster-feature-cover img{width:100%;height:auto;max-height:600px;object-fit:contain;border-radius:10px}
+.aster-feature-cover:focus-visible{outline:3px solid var(--oy-green);outline-offset:-4px}
+.aster-case .case-intro-grid{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr)}
+.aster-case .case-intro h1{max-width:18ch}
+.aster-case .aster-cover{margin:0;min-width:0;background:#f7f6f2;border:1px solid var(--oy-line);border-radius:18px;overflow:hidden;box-shadow:0 20px 55px rgba(0,0,0,.09)}
+.aster-case .aster-cover img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+.aster-case .aster-cover figcaption{padding:10px 16px 15px;color:#5a6558;text-align:center;font-size:11px}
+.aster-case .aster-proof-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(22px,4vw,64px);align-items:center}
+.aster-case .aster-shot,.aster-case .aster-flow-shot{margin:0;min-width:0;overflow:hidden;border-radius:16px;background:var(--oy-panel);border:1px solid var(--oy-line)}
+.aster-case .aster-shot img,.aster-case .aster-flow-shot img{display:block;width:100%;height:auto;object-fit:contain}
+.aster-case figure figcaption{color:var(--oy-muted);font-size:11px;line-height:1.55;letter-spacing:.03em}
+.aster-case .aster-shot figcaption,.aster-case .aster-flow-shot figcaption{padding:13px 18px 16px;border-top:1px solid var(--oy-line)}
+.aster-case .aster-proof-copy h3{color:var(--oy-text);font-size:clamp(27px,3vw,39px);line-height:1.18;letter-spacing:-.04em;margin:0 0 17px}
+.aster-case .aster-proof-copy p:not(.eyebrow){color:var(--oy-muted);font-size:15px;line-height:1.85;margin:0 0 17px}
+.aster-case .aster-proof-copy strong,.aster-case .case-summary-grid strong{color:var(--oy-text)}
+.aster-case .aster-flow-shot{background:#f5f7f5;max-width:1120px}
+.aster-case .aster-flow-shot figcaption{color:#486052;background:var(--oy-panel)}
+.aster-case .aster-email-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,24px)}
+.aster-case .aster-email-card{display:flex;flex-direction:column;min-width:0;border:1px solid var(--oy-line);background:var(--oy-panel);border-radius:16px;overflow:hidden}
+.aster-case .aster-email-image{display:grid;place-items:start center;min-height:0;padding:13px;background:#faf9f6}
+.aster-case .aster-email-image img{display:block;width:100%;height:auto;max-height:430px;object-fit:contain;object-position:top center}
+.aster-case .aster-email-copy{padding:clamp(20px,2vw,28px);flex:1}
+.aster-case .aster-email-copy>span{font-size:11px;font-weight:750;letter-spacing:.04em;color:var(--oy-green)}
+.aster-case .aster-email-copy h3{font-size:clamp(19px,1.8vw,24px);line-height:1.25;letter-spacing:-.03em;color:var(--oy-text);margin:12px 0}
+.aster-case .aster-email-copy p{margin:0;color:var(--oy-muted);font-size:13px;line-height:1.75}
+.aster-case .aster-email-copy strong{color:var(--oy-text)}
+.aster-case .aster-reference{margin-top:25px}
+@media(max-width:900px){
+ .aster-case .case-intro-grid,.aster-case .aster-proof-grid{grid-template-columns:1fr!important}
+ .aster-case .aster-cover{max-width:600px}
+ .aster-case .aster-email-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px){
+ .aster-case .case-intro{padding:46px 0!important}
+ .aster-case .case-intro h1{font-size:clamp(36px,8vw,48px)!important}
+ .aster-case .aster-email-grid{grid-template-columns:1fr!important}
+ .aster-case .aster-email-image img{max-height:none}
+ .aster-case .aster-email-copy{padding:22px}
+ .aster-case .aster-shot figcaption,.aster-case .aster-flow-shot figcaption{padding:12px 14px}
+ .aster-feature-cover{padding:12px}
+}
