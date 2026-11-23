@@ -52,6 +52,16 @@
       "inside": "https://populusseattle.com/accommodations/#/populus-seattle/?oliveSrc=rooms"
     },
     {
+      "slug": "roostiq-bar",
+      "name": "Roostiq Bar",
+      "title": "▷ Roostiq Bar • A unique experience • Cook on fire 🔥",
+      "status": 200,
+      "homeUrl": "https://bar.roostiq.com/en/",
+      "category": "Restaurants & Dining",
+      "loadedImages": 4,
+      "inside": "https://bar.roostiq.com/en/"
+    },
+    {
       "slug": "rural-habitat",
       "name": "Rural Habitat",
       "title": "Fincas Rusticas en Venta en Valencia - Rural Habitat",
@@ -62,11 +72,5 @@
       "inside": "https://www.ruralhabitat.com/propiedades/"
     }
   ],
-  "rejected": [
-    {
-      "slug": "roostiq-bar",
-      "status": 202,
-      "reason": "Robot Challenge Screen"
-    }
-  ]
+  "rejected": []
 }
