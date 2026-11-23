@@ -3187,3 +3187,46 @@ html[data-theme="light"] .tool-logo-grid .tool-chip-visual{border-color:#dce7dc!
   html[data-theme="light"] .studio-menu-nav a{border-color:#e2ece4!important}
   html[data-theme="light"] :is(.service-tile,.feature-card,.testimonial-card){box-shadow:none!important}
 }
+
+/* Light theme contrast guard | November 23, 2026
+   Respect deliberately dark footer/CTA/illustration surfaces; prevent
+   bright text from surviving on pale headers, copy, cards and forms. */
+html[data-theme="light"] :is(.page-hero,.service-hero,.case-hero,.blog-index-hero){
+  color:#152d1e!important;
+}
+html[data-theme="light"] :is(.page-hero,.service-hero,.case-hero,.blog-index-hero) :is(h1,h2,h3,h4,.display){
+  color:#142c1d!important;
+}
+html[data-theme="light"] :is(.page-hero,.service-hero,.case-hero,.blog-index-hero) :is(p:not(.eyebrow),.lead,.breadcrumb){
+  color:#465e4d!important;
+}
+html[data-theme="light"] :is(.page-hero,.service-hero,.case-hero,.blog-index-hero) .eyebrow{
+  color:#176b36!important;
+}
+html[data-theme="light"] :is(.section-head,.form-intro,.section .copy,.how-work-intro,.portfolio-slider-heading,.featured-portfolio-copy,.founder-home-layout,.additional-work-heading,.service-proof-heading) :is(h1,h2,h3,h4){
+  color:#142c1d!important;
+}
+html[data-theme="light"] :is(.section-head,.form-intro,.section .copy,.how-work-intro,.portfolio-slider-heading,.featured-portfolio-copy,.founder-home-layout,.additional-work-heading,.service-proof-heading) :is(p:not(.eyebrow),li){
+  color:#465e4d!important;
+}
+html[data-theme="light"] :is(.service-tile,.feature-card,.work-card,.project-card,.review-card,.testimonial-card,.learning-card,.toolbox-card,.education-card,.demo-lab-card,.service-related-work article,.service-process-wide article,.commerce-focus-card,.proof-stat,.case-block,.simple-details,.contact-box) :is(h2,h3,h4,blockquote){
+  color:#193423!important;
+}
+html[data-theme="light"] :is(.service-tile,.feature-card,.work-card,.project-card,.review-card,.testimonial-card,.learning-card,.toolbox-card,.education-card,.demo-lab-card,.service-related-work article,.service-process-wide article,.commerce-focus-card,.proof-stat,.case-block,.simple-details,.contact-box) :is(p,li,.service-proof-label){
+  color:#4c6352!important;
+}
+html[data-theme="light"] :is(.service-tile,.feature-card,.work-card,.project-card,.review-card,.testimonial-card,.learning-card,.toolbox-card,.education-card,.service-related-work article,.service-process-wide article) .text-link{
+  color:#176b36!important;
+}
+html[data-theme="light"] :is(.section-head,.page-hero,.service-hero,.hero-shell,.service-tile,.feature-card,.blog-card,.form-shell,.contact-stage,.service-proof-strip) :is(.accent,.eyebrow,.text-link){
+  color:#176b36!important;
+}
+html[data-theme="light"] .hero-shell .hero-copy :is(h1,.display){color:#122c1c!important}
+html[data-theme="light"] .hero-shell .hero-copy :is(.lead,.hero-note){color:#445f4d!important}
+html[data-theme="light"] :is(.contact-form-card,.diagnostic,.lead-form) label{color:#25432f!important}
+html[data-theme="light"] .footer :is(h2,h3,h4,strong){color:#ffffff!important}
+html[data-theme="light"] .footer :is(p,li,a,small,span){color:#c5d8c9!important}
+html[data-theme="light"] .cta-band .container :is(h2,h3){color:#ffffff!important}
+html[data-theme="light"] .cta-band .container :is(p,.eyebrow){color:#b9ddc1!important}
+html[data-theme="light"] .cta-band .btn,
+html[data-theme="light"] .cta-band .btn :is(span,strong){color:#0d2618!important}
