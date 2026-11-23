@@ -1,0 +1,100 @@
+[
+  {
+    "slug": "vapourvend",
+    "name": "VapourVend",
+    "url": "https://vapourvend.wixsite.com/website",
+    "casePath": "case-studies/vapourvend.html",
+    "category": "Retail & Ecommerce"
+  },
+  {
+    "slug": "three-nails-one-cross",
+    "name": "3 Nails 1 Cross",
+    "url": "https://www.3nails1cross.com/",
+    "casePath": "case-studies/three-nails-one-cross.html",
+    "category": "Faith Brand & Ecommerce"
+  },
+  {
+    "slug": "one-love-beauty",
+    "name": "One Love Beauty",
+    "url": "https://www.onelovebeaut.com/",
+    "casePath": "case-studies/one-love-beauty.html",
+    "category": "Beauty & Services"
+  },
+  {
+    "slug": "bambo-oladipo",
+    "name": "Bambo Oladipo",
+    "url": "https://olabambodatapro.wixsite.com/bambo-oladipo",
+    "casePath": "case-studies/bambo-oladipo.html",
+    "category": "Personal Brand"
+  },
+  {
+    "slug": "somatra-healing",
+    "name": "Somatra Healing",
+    "url": "https://somatrahealing.com/",
+    "casePath": "case-studies/somatra-healing.html",
+    "category": "Wellness"
+  },
+  {
+    "slug": "ah-dental-services",
+    "name": "AH Dental Services",
+    "url": "https://www.ahdentalservices.com/",
+    "casePath": "case-studies/ah-dental-services.html",
+    "category": "Healthcare & Dental"
+  },
+  {
+    "slug": "zentravels",
+    "name": "ZenTravels",
+    "url": "https://zentravels.us/",
+    "casePath": "case-studies/zentravels.html",
+    "category": "Travel"
+  },
+  {
+    "slug": "arbequina-apartment",
+    "name": "Arbequina Apartment",
+    "url": "https://www.myarbequina.com/",
+    "casePath": "case-studies/arbequina-apartment.html",
+    "category": "Hospitality & Booking"
+  },
+  {
+    "slug": "dr-akira",
+    "name": "Dr. Akira",
+    "url": "https://drakira.com/",
+    "casePath": "case-studies/dr-akira.html",
+    "category": "Mental Health"
+  },
+  {
+    "slug": "concierge-wellness",
+    "name": "Concierge Wellness & Consulting",
+    "url": "https://conciergewellnessaz.com/",
+    "casePath": "case-studies/concierge-wellness.html",
+    "category": "Wellness"
+  },
+  {
+    "slug": "latonya-speaks",
+    "name": "LaTonya Speaks",
+    "url": "https://latonyadebruce.com/",
+    "casePath": "case-studies/latonya-speaks.html",
+    "category": "Personal Brand & Speaking"
+  },
+  {
+    "slug": "local-legends-training",
+    "name": "Local Legends Training",
+    "url": "https://locallegendstraining.com/",
+    "casePath": "case-studies/local-legends-training.html",
+    "category": "Sports & Development"
+  },
+  {
+    "slug": "guestwork-property-management",
+    "name": "Guestwork Property Management",
+    "url": "https://guestwork.ca/",
+    "casePath": "case-studies/guestwork-property-management.html",
+    "category": "Property Management"
+  },
+  {
+    "slug": "k-pet-supplies-and-more",
+    "name": "K Pet Supplies & More",
+    "url": "https://kpetsuppliesandmore.com/",
+    "casePath": "case-studies/k-pet-supplies-and-more.html",
+    "category": "Pet Ecommerce"
+  }
+]
