@@ -1,0 +1,610 @@
+{
+  "runDate": "2026-11-23",
+  "total": 21,
+  "results": [
+    {
+      "slug": "birth-control-care-center",
+      "name": "Birth Control Care Center",
+      "type": "industry",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/industry-captures/birth-control-care-center/full-desktop.webp",
+          "width": 1440,
+          "height": 7595,
+          "bytes": 532202,
+          "title": "Birth Control Care Center | Abortion Clinic in Las Vegas",
+          "source": "https://birthcontrolcarecenter.com/"
+        },
+        "mobile": {
+          "file": "assets/industry-captures/birth-control-care-center/full-mobile.webp",
+          "width": 390,
+          "height": 13145,
+          "bytes": 443586,
+          "title": "Birth Control Care Center | Abortion Clinic in Las Vegas",
+          "source": "https://birthcontrolcarecenter.com/"
+        },
+        "detail": {
+          "file": "assets/industry-captures/birth-control-care-center/full-detail.webp",
+          "width": 1440,
+          "height": 3242,
+          "bytes": 202726,
+          "title": "Birth Control Services in Las Vegas | Birth Control Care Center",
+          "source": "https://birthcontrolcarecenter.com/services/birth-control/"
+        }
+      }
+    },
+    {
+      "slug": "xigera-safari-lodge",
+      "name": "Xigera Safari Lodge",
+      "type": "industry",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/industry-captures/xigera-safari-lodge/full-desktop.webp",
+          "width": 1440,
+          "height": 7445,
+          "bytes": 870286,
+          "title": "Xigera Home - Xigera Safari Lodge",
+          "source": "https://www.xigera.com/"
+        },
+        "mobile": {
+          "file": "assets/industry-captures/xigera-safari-lodge/full-mobile.webp",
+          "width": 390,
+          "height": 12637,
+          "bytes": 584616,
+          "title": "Xigera Home - Xigera Safari Lodge",
+          "source": "https://www.xigera.com/"
+        },
+        "detail": {
+          "file": "assets/industry-captures/xigera-safari-lodge/full-detail.webp",
+          "width": 1440,
+          "height": 5273,
+          "bytes": 454942,
+          "title": "The Lodge - 12 Suites | Xigera Safari Lodge",
+          "source": "https://www.xigera.com/lodge/"
+        }
+      }
+    },
+    {
+      "slug": "miraval-resorts",
+      "name": "Miraval Resorts & Spas",
+      "type": "industry",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/industry-captures/miraval-resorts/full-desktop.webp",
+          "width": 1440,
+          "height": 8875,
+          "bytes": 156190,
+          "title": "Miraval Resorts and Spas | Luxury Inclusive Wellness Retreats",
+          "source": "https://www.miravalresorts.com/"
+        },
+        "mobile": {
+          "file": "assets/industry-captures/miraval-resorts/full-mobile.webp",
+          "width": 390,
+          "height": 13560,
+          "bytes": 512490,
+          "title": "Miraval Resorts and Spas | Luxury Inclusive Wellness Retreats",
+          "source": "https://www.miravalresorts.com/"
+        },
+        "detail": {
+          "file": "assets/industry-captures/miraval-resorts/full-detail.webp",
+          "width": 1440,
+          "height": 900,
+          "bytes": 66738,
+          "title": "Accommodations - Miraval Resorts",
+          "source": "https://www.miravalresorts.com/accommodations"
+        }
+      }
+    },
+    {
+      "slug": "park-lane-copenhagen",
+      "name": "Park Lane Copenhagen",
+      "type": "industry",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/industry-captures/park-lane-copenhagen/full-desktop.webp",
+          "width": 1440,
+          "height": 10909,
+          "bytes": 323246,
+          "title": "Park Lane Copenhagen Hotel | Exclusive Boutique Stay in Hellerup",
+          "source": "https://parklanecph.com/en/"
+        },
+        "mobile": {
+          "file": "assets/industry-captures/park-lane-copenhagen/full-mobile.webp",
+          "width": 390,
+          "height": 10247,
+          "bytes": 106402,
+          "title": "Park Lane Copenhagen Hotel | Exclusive Boutique Stay in Hellerup",
+          "source": "https://parklanecph.com/en/"
+        },
+        "detail": {
+          "file": "assets/industry-captures/park-lane-copenhagen/full-detail.webp",
+          "width": 1440,
+          "height": 5999,
+          "bytes": 116538,
+          "title": "Rooms & Suites Archive - Park Lane Copenhagen",
+          "source": "https://parklanecph.com/en/rooms/"
+        }
+      }
+    },
+    {
+      "slug": "populus-seattle",
+      "name": "Populus Seattle",
+      "type": "industry",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/industry-captures/populus-seattle/full-desktop.webp",
+          "width": 1440,
+          "height": 9560,
+          "bytes": 941856,
+          "title": "Boutique Hotel Downtown Seattle | Populus",
+          "source": "https://populusseattle.com/"
+        },
+        "mobile": {
+          "file": "assets/industry-captures/populus-seattle/full-mobile.webp",
+          "width": 390,
+          "height": 12817,
+          "bytes": 647432,
+          "title": "Boutique Hotel Downtown Seattle | Populus",
+          "source": "https://populusseattle.com/"
+        },
+        "detail": {
+          "file": "assets/industry-captures/populus-seattle/full-detail.webp",
+          "width": 1440,
+          "height": 4130,
+          "bytes": 516724,
+          "title": "Boutique Hotel Rooms & Suites in Downtown Seattle | Populus",
+          "source": "https://populusseattle.com/accommodations/"
+        }
+      }
+    },
+    {
+      "slug": "roostiq-bar",
+      "name": "Roostiq Bar",
+      "type": "industry",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/industry-captures/roostiq-bar/full-desktop.webp",
+          "width": 1440,
+          "height": 7586,
+          "bytes": 326678,
+          "title": "▷ Roostiq Bar • A unique experience • Cook on fire 🔥",
+          "source": "https://bar.roostiq.com/en/"
+        },
+        "mobile": {
+          "file": "assets/industry-captures/roostiq-bar/full-mobile.webp",
+          "width": 390,
+          "height": 5576,
+          "bytes": 275388,
+          "title": "▷ Roostiq Bar • A unique experience • Cook on fire 🔥",
+          "source": "https://bar.roostiq.com/en/"
+        }
+      }
+    },
+    {
+      "slug": "rural-habitat",
+      "name": "Rural Habitat",
+      "type": "industry",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/industry-captures/rural-habitat/full-desktop.webp",
+          "width": 1440,
+          "height": 6000,
+          "bytes": 583392,
+          "title": "Fincas Rusticas en Venta en Valencia - Rural Habitat",
+          "source": "https://www.ruralhabitat.com/"
+        },
+        "mobile": {
+          "file": "assets/industry-captures/rural-habitat/full-mobile.webp",
+          "width": 392,
+          "height": 13690,
+          "bytes": 635468,
+          "title": "Fincas Rusticas en Venta en Valencia - Rural Habitat",
+          "source": "https://www.ruralhabitat.com/"
+        }
+      }
+    },
+    {
+      "slug": "vapourvend",
+      "name": "VapourVend",
+      "type": "existing",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/portfolio/live-captures/vapourvend/full-home.webp",
+          "width": 1440,
+          "height": 5734,
+          "bytes": 450342,
+          "title": "HOME | Vapour Vend Copy",
+          "source": "https://vapourvend.wixsite.com/website"
+        },
+        "mobile": {
+          "file": "assets/portfolio/live-captures/vapourvend/full-mobile.webp",
+          "width": 980,
+          "height": 5734,
+          "bytes": 417152,
+          "title": "HOME | Vapour Vend Copy",
+          "source": "https://vapourvend.wixsite.com/website"
+        }
+      }
+    },
+    {
+      "slug": "three-nails-one-cross",
+      "name": "3 Nails 1 Cross",
+      "type": "existing",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/portfolio/live-captures/three-nails-one-cross/full-home.webp",
+          "width": 1440,
+          "height": 6040,
+          "bytes": 426848,
+          "title": "3 Nails 1 Cross",
+          "source": "https://www.3nails1cross.com/"
+        },
+        "mobile": {
+          "file": "assets/portfolio/live-captures/three-nails-one-cross/full-mobile.webp",
+          "width": 984,
+          "height": 6702,
+          "bytes": 374158,
+          "title": "3 Nails 1 Cross",
+          "source": "https://www.3nails1cross.com/"
+        },
+        "detail": {
+          "file": "assets/portfolio/live-captures/three-nails-one-cross/full-detail.webp",
+          "width": 1440,
+          "height": 1609,
+          "bytes": 65050,
+          "title": "Wedding Products | 3 Nails 1 Cross",
+          "source": "https://www.3nails1cross.com/category/wedding-products"
+        }
+      }
+    },
+    {
+      "slug": "one-love-beauty",
+      "name": "One Love Beauty",
+      "type": "existing",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/portfolio/live-captures/one-love-beauty/full-home.webp",
+          "width": 1440,
+          "height": 3709,
+          "bytes": 165610,
+          "title": "One Love Beauty | Hair Recovery Specialist in Charlotte, NC",
+          "source": "https://onelovebeaut.com/"
+        },
+        "mobile": {
+          "file": "assets/portfolio/live-captures/one-love-beauty/full-mobile.webp",
+          "width": 390,
+          "height": 5142,
+          "bytes": 116908,
+          "title": "One Love Beauty | Hair Recovery Specialist in Charlotte, NC",
+          "source": "https://onelovebeaut.com/"
+        }
+      }
+    },
+    {
+      "slug": "bambo-oladipo",
+      "name": "Bambo Oladipo",
+      "type": "existing",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/portfolio/live-captures/bambo-oladipo/full-home.webp",
+          "width": 1440,
+          "height": 5697,
+          "bytes": 398782,
+          "title": "Home | Bambo Oladipo",
+          "source": "https://olabambodatapro.wixsite.com/bambo-oladipo"
+        },
+        "mobile": {
+          "file": "assets/portfolio/live-captures/bambo-oladipo/full-mobile.webp",
+          "width": 1120,
+          "height": 5697,
+          "bytes": 361766,
+          "title": "Home | Bambo Oladipo",
+          "source": "https://olabambodatapro.wixsite.com/bambo-oladipo"
+        },
+        "detail": {
+          "file": "assets/portfolio/live-captures/bambo-oladipo/full-detail.webp",
+          "width": 1440,
+          "height": 2456,
+          "bytes": 169452,
+          "title": "Education & Experience | Bambo Oladipo",
+          "source": "https://olabambodatapro.wixsite.com/bambo-oladipo/education-experience"
+        }
+      }
+    },
+    {
+      "slug": "somatra-healing",
+      "name": "Somatra Healing",
+      "type": "existing",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/portfolio/live-captures/somatra-healing/full-home.webp",
+          "width": 1440,
+          "height": 7260,
+          "bytes": 488766,
+          "title": "Akashic Records Reader | Somatra Healing",
+          "source": "https://www.somatrahealing.com/"
+        },
+        "mobile": {
+          "file": "assets/portfolio/live-captures/somatra-healing/full-mobile.webp",
+          "width": 980,
+          "height": 7260,
+          "bytes": 457008,
+          "title": "Akashic Records Reader | Somatra Healing",
+          "source": "https://www.somatrahealing.com/"
+        }
+      }
+    },
+    {
+      "slug": "ah-dental-services",
+      "name": "AH Dental Services",
+      "type": "existing",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/portfolio/live-captures/ah-dental-services/full-home.webp",
+          "width": 1440,
+          "height": 10425,
+          "bytes": 755098,
+          "title": "Home | AH Dental Services",
+          "source": "https://www.ahdentalservices.com/"
+        },
+        "mobile": {
+          "file": "assets/portfolio/live-captures/ah-dental-services/full-mobile.webp",
+          "width": 981,
+          "height": 10425,
+          "bytes": 735892,
+          "title": "Home | AH Dental Services",
+          "source": "https://www.ahdentalservices.com/"
+        },
+        "detail": {
+          "file": "assets/portfolio/live-captures/ah-dental-services/full-detail.webp",
+          "width": 1440,
+          "height": 6026,
+          "bytes": 471080,
+          "title": "About | AH Dental Services",
+          "source": "https://www.ahdentalservices.com/about"
+        }
+      }
+    },
+    {
+      "slug": "zentravels",
+      "name": "ZenTravels",
+      "type": "existing",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/portfolio/live-captures/zentravels/full-home.webp",
+          "width": 1440,
+          "height": 3572,
+          "bytes": 400648,
+          "title": "Zen Travels | Full Service Travel Agency",
+          "source": "https://www.zentravels.us/"
+        },
+        "mobile": {
+          "file": "assets/portfolio/live-captures/zentravels/full-mobile.webp",
+          "width": 980,
+          "height": 3470,
+          "bytes": 255620,
+          "title": "Zen Travels | Full Service Travel Agency",
+          "source": "https://www.zentravels.us/"
+        }
+      }
+    },
+    {
+      "slug": "arbequina-apartment",
+      "name": "Arbequina Apartment",
+      "type": "existing",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/portfolio/live-captures/arbequina-apartment/full-home.webp",
+          "width": 1440,
+          "height": 5833,
+          "bytes": 649208,
+          "title": "Home | Arbequina Apartment at Flamenca Village",
+          "source": "https://www.myarbequina.com/"
+        },
+        "mobile": {
+          "file": "assets/portfolio/live-captures/arbequina-apartment/full-mobile.webp",
+          "width": 981,
+          "height": 5833,
+          "bytes": 535130,
+          "title": "Home | Arbequina Apartment at Flamenca Village",
+          "source": "https://www.myarbequina.com/"
+        },
+        "detail": {
+          "file": "assets/portfolio/live-captures/arbequina-apartment/full-detail.webp",
+          "width": 1440,
+          "height": 8816,
+          "bytes": 70246,
+          "title": "Gallery | Arbequina Apartment at Flamenca Village",
+          "source": "https://www.myarbequina.com/gallery"
+        }
+      }
+    },
+    {
+      "slug": "dr-akira",
+      "name": "Dr. Akira",
+      "type": "existing",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/portfolio/live-captures/dr-akira/full-home.webp",
+          "width": 1440,
+          "height": 7591,
+          "bytes": 444358,
+          "title": "Home - Dr Akira",
+          "source": "https://drakira.com/"
+        },
+        "mobile": {
+          "file": "assets/portfolio/live-captures/dr-akira/full-mobile.webp",
+          "width": 390,
+          "height": 9530,
+          "bytes": 253082,
+          "title": "Home - Dr Akira",
+          "source": "https://drakira.com/"
+        },
+        "detail": {
+          "file": "assets/portfolio/live-captures/dr-akira/full-detail.webp",
+          "width": 1440,
+          "height": 2643,
+          "bytes": 148260,
+          "title": "About Us - Dr Akira",
+          "source": "https://drakira.com/about-us/"
+        }
+      }
+    },
+    {
+      "slug": "concierge-wellness",
+      "name": "Concierge Wellness & Consulting",
+      "type": "existing",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/portfolio/live-captures/concierge-wellness/full-home.webp",
+          "width": 1440,
+          "height": 5957,
+          "bytes": 478144,
+          "title": "Concierge Wellness and Consulting",
+          "source": "https://conciergewellnessaz.com/"
+        },
+        "mobile": {
+          "file": "assets/portfolio/live-captures/concierge-wellness/full-mobile.webp",
+          "width": 390,
+          "height": 10202,
+          "bytes": 388318,
+          "title": "Concierge Wellness and Consulting",
+          "source": "https://conciergewellnessaz.com/"
+        },
+        "detail": {
+          "file": "assets/portfolio/live-captures/concierge-wellness/full-detail.webp",
+          "width": 1440,
+          "height": 4236,
+          "bytes": 344670,
+          "title": "About Concierge Wellness and Consulting",
+          "source": "https://conciergewellnessaz.com/about"
+        }
+      }
+    },
+    {
+      "slug": "latonya-speaks",
+      "name": "LaTonya Speaks",
+      "type": "existing",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/portfolio/live-captures/latonya-speaks/full-home.webp",
+          "width": 1440,
+          "height": 10850,
+          "bytes": 715680,
+          "title": "LaTonya Speaks!",
+          "source": "https://latonyadebruce.com/"
+        },
+        "mobile": {
+          "file": "assets/portfolio/live-captures/latonya-speaks/full-mobile.webp",
+          "width": 390,
+          "height": 11978,
+          "bytes": 459368,
+          "title": "LaTonya Speaks!",
+          "source": "https://latonyadebruce.com/"
+        },
+        "detail": {
+          "file": "assets/portfolio/live-captures/latonya-speaks/full-detail.webp",
+          "width": 1440,
+          "height": 8127,
+          "bytes": 380498,
+          "title": "About | LaTonya Speaks!",
+          "source": "https://latonyadebruce.com/about"
+        }
+      }
+    },
+    {
+      "slug": "local-legends-training",
+      "name": "Local Legends Training",
+      "type": "existing",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/portfolio/live-captures/local-legends-training/full-home.webp",
+          "width": 1440,
+          "height": 5213,
+          "bytes": 335526,
+          "title": "Home - Local Legends Training",
+          "source": "https://locallegendstraining.com/"
+        },
+        "mobile": {
+          "file": "assets/portfolio/live-captures/local-legends-training/full-mobile.webp",
+          "width": 400,
+          "height": 7571,
+          "bytes": 248206,
+          "title": "Home - Local Legends Training",
+          "source": "https://locallegendstraining.com/"
+        },
+        "detail": {
+          "file": "assets/portfolio/live-captures/local-legends-training/full-detail.webp",
+          "width": 1440,
+          "height": 4677,
+          "bytes": 278818,
+          "title": "About - Local Legends Training",
+          "source": "https://locallegendstraining.com/about/"
+        }
+      }
+    },
+    {
+      "slug": "guestwork-property-management",
+      "name": "Guestwork Property Management",
+      "type": "existing",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/portfolio/live-captures/guestwork-property-management/full-home.webp",
+          "width": 1440,
+          "height": 6962,
+          "bytes": 341256,
+          "title": "Airbnb & STR Property Management | Ontario & Mexico | Guestwork",
+          "source": "https://guestwork.ca/"
+        },
+        "mobile": {
+          "file": "assets/portfolio/live-captures/guestwork-property-management/full-mobile.webp",
+          "width": 390,
+          "height": 11788,
+          "bytes": 268888,
+          "title": "Airbnb & STR Property Management | Ontario & Mexico | Guestwork",
+          "source": "https://guestwork.ca/"
+        },
+        "detail": {
+          "file": "assets/portfolio/live-captures/guestwork-property-management/full-detail.webp",
+          "width": 1440,
+          "height": 5048,
+          "bytes": 291334,
+          "title": "Services - Guestwork",
+          "source": "https://guestwork.ca/services/"
+        }
+      }
+    },
+    {
+      "slug": "k-pet-supplies-and-more",
+      "name": "K Pet Supplies & More",
+      "type": "existing",
+      "screenshots": {
+        "desktop": {
+          "file": "assets/portfolio/live-captures/k-pet-supplies-and-more/full-home.webp",
+          "width": 1440,
+          "height": 8143,
+          "bytes": 667548,
+          "title": "K Pet Supplies And More",
+          "source": "https://www.kpetsuppliesandmore.com/"
+        },
+        "mobile": {
+          "file": "assets/portfolio/live-captures/k-pet-supplies-and-more/full-mobile.webp",
+          "width": 390,
+          "height": 9776,
+          "bytes": 329214,
+          "title": "K Pet Supplies And More",
+          "source": "https://www.kpetsuppliesandmore.com/"
+        },
+        "detail": {
+          "file": "assets/portfolio/live-captures/k-pet-supplies-and-more/full-detail.webp",
+          "width": 1440,
+          "height": 3826,
+          "bytes": 249734,
+          "title": "Fur Baby Skin Restore – K Pet Supplies And More",
+          "source": "https://www.kpetsuppliesandmore.com/products/animals-and-pet-supplies-example-product-4"
+        }
+      }
+    }
+  ],
+  "errors": []
+}

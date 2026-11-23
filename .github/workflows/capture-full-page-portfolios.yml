@@ -1,0 +1,34 @@
+name: Full-page portfolio screenshot capture
+on:
+  push:
+    branches: [fix/premium-portfolio-presentation-nov24]
+    paths:
+      - 'scripts/capture-full-page-portfolios.cjs'
+      - '.github/workflows/capture-full-page-portfolios.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  capture-full-page:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser and image processing
+        run: |
+          npm install --no-save --no-package-lock playwright sharp
+          npx playwright install --with-deps chromium
+      - name: Capture full-length desktop, mobile, and interior pages
+        run: node scripts/capture-full-page-portfolios.cjs
+      - name: Commit complete images and results
+        run: |
+          git config user.name "Oyeola Portfolio"
+          git config user.email "56065632+damolax@users.noreply.github.com"
+          git add assets/industry-captures assets/portfolio/live-captures data/portfolio-full-page-results.json
+          if ! git diff --cached --quiet; then
+            git commit -m "portfolio: capture complete desktop and mobile page designs"
+            git push origin HEAD:fix/premium-portfolio-presentation-nov24
+          fi
