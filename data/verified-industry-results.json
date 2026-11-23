@@ -1,0 +1,76 @@
+{
+  "capturedOn": "23 November 2026",
+  "verified": [
+    {
+      "slug": "birth-control-care-center",
+      "name": "Birth Control Care Center",
+      "title": "Birth Control Care Center | Abortion Clinic in Las Vegas",
+      "status": 200,
+      "homeUrl": "https://birthcontrolcarecenter.com/",
+      "category": "Clinic & Health",
+      "loadedImages": 2,
+      "inside": "https://birthcontrolcarecenter.com/services/birth-control/"
+    },
+    {
+      "slug": "xigera-safari-lodge",
+      "name": "Xigera Safari Lodge",
+      "title": "Xigera Home - Xigera Safari Lodge",
+      "status": 200,
+      "homeUrl": "https://www.xigera.com/",
+      "category": "Hotel & Retreats",
+      "loadedImages": 14,
+      "inside": "https://www.xigera.com/lodge/"
+    },
+    {
+      "slug": "miraval-resorts",
+      "name": "Miraval Resorts & Spas",
+      "title": "Miraval Resorts and Spas | Luxury Inclusive Wellness Retreats",
+      "status": 200,
+      "homeUrl": "https://www.miravalresorts.com/",
+      "category": "Hotel & Retreats",
+      "loadedImages": 42,
+      "inside": "https://www.miravalresorts.com/accommodations"
+    },
+    {
+      "slug": "park-lane-copenhagen",
+      "name": "Park Lane Copenhagen",
+      "title": "Park Lane Copenhagen Hotel | Exclusive Boutique Stay in Hellerup",
+      "status": 200,
+      "homeUrl": "https://parklanecph.com/en/",
+      "category": "Hospitality & Stays",
+      "loadedImages": 25,
+      "inside": "https://parklanecph.com/en/rooms/"
+    },
+    {
+      "slug": "populus-seattle",
+      "name": "Populus Seattle",
+      "title": "Boutique Hotel Downtown Seattle | Populus",
+      "status": 200,
+      "homeUrl": "https://populusseattle.com/",
+      "category": "Hospitality & Stays",
+      "loadedImages": 25,
+      "inside": "https://populusseattle.com/accommodations/#/populus-seattle/?oliveSrc=rooms"
+    },
+    {
+      "slug": "roostiq-bar",
+      "name": "Roostiq Bar",
+      "title": "▷ Roostiq Bar • A unique experience • Cook on fire 🔥",
+      "status": 200,
+      "homeUrl": "https://bar.roostiq.com/en/",
+      "category": "Restaurants & Dining",
+      "loadedImages": 4,
+      "inside": "https://bar.roostiq.com/en/"
+    },
+    {
+      "slug": "rural-habitat",
+      "name": "Rural Habitat",
+      "title": "Fincas Rusticas en Venta en Valencia - Rural Habitat",
+      "status": 200,
+      "homeUrl": "https://www.ruralhabitat.com/",
+      "category": "Property & Real Estate",
+      "loadedImages": 35,
+      "inside": "https://www.ruralhabitat.com/propiedades/"
+    }
+  ],
+  "rejected": []
+}

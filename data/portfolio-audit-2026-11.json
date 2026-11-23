@@ -1,0 +1,314 @@
+{
+  "date": "2026-11-23",
+  "totalUniqueSupplied": 70,
+  "initialHttpUsable": 56,
+  "initialUnavailableOrError": 14,
+  "firstProductionBatch": {
+    "newIndustryStudies": 7,
+    "existingCaseStudyEnhancements": 14,
+    "totalVerified": 21,
+    "source": "Browser screenshots and verified project pages"
+  },
+  "newStudyExcludedAfterBrowser": [],
+  "pendingBrowserReview": [
+    {
+      "name": "The Mobile Phlebotomist",
+      "url": "https://www.themobilephlebotomist.com/",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Respire USA",
+      "url": "https://www.respireusa.com/",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Meagan Starr",
+      "url": "https://www.meaganstarr.com/",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "WWEX",
+      "url": "https://www.wwex.com/",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Clean Life",
+      "url": "https://cleanlife1926.wixsite.com/clean-life",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Annie's Sole Paint",
+      "url": "https://www.anniessolepaint.com/",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "D&K Books",
+      "url": "https://dkbooks.co/",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Shop & Ship Express",
+      "url": "https://www.shopandshipexpress.com/",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Petal Escape",
+      "url": "https://www.petalescape.com/",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Unsealed the Time of the End",
+      "url": "https://www.unsealedthetimeoftheend.com/",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Latricia Buckner",
+      "url": "https://www.latriciabuckner.com/",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Precision Dental Claims",
+      "url": "https://www.precisiondentalclaims.com/",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Real Estate Photography of Myrtle Beach",
+      "url": "https://www.realestatephotographyofmyrtlebeach.com/",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "SB Billing LLC",
+      "url": "https://www.sbbillingllc.com/",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Tillman Tough",
+      "url": "https://www.tillmantough.com/",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Tuel's Equipment Repair",
+      "url": "https://www.tuelsequipment.com/?rc=test-site",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Skyrocket Press",
+      "url": "https://lwreyes.wixsite.com/skyrocketpress/home-1?rc=test-site",
+      "category": "Wix",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Bellori Couture",
+      "url": "https://www.belloricouture.com/",
+      "category": "Wix Studio",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Donor Concierge",
+      "url": "https://www.donorconcierge.com/",
+      "category": "Wix Studio",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Laserglow",
+      "url": "https://www.laserglow.com/",
+      "category": "Wix Studio",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Celebrity Oceanfront Estate",
+      "url": "https://celebrityoceanfrontestate.com/",
+      "category": "GoDaddy",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Warm Lounge",
+      "url": "https://warmlounge.com/",
+      "category": "GoDaddy",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Traveling with Ears",
+      "url": "https://travelingwithears.com/",
+      "category": "GoDaddy",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Dance Culture",
+      "url": "https://danceculture.co/",
+      "category": "GoDaddy",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Aunt Elsie's Homestays",
+      "url": "https://auntelsiehomestay.com/",
+      "category": "WordPress",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "It Takes a Village AMSA Edition",
+      "url": "https://ittakesavillageamsaedition.com/",
+      "category": "WordPress",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Molano Advisors",
+      "url": "https://www.molano.com/",
+      "category": "WordPress",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Creative Products for Reading",
+      "url": "https://creativeproducts4reading.com/",
+      "category": "WordPress",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Fleur du Mal",
+      "url": "https://fleurdumal.com/",
+      "category": "Shopify",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Chamberlain Coffee",
+      "url": "https://chamberlaincoffee.com/",
+      "category": "Shopify",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "4ocean",
+      "url": "https://www.4ocean.com/",
+      "category": "Shopify",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "KraveBeauty",
+      "url": "https://kravebeauty.com/",
+      "category": "Shopify",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Moss Ball Pets",
+      "url": "https://mossballpets.com/",
+      "category": "Terrarium",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Warranty Wizards Figma",
+      "url": "https://www.figma.com/design/c5E82bajK6XPMIAzejfBjD/Warranty-Wizards?node-id=0-1",
+      "category": "Figma",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    },
+    {
+      "name": "Booing Bicycle Figma",
+      "url": "https://www.figma.com/design/HP0pfvQqaoNSH10q5az93t/Booing-Bicycle?node-id=0-1",
+      "category": "Figma",
+      "status": "HTTP response initially successful; browser and screenshot verification not yet completed"
+    }
+  ],
+  "excludedAtHttpAudit": [
+    {
+      "name": "Budd Pools",
+      "url": "https://www.buddpools.com/",
+      "reason": "403/robot check",
+      "status": "excluded"
+    },
+    {
+      "name": "Mass Precision Coating",
+      "url": "https://www.massprecisioncoating.com/",
+      "reason": "DNS resolution failed",
+      "status": "excluded"
+    },
+    {
+      "name": "Beach Cities Cinema",
+      "url": "https://www.beachcitiescinema.com/",
+      "reason": "404 Wix domain error",
+      "status": "excluded"
+    },
+    {
+      "name": "ASL Kids Club",
+      "url": "https://www.aslkidsclub.org/",
+      "reason": "DNS resolution failed",
+      "status": "excluded"
+    },
+    {
+      "name": "DaVinci Resolve Craftsman",
+      "url": "https://www.davinciresolvecraftsman.com/",
+      "reason": "DNS resolution failed",
+      "status": "excluded"
+    },
+    {
+      "name": "EWI BD",
+      "url": "https://www.ewi-bd.com/",
+      "reason": "DNS resolution failed",
+      "status": "excluded"
+    },
+    {
+      "name": "B Better Now",
+      "url": "https://www.bbetternow.com/",
+      "reason": "DNS resolution failed",
+      "status": "excluded"
+    },
+    {
+      "name": "Blaccroc Insurance",
+      "url": "https://www.blaccrocinsurance.group/",
+      "reason": "404 Wix domain error",
+      "status": "excluded"
+    },
+    {
+      "name": "MRO City",
+      "url": "https://www.mrocity.info/",
+      "reason": "404 Wix domain error",
+      "status": "excluded"
+    },
+    {
+      "name": "The Bookshop",
+      "url": "https://www.thebookshop.biz/",
+      "reason": "DNS resolution failed",
+      "status": "excluded"
+    },
+    {
+      "name": "Wix Studio Ebook Store",
+      "url": "https://mt2976.wixstudio.com/ebook-store",
+      "reason": "404 page not found",
+      "status": "excluded"
+    },
+    {
+      "name": "Pound Ridge Car Show",
+      "url": "https://poundridgecarshow.com/",
+      "reason": "DNS resolution failed",
+      "status": "excluded"
+    },
+    {
+      "name": "Fix My Alopecia",
+      "url": "https://fixmyalopecia.com/",
+      "reason": "DNS resolution failed",
+      "status": "excluded"
+    },
+    {
+      "name": "GBG Consulting LLC",
+      "url": "https://gbgconsultingllc.com/",
+      "reason": "Squarespace website expired / 404",
+      "status": "excluded"
+    }
+  ],
+  "policy": "Do not add a site unless the browser loads actual usable content, images can be captured, and the portfolio representation does not falsely claim authorship or results.",
+  "remainingForBrowserReview": 35,
+  "currentStatus": "Seven new industry studies and fourteen existing case studies verified with real desktop and mobile captures. Thirty-five supplied URLs remain unreviewed in a browser."
+}

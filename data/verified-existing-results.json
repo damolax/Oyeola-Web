@@ -1,0 +1,132 @@
+{
+  "capturedOn": "2026-11-23",
+  "verified": [
+    {
+      "slug": "vapourvend",
+      "name": "VapourVend",
+      "url": "https://vapourvend.wixsite.com/website",
+      "title": "HOME | Vapour Vend Copy",
+      "status": 200,
+      "inner": null,
+      "workCardsUpdated": 1
+    },
+    {
+      "slug": "three-nails-one-cross",
+      "name": "3 Nails 1 Cross",
+      "url": "https://www.3nails1cross.com/",
+      "title": "3 Nails 1 Cross",
+      "status": 200,
+      "inner": "https://www.3nails1cross.com/category/wedding-products",
+      "workCardsUpdated": 1
+    },
+    {
+      "slug": "one-love-beauty",
+      "name": "One Love Beauty",
+      "url": "https://onelovebeaut.com/",
+      "title": "One Love Beauty | Hair Recovery Specialist in Charlotte, NC",
+      "status": 200,
+      "inner": null,
+      "workCardsUpdated": 1
+    },
+    {
+      "slug": "bambo-oladipo",
+      "name": "Bambo Oladipo",
+      "url": "https://olabambodatapro.wixsite.com/bambo-oladipo",
+      "title": "Home | Bambo Oladipo",
+      "status": 200,
+      "inner": "https://olabambodatapro.wixsite.com/bambo-oladipo/education-experience",
+      "workCardsUpdated": 1
+    },
+    {
+      "slug": "somatra-healing",
+      "name": "Somatra Healing",
+      "url": "https://www.somatrahealing.com/",
+      "title": "Akashic Records Reader | Somatra Healing",
+      "status": 200,
+      "inner": null,
+      "workCardsUpdated": 1
+    },
+    {
+      "slug": "ah-dental-services",
+      "name": "AH Dental Services",
+      "url": "https://www.ahdentalservices.com/",
+      "title": "Home | AH Dental Services",
+      "status": 200,
+      "inner": "https://www.ahdentalservices.com/about",
+      "workCardsUpdated": 1
+    },
+    {
+      "slug": "zentravels",
+      "name": "ZenTravels",
+      "url": "https://www.zentravels.us/",
+      "title": "Zen Travels | Full Service Travel Agency",
+      "status": 200,
+      "inner": null,
+      "workCardsUpdated": 1
+    },
+    {
+      "slug": "arbequina-apartment",
+      "name": "Arbequina Apartment",
+      "url": "https://www.myarbequina.com/",
+      "title": "Home | Arbequina Apartment at Flamenca Village",
+      "status": 200,
+      "inner": "https://www.myarbequina.com/gallery",
+      "workCardsUpdated": 2
+    },
+    {
+      "slug": "dr-akira",
+      "name": "Dr. Akira",
+      "url": "https://drakira.com/",
+      "title": "Home - Dr Akira",
+      "status": 200,
+      "inner": "https://drakira.com/about-us/",
+      "workCardsUpdated": 1
+    },
+    {
+      "slug": "concierge-wellness",
+      "name": "Concierge Wellness & Consulting",
+      "url": "https://conciergewellnessaz.com/",
+      "title": "Concierge Wellness and Consulting",
+      "status": 200,
+      "inner": "https://conciergewellnessaz.com/about",
+      "workCardsUpdated": 1
+    },
+    {
+      "slug": "latonya-speaks",
+      "name": "LaTonya Speaks",
+      "url": "https://latonyadebruce.com/",
+      "title": "LaTonya Speaks!",
+      "status": 200,
+      "inner": "https://latonyadebruce.com/about",
+      "workCardsUpdated": 1
+    },
+    {
+      "slug": "local-legends-training",
+      "name": "Local Legends Training",
+      "url": "https://locallegendstraining.com/",
+      "title": "Home - Local Legends Training",
+      "status": 200,
+      "inner": "https://locallegendstraining.com/about/",
+      "workCardsUpdated": 1
+    },
+    {
+      "slug": "guestwork-property-management",
+      "name": "Guestwork Property Management",
+      "url": "https://guestwork.ca/",
+      "title": "Airbnb & STR Property Management | Ontario & Mexico | Guestwork",
+      "status": 200,
+      "inner": "https://guestwork.ca/services/",
+      "workCardsUpdated": 1
+    },
+    {
+      "slug": "k-pet-supplies-and-more",
+      "name": "K Pet Supplies & More",
+      "url": "https://www.kpetsuppliesandmore.com/",
+      "title": "K Pet Supplies And More",
+      "status": 200,
+      "inner": "https://www.kpetsuppliesandmore.com/products/animals-and-pet-supplies-example-product-4",
+      "workCardsUpdated": 1
+    }
+  ],
+  "skipped": []
+}

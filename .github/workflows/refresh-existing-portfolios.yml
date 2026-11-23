@@ -1,0 +1,35 @@
+name: Refresh existing Oyeola portfolio screenshots
+on:
+  push:
+    branches: [portfolio/verified-industry-gallery-nov2026]
+    paths:
+      - 'data/verified-existing-targets.json'
+      - 'scripts/refresh-existing-portfolios.cjs'
+      - '.github/workflows/refresh-existing-portfolios.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  capture-and-update-existing-work:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser and image tools
+        run: |
+          npm install --no-save --no-package-lock playwright sharp
+          npx playwright install --with-deps chromium
+      - name: Verify live sites and upgrade existing case study galleries
+        run: node scripts/refresh-existing-portfolios.cjs
+      - name: Commit authentic portfolio captures
+        run: |
+          git config user.name "Oyeola Portfolio Capture"
+          git config user.email "56065632+damolax@users.noreply.github.com"
+          git add assets/portfolio/live-captures case-studies work.html data/verified-existing-results.json
+          if ! git diff --cached --quiet; then
+            git commit -m "portfolio: refresh original Oyeola projects with real site screenshots"
+            git push origin HEAD:portfolio/verified-industry-gallery-nov2026
+          fi

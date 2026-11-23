@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "birth-control-care-center",
+    "name": "Birth Control Care Center",
+    "category": "Clinic & Health",
+    "url": "https://birthcontrolcarecenter.com/",
+    "inside": "https://birthcontrolcarecenter.com/services/birth-control/",
+    "headline": "Care information with a clear next step.",
+    "lead": "A Las Vegas clinic website that brings practical family-planning information, treatment details and scheduling pathways into one place.",
+    "focus": "The public site introduces clinical services while giving visitors clear places to find answers and plan an appointment.",
+    "insideNote": "The birth-control service page offers a closer look at care options and practical patient information.",
+    "notes": [
+      "Service-focused navigation puts practical care details within reach.",
+      "Patient information and FAQs support visitors before contact.",
+      "Appointment guidance turns browsing into a clearer next step."
+    ]
+  },
+  {
+    "slug": "xigera-safari-lodge",
+    "name": "Xigera Safari Lodge",
+    "category": "Hotel & Retreats",
+    "url": "https://www.xigera.com/",
+    "inside": "https://www.xigera.com/lodge/",
+    "headline": "A safari experience told through atmosphere.",
+    "lead": "An immersive lodge website where dramatic imagery, nature and individually designed suites set the stage for an Okavango Delta stay.",
+    "focus": "The visual story introduces Xigera through its setting and distinctive hospitality rather than relying on room lists alone.",
+    "insideNote": "The Lodge page brings the suite experience into sharper focus, supporting exploration beyond the opening imagery.",
+    "notes": [
+      "Strong photography establishes destination and mood.",
+      "Editorial storytelling gives the lodge a distinct personality.",
+      "The lodge and experiences sections support trip discovery."
+    ]
+  },
+  {
+    "slug": "miraval-resorts",
+    "name": "Miraval Resorts & Spas",
+    "category": "Hotel & Retreats",
+    "url": "https://www.miravalresorts.com/",
+    "inside": "https://www.miravalresorts.com/accommodations",
+    "headline": "A retreat journey built around possibility.",
+    "lead": "A wellness resort experience that gives visitors room to explore destinations, activities and the kind of stay that fits them.",
+    "focus": "The homepage introduces the shared wellness philosophy before guiding guests toward destinations and resort offerings.",
+    "insideNote": "The accommodations page gives visitors another way to picture the experience before planning a stay.",
+    "notes": [
+      "Destination-led content accommodates different retreat preferences.",
+      "Wellness activities and stays are easy to explore as separate decisions.",
+      "Brand language remains calm and consistent across the journey."
+    ]
+  },
+  {
+    "slug": "park-lane-copenhagen",
+    "name": "Park Lane Copenhagen",
+    "category": "Hospitality & Stays",
+    "url": "https://parklanecph.com/en/",
+    "inside": "https://parklanecph.com/en/rooms/",
+    "headline": "Boutique hospitality with considered details.",
+    "lead": "A Copenhagen hotel site combining refined interiors, room discovery and dining information in a restrained visual experience.",
+    "focus": "Park Lane brings accommodations, food and local context together while retaining a clear sense of the hotel's identity.",
+    "insideNote": "Rooms and Suites presents accommodation choices with enough detail to make comparing stays easier.",
+    "notes": [
+      "Understated imagery keeps the property at the center.",
+      "Room types and suites get their own discovery path.",
+      "Dining and experiences extend the hotel story beyond the room."
+    ]
+  },
+  {
+    "slug": "populus-seattle",
+    "name": "Populus Seattle",
+    "category": "Hospitality & Stays",
+    "url": "https://populusseattle.com/",
+    "inside": "https://populusseattle.com/accommodations/",
+    "headline": "A place-first hotel experience in Seattle.",
+    "lead": "A boutique hotel's digital presentation connecting its Pioneer Square location, accommodation choices and food-and-drink experiences.",
+    "focus": "The homepage positions the hotel within its neighborhood and introduces distinctive spaces alongside practical reasons to book.",
+    "insideNote": "The accommodations experience lets visitors explore available room types and suites.",
+    "notes": [
+      "Neighborhood context helps guests imagine the stay.",
+      "Rooms, dining and amenities have separate content paths.",
+      "Visual storytelling supports the hotel's boutique identity."
+    ]
+  },
+  {
+    "slug": "roostiq-bar",
+    "name": "Roostiq Bar",
+    "category": "Restaurants & Dining",
+    "url": "https://bar.roostiq.com/en/",
+    "inside": "",
+    "headline": "Fire-led dining presented with character.",
+    "lead": "A restaurant and bar website using immersive visuals and food-focused messaging to express its open-fire culinary concept.",
+    "focus": "Roostiq leads with a recognizable cooking identity and atmosphere, encouraging visitors to explore the restaurant experience.",
+    "insideNote": "The restaurant's homepage continues into its cuisine, setting and practical visit information.",
+    "notes": [
+      "An unmistakable visual identity communicates the food concept.",
+      "Atmosphere plays a meaningful role in the browsing journey.",
+      "On-page navigation supports discovery without cluttering the first screen."
+    ]
+  },
+  {
+    "slug": "rural-habitat",
+    "name": "Rural Habitat",
+    "category": "Property & Real Estate",
+    "url": "https://www.ruralhabitat.com/",
+    "inside": "",
+    "headline": "Rural property discovery with local context.",
+    "lead": "A Spanish real-estate website centered on countryside property searches, regional context and available listings.",
+    "focus": "The public site guides visitors toward rural properties while establishing the kind of land and lifestyle they can explore.",
+    "insideNote": "Available property listings offer a more specific view of the search and decision journey.",
+    "notes": [
+      "Property-led navigation keeps listings central.",
+      "Regional language and imagery reinforce the rural market.",
+      "Listing detail supports a more informed enquiry."
+    ]
+  }
+]
