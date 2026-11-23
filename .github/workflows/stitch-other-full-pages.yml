@@ -1,0 +1,34 @@
+name: Refine full-page hospitality captures
+on:
+  push:
+    branches: [fix/premium-portfolio-presentation-nov24]
+    paths:
+      - 'scripts/stitch-other-full-pages.cjs'
+      - '.github/workflows/stitch-other-full-pages.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install screenshot tooling
+        run: |
+          npm install --no-save --no-package-lock playwright sharp
+          npx playwright install --with-deps chromium
+      - name: Capture complete pages with section-by-section rendering
+        run: node scripts/stitch-other-full-pages.cjs
+      - name: Commit upgraded screenshots
+        run: |
+          git config user.name "Oyeola Portfolio"
+          git config user.email "56065632+damolax@users.noreply.github.com"
+          git add assets/industry-captures/park-lane-copenhagen assets/industry-captures/roostiq-bar
+          if ! git diff --cached --quiet; then
+            git commit -m "portfolio: improve hospitality screenshots with viewport stitching"
+            git push origin HEAD:fix/premium-portfolio-presentation-nov24
+          fi
