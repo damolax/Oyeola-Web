@@ -183,3 +183,21 @@ html[data-theme="light"] .klaviyo-deliverable{background:#fff!important;border-c
   .portfolio-slide .klaviyo-work-art{min-height:225px}
 }
 @media(prefers-reduced-motion:reduce){.klaviyo-portfolio-visual *{transition:none!important}}
+
+
+/* Keep portfolio visual fully inside the same 16:10 frame as every other card. */
+.portfolio-slide .klaviyo-work-art{
+  height:100%!important;
+  min-height:0!important;
+  max-height:100%;
+  padding:clamp(14px,1.8vw,23px)!important;
+}
+.portfolio-slide .klaviyo-art-count{font-size:clamp(46px,6vw,78px)!important}
+.portfolio-slide .klaviyo-art-center{margin:clamp(8px,2vw,22px) 0!important}
+.portfolio-slide .klaviyo-art-center>span:last-child{font-size:clamp(11px,1.25vw,15px)!important}
+@media(max-width:700px){
+  .portfolio-slide .klaviyo-work-art{padding:14px!important}
+  .portfolio-slide .klaviyo-art-top span{display:none}
+  .portfolio-slide .klaviyo-art-count{font-size:clamp(48px,12vw,68px)!important}
+  .portfolio-slide .klaviyo-art-bottom{display:none}
+}
