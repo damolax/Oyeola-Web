@@ -1,0 +1,34 @@
+name: Improve Miraval full-page screenshots
+on:
+  push:
+    branches: [fix/premium-portfolio-presentation-nov24]
+    paths:
+      - 'scripts/stitch-miraval-full-pages.cjs'
+      - '.github/workflows/stitch-miraval-full-pages.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  stitch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Set up browser and image tools
+        run: |
+          npm install --no-save --no-package-lock playwright sharp
+          npx playwright install --with-deps chromium
+      - name: Stitch each viewport with fully rendered sections
+        run: node scripts/stitch-miraval-full-pages.cjs
+      - name: Commit improved page images
+        run: |
+          git config user.name "Oyeola Portfolio"
+          git config user.email "56065632+damolax@users.noreply.github.com"
+          git add assets/industry-captures/miraval-resorts/full-*.webp
+          if ! git diff --cached --quiet; then
+            git commit -m "portfolio: replace blank Miraval capture with viewport-stitched full pages"
+            git push origin HEAD:fix/premium-portfolio-presentation-nov24
+          fi
