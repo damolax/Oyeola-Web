@@ -1,0 +1,36 @@
+name: Capture verified industry portfolio screenshots
+on:
+  push:
+    branches: [portfolio/verified-industry-gallery-nov2026]
+    paths:
+      - 'data/verified-industry-targets.json'
+      - 'scripts/capture-industry-portfolios.cjs'
+      - '.github/workflows/capture-industry-portfolios.yml'
+      - 'assets/css/industry-portfolio.css'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  screenshot-and-publish-on-branch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install screenshot dependencies
+        run: |
+          npm install --no-save --no-package-lock playwright sharp
+          npx playwright install --with-deps chromium
+      - name: Visit websites, capture screenshots, and build portfolio pages
+        run: node scripts/capture-industry-portfolios.cjs
+      - name: Commit only verified screenshot assets and pages
+        run: |
+          git config user.name "Oyeola Portfolio Capture"
+          git config user.email "56065632+damolax@users.noreply.github.com"
+          git add assets/industry-captures industry-portfolios industry-portfolios.html work.html data/verified-industry-results.json
+          if ! git diff --cached --quiet; then
+            git commit -m "portfolio: add verified website screenshots and industry studies"
+            git push origin HEAD:portfolio/verified-industry-gallery-nov2026
+          fi
