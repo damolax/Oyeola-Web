@@ -1,0 +1,44 @@
+name: Portfolio device showcase QA and walkthroughs
+on:
+  push:
+    branches: [design/portfolio-device-showcase-nov24]
+    paths:
+      - 'scripts/capture-portfolio-walkthroughs.cjs'
+      - 'scripts/qa-device-showcase.cjs'
+      - '.github/workflows/portfolio-device-showcase.yml'
+permissions:
+  contents: write
+jobs:
+  verify-and-record:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+      - name: Check responsive layouts and image files
+        run: |
+          python3 -m http.server 8098 --bind 127.0.0.1 >/tmp/portfolio-server.log 2>&1 &
+          node scripts/qa-device-showcase.cjs
+      - name: Upload browser QA report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: device-showcase-qa
+          path: portfolio-qa.json
+      - name: Record genuine desktop walkthroughs
+        run: node scripts/capture-portfolio-walkthroughs.cjs
+      - name: Save only verified walkthroughs on preview branch
+        run: |
+          git config user.name "Oyeola Portfolio"
+          git config user.email "56065632+damolax@users.noreply.github.com"
+          git add case-studies assets/portfolio/live-captures data/portfolio-walkthrough-results.json
+          if ! git diff --cached --quiet; then
+            git commit -m "portfolio: add verified recorded walkthroughs"
+            git push origin HEAD:design/portfolio-device-showcase-nov24
+          fi

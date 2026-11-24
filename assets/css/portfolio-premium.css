@@ -139,3 +139,5 @@ html[data-theme="light"] .pp-filter[aria-pressed="true"]{color:#fff}
 .oy-mini-mockup{aspect-ratio:1.52;border-radius:12px}
 @media(max-width:680px){.oy-case-device-hero{border-radius:12px}.oy-industry-device-section .oy-device-mockup{aspect-ratio:1.52}.oy-industry-device-section .oy-device-desktop{left:6%;width:78%}.oy-industry-device-section .oy-device-phone{right:5%;width:23%}.oy-industry-device-section .oy-device-base{left:4%;width:82%}.oy-view-phone img{max-height:280px}.oy-selected-views{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.oy-mockup-link *{transition:none!important}}
+
+.oy-walkthrough video{display:block;width:100%;aspect-ratio:16/10;max-height:700px;object-fit:contain;background:#101713;border:1px solid var(--oy-line);border-radius:16px}
