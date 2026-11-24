@@ -6,6 +6,8 @@ const block=/access denied|just a moment|captcha|verify you are human|website ex
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 (async()=>{
+execFileSync('ffmpeg',['-version'],{stdio:'ignore'});
+execFileSync('ffprobe',['-version'],{stdio:'ignore'});
 const browser=await chromium.launch({headless:true,args:['--disable-dev-shm-usage']});
 let report=[];
 for(const x of targets){
@@ -32,9 +34,20 @@ for(const x of targets){
   const file='case-studies/'+x.slug+'.html';let html=fs.readFileSync(file,'utf8');
   const marker='<!-- Verified portfolio screenshots end -->';
   if(!html.includes(marker))throw Error('Missing case gallery marker');
-  const section='<section class="pp-case-enhancement oy-walkthrough"><div class="container"><div class="pp-section-top"><div><p class="pp-eyebrow">WEBSITE WALKTHROUGH</p><h2>See the website in motion.</h2></div><p>A genuine recording of the public desktop website, captured after the page loaded.</p></div><video controls playsinline preload="none" poster="../'+folder+'/home.webp" aria-label="'+esc(x.name)+' website walkthrough"><source src="../'+output+'" type="video/mp4">Your browser does not support this video.</video></div></section>';
+  const section='<section class="pp-case-enhancement oy-walkthrough" id="project-walkthrough"><div class="container"><div class="pp-section-top"><div><p class="pp-eyebrow">WEBSITE WALKTHROUGH</p><h2>See the website in motion.</h2></div><p>A genuine recording of the public desktop website, captured after the page loaded.</p></div><video controls playsinline preload="none" poster="../'+folder+'/home.webp" aria-label="'+esc(x.name)+' website walkthrough"><source src="../'+output+'" type="video/mp4">Your browser does not support this video.</video></div></section>';
   html=html.replace(/<!-- OYEOLA WALKTHROUGH START -->[\s\S]*?<!-- OYEOLA WALKTHROUGH END -->/g,'');
-  html=html.replace(marker,marker+'<!-- OYEOLA WALKTHROUGH START -->'+section+'<!-- OYEOLA WALKTHROUGH END -->');fs.writeFileSync(file,html);
+  const heroEnd=html.indexOf('</section>',html.indexOf('<main'));
+  if(heroEnd<0)throw Error('Cannot identify first project section');
+  const end=heroEnd+'</section>'.length;
+  html=html.slice(0,end)+'<!-- OYEOLA WALKTHROUGH START -->'+section+'<!-- OYEOLA WALKTHROUGH END -->'+html.slice(end);
+  fs.writeFileSync(file,html);
+  const workFile='work.html';let work=fs.readFileSync(workFile,'utf8');
+  const caseHref='case-studies/'+x.slug+'.html';
+  work=work.replace(/<article\b[^>]*>[\s\S]*?<\/article>/g,a=>{
+    if(!a.includes('href="'+caseHref+'"')||!a.includes('portfolio-slide-body')||a.includes('#project-walkthrough'))return a;
+    return a.replace(/<a class="text-link" href="[^"]+">[^<]+<\/a>/, '<a class="text-link" href="'+caseHref+'#project-walkthrough">Watch website walkthrough ↗</a>');
+  });
+  fs.writeFileSync(workFile,work);
   report.push({slug:x.slug,status:'recorded',file:output,durationSeconds:duration,bytes:fs.statSync(output).size,source:x.screenshots.desktop.source});
   console.log('RECORDED',x.slug,duration);
  }catch(e){report.push({slug:x.slug,status:'not-published',reason:String(e).slice(0,250)});console.log('SKIPPED',x.slug,String(e).slice(0,200));}
