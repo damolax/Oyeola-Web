@@ -1,6 +1,6 @@
 {
   "runDate": "2026-11-23",
-  "total": 21,
+  "total": 20,
   "results": [
     {
       "slug": "birth-control-care-center",
@@ -92,37 +92,6 @@
           "bytes": 66738,
           "title": "Accommodations - Miraval Resorts",
           "source": "https://www.miravalresorts.com/accommodations"
-        }
-      }
-    },
-    {
-      "slug": "park-lane-copenhagen",
-      "name": "Park Lane Copenhagen",
-      "type": "industry",
-      "screenshots": {
-        "desktop": {
-          "file": "assets/industry-captures/park-lane-copenhagen/full-desktop.webp",
-          "width": 1440,
-          "height": 10909,
-          "bytes": 323246,
-          "title": "Park Lane Copenhagen Hotel | Exclusive Boutique Stay in Hellerup",
-          "source": "https://parklanecph.com/en/"
-        },
-        "mobile": {
-          "file": "assets/industry-captures/park-lane-copenhagen/full-mobile.webp",
-          "width": 390,
-          "height": 10247,
-          "bytes": 106402,
-          "title": "Park Lane Copenhagen Hotel | Exclusive Boutique Stay in Hellerup",
-          "source": "https://parklanecph.com/en/"
-        },
-        "detail": {
-          "file": "assets/industry-captures/park-lane-copenhagen/full-detail.webp",
-          "width": 1440,
-          "height": 5999,
-          "bytes": 116538,
-          "title": "Rooms & Suites Archive - Park Lane Copenhagen",
-          "source": "https://parklanecph.com/en/rooms/"
         }
       }
     },

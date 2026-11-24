@@ -32,16 +32,6 @@
       "inside": "https://www.miravalresorts.com/accommodations"
     },
     {
-      "slug": "park-lane-copenhagen",
-      "name": "Park Lane Copenhagen",
-      "title": "Park Lane Copenhagen Hotel | Exclusive Boutique Stay in Hellerup",
-      "status": 200,
-      "homeUrl": "https://parklanecph.com/en/",
-      "category": "Hospitality & Stays",
-      "loadedImages": 25,
-      "inside": "https://parklanecph.com/en/rooms/"
-    },
-    {
       "slug": "populus-seattle",
       "name": "Populus Seattle",
       "title": "Boutique Hotel Downtown Seattle | Populus",

@@ -4,12 +4,17 @@
   "initialHttpUsable": 56,
   "initialUnavailableOrError": 14,
   "firstProductionBatch": {
-    "newIndustryStudies": 7,
+    "newIndustryStudies": 6,
     "existingCaseStudyEnhancements": 14,
-    "totalVerified": 21,
+    "totalVerified": 20,
     "source": "Browser screenshots and verified project pages"
   },
-  "newStudyExcludedAfterBrowser": [],
+  "newStudyExcludedAfterBrowser": [
+    {
+      "name": "Park Lane Copenhagen",
+      "reason": "Removed at owner's request; capture quality unsuitable."
+    }
+  ],
   "pendingBrowserReview": [
     {
       "name": "The Mobile Phlebotomist",
@@ -310,5 +315,5 @@
   ],
   "policy": "Do not add a site unless the browser loads actual usable content, images can be captured, and the portfolio representation does not falsely claim authorship or results.",
   "remainingForBrowserReview": 35,
-  "currentStatus": "Seven new industry studies and fourteen existing case studies verified with real desktop and mobile captures. Thirty-five supplied URLs remain unreviewed in a browser."
+  "currentStatus": "Six industry studies and fourteen existing case studies retained. Thirteen have width-verified mobile captures; seven require a genuine mobile recapture or recorded walkthrough."
 }
