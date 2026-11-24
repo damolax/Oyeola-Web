@@ -1,0 +1,40 @@
+{
+  "recordedOn": "2026-11-24T06:02:31.883Z",
+  "report": [
+    {
+      "slug": "vapourvend",
+      "status": "not-published",
+      "reason": "Error: spawnSync ffmpeg ENOENT"
+    },
+    {
+      "slug": "three-nails-one-cross",
+      "status": "not-published",
+      "reason": "Error: spawnSync ffmpeg ENOENT"
+    },
+    {
+      "slug": "bambo-oladipo",
+      "status": "not-published",
+      "reason": "Error: spawnSync ffmpeg ENOENT"
+    },
+    {
+      "slug": "somatra-healing",
+      "status": "not-published",
+      "reason": "Error: spawnSync ffmpeg ENOENT"
+    },
+    {
+      "slug": "ah-dental-services",
+      "status": "not-published",
+      "reason": "Error: spawnSync ffmpeg ENOENT"
+    },
+    {
+      "slug": "zentravels",
+      "status": "not-published",
+      "reason": "Error: spawnSync ffmpeg ENOENT"
+    },
+    {
+      "slug": "arbequina-apartment",
+      "status": "not-published",
+      "reason": "Error: spawnSync ffmpeg ENOENT"
+    }
+  ]
+}
