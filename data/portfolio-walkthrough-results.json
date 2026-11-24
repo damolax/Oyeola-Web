@@ -1,0 +1,61 @@
+{
+  "recordedOn": "2026-11-24T08:33:45.443Z",
+  "report": [
+    {
+      "slug": "vapourvend",
+      "status": "recorded",
+      "file": "assets/portfolio/live-captures/vapourvend/walkthrough.mp4",
+      "durationSeconds": 14,
+      "bytes": 2218939,
+      "source": "https://vapourvend.wixsite.com/website"
+    },
+    {
+      "slug": "three-nails-one-cross",
+      "status": "recorded",
+      "file": "assets/portfolio/live-captures/three-nails-one-cross/walkthrough.mp4",
+      "durationSeconds": 12.16,
+      "bytes": 1638523,
+      "source": "https://www.3nails1cross.com/"
+    },
+    {
+      "slug": "bambo-oladipo",
+      "status": "recorded",
+      "file": "assets/portfolio/live-captures/bambo-oladipo/walkthrough.mp4",
+      "durationSeconds": 14,
+      "bytes": 2161734,
+      "source": "https://olabambodatapro.wixsite.com/bambo-oladipo"
+    },
+    {
+      "slug": "somatra-healing",
+      "status": "recorded",
+      "file": "assets/portfolio/live-captures/somatra-healing/walkthrough.mp4",
+      "durationSeconds": 13.96,
+      "bytes": 2092232,
+      "source": "https://www.somatrahealing.com/"
+    },
+    {
+      "slug": "ah-dental-services",
+      "status": "recorded",
+      "file": "assets/portfolio/live-captures/ah-dental-services/walkthrough.mp4",
+      "durationSeconds": 14,
+      "bytes": 2195810,
+      "source": "https://www.ahdentalservices.com/"
+    },
+    {
+      "slug": "zentravels",
+      "status": "recorded",
+      "file": "assets/portfolio/live-captures/zentravels/walkthrough.mp4",
+      "durationSeconds": 14,
+      "bytes": 1922411,
+      "source": "https://www.zentravels.us/"
+    },
+    {
+      "slug": "arbequina-apartment",
+      "status": "recorded",
+      "file": "assets/portfolio/live-captures/arbequina-apartment/walkthrough.mp4",
+      "durationSeconds": 13.96,
+      "bytes": 2693250,
+      "source": "https://www.myarbequina.com/"
+    }
+  ]
+}

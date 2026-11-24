@@ -48,22 +48,6 @@
     ]
   },
   {
-    "slug": "park-lane-copenhagen",
-    "name": "Park Lane Copenhagen",
-    "category": "Hospitality & Stays",
-    "url": "https://parklanecph.com/en/",
-    "inside": "https://parklanecph.com/en/rooms/",
-    "headline": "Boutique hospitality with considered details.",
-    "lead": "A Copenhagen hotel site combining refined interiors, room discovery and dining information in a restrained visual experience.",
-    "focus": "Park Lane brings accommodations, food and local context together while retaining a clear sense of the hotel's identity.",
-    "insideNote": "Rooms and Suites presents accommodation choices with enough detail to make comparing stays easier.",
-    "notes": [
-      "Understated imagery keeps the property at the center.",
-      "Room types and suites get their own discovery path.",
-      "Dining and experiences extend the hotel story beyond the room."
-    ]
-  },
-  {
     "slug": "populus-seattle",
     "name": "Populus Seattle",
     "category": "Hospitality & Stays",

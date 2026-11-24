@@ -6,8 +6,8 @@
  const allowed=x=>{try{const u=new URL(x,location.origin);return ['https:','http:'].includes(u.protocol)?u.href:''}catch{return''}};
  fetch('/api/content?type=project').then(r=>r.ok?r.json():{items:[]}).then(({items=[]})=>{
   const bySlug=new Map(items.map(x=>[x.slug,x]));
-  for(const a of list){const m=a.getAttribute('href')?.match(/case-studies\/([^/?#]+)(?:\.html)?/);if(!m)continue;const slug=m[1].replace(/\.html$/,'');const data=bySlug.get(slug)?.data||{};const url=allowed(data.fullpage_image_url||data.hero_image_url);if(!url)continue;const image=a.querySelector('img');if(image&&image.src!==url){image.src=url;image.alt=(bySlug.get(slug)?.title||slug)+' — original project screenshot';image.style.objectPosition='top center';image.style.objectFit='contain';image.loading='lazy';}}
-  if(!isCase)return;
+  for(const a of list){if(a.querySelector('[data-oy-device-mockup]'))continue;const m=a.getAttribute('href')?.match(/case-studies\/([^/?#]+)(?:\.html)?/);if(!m)continue;const slug=m[1].replace(/\.html$/,'');const data=bySlug.get(slug)?.data||{};const url=allowed(data.fullpage_image_url||data.hero_image_url);if(!url)continue;const image=a.querySelector('img');if(image&&image.src!==url){image.src=url;image.alt=(bySlug.get(slug)?.title||slug)+' — original project screenshot';image.style.objectPosition='top center';image.style.objectFit='contain';image.loading='lazy';}}
+  if(!isCase||document.querySelector('main [data-oy-device-mockup]'))return;
   const slug=location.pathname.split('/').pop().replace(/\.html$/,''),record=bySlug.get(slug),d=record?.data||{},url=allowed(d.fullpage_image_url||d.hero_image_url);if(!url)return;
   const title=record?.title||document.querySelector('h1')?.textContent||'Portfolio project';
   const hero=document.querySelector('.case-screen');
